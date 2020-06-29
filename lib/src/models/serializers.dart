@@ -1,0 +1,33 @@
+library serializers;
+
+
+import 'package:FrostLibrary/src/models/item/itemtype.dart';
+import 'package:FrostLibrary/src/models/potion/potion.dart';
+import 'package:FrostLibrary/src/models/potion/potions.dart';
+import 'package:FrostLibrary/src/models/spell/category.dart';
+import 'package:FrostLibrary/src/models/spell/school.dart';
+import 'package:FrostLibrary/src/models/spell/spell.dart';
+import 'package:FrostLibrary/src/models/spell/spells.dart';
+import 'package:FrostLibrary/src/models/weapons/weapon.dart';
+import 'package:FrostLibrary/src/models/weapons/weapons.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/serializer.dart';
+import 'package:built_value/standard_json_plugin.dart';
+
+import '../../FrostLibrary.dart';
+
+part 'serializers.g.dart';
+
+@SerializersFor([
+  ItemType,
+  Weapons,
+  Weapon,
+  Potion,
+  Potions,
+  Spell,
+  Spells,
+  School,
+  Category,
+])
+final Serializers serializers =
+(_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

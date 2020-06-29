@@ -1,0 +1,70 @@
+potions:
+- name: "Healing"
+  itemType: Potion
+  effect: "Restores up to 5 lost health."
+  price: 50
+  description: "Retores up to 5 lost health."
+  notes:
+
+- name: "Strength"
+  itemType: Potion
+  effect: "+2 fight for the rest of the game."
+  price: 50
+  description: "+2 fight for the rest of the game."
+  notes:
+
+- name: "Toughness"
+  itemType: Potion
+  effect: "+1 Armour for the rest of the game."
+  price: 50
+  description: "+1 Armour for the rest of the game."
+  notes:
+
+- name: "Elixir of Speed"
+  itemType: Potion
+  effect: "+1 Move for the rest of the game."
+  price: 50
+  description: "+1 Move for the rest of the game."
+  notes:
+
+- name: "Invisibility"
+  itemType: Potion
+  effect: "As an invisibility spell, no casting roll needed."
+  price: 100
+  description: "As an invisibility spell, no casting roll needed."
+  notes:
+
+- name: "Explosive Cocktail"
+  itemType: Potion
+  effect: "As a grenade spell, no casting roll needed."
+  price: 50
+  description: "As a grenade spell, no casting roll needed."
+  notes:
+
+- name: "Invulnerability"
+  itemType: Potion
+  effect: "Drinker cannot be damaged until after its next activation."
+  price: 100
+  description: "Drinker cannot be damaged until after its next activation."
+  notes:
+
+- name: "Teleportation"
+  itemType: Potion
+  effect: "As a Teleport spell, no casting roll needed."
+  price: 100
+  description: "As a Teleport spell, no casting roll needed."
+  notes:
+
+- name: "Demon in a Bottle"
+  itemType: Potion
+  effect: "When smashed, summons and binds a minor demon to fight for the warband until the end of the game."
+  price: 200
+  description: "When smashed, summons and binds a minor demon to fight for the warband until the end of the game."
+  notes:
+
+- name: "Elixir of Life"
+  itemType: Potion
+  effect: "As a Restore potion, no casting roll needed."
+  price: 500
+  description: "As a Restore potion, no casting roll needed."
+  notes:
