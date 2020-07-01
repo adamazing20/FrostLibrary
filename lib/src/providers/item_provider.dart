@@ -2,21 +2,20 @@ library item_provider;
 
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/models/potion/potion.dart';
 import 'package:FrostLibrary/src/models/potion/potions.dart';
 import 'package:FrostLibrary/src/models/spell/spell.dart';
 import 'package:FrostLibrary/src/models/spell/spells.dart';
 import 'package:FrostLibrary/src/models/weapons/weapon.dart';
 import 'package:FrostLibrary/src/models/weapons/weapons.dart';
+import 'package:path/path.dart' as p;
 import 'package:yaml/yaml.dart';
 
-
-import 'package:FrostLibrary/src/models/item/item.dart';
-
-
-part 'weapon_provider.dart';
 part 'potion_provider.dart';
 part 'spell_provider.dart';
+part 'weapon_provider.dart';
 
 abstract class ItemProvider<T extends Item> {
   String filePath;
@@ -24,9 +23,11 @@ abstract class ItemProvider<T extends Item> {
 
   Future<List<T>> load();
 
-
   File _getFile() {
-    return File(filePath);
+    var fileList = filePath.split('/');
+
+    var joinedPath = p.joinAll(fileList);
+    return File(joinedPath);
   }
 
   Future<YamlMap> _LoadYaml() async {
