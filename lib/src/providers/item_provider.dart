@@ -28,7 +28,7 @@ abstract class ItemProvider<T extends Item> {
   }
 
   Future<YamlMap> _LoadYaml() async {
-    var yamlString = _getFile();
+    var yamlString = await _getFile();
 //    var yamlString = await file.readAsString();
     return loadYaml(await yamlString);
   }
