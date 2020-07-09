@@ -1,7 +1,7 @@
 library item_provider;
 
+import 'dart:async' show Future;
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/models/potion/potion.dart';
@@ -10,7 +10,7 @@ import 'package:FrostLibrary/src/models/spell/spell.dart';
 import 'package:FrostLibrary/src/models/spell/spells.dart';
 import 'package:FrostLibrary/src/models/weapons/weapon.dart';
 import 'package:FrostLibrary/src/models/weapons/weapons.dart';
-import 'package:path/path.dart' as p;
+import 'package:flutter/services.dart';
 import 'package:yaml/yaml.dart';
 
 part 'potion_provider.dart';
@@ -23,17 +23,14 @@ abstract class ItemProvider<T extends Item> {
 
   Future<List<T>> load();
 
-  File _getFile() {
-    var fileList = filePath.split('/');
-
-    var joinedPath = p.joinAll(fileList);
-    return File(joinedPath);
+  Future<String> _getFile() async {
+    return await rootBundle.loadString(filePath);
   }
 
   Future<YamlMap> _LoadYaml() async {
-    var file = _getFile();
-    var yamlString = await file.readAsString();
-    return loadYaml(yamlString);
+    var yamlString = _getFile();
+//    var yamlString = await file.readAsString();
+    return loadYaml(await yamlString);
   }
 
   Future<String> _getItemsAsJsonString() async {
