@@ -6,6 +6,10 @@ description: A starting point for Dart libraries or applications.
 environment:
   sdk: '>=2.8.1 <3.0.0'
 
+flutter:
+  assets:
+    - assets/item_defs/
+
 dependencies:
   flutter:
     sdk: flutter
@@ -16,15 +20,9 @@ dependencies:
   build_runner: ^1.0.0
   built_value_generator: ^7.0.9
 
-flutter:
-  assets:
-    - lib/definitions/item_defs/potions.yaml
-    - lib/definitions/item_defs/weapons.yaml
-    - lib/definitions/item_defs/spells.yaml
-
 dev_dependencies:
   pedantic: ^1.9.0
-#  test: ^1.15.2
+  #  test: ^1.15.2
   flutter_test:
     sdk: flutter
 
