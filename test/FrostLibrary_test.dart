@@ -7,8 +7,8 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     var frostLibrary = FrostLibrary();
     await frostLibrary.init();
-    WeaponProvider weapons = frostLibrary.weaponProvider;
-    PotionProvider potions = frostLibrary.potionProvider;
+//    WeaponProvider weapons = frostLibrary.weaponProvider;
+//    PotionProvider potions = frostLibrary.potionProvider;
     SpellProvider spells = frostLibrary.spellProvider;
 
 //      //Get Weapon By Name

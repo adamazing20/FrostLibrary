@@ -24,7 +24,7 @@ abstract class ItemProvider<T extends Item> {
   Future<List<T>> load();
 
   Future<String> _getFile() async {
-    return await rootBundle.loadString(filePath);
+    return await rootBundle.loadString("$filePath");
   }
 
   Future<YamlMap> _LoadYaml() async {
