@@ -2,7 +2,7 @@ part of 'item_provider.dart';
 
 class PotionProvider extends ItemProvider<Potion> {
   @override
-  String filePath = 'definitions/item_defs/potions.yaml';
+  String filePath = 'lib/definitions/item_defs/potions.yaml';
 
   @override
   Future<List<Potion>> load() async {
