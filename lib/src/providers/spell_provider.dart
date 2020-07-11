@@ -2,7 +2,7 @@ part of 'item_provider.dart';
 
 class SpellProvider extends ItemProvider<Spell> {
   @override
-  String filePath = 'lib/assets/item_defs/spells.yaml';
+  String filePath = 'assets/item_defs/spells.yaml';
 
   @override
   Future<List<Spell>> load() async {
