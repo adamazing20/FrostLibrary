@@ -1,9 +1,10 @@
 potions:
-- name: "Healing"
+- name: "Healingggg"
   itemType: Potion
   effect: "Restores up to 5 lost health."
   price: 50
   description: "Retores up to 5 lost health."
+  expansion: Core
   notes:
 
 - name: "Strength"
@@ -11,6 +12,7 @@ potions:
   effect: "+2 fight for the rest of the game."
   price: 50
   description: "+2 fight for the rest of the game."
+  expansion: Core
   notes:
 
 - name: "Toughness"
@@ -18,13 +20,16 @@ potions:
   effect: "+1 Armour for the rest of the game."
   price: 50
   description: "+1 Armour for the rest of the game."
+  expansion: Core
   notes:
+
 
 - name: "Elixir of Speed"
   itemType: Potion
   effect: "+1 Move for the rest of the game."
   price: 50
   description: "+1 Move for the rest of the game."
+  expansion: Core
   notes:
 
 - name: "Invisibility"
@@ -32,6 +37,7 @@ potions:
   effect: "As an invisibility spell, no casting roll needed."
   price: 100
   description: "As an invisibility spell, no casting roll needed."
+  expansion: Core
   notes:
 
 - name: "Explosive Cocktail"
@@ -39,6 +45,7 @@ potions:
   effect: "As a grenade spell, no casting roll needed."
   price: 50
   description: "As a grenade spell, no casting roll needed."
+  expansion: Core
   notes:
 
 - name: "Invulnerability"
@@ -46,6 +53,7 @@ potions:
   effect: "Drinker cannot be damaged until after its next activation."
   price: 100
   description: "Drinker cannot be damaged until after its next activation."
+  expansion: Core
   notes:
 
 - name: "Teleportation"
@@ -53,6 +61,7 @@ potions:
   effect: "As a Teleport spell, no casting roll needed."
   price: 100
   description: "As a Teleport spell, no casting roll needed."
+  expansion: Core
   notes:
 
 - name: "Demon in a Bottle"
@@ -60,6 +69,7 @@ potions:
   effect: "When smashed, summons and binds a minor demon to fight for the warband until the end of the game."
   price: 200
   description: "When smashed, summons and binds a minor demon to fight for the warband until the end of the game."
+  expansion: Core
   notes:
 
 - name: "Elixir of Life"
@@ -67,4 +77,5 @@ potions:
   effect: "As a Restore potion, no casting roll needed."
   price: 500
   description: "As a Restore potion, no casting roll needed."
+  expansion: Core
   notes:

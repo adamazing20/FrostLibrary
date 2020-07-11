@@ -18,7 +18,9 @@ dependencies:
 
 flutter:
   assets:
-    - assets/item_defs/
+    - assets/item_defs/potions.yaml
+    - assets/item_defs/weapons.yaml
+    - assets/item_defs/spells.yaml
 
 dev_dependencies:
   pedantic: ^1.9.0

@@ -8,6 +8,7 @@ part of serializers;
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Category.serializer)
+      ..add(Expansion.serializer)
       ..add(ItemType.serializer)
       ..add(Potion.serializer)
       ..add(Potions.serializer)

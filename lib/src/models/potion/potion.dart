@@ -2,17 +2,16 @@ library potion;
 
 import 'dart:convert';
 
+import 'package:FrostLibrary/src/models/item/expansion.dart';
 import 'package:FrostLibrary/src/models/item/item.dart';
-import 'package:FrostLibrary/src/models/serializers.dart';
-import 'package:built_value/serializer.dart';
 import 'package:FrostLibrary/src/models/item/itemtype.dart';
+import 'package:FrostLibrary/src/models/serializers.dart';
 import 'package:built_value/built_value.dart';
-
+import 'package:built_value/serializer.dart';
 
 part 'potion.g.dart';
 
-
-abstract class Potion implements Built<Potion, PotionBuilder>, Item{
+abstract class Potion implements Built<Potion, PotionBuilder>, Item {
   static Serializer<Potion> get serializer => _$potionSerializer;
 
   @override
@@ -30,6 +29,9 @@ abstract class Potion implements Built<Potion, PotionBuilder>, Item{
 
   @nullable
   int get price;
+
+  @override
+  Expansion get expansion;
 
   String toJson() {
     return json.encode(serializers.serializeWith(Potion.serializer, this));

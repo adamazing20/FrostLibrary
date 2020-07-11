@@ -23,6 +23,9 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
+      'expansion',
+      serializers.serialize(object.expansion,
+          specifiedType: const FullType(Expansion)),
     ];
     if (object.description != null) {
       result
@@ -76,6 +79,10 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'expansion':
+          result.expansion = serializers.deserialize(value,
+              specifiedType: const FullType(Expansion)) as Expansion;
+          break;
       }
     }
 
@@ -94,18 +101,28 @@ class _$Potion extends Potion {
   final String effect;
   @override
   final int price;
+  @override
+  final Expansion expansion;
 
   factory _$Potion([void Function(PotionBuilder) updates]) =>
       (new PotionBuilder()..update(updates)).build();
 
   _$Potion._(
-      {this.name, this.itemType, this.description, this.effect, this.price})
+      {this.name,
+      this.itemType,
+      this.description,
+      this.effect,
+      this.price,
+      this.expansion})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Potion', 'name');
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Potion', 'itemType');
+    }
+    if (expansion == null) {
+      throw new BuiltValueNullFieldError('Potion', 'expansion');
     }
   }
 
@@ -124,17 +141,20 @@ class _$Potion extends Potion {
         itemType == other.itemType &&
         description == other.description &&
         effect == other.effect &&
-        price == other.price;
+        price == other.price &&
+        expansion == other.expansion;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, name.hashCode), itemType.hashCode),
-                description.hashCode),
-            effect.hashCode),
-        price.hashCode));
+            $jc(
+                $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                    description.hashCode),
+                effect.hashCode),
+            price.hashCode),
+        expansion.hashCode));
   }
 
   @override
@@ -144,7 +164,8 @@ class _$Potion extends Potion {
           ..add('itemType', itemType)
           ..add('description', description)
           ..add('effect', effect)
-          ..add('price', price))
+          ..add('price', price)
+          ..add('expansion', expansion))
         .toString();
   }
 }
@@ -172,6 +193,10 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   int get price => _$this._price;
   set price(int price) => _$this._price = price;
 
+  Expansion _expansion;
+  Expansion get expansion => _$this._expansion;
+  set expansion(Expansion expansion) => _$this._expansion = expansion;
+
   PotionBuilder();
 
   PotionBuilder get _$this {
@@ -181,6 +206,7 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
       _description = _$v.description;
       _effect = _$v.effect;
       _price = _$v.price;
+      _expansion = _$v.expansion;
       _$v = null;
     }
     return this;
@@ -207,7 +233,8 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
             itemType: itemType,
             description: description,
             effect: effect,
-            price: price);
+            price: price,
+            expansion: expansion);
     replace(_$result);
     return _$result;
   }

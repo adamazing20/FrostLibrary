@@ -15,9 +15,9 @@ void main() {
 //      print(weapons.getItemByName("Two Handed Weapon").itemType);
 
 //
-    print(frostLibrary.getAllItems());
+//    print(frostLibrary.getAllItems());
 
     //get all weapons
-//      print(weapons.items);
+    print(spells.items);
   });
 }

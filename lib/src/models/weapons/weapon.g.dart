@@ -23,6 +23,9 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
+      'expansion',
+      serializers.serialize(object.expansion,
+          specifiedType: const FullType(Expansion)),
     ];
     if (object.damageModified != null) {
       result
@@ -76,6 +79,10 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
           result.notes = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'expansion':
+          result.expansion = serializers.deserialize(value,
+              specifiedType: const FullType(Expansion)) as Expansion;
+          break;
       }
     }
 
@@ -94,6 +101,8 @@ class _$Weapon extends Weapon {
   final String description;
   @override
   final String notes;
+  @override
+  final Expansion expansion;
 
   factory _$Weapon([void Function(WeaponBuilder) updates]) =>
       (new WeaponBuilder()..update(updates)).build();
@@ -103,13 +112,17 @@ class _$Weapon extends Weapon {
       this.itemType,
       this.damageModified,
       this.description,
-      this.notes})
+      this.notes,
+      this.expansion})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Weapon', 'name');
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Weapon', 'itemType');
+    }
+    if (expansion == null) {
+      throw new BuiltValueNullFieldError('Weapon', 'expansion');
     }
   }
 
@@ -128,17 +141,20 @@ class _$Weapon extends Weapon {
         itemType == other.itemType &&
         damageModified == other.damageModified &&
         description == other.description &&
-        notes == other.notes;
+        notes == other.notes &&
+        expansion == other.expansion;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, name.hashCode), itemType.hashCode),
-                damageModified.hashCode),
-            description.hashCode),
-        notes.hashCode));
+            $jc(
+                $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                    damageModified.hashCode),
+                description.hashCode),
+            notes.hashCode),
+        expansion.hashCode));
   }
 
   @override
@@ -148,7 +164,8 @@ class _$Weapon extends Weapon {
           ..add('itemType', itemType)
           ..add('damageModified', damageModified)
           ..add('description', description)
-          ..add('notes', notes))
+          ..add('notes', notes)
+          ..add('expansion', expansion))
         .toString();
   }
 }
@@ -177,6 +194,10 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
   String get notes => _$this._notes;
   set notes(String notes) => _$this._notes = notes;
 
+  Expansion _expansion;
+  Expansion get expansion => _$this._expansion;
+  set expansion(Expansion expansion) => _$this._expansion = expansion;
+
   WeaponBuilder();
 
   WeaponBuilder get _$this {
@@ -186,6 +207,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
       _damageModified = _$v.damageModified;
       _description = _$v.description;
       _notes = _$v.notes;
+      _expansion = _$v.expansion;
       _$v = null;
     }
     return this;
@@ -212,7 +234,8 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
             itemType: itemType,
             damageModified: damageModified,
             description: description,
-            notes: notes);
+            notes: notes,
+            expansion: expansion);
     replace(_$result);
     return _$result;
   }

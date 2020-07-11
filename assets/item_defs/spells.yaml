@@ -10,8 +10,12 @@ spells:
   #    baseCastingNumber: 8
   #    # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
   #    category: OutOfGame
-  #    price: 500
-  #    sellValue: 250
+  #    grimoirePrice: <Calculated for you, for now don't include this field>
+  #    scrollPrice: <Calculated for you, for now don't include this field>
+  #    grimoireSellValue: <Calculated for you, for now don't include this field>
+  #    scrollSellValue: <Calculated for you, for now don't include this field>
+  #    #Valid expansions are DarkAlchemy, ArcaneLocations, SecondChances, UlteriorMotives,
+  #    TheMazeOfMalcor, LostColossus, TheWizardsConclave, and Core
 
   - name: "Absorb Knowledge"
     itemType: Spell
@@ -25,5 +29,4 @@ spells:
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
     category: OutOfGame
-    price:
-    sellValue:
+    expansion: Core
