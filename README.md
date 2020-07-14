@@ -15,7 +15,7 @@ as Flutter assets: (I put my definitions in assets/item_defs/)
   assets:
     - assets/item_defs/
 
-```dart
+```
 
 NOTE: This library would work best with a state management system like bloc.
 For the following example we presume a more trivial list setup / stateful widget;
