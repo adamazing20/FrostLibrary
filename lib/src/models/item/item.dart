@@ -11,13 +11,9 @@ abstract class Item {
 }
 
 abstract class SpellDefinition extends Item {
-  int get grimoireSellValue;
+  int get price;
 
-  int get scrollSellValue;
-
-  int get grimoirePrice;
-
-  int get scrollPrice;
+  int get sellValue;
 
   School get school;
 

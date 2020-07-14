@@ -16,11 +16,11 @@ part 'spell.g.dart';
 abstract class Spell implements Built<Spell, SpellBuilder>, SpellDefinition {
   static Serializer<Spell> get serializer => _$spellSerializer;
 
-  static void _initializeBuilder(SpellBuilder b) => b
-    ..grimoirePrice = 500
-    ..grimoireSellValue = 250
-    ..scrollPrice = 400
-    ..scrollSellValue = 100;
+//  static void _initializeBuilder(SpellBuilder b) => b
+//    ..grimoirePrice = 500
+//    ..grimoireSellValue = 250
+//    ..scrollPrice = 400
+//    ..scrollSellValue = 100;
 
   @override
   String get name;
@@ -33,16 +33,12 @@ abstract class Spell implements Built<Spell, SpellBuilder>, SpellDefinition {
   String get description;
 
   @override
-  int get grimoireSellValue;
+  @nullable
+  int get sellValue;
 
   @override
-  int get grimoirePrice;
-
-  @override
-  int get scrollSellValue;
-
-  @override
-  int get scrollPrice;
+  @nullable
+  int get price;
 
   @override
   School get school;

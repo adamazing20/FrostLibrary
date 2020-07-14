@@ -5,9 +5,8 @@ class WeaponProvider extends ItemProvider<Weapon> {
   String filePath = 'assets/item_defs/weapons.yaml';
 
   @override
-  Future<List<Weapon>> load() async {
+  Future load() async {
     var jsonString = await _getItemsAsJsonString();
     items = Weapons.fromJson(jsonString).weapons.toList();
-    return items;
   }
 }

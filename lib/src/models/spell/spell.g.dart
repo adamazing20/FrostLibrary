@@ -23,18 +23,6 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
-      'grimoireSellValue',
-      serializers.serialize(object.grimoireSellValue,
-          specifiedType: const FullType(int)),
-      'grimoirePrice',
-      serializers.serialize(object.grimoirePrice,
-          specifiedType: const FullType(int)),
-      'scrollSellValue',
-      serializers.serialize(object.scrollSellValue,
-          specifiedType: const FullType(int)),
-      'scrollPrice',
-      serializers.serialize(object.scrollPrice,
-          specifiedType: const FullType(int)),
       'school',
       serializers.serialize(object.school,
           specifiedType: const FullType(School)),
@@ -53,6 +41,18 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
         ..add('description')
         ..add(serializers.serialize(object.description,
             specifiedType: const FullType(String)));
+    }
+    if (object.sellValue != null) {
+      result
+        ..add('sellValue')
+        ..add(serializers.serialize(object.sellValue,
+            specifiedType: const FullType(int)));
+    }
+    if (object.price != null) {
+      result
+        ..add('price')
+        ..add(serializers.serialize(object.price,
+            specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -80,20 +80,12 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
           result.description = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'grimoireSellValue':
-          result.grimoireSellValue = serializers.deserialize(value,
+        case 'sellValue':
+          result.sellValue = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'grimoirePrice':
-          result.grimoirePrice = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'scrollSellValue':
-          result.scrollSellValue = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'scrollPrice':
-          result.scrollPrice = serializers.deserialize(value,
+        case 'price':
+          result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
         case 'school':
@@ -127,13 +119,9 @@ class _$Spell extends Spell {
   @override
   final String description;
   @override
-  final int grimoireSellValue;
+  final int sellValue;
   @override
-  final int grimoirePrice;
-  @override
-  final int scrollSellValue;
-  @override
-  final int scrollPrice;
+  final int price;
   @override
   final School school;
   @override
@@ -150,10 +138,8 @@ class _$Spell extends Spell {
       {this.name,
       this.itemType,
       this.description,
-      this.grimoireSellValue,
-      this.grimoirePrice,
-      this.scrollSellValue,
-      this.scrollPrice,
+      this.sellValue,
+      this.price,
       this.school,
       this.baseCastingNumber,
       this.category,
@@ -164,18 +150,6 @@ class _$Spell extends Spell {
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Spell', 'itemType');
-    }
-    if (grimoireSellValue == null) {
-      throw new BuiltValueNullFieldError('Spell', 'grimoireSellValue');
-    }
-    if (grimoirePrice == null) {
-      throw new BuiltValueNullFieldError('Spell', 'grimoirePrice');
-    }
-    if (scrollSellValue == null) {
-      throw new BuiltValueNullFieldError('Spell', 'scrollSellValue');
-    }
-    if (scrollPrice == null) {
-      throw new BuiltValueNullFieldError('Spell', 'scrollPrice');
     }
     if (school == null) {
       throw new BuiltValueNullFieldError('Spell', 'school');
@@ -205,10 +179,8 @@ class _$Spell extends Spell {
         name == other.name &&
         itemType == other.itemType &&
         description == other.description &&
-        grimoireSellValue == other.grimoireSellValue &&
-        grimoirePrice == other.grimoirePrice &&
-        scrollSellValue == other.scrollSellValue &&
-        scrollPrice == other.scrollPrice &&
+        sellValue == other.sellValue &&
+        price == other.price &&
         school == other.school &&
         baseCastingNumber == other.baseCastingNumber &&
         category == other.category &&
@@ -223,16 +195,10 @@ class _$Spell extends Spell {
                 $jc(
                     $jc(
                         $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc($jc(0, name.hashCode),
-                                            itemType.hashCode),
-                                        description.hashCode),
-                                    grimoireSellValue.hashCode),
-                                grimoirePrice.hashCode),
-                            scrollSellValue.hashCode),
-                        scrollPrice.hashCode),
+                            $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                                description.hashCode),
+                            sellValue.hashCode),
+                        price.hashCode),
                     school.hashCode),
                 baseCastingNumber.hashCode),
             category.hashCode),
@@ -245,10 +211,8 @@ class _$Spell extends Spell {
           ..add('name', name)
           ..add('itemType', itemType)
           ..add('description', description)
-          ..add('grimoireSellValue', grimoireSellValue)
-          ..add('grimoirePrice', grimoirePrice)
-          ..add('scrollSellValue', scrollSellValue)
-          ..add('scrollPrice', scrollPrice)
+          ..add('sellValue', sellValue)
+          ..add('price', price)
           ..add('school', school)
           ..add('baseCastingNumber', baseCastingNumber)
           ..add('category', category)
@@ -272,23 +236,13 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  int _grimoireSellValue;
-  int get grimoireSellValue => _$this._grimoireSellValue;
-  set grimoireSellValue(int grimoireSellValue) =>
-      _$this._grimoireSellValue = grimoireSellValue;
+  int _sellValue;
+  int get sellValue => _$this._sellValue;
+  set sellValue(int sellValue) => _$this._sellValue = sellValue;
 
-  int _grimoirePrice;
-  int get grimoirePrice => _$this._grimoirePrice;
-  set grimoirePrice(int grimoirePrice) => _$this._grimoirePrice = grimoirePrice;
-
-  int _scrollSellValue;
-  int get scrollSellValue => _$this._scrollSellValue;
-  set scrollSellValue(int scrollSellValue) =>
-      _$this._scrollSellValue = scrollSellValue;
-
-  int _scrollPrice;
-  int get scrollPrice => _$this._scrollPrice;
-  set scrollPrice(int scrollPrice) => _$this._scrollPrice = scrollPrice;
+  int _price;
+  int get price => _$this._price;
+  set price(int price) => _$this._price = price;
 
   School _school;
   School get school => _$this._school;
@@ -307,19 +261,15 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   Expansion get expansion => _$this._expansion;
   set expansion(Expansion expansion) => _$this._expansion = expansion;
 
-  SpellBuilder() {
-    Spell._initializeBuilder(this);
-  }
+  SpellBuilder();
 
   SpellBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
       _itemType = _$v.itemType;
       _description = _$v.description;
-      _grimoireSellValue = _$v.grimoireSellValue;
-      _grimoirePrice = _$v.grimoirePrice;
-      _scrollSellValue = _$v.scrollSellValue;
-      _scrollPrice = _$v.scrollPrice;
+      _sellValue = _$v.sellValue;
+      _price = _$v.price;
       _school = _$v.school;
       _baseCastingNumber = _$v.baseCastingNumber;
       _category = _$v.category;
@@ -349,10 +299,8 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
             name: name,
             itemType: itemType,
             description: description,
-            grimoireSellValue: grimoireSellValue,
-            grimoirePrice: grimoirePrice,
-            scrollSellValue: scrollSellValue,
-            scrollPrice: scrollPrice,
+            sellValue: sellValue,
+            price: price,
             school: school,
             baseCastingNumber: baseCastingNumber,
             category: category,

@@ -4,6 +4,7 @@ import 'dart:async' show Future;
 import 'dart:convert';
 
 import 'package:FrostLibrary/src/models/item/item.dart';
+import 'package:FrostLibrary/src/models/item/itemtype.dart';
 import 'package:FrostLibrary/src/models/potion/potion.dart';
 import 'package:FrostLibrary/src/models/potion/potions.dart';
 import 'package:FrostLibrary/src/models/spell/spell.dart';
@@ -21,7 +22,7 @@ abstract class ItemProvider<T extends Item> {
   String filePath;
   List<T> items;
 
-  Future<List<T>> load();
+  void load();
 
   Future<String> _getFile() async {
     return await rootBundle.loadString("$filePath");

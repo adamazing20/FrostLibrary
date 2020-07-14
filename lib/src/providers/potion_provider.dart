@@ -5,9 +5,8 @@ class PotionProvider extends ItemProvider<Potion> {
   String filePath = 'assets/item_defs/potions.yaml';
 
   @override
-  Future<List<Potion>> load() async {
+  Future load() async {
     var jsonString = await _getItemsAsJsonString();
     items = Potions.fromJson(jsonString).potions.toList();
-    return items;
   }
 }

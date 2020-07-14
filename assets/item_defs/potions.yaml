@@ -1,5 +1,5 @@
 potions:
-- name: "Healingggg"
+- name: "Healing"
   itemType: Potion
   effect: "Restores up to 5 lost health."
   price: 50

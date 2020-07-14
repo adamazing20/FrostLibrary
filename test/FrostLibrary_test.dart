@@ -7,17 +7,21 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     var frostLibrary = FrostLibrary();
     await frostLibrary.init();
-//    WeaponProvider weapons = frostLibrary.weaponProvider;
-//    PotionProvider potions = frostLibrary.potionProvider;
+    WeaponProvider weapons = frostLibrary.weaponProvider;
+    PotionProvider potions = frostLibrary.potionProvider;
     SpellProvider spells = frostLibrary.spellProvider;
+    GrimoireProvider grimoire = frostLibrary.grimoireProvider;
+    ScrollProvider scrolls = frostLibrary.scrollProvider;
 
 //      //Get Weapon By Name
 //      print(weapons.getItemByName("Two Handed Weapon").itemType);
 
 //
-//    print(frostLibrary.getAllItems());
 
+    print(grimoire.getItemByName("Absorb Knowledge").description);
     //get all weapons
-    print(spells.items);
+//    print(spells.items);
+//    print(grimoire.items);
+//    print(scrolls.items);
   });
 }
