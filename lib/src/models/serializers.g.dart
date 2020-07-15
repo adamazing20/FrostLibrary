@@ -7,15 +7,19 @@ part of serializers;
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(ArmourType.serializer)
       ..add(Category.serializer)
       ..add(Expansion.serializer)
       ..add(ItemType.serializer)
+      ..add(MagicItem.serializer)
+      ..add(MagicItemType.serializer)
       ..add(Potion.serializer)
       ..add(Potions.serializer)
       ..add(School.serializer)
       ..add(Spell.serializer)
       ..add(Spells.serializer)
       ..add(Weapon.serializer)
+      ..add(WeaponType.serializer)
       ..add(Weapons.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Potion)]),
