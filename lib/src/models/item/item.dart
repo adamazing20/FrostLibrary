@@ -1,7 +1,7 @@
 import 'package:FrostLibrary/src/models/armour/amourtype.dart';
 import 'package:FrostLibrary/src/models/item/expansion.dart';
 import 'package:FrostLibrary/src/models/item/itemtype.dart';
-import 'package:FrostLibrary/src/models/item/magic_itemtype.dart';
+import 'package:FrostLibrary/src/models/magic_item/magic_itemtype.dart';
 import 'package:FrostLibrary/src/models/spell/category.dart';
 import 'package:FrostLibrary/src/models/spell/school.dart';
 import 'package:FrostLibrary/src/models/weapons/weapontype.dart';

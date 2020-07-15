@@ -5,9 +5,8 @@ import 'dart:convert';
 import 'package:FrostLibrary/src/models/item/expansion.dart';
 import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/models/item/itemtype.dart';
-import 'package:FrostLibrary/src/models/item/magic_itemtype.dart';
+import 'package:FrostLibrary/src/models/magic_item/magic_itemtype.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
-import 'package:FrostLibrary/src/models/weapons/weapontype.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
