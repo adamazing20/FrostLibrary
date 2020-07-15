@@ -7,6 +7,16 @@ Created from templates made available by Stagehand under a BSD-style
 
 A simple usage example:
 
+Add an assets Folder add the asset YAML files from this project into yours, and add those to your pubspec.yaml 
+as Flutter assets: (I put my definitions in assets/item_defs/)
+
+```dart
+  flutter:
+  assets:
+    - assets/item_defs/
+
+```
+
 NOTE: This library would work best with a state management system like bloc.
 For the following example we presume a more trivial list setup / stateful widget;
 
@@ -54,9 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
-//    return ListTile(
-//      title: allItems[int],
-//    );
   }
 
   _getItems() async {
@@ -64,3 +71,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+![image](https://drive.google.com/uc?export=view&id=12L7EVlgtxXcbcQNY6CKd10-a_OZmv7LU)
