@@ -11,8 +11,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Category.serializer)
       ..add(Expansion.serializer)
       ..add(ItemType.serializer)
+      ..add(MagicArmour.serializer)
+      ..add(MagicArmours.serializer)
       ..add(MagicItem.serializer)
       ..add(MagicItemType.serializer)
+      ..add(MagicItems.serializer)
+      ..add(MagicWeapon.serializer)
+      ..add(MagicWeapons.serializer)
       ..add(Potion.serializer)
       ..add(Potions.serializer)
       ..add(School.serializer)
@@ -21,6 +26,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Weapon.serializer)
       ..add(WeaponType.serializer)
       ..add(Weapons.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MagicArmour)]),
+          () => new ListBuilder<MagicArmour>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MagicItem)]),
+          () => new ListBuilder<MagicItem>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MagicWeapon)]),
+          () => new ListBuilder<MagicWeapon>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Potion)]),
           () => new ListBuilder<Potion>())
