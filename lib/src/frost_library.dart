@@ -1,3 +1,4 @@
+import 'package:FrostLibrary/src/models/item/expansion.dart';
 import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/providers/item_provider.dart';
 
@@ -48,12 +49,23 @@ class FrostLibrary {
     await _magicItemProvider.load();
   }
 
-  List<Item> getAllItems() {
+  List<Item> getAllItems({Expansion expansion}) {
     List<Item> itemsList = [];
     _providerList.forEach((provider) {
       itemsList.addAll(provider.items);
     });
 
+    if (expansion != null) {
+      itemsList.removeWhere((item) => item.expansion != expansion);
+    }
+
     return itemsList;
+  }
+
+  Item getItemByName(String name, {Expansion expansion}) {
+    List<Item> itemList = getAllItems(expansion: expansion);
+
+    return itemList
+        .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
   }
 }

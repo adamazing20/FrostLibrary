@@ -9,7 +9,7 @@ void main() {
     var frostLibrary = FrostLibrary();
     await frostLibrary.init();
 
-    print(
-        frostLibrary.spells.filterItemsByExpansion(Expansion.ArcaneLocations));
+    print(frostLibrary.getItemByName("Two Handed Weapon",
+        expansion: Expansion.Core));
   });
 }

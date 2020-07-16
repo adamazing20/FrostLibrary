@@ -16,12 +16,22 @@ Get all Items:
 itemLibrary.getAllItems();
 ```
 
+Get all Items from a Specified Expansion:
+```dart
+itemLibrary.getAllItems(Expansion.Core);
+```
+
 Get all Items of a Specified Type:
 ```dart
 itemLibrary.weapons.items;
 ```
 
-Get an Item with a Specified by Name:
+Get an Item of any Type by Name:
+```dart
+itemLibrary.getItemByName("Two Handed Weapon");
+```
+
+Get an Item of a Specified Type by Name:
 ```dart
 itemLibrary.weapons.getItemByName("Hand Weapon");
 ```
