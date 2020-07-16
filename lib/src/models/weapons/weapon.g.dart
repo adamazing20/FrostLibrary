@@ -23,6 +23,9 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
+      'weaponType',
+      serializers.serialize(object.weaponType,
+          specifiedType: const FullType(WeaponType)),
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
@@ -67,6 +70,10 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
           result.itemType = serializers.deserialize(value,
               specifiedType: const FullType(ItemType)) as ItemType;
           break;
+        case 'weaponType':
+          result.weaponType = serializers.deserialize(value,
+              specifiedType: const FullType(WeaponType)) as WeaponType;
+          break;
         case 'damageModified':
           result.damageModified = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -96,6 +103,8 @@ class _$Weapon extends Weapon {
   @override
   final ItemType itemType;
   @override
+  final WeaponType weaponType;
+  @override
   final int damageModified;
   @override
   final String description;
@@ -110,6 +119,7 @@ class _$Weapon extends Weapon {
   _$Weapon._(
       {this.name,
       this.itemType,
+      this.weaponType,
       this.damageModified,
       this.description,
       this.notes,
@@ -120,6 +130,9 @@ class _$Weapon extends Weapon {
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Weapon', 'itemType');
+    }
+    if (weaponType == null) {
+      throw new BuiltValueNullFieldError('Weapon', 'weaponType');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Weapon', 'expansion');
@@ -139,6 +152,7 @@ class _$Weapon extends Weapon {
     return other is Weapon &&
         name == other.name &&
         itemType == other.itemType &&
+        weaponType == other.weaponType &&
         damageModified == other.damageModified &&
         description == other.description &&
         notes == other.notes &&
@@ -150,7 +164,9 @@ class _$Weapon extends Weapon {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                $jc(
+                    $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                        weaponType.hashCode),
                     damageModified.hashCode),
                 description.hashCode),
             notes.hashCode),
@@ -162,6 +178,7 @@ class _$Weapon extends Weapon {
     return (newBuiltValueToStringHelper('Weapon')
           ..add('name', name)
           ..add('itemType', itemType)
+          ..add('weaponType', weaponType)
           ..add('damageModified', damageModified)
           ..add('description', description)
           ..add('notes', notes)
@@ -180,6 +197,10 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
   ItemType _itemType;
   ItemType get itemType => _$this._itemType;
   set itemType(ItemType itemType) => _$this._itemType = itemType;
+
+  WeaponType _weaponType;
+  WeaponType get weaponType => _$this._weaponType;
+  set weaponType(WeaponType weaponType) => _$this._weaponType = weaponType;
 
   int _damageModified;
   int get damageModified => _$this._damageModified;
@@ -204,6 +225,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
     if (_$v != null) {
       _name = _$v.name;
       _itemType = _$v.itemType;
+      _weaponType = _$v.weaponType;
       _damageModified = _$v.damageModified;
       _description = _$v.description;
       _notes = _$v.notes;
@@ -232,6 +254,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
         new _$Weapon._(
             name: name,
             itemType: itemType,
+            weaponType: weaponType,
             damageModified: damageModified,
             description: description,
             notes: notes,

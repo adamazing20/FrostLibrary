@@ -2,7 +2,7 @@ part of 'item_provider.dart';
 
 class SpellProvider extends ItemProvider<Spell> {
   //todo: Should make this a singleton with factory constructor to avoid
-  //todo: repulling for scroll/grimoire/spell depending on the order.
+  //todo: re-pulling for scroll/grimoire/spell depending on the order.
   @override
   String filePath = 'assets/item_defs/spells.yaml';
 

@@ -1,0 +1,12 @@
+magicWeapons:
+  - name: "magic weapon name"
+    price: 100
+    sellValue: 50
+    weaponType: HandWeapon
+    itemType: MagicWeapon
+    damageModified: 1
+    fightModified: 1
+    shootModified: 1
+    description: "magic weapon description"
+    notes: "some notes about the item"
+    expansion: Core

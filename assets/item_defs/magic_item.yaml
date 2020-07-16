@@ -1,0 +1,17 @@
+magicItems:
+  - name: "Some magic ItemName"
+    price: 10
+    sellValue: 10
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 8
+    fightModified: 8
+    shootModified: 8
+    castingRollModified: 8
+    willRollModified: 8
+    moveModified: 8
+    armourModified: 8
+    healthModified: 8
+    description: "fooBar"
+    notes:
+    expansion: Core

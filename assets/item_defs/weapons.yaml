@@ -1,13 +1,15 @@
 weapons:
   - name: "Two Handed Weapon"
     itemType: Weapon
+    weaponType: TwoHandedWeapon
     damageModified: 2
     description: "Any weapon that requires two hands to wield."
     expansion: Core
     notes:
-
+    
   - name: "Hand Weapon"
     itemType: Weapon
+    weaponType: HandWeapon
     damageModified: 0
     description: "Any larger weapon that's wielded with one hand."
     expansion: Core
@@ -15,6 +17,7 @@ weapons:
 
   - name: "Staff"
     itemType: Weapon
+    weaponType: Staff
     damageModified:
     description: "Defensive weapon, popular amongst wizards."
     expansion: Core
@@ -22,6 +25,7 @@ weapons:
 
   - name: "Dagger"
     itemType: Weapon
+    weaponType: Dagger
     damageModified: -1
     description: "Any one handed weapon smaller than a sword."
     expansion: Core
@@ -29,6 +33,7 @@ weapons:
 
   - name: "Bow"
     itemType: Weapon
+    weaponType: Bow
     damage_modified: 0
     description: "Common missle weapon"
     expansion: Core
@@ -36,6 +41,7 @@ weapons:
 
   - name: "Cross Bow"
     itemType: Weapon
+    weaponType: CrossBow
     damage_modified:
     description: "Uncommon missle weapon."
     expansion: Core

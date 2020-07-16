@@ -6,6 +6,7 @@ import 'package:FrostLibrary/src/models/item/expansion.dart';
 import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/models/item/itemtype.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
+import 'package:FrostLibrary/src/models/weapons/weapontype.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,6 +20,8 @@ abstract class Weapon implements Built<Weapon, WeaponBuilder>, Item {
 
   @override
   ItemType get itemType;
+
+  WeaponType get weaponType;
 
   @nullable
   int get damageModified;
