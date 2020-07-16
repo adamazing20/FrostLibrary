@@ -12,13 +12,15 @@ void main() {
     SpellProvider spells = frostLibrary.spellProvider;
     GrimoireProvider grimoire = frostLibrary.grimoireProvider;
     ScrollProvider scrolls = frostLibrary.scrollProvider;
+    MagicArmourProvider magicArmours = frostLibrary.magicArmourProvider;
 
 //      //Get Weapon By Name
 //      print(weapons.getItemByName("Two Handed Weapon").itemType);
 
 //
 
-    print(grimoire.getItemByName("Absorb Knowledge").description);
+//    print(grimoire.getItemByName("Absorb Knowledge").description);
+    print(magicArmours.items);
     //get all weapons
 //    print(spells.items);
 //    print(grimoire.items);

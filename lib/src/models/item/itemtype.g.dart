@@ -9,7 +9,7 @@ part of itemtype;
 const ItemType _$weapon = const ItemType._('Weapon');
 const ItemType _$magicWeapon = const ItemType._('MagicWeapon');
 const ItemType _$potion = const ItemType._('Potion');
-const ItemType _$magicArmor = const ItemType._('MagicArmor');
+const ItemType _$magicArmor = const ItemType._('MagicArmour');
 const ItemType _$baseResources = const ItemType._('BaseResources');
 const ItemType _$spell = const ItemType._('Spell');
 const ItemType _$grimoire = const ItemType._('Grimoire');
@@ -24,7 +24,7 @@ ItemType _$valueOf(String name) {
       return _$magicWeapon;
     case 'Potion':
       return _$potion;
-    case 'MagicArmor':
+    case 'MagicArmour':
       return _$magicArmor;
     case 'BaseResources':
       return _$baseResources;

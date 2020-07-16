@@ -1,2 +1,10 @@
-//todo
-//add the plural versions of these things to the models code base before continuing here
+magicArmours:
+  - name: "test name"
+    itemType: MagicArmour
+    description: "Some description"
+    notes:
+    price: 100
+    sellValue: 100
+    armourType: Cloak
+    armourModified: 1
+    expansion: Core

@@ -7,6 +7,7 @@ class FrostLibrary {
   final SpellProvider spellProvider = SpellProvider();
   final GrimoireProvider grimoireProvider = GrimoireProvider();
   final ScrollProvider scrollProvider = ScrollProvider();
+  final MagicArmourProvider magicArmourProvider = MagicArmourProvider();
   final List<ItemProvider> _providerList = [];
 
   Future init() async {
@@ -15,12 +16,14 @@ class FrostLibrary {
     await spellProvider.load();
     await scrollProvider.load();
     await grimoireProvider.load();
+    await magicArmourProvider.load();
     _providerList.addAll([
       potionProvider,
       weaponProvider,
       spellProvider,
       scrollProvider,
-      grimoireProvider
+      grimoireProvider,
+      magicArmourProvider,
     ]);
   }
 

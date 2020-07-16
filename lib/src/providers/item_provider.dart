@@ -3,6 +3,8 @@ library item_provider;
 import 'dart:async' show Future;
 import 'dart:convert';
 
+import 'package:FrostLibrary/src/models/armour/magic_armour.dart';
+import 'package:FrostLibrary/src/models/armour/magic_armours.dart';
 import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/models/item/itemtype.dart';
 import 'package:FrostLibrary/src/models/potion/potion.dart';
@@ -14,6 +16,7 @@ import 'package:FrostLibrary/src/models/weapons/weapons.dart';
 import 'package:flutter/services.dart';
 import 'package:yaml/yaml.dart';
 
+part 'magic_armour_provider.dart';
 part 'potion_provider.dart';
 part 'spell_provider.dart';
 part 'weapon_provider.dart';
