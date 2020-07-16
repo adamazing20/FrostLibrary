@@ -5,6 +5,27 @@ Created from templates made available by Stagehand under a BSD-style
 
 ## Usage
 
+Initialize:
+```dart
+FrostLibrary itemLibrary = FrostLibrary();
+await itemLibrary.init();
+
+```
+Get all Items:
+```dart
+itemLibrary.getAllItems();
+```
+
+Get all Items of a Specified Type:
+```dart
+itemLibrary.weapons.items;
+```
+
+Get all Items of a Specified by Name:
+```dart
+itemLibrary.weapons.getItemByName("Hand Weapon");
+```
+
 A simple usage example:
 
 Add an assets Folder add the asset YAML files from this project into yours, and add those to your pubspec.yaml 
