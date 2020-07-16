@@ -21,9 +21,15 @@ Get all Items of a Specified Type:
 itemLibrary.weapons.items;
 ```
 
-Get all Items of a Specified by Name:
+Get an Item with a Specified by Name:
 ```dart
 itemLibrary.weapons.getItemByName("Hand Weapon");
+```
+
+Filter Items of a Specified Type by Expansion:
+
+```dart
+itemLibrary.weapons.filterByExpansion(Expansion.Core):
 ```
 
 A simple usage example:

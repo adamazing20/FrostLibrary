@@ -30,3 +30,18 @@ spells:
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
     category: OutOfGame
     expansion: Core
+
+  - name: "Arcane Something Spell"
+    itemType: Spell
+    description: "This spell can only be cast by a wizard, and allows him to absorb the knowledge
+    from a written work without having to read it. A wizard immeadiately gains 50 experience
+    points for casting this spell to represent the speed with which he can gain knowlege. This spell
+    may only be cast after a game in which the wizard was not reduced to 0 Health."
+    #Valid schools are Chronomancer, Elementalist, Enchanter, Illusionist,
+    #Necromancer, Sigilist, Soothsayer, Summoner, Thaumaturge, and Witch.
+    school: Sigilist
+    baseCastingNumber: 8
+    # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
+    category: OutOfGame
+    expansion: ArcaneLocations
+

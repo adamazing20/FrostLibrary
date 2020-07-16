@@ -5,6 +5,7 @@ import 'dart:convert';
 
 import 'package:FrostLibrary/src/models/armour/magic_armour.dart';
 import 'package:FrostLibrary/src/models/armour/magic_armours.dart';
+import 'package:FrostLibrary/src/models/item/expansion.dart';
 import 'package:FrostLibrary/src/models/item/item.dart';
 import 'package:FrostLibrary/src/models/item/itemtype.dart';
 import 'package:FrostLibrary/src/models/magic_item/magic_item.dart';
@@ -48,9 +49,23 @@ abstract class ItemProvider<T extends Item> {
     return await jsonEncode(doc);
   }
 
-  T getItemByName(String name) {
-    var itemWithName = items
+  T getItemByName(String name, {Expansion expansion}) {
+    var filteredItems = items;
+
+    if (expansion != null) {
+      filteredItems.removeWhere((item) => item.expansion != expansion);
+    }
+    var itemWithName = filteredItems
         .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
     return itemWithName;
+  }
+
+  List<T> filterItemsByExpansion(Expansion expansion) {
+    var filteredItems = items;
+
+    if (expansion != null) {
+      filteredItems.removeWhere((item) => item.expansion != expansion);
+    }
+    return filteredItems;
   }
 }
