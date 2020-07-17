@@ -13,7 +13,7 @@ dependencies:
       git:
         url: git://github.com/adamazing20/FrostLibrary.git
 ```
-
+See https://flutter.dev/docs/development/packages-and-plugins/using-packages
 
 Initialize:
 ```dart
