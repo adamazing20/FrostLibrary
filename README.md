@@ -5,6 +5,16 @@ Created from templates made available by Stagehand under a BSD-style
 
 ## Usage
 
+Install: 
+In your pubspec.yaml add 
+```dart
+dependencies:
+  FrostLibrary:
+      git:
+        url: git://github.com/adamazing20/FrostLibrary.git
+```
+
+
 Initialize:
 ```dart
 FrostLibrary itemLibrary = FrostLibrary();
