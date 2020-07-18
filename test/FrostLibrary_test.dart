@@ -1,5 +1,6 @@
 import 'package:FrostLibrary/src/frost_library.dart';
-import 'package:FrostLibrary/src/models/item/expansion.dart';
+import 'package:FrostLibrary/src/models/weapons/weapon.dart';
+import 'package:FrostLibrary/src/providers/item_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -9,7 +10,12 @@ void main() {
     var frostLibrary = FrostLibrary();
     await frostLibrary.init();
 
-    print(frostLibrary.getItemByName("Two Handed Weapon",
-        expansion: Expansion.Core));
+    WeaponProvider weaponProvider = frostLibrary.weapons;
+
+    List<Weapon> weapons = weaponProvider.items;
+
+    for (Weapon weapon in weapons) {
+      print(weapon.description);
+    }
   });
 }
