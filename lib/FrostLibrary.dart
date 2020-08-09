@@ -7,3 +7,4 @@ library FrostLibrary;
 export 'src/frost_library.dart';
 export 'src/models/item/item.dart';
 export 'src/models/item/itemtype.dart';
+export 'src/providers/item_provider.dart';
