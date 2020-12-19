@@ -8,7 +8,7 @@ environment:
 
 flutter:
   assets:
-    - assets/item_defs/
+    - lib/item_defs/
 
 dependencies:
   flutter:
