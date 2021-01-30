@@ -4,7 +4,7 @@ class SpellProvider extends ItemProvider<Spell> {
   //todo: Should make this a singleton with factory constructor to avoid
   //todo: re-pulling for scroll/grimoire/spell depending on the order.
   @override
-  String filePath = '/item_defs/spells.yaml';
+  String filePath = 'lib/item_defs/spells.yaml';
 
   @override
   Future load() async {
