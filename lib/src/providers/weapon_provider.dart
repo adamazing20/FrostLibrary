@@ -2,7 +2,7 @@ part of 'item_provider.dart';
 
 class WeaponProvider extends ItemProvider<Weapon> {
   @override
-  String filePath = '/item_defs/weapons.yaml';
+  String filePath = 'lib/item_defs/weapons.yaml';
 
   @override
   Future load() async {
