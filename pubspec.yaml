@@ -17,8 +17,11 @@ dependencies:
   built_value_generator: ^7.0.9
 
 dev_dependencies:
+  integration_test: ^1.0.0
   pedantic: ^1.9.0
   #  test: ^1.15.2
   flutter_test:
     sdk: flutter
-
+  flutter_driver:
+    sdk: flutter
+  test: any
