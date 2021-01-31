@@ -2,8 +2,7 @@ part of 'item_provider.dart';
 
 class MagicArmourProvider extends ItemProvider<MagicArmour> {
   @override
-  String filePath = 'item_defs/magic_armour.yaml';
-
+  String filePath = 'packages/FrostLibrary/lib/item_defs/magic_armour.yaml';
 
   @override
   Future load() async {
