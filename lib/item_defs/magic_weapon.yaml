@@ -78,118 +78,119 @@ magicWeapons:
     expansion: Core
 
   - name: "Two Handed Weapon"
-      price: 300
-      sellValue: 125
-      weaponType: TwoHandedWeapon
-      itemType: MagicWeapon
-      damageModified: 0
-      fightModified: 0
-      shootModified: 0
-      willModified: 2
-      description: "+2 Will"
-      notes:
-      expansion: Core
+    price: 300
+    sellValue: 125
+    weaponType: TwoHandedWeapon
+    temType: MagicWeapon
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    willModified: 2
+    description: "+2 Will"
+    notes:
+    expansion: Core
+
 
   - name: "Bow"
-      price: 300
-      sellValue: 125
-      weaponType: Bow
-      itemType: MagicWeapon
-      damageModified: 1
-      fightModified: 0
-      shootModified: 0
-      willModified: 0
-      description: "+1 Damage Modifier"
-      notes:
-      expansion: Core
+    price: 300
+    sellValue: 125
+    weaponType: Bow
+    itemType: MagicWeapon
+    damageModified: 1
+    fightModified: 0
+    shootModified: 0
+    willModified: 0
+    description: "+1 Damage Modifier"
+    notes:
+    expansion: Core
 
   - name: "Bow"
-      price: 600
-      sellValue: 250
-      weaponType: Bow
-      itemType: MagicWeapon
-      damageModified: 0
-      fightModified: 0
-      shootModified: 1
-      willModified: 0
-      description: "+1 Shoot"
-      notes:
-      expansion: Core
+    price: 600
+    sellValue: 250
+    weaponType: Bow
+    itemType: MagicWeapon
+    damageModified: 0
+    fightModified: 0
+    shootModified: 1
+    willModified: 0
+    description: "+1 Shoot"
+    notes:
+    expansion: Core
 
   - name: "CrossBow"
-      price: 300
-      sellValue: 125
-      weaponType: CrossBow
-      itemType: MagicWeapon
-      damageModified: 1
-      fightModified: 0
-      shootModified: 0
-      willModified: 0
-      description: "+1 Damage Modifier"
-      notes:
-      expansion: Core
+    price: 300
+    sellValue: 125
+    weaponType: CrossBow
+    itemType: MagicWeapon
+    damageModified: 1
+    fightModified: 0
+    shootModified: 0
+    willModified: 0
+    description: "+1 Damage Modifier"
+    notes:
+    expansion: Core
 
   - name: "CrossBow"
-      price: 600
-      sellValue: 250
-      weaponType: CrossBow
-      itemType: MagicWeapon
-      damageModified: 0
-      fightModified: 0
-      shootModified: 1
-      willModified: 0
-      description: "+1 Shoot"
-      notes:
-      expansion: Core
+    price: 600
+    sellValue: 250
+    weaponType: CrossBow
+    itemType: MagicWeapon
+    damageModified: 0
+    fightModified: 0
+    shootModified: 1
+    willModified: 0
+    description: "+1 Shoot"
+    notes:
+    expansion: Core
 
   - name: "Dagger"
-      price: 400
-      sellValue: 200
-      weaponType: Dagger
-      itemType: MagicWeapon
-      damageModified: 0
-      fightModified: 1
-      shootModified: 0
-      willModified: 0
-      description: "+1 Fight"
-      notes:
-      expansion: Core
+    price: 400
+    sellValue: 200
+    weaponType: Dagger
+    itemType: MagicWeapon
+    damageModified: 0
+    fightModified: 1
+    shootModified: 0
+    willModified: 0
+    description: "+1 Fight"
+    notes:
+    expansion: Core
 
   - name: "Dagger"
-      price: 400
-      sellValue: 150
-      weaponType: Dagger
-      itemType: MagicWeapon
-      damageModified: 1
-      fightModified: 0
-      shootModified: 0
-      willModified: 0
-      description: "+1 Damage Modifier"
-      notes:
-      expansion: Core
+    price: 400
+    sellValue: 150
+    weaponType: Dagger
+    itemType: MagicWeapon
+    damageModified: 1
+    fightModified: 0
+    shootModified: 0
+    willModified: 0
+    description: "+1 Damage Modifier"
+    notes:
+    expansion: Core
 
   - name: "Dagger"
-      price: 500
-      sellValue: 200
-      weaponType: Dagger
-      itemType: MagicWeapon
-      damageModified: 2
-      fightModified: 0
-      shootModified: 0
-      willModified: 0
-      description: "+2 Damage Modifier"
-      notes:
-      expansion: Core
+    price: 500
+    sellValue: 200
+    weaponType: Dagger
+    itemType: MagicWeapon
+    damageModified: 2
+    fightModified: 0
+    shootModified: 0
+    willModified: 0
+    description: "+2 Damage Modifier"
+    notes:
+    expansion: Core
 
   - name: "Staff"
-      price: 300
-      sellValue: 125
-      weaponType: Staff
-      itemType: MagicWeapon
-      damageModified: 0
-      fightModified: 1
-      shootModified: 0
-      willModified: 0
-      description: "+1 Fight"
-      notes:
-      expansion: Core
+    price: 300
+    sellValue: 125
+    weaponType: Staff
+    itemType: MagicWeapon
+    damageModified: 0
+    fightModified: 1
+    shootModified: 0
+    willModified: 0
+    description: "+1 Fight"
+    notes:
+    expansion: Core
