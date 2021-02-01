@@ -6,18 +6,18 @@ part of armourtype;
 // BuiltValueGenerator
 // **************************************************************************
 
-const ArmourType _$leatherArmour = const ArmourType._('LeatherArmour');
-const ArmourType _$mailArmour = const ArmourType._('MailArmour');
+const ArmourType _$lightArmour = const ArmourType._('LightArmour');
+const ArmourType _$heavyArmour = const ArmourType._('HeavyArmour');
 const ArmourType _$ringOfProtection = const ArmourType._('Ring');
 const ArmourType _$cloak = const ArmourType._('Cloak');
 const ArmourType _$shield = const ArmourType._('Shield');
 
 ArmourType _$valueOf(String name) {
   switch (name) {
-    case 'LeatherArmour':
-      return _$leatherArmour;
-    case 'MailArmour':
-      return _$mailArmour;
+    case 'LightArmour':
+      return _$lightArmour;
+    case 'HeavyArmour':
+      return _$heavyArmour;
     case 'Ring':
       return _$ringOfProtection;
     case 'Cloak':
@@ -31,8 +31,8 @@ ArmourType _$valueOf(String name) {
 
 final BuiltSet<ArmourType> _$values =
     new BuiltSet<ArmourType>(const <ArmourType>[
-  _$leatherArmour,
-  _$mailArmour,
+  _$lightArmour,
+  _$heavyArmour,
   _$ringOfProtection,
   _$cloak,
   _$shield,

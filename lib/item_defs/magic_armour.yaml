@@ -8,3 +8,65 @@ magicArmours:
     armourType: Cloak
     armourModified: 1
     expansion: Core
+
+  - name: "Light Armour"
+    itemType: MagicArmour
+    description: "+1 Armour"
+    notes:
+    price: 600
+    sellValue: 200
+    armourType: LightArmour
+    armourModified: 1
+    expansion: Core
+
+  - name: "Heavy Armour"
+    itemType: MagicArmour
+    description: "Elemental Absorption"
+    notes:
+    price: 800
+    sellValue: 300
+    armourType: HeavyArmour
+    armourModified: 0
+    expansion: Core
+
+  - name: "Ring of Protection"
+    itemType: MagicArmour
+    description: "+1 Armour"
+    notes:
+    price: 600
+    sellValue: 250
+    armourType: Ring
+    armourModified: 1
+    expansion: Core
+
+  - name: "Cloak of Protection"
+    itemType: MagicArmour
+    description: "+1 Armour"
+    notes:
+    price: 600
+    sellValue: 250
+    armourType: Cloak
+    armourModified: 1
+    expansion: Core
+
+  - name: "Cloak of Night"
+    itemType: MagicArmour
+    description: "Elemental Absorption"
+    notes:
+    price: 500
+    sellValue: 200
+    armourType: Cloak
+    armourModified: 0
+    expansion: Core
+
+  - name: "Shield"
+    itemType: MagicArmour
+    description: "+ Armour"
+    notes:
+    price: 700
+    sellValue: 259
+    armourType: Shield
+    armourModified: 1
+    expansion: Core
+
+

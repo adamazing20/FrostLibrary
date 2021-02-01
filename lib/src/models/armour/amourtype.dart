@@ -9,8 +9,8 @@ part 'amourtype.g.dart';
 class ArmourType extends EnumClass {
   static Serializer<ArmourType> get serializer => _$armourTypeSerializer;
 
-  static const ArmourType LeatherArmour = _$leatherArmour;
-  static const ArmourType MailArmour = _$mailArmour;
+  static const ArmourType LightArmour = _$lightArmour;
+  static const ArmourType HeavyArmour = _$heavyArmour;
   static const ArmourType Ring = _$ringOfProtection;
   static const ArmourType Cloak = _$cloak;
   static const ArmourType Shield = _$shield;

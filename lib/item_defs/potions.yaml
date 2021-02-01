@@ -23,7 +23,6 @@ potions:
   expansion: Core
   notes:
 
-
 - name: "Elixir of Speed"
   itemType: Potion
   effect: "+1 Move for the rest of the game."
