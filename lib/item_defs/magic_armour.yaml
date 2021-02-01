@@ -61,7 +61,7 @@ magicArmours:
 
   - name: "Shield"
     itemType: MagicArmour
-    description: "+ Armour"
+    description: "+1 Armour"
     notes:
     price: 700
     sellValue: 259
