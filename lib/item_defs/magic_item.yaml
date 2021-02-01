@@ -15,3 +15,260 @@ magicItems:
     description: "fooBar"
     notes:
     expansion: Core
+
+  - name: "Staff of Power(1)"
+    price: 300
+    sellValue: 150
+    magicItemType: Staff
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 1
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "+1 Casting Roll Modifier"
+    notes:
+    expansion: Core
+
+  - name: "Staff of Power 2"
+    price: 400
+    sellValue: 200
+    magicItemType: Staff
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 2
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "+1 Casting Roll Modifier"
+    notes:
+    expansion: Core
+
+  - name: "Ring of Transference"
+    price: 400
+    sellValue: 150
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "This ring may only be worn by a spellcaster. Once per game, the wearer of the ring can spend an action to transfer up to 5 points of their own Health to another member of their warband that is in line of sight, on a 1-for-1 basis. So, if the wearer spend 3 Health, they may transfer 3 Health to another warband member.
+    This may not take the other warband member above their starting Health."
+    notes:
+    expansion: Core
+
+  - name: "Ring of Power(1)"
+    price: 200
+    sellValue: 100
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 1
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "fooBar"
+    notes:
+    expansion: Core
+
+  - name: "Orb of Power(6)"
+    price: 500
+    sellValue: 200
+    magicItemType: Orb
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 6
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "fooBar"
+    notes:
+    expansion: Core
+
+  - name: "Staff of Casting"
+    price: 500
+    sellValue: 200
+    magicItemType: Staff
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 1
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "This staff gives a +1 to the casting roll for that specific spell."
+    notes:
+    expansion: Core
+
+  - name: "Boots of Speed"
+    price: 300
+    sellValue: 130
+    magicItemType: Boots
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 1
+    armourModified: 0
+    healthModified: 0
+    description: "Wearer gains +1 move"
+    notes:
+    expansion: Core
+
+  - name: "Ring of Slow Fall"
+    price: 200
+    sellValue: 100
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "The wearer of this ring never suffers any damage from falling. (Fall or Jump)"
+    notes:
+    expansion: Core
+
+  - name: "Ring of Will"
+    price: 300
+    sellValue: 150
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 1
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "Wearer of this ring received +1 will"
+    notes:
+    expansion: Core
+
+  - name: "Ring of Teleportation"
+    price: 400
+    sellValue: 150
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "Once per game the wearer of this ring may spend an action to teleport up to 8 inches anywhere within line of sight.(Not off the table. Cannot be used to enter or exit combat)"
+    notes:
+    expansion: Core
+
+  - name: "Gloves of Strength"
+    price: 300
+    sellValue: 150
+    magicItemType: Gloves
+    itemType: MagicItem
+    damageModified: 1
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "Wearer gains +1 damage modified on all successful hand to hand attacks"
+    notes:
+    expansion: Core
+
+  - name: "Robes of Arrow Turning"
+    price: 500
+    sellValue: 250
+    magicItemType: Robes
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 4
+    healthModified: 0
+    description: "Wearer gains +4 armour against all bow and crossbow attacks"
+    notes:
+    expansion: Core
+
+  - name: "Amulet of Resistance"
+    price: 300
+    sellValue: 100
+    magicItemType: Amulet
+    itemType: MagicItem
+    damageModified: 0
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 4
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "Once per game the wearer may add +4 to a will roll to resist a spell. The decision to use the amulet can be made after the die has been rolled"
+    notes:
+    expansion: Core
+
+  - name: "Construct Hammer"
+    price: 300
+    sellValue: 100
+    magicItemType: Hammer
+    itemType: MagicItem
+    damageModified: 1
+    fightModified: 0
+    shootModified: 0
+    castingRollModified: 0
+    willRollModified: 0
+    moveModified: 0
+    armourModified: 0
+    healthModified: 0
+    description: "Can be fitter to a medium or large construct before or after a game. A construct equipped with this item is treated as carrying a magic weapon and receives an additional +1 damage modifier.
+    The Construct may only ever be fitted with 1 construct hammer"
+    notes:
+    expansion: Core
+
+  - name: "Gloves of Casting"
+    price:
+    sellValue: 10
+    magicItemType: Ring
+    itemType: MagicItem
+    damageModified: 8
+    fightModified: 8
+    shootModified: 8
+    castingRollModified: 8
+    willRollModified: 8
+    moveModified: 8
+    armourModified: 8
+    healthModified: 8
+    description: "fooBar"
+    notes:
+    expansion: Core

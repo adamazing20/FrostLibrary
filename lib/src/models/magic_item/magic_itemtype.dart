@@ -21,6 +21,7 @@ class MagicItemType extends EnumClass {
   static const MagicItemType Horn = _$horn;
   static const MagicItemType Stone = _$stone;
   static const MagicItemType Banner = _$banner;
+  static const MagicItemType Hammer = _$hammer;
 
   const MagicItemType._(String name) : super(name);
 

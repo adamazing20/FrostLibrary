@@ -18,6 +18,7 @@ const MagicItemType _$belt = const MagicItemType._('Belt');
 const MagicItemType _$horn = const MagicItemType._('Horn');
 const MagicItemType _$stone = const MagicItemType._('Stone');
 const MagicItemType _$banner = const MagicItemType._('Banner');
+const MagicItemType _$hammer = const MagicItemType._('Hammer');
 
 MagicItemType _$valueOf(String name) {
   switch (name) {
@@ -45,6 +46,8 @@ MagicItemType _$valueOf(String name) {
       return _$stone;
     case 'Banner':
       return _$banner;
+    case 'Hammer':
+      return _$hammer;
     default:
       throw new ArgumentError(name);
   }
@@ -64,6 +67,7 @@ final BuiltSet<MagicItemType> _$values =
   _$horn,
   _$stone,
   _$banner,
+  _$hammer,
 ]);
 
 Serializer<MagicItemType> _$magicItemTypeSerializer =
