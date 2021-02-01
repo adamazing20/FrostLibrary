@@ -81,7 +81,7 @@ magicWeapons:
     price: 300
     sellValue: 125
     weaponType: TwoHandedWeapon
-    temType: MagicWeapon
+    itemType: MagicWeapon
     damageModified: 0
     fightModified: 0
     shootModified: 0
