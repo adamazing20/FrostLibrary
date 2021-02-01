@@ -47,6 +47,12 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
         ..add(serializers.serialize(object.fightModified,
             specifiedType: const FullType(int)));
     }
+    if (object.willModified != null) {
+      result
+        ..add('willModified')
+        ..add(serializers.serialize(object.willModified,
+            specifiedType: const FullType(int)));
+    }
     if (object.shootModified != null) {
       result
         ..add('shootModified')
@@ -107,6 +113,10 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
           result.fightModified = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'willModified':
+          result.willModified = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'shootModified':
           result.shootModified = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -146,6 +156,8 @@ class _$MagicWeapon extends MagicWeapon {
   @override
   final int fightModified;
   @override
+  final int willModified;
+  @override
   final int shootModified;
   @override
   final String description;
@@ -165,6 +177,7 @@ class _$MagicWeapon extends MagicWeapon {
       this.itemType,
       this.damageModified,
       this.fightModified,
+      this.willModified,
       this.shootModified,
       this.description,
       this.notes,
@@ -208,6 +221,7 @@ class _$MagicWeapon extends MagicWeapon {
         itemType == other.itemType &&
         damageModified == other.damageModified &&
         fightModified == other.fightModified &&
+        willModified == other.willModified &&
         shootModified == other.shootModified &&
         description == other.description &&
         notes == other.notes &&
@@ -225,13 +239,15 @@ class _$MagicWeapon extends MagicWeapon {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, name.hashCode),
-                                            price.hashCode),
-                                        sellValue.hashCode),
-                                    weaponType.hashCode),
-                                itemType.hashCode),
-                            damageModified.hashCode),
-                        fightModified.hashCode),
+                                        $jc(
+                                            $jc($jc(0, name.hashCode),
+                                                price.hashCode),
+                                            sellValue.hashCode),
+                                        weaponType.hashCode),
+                                    itemType.hashCode),
+                                damageModified.hashCode),
+                            fightModified.hashCode),
+                        willModified.hashCode),
                     shootModified.hashCode),
                 description.hashCode),
             notes.hashCode),
@@ -248,6 +264,7 @@ class _$MagicWeapon extends MagicWeapon {
           ..add('itemType', itemType)
           ..add('damageModified', damageModified)
           ..add('fightModified', fightModified)
+          ..add('willModified', willModified)
           ..add('shootModified', shootModified)
           ..add('description', description)
           ..add('notes', notes)
@@ -288,6 +305,10 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   int get fightModified => _$this._fightModified;
   set fightModified(int fightModified) => _$this._fightModified = fightModified;
 
+  int _willModified;
+  int get willModified => _$this._willModified;
+  set willModified(int willModified) => _$this._willModified = willModified;
+
   int _shootModified;
   int get shootModified => _$this._shootModified;
   set shootModified(int shootModified) => _$this._shootModified = shootModified;
@@ -315,6 +336,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
       _itemType = _$v.itemType;
       _damageModified = _$v.damageModified;
       _fightModified = _$v.fightModified;
+      _willModified = _$v.willModified;
       _shootModified = _$v.shootModified;
       _description = _$v.description;
       _notes = _$v.notes;
@@ -348,6 +370,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
             itemType: itemType,
             damageModified: damageModified,
             fightModified: fightModified,
+            willModified: willModified,
             shootModified: shootModified,
             description: description,
             notes: notes,

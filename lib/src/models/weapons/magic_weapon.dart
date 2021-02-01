@@ -41,6 +41,10 @@ abstract class MagicWeapon
 
   @override
   @nullable
+  int get willModified;
+
+  @override
+  @nullable
   int get shootModified;
 
   @nullable
