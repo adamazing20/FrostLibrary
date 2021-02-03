@@ -12,7 +12,7 @@ class WeaponType extends EnumClass {
   static const WeaponType HandWeapon = _$handWeapon;
   static const WeaponType TwoHandedWeapon = _$twoHandedWeapon;
   static const WeaponType Bow = _$bow;
-  static const WeaponType CrossBow = _$crossBow;
+  static const WeaponType Crossbow = _$crossBow;
   static const WeaponType Dagger = _$dagger;
   static const WeaponType Staff = _$staff;
 

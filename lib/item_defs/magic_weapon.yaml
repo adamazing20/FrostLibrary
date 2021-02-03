@@ -117,10 +117,10 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "CrossBow"
+  - name: "Crossbow"
     price: 300
     sellValue: 125
-    weaponType: CrossBow
+    weaponType: Crossbow
     itemType: MagicWeapon
     damageModified: 1
     fightModified: 0
@@ -130,10 +130,10 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "CrossBow"
+  - name: "Crossbow"
     price: 600
     sellValue: 250
-    weaponType: CrossBow
+    weaponType: Crossbow
     itemType: MagicWeapon
     damageModified: 0
     fightModified: 0

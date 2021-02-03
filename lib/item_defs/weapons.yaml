@@ -41,7 +41,7 @@ weapons:
 
   - name: "Cross Bow"
     itemType: Weapon
-    weaponType: CrossBow
+    weaponType: Crossbow
     damage_modified:
     description: "Uncommon missle weapon."
     expansion: Core

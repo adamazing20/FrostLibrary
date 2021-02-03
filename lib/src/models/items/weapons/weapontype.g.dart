@@ -9,7 +9,7 @@ part of weapontype;
 const WeaponType _$handWeapon = const WeaponType._('HandWeapon');
 const WeaponType _$twoHandedWeapon = const WeaponType._('TwoHandedWeapon');
 const WeaponType _$bow = const WeaponType._('Bow');
-const WeaponType _$crossBow = const WeaponType._('CrossBow');
+const WeaponType _$crossBow = const WeaponType._('Crossbow');
 const WeaponType _$dagger = const WeaponType._('Dagger');
 const WeaponType _$staff = const WeaponType._('Staff');
 
@@ -21,7 +21,7 @@ WeaponType _$valueOf(String name) {
       return _$twoHandedWeapon;
     case 'Bow':
       return _$bow;
-    case 'CrossBow':
+    case 'Crossbow':
       return _$crossBow;
     case 'Dagger':
       return _$dagger;

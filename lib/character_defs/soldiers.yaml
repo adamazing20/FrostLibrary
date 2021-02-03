@@ -15,3 +15,263 @@ soldiers:
     weapons:
       - HandWeapon
     armours:
+
+  - name: "Thief"
+    expansion: Core
+    health: 10
+    move: 7
+    fight: 1
+    shoot: 0
+    armour: 10
+    will: 0
+    cost: 0
+    notes:
+    characterType: Soldier
+    soldierType: Thief
+    description:
+    weapons:
+      - Dagger
+    armours:
+
+  - name: "War Hound"
+    expansion: Core
+    health: 8
+    move: 8
+    fight: 1
+    shoot: 0
+    armour: 10
+    will: -2
+    cost: 10
+    notes:
+    characterType: Soldier
+    soldierType: WarHound
+    description: "As animals, war hounds cannot pick up treasure tokens and have no item slots."
+    weapons:
+    armours:
+
+  - name: "Infantryman"
+    expansion: Core
+    health: 10
+    move: 6
+    fight: 3
+    shoot: 0
+    armour: 11
+    will: 0
+    cost: 50
+    notes:
+    characterType: Soldier
+    soldierType: Infantryman
+    description:
+    weapons:
+      - TwoHandedWeapon
+    armours:
+      - LightArmour
+
+  - name: "Man-at-Arms"
+    expansion: Core
+    health: 12
+    move: 6
+    fight: 3
+    shoot: 0
+    armour: 12
+    will: 1
+    cost: 75
+    notes:
+    characterType: Soldier
+    soldierType: ManAtArms
+    description:
+    weapons:
+      - HandWeapon
+    armours:
+      - Shield
+      - LightArmour
+
+  - name: "Apothecary"
+    expansion: Core
+    health: 12
+    move: 6
+    fight: 1
+    shoot: 0
+    armour: 10
+    will: 3
+    cost: 75
+    notes:
+    characterType: Soldier
+    soldierType: Thug
+    description: "Apothecaries start each game with a potion of healing. An apothecary may spend and action to give a potion
+                     to a member of the same warband within 1'', provided neither are in combat. The figure receiving the potion counts as having drunk it,
+                     and effects are applied immediately. Note that this rule applies to any potion carried by an apothecary,
+                     not just their free healing potion."
+    weapons:
+      - HandWeapon
+    armours:
+
+  - name: "Archer"
+    expansion: Core
+    health: 10
+    move: 6
+    fight: 1
+    shoot: 2
+    armour: 11
+    will: 0
+    cost: 75
+    notes:
+    characterType: Soldier
+    soldierType: Crossbowman
+    description:
+    weapons:
+      - Bow
+      - Dagger
+    armours:
+      - LightArmour
+
+  - name: "Crossbowman"
+    expansion: Core
+    health: 10
+    move: 6
+    fight: 1
+    shoot: 2
+    armour: 11
+    will: 0
+    cost: 75
+    notes:
+    characterType: Soldier
+    soldierType: Thug
+    description:
+    weapons:
+      - Crossbow
+      - Dagger
+    armours:
+      - LightArmour
+
+  - name: "Treasure Hunter"
+    expansion: Core
+    health: 12
+    move: 7
+    fight: 3
+    shoot: 0
+    armour: 11
+    will: 2
+    cost: 100
+    notes:
+    characterType: Soldier
+    soldierType: TreasureHunter
+    description:
+    weapons:
+      - HandWeapon
+      - Dagger
+    armours:
+      - LightArmour
+
+  - name: "Tracker"
+    expansion: Core
+    health: 12
+    move: 7
+    fight: 1
+    shoot: 2
+    armour: 11
+    will: 1
+    cost: 100
+    notes:
+    characterType: Soldier
+    soldierType: Tracker
+    description:
+    weapons:
+      - Staff
+      - Bow
+    armours:
+      - LightArmour
+
+  - name: "Knight"
+    expansion: Core
+    health: 12
+    move: 5
+    fight: 4
+    shoot: 0
+    armour: 13
+    will: 1
+    cost: 125
+    notes:
+    characterType: Soldier
+    soldierType: Knight
+    description:
+    weapons:
+      - HandWeapon
+      - Dagger
+    armours:
+      - Shield
+      - HeavyArmour
+
+  - name: "Templar"
+    expansion: Core
+    health: 12
+    move: 5
+    fight: 4
+    shoot: 0
+    armour: 12
+    will: 1
+    cost: 0
+    notes:
+    characterType: Soldier
+    soldierType: Templar
+    description:
+    weapons:
+      - TwoHandedWeapon
+    armours:
+      - HeavyArmour
+
+  - name: "Ranger"
+    expansion: Core
+    health: 12
+    move: 7
+    fight: 2
+    shoot: 2
+    armour: 11
+    will: 1
+    cost: 125
+    notes:
+    characterType: Soldier
+    soldierType: Ranger
+    description:
+    weapons:
+      - Bow
+      - HandWeapon
+    armours:
+      - LightArmour
+
+  - name: "Barbarian"
+    expansion: Core
+    health: 14
+    move: 6
+    fight: 4
+    shoot: 0
+    armour: 10
+    will: 3
+    cost: 125
+    notes:
+    characterType: Soldier
+    soldierType: Barbarian
+    description:
+    weapons:
+      - TwoHandedWeapon
+      - Dagger
+    armours:
+
+  - name: "Marksman"
+    expansion: Core
+    health: 12
+    move: 5
+    fight: 2
+    shoot: 2
+    armour: 12
+    will: 1
+    cost: 125
+    notes:
+    characterType: Soldier
+    soldierType: Marksman
+    description:
+    weapons:
+      - Crossbow
+      - HandWeapon
+    armours:
+      - HeavyArmour
