@@ -8,7 +8,7 @@ class SpellProvider extends ItemProvider<Spell> {
 
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = Spells.fromJson(jsonString).spells.toList();
   }
 }
@@ -16,7 +16,7 @@ class SpellProvider extends ItemProvider<Spell> {
 class GrimoireProvider extends SpellProvider {
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = Spells.fromJson(jsonString).spells.toList();
     List<Spell> itemsUpdated = [];
 
@@ -34,7 +34,7 @@ class GrimoireProvider extends SpellProvider {
 class ScrollProvider extends SpellProvider {
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = Spells.fromJson(jsonString).spells.toList();
     List<Spell> itemsUpdated = [];
 

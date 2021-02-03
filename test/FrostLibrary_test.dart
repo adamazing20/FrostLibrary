@@ -1,6 +1,6 @@
 import 'package:FrostLibrary/src/frost_library.dart';
-import 'package:FrostLibrary/src/models/item/item.dart';
-import 'package:FrostLibrary/src/models/weapons/weapon.dart';
+import 'package:FrostLibrary/src/models/items/item/item.dart';
+import 'package:FrostLibrary/src/models/items/weapons/weapon.dart';
 import 'package:FrostLibrary/src/providers/item_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 

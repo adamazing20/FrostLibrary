@@ -6,7 +6,7 @@ class WeaponProvider extends ItemProvider<Weapon> {
 
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = Weapons.fromJson(jsonString).weapons.toList();
   }
 }

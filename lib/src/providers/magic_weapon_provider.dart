@@ -6,7 +6,7 @@ class MagicWeaponProvider extends ItemProvider<MagicWeapon> {
 
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = MagicWeapons.fromJson(jsonString).magicWeapons.toList();
   }
 }

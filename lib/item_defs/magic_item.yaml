@@ -257,7 +257,7 @@ magicItems:
     expansion: Core
 
   - name: "Gloves of Casting"
-    price:
+    price: 200
     sellValue: 10
     magicItemType: Ring
     itemType: MagicItem

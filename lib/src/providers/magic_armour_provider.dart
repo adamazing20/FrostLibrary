@@ -6,7 +6,7 @@ class MagicArmourProvider extends ItemProvider<MagicArmour> {
 
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = MagicArmours.fromJson(jsonString).magicArmours.toList();
   }
 }

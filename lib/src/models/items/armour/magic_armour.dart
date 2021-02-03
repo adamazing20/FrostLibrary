@@ -2,10 +2,10 @@ library magicarmour;
 
 import 'dart:convert';
 
-import 'package:FrostLibrary/src/models/armour/amourtype.dart';
-import 'package:FrostLibrary/src/models/item/expansion.dart';
-import 'package:FrostLibrary/src/models/item/item.dart';
-import 'package:FrostLibrary/src/models/item/itemtype.dart';
+import 'package:FrostLibrary/src/models/expansions/expansion.dart';
+import 'package:FrostLibrary/src/models/items/armour/amourtype.dart';
+import 'package:FrostLibrary/src/models/items/item/item.dart';
+import 'package:FrostLibrary/src/models/items/item/itemtype.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

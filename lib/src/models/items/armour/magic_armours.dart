@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:FrostLibrary/src/models/armour/magic_armour.dart';
+import 'package:FrostLibrary/src/models/items/armour/magic_armour.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';

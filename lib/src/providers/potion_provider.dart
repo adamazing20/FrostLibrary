@@ -6,7 +6,7 @@ class PotionProvider extends ItemProvider<Potion> {
 
   @override
   Future load() async {
-    var jsonString = await _getItemsAsJsonString();
+    var jsonString = await _getDefinitionsAsJsonString();
     items = Potions.fromJson(jsonString).potions.toList();
   }
 }

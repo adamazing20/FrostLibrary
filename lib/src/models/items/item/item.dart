@@ -1,10 +1,11 @@
-import 'package:FrostLibrary/src/models/armour/amourtype.dart';
-import 'package:FrostLibrary/src/models/item/expansion.dart';
-import 'package:FrostLibrary/src/models/item/itemtype.dart';
-import 'package:FrostLibrary/src/models/magic_item/magic_itemtype.dart';
-import 'package:FrostLibrary/src/models/spell/category.dart';
-import 'package:FrostLibrary/src/models/spell/school.dart';
-import 'package:FrostLibrary/src/models/weapons/weapontype.dart';
+import 'package:FrostLibrary/src/models/expansions/expansion.dart';
+import 'package:FrostLibrary/src/models/items/armour/amourtype.dart';
+import 'package:FrostLibrary/src/models/items/magic_item/magic_itemtype.dart';
+import 'package:FrostLibrary/src/models/items/spell/category.dart';
+import 'package:FrostLibrary/src/models/items/spell/school.dart';
+import 'package:FrostLibrary/src/models/items/weapons/weapontype.dart';
+
+import 'itemtype.dart';
 
 abstract class Item {
   String get name;

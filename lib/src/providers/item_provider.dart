@@ -3,21 +3,21 @@ library item_provider;
 import 'dart:async' show Future;
 import 'dart:convert';
 
-import 'package:FrostLibrary/src/models/armour/magic_armour.dart';
-import 'package:FrostLibrary/src/models/armour/magic_armours.dart';
-import 'package:FrostLibrary/src/models/item/expansion.dart';
-import 'package:FrostLibrary/src/models/item/item.dart';
-import 'package:FrostLibrary/src/models/item/itemtype.dart';
-import 'package:FrostLibrary/src/models/magic_item/magic_item.dart';
-import 'package:FrostLibrary/src/models/magic_item/magic_items.dart';
-import 'package:FrostLibrary/src/models/potion/potion.dart';
-import 'package:FrostLibrary/src/models/potion/potions.dart';
-import 'package:FrostLibrary/src/models/spell/spell.dart';
-import 'package:FrostLibrary/src/models/spell/spells.dart';
-import 'package:FrostLibrary/src/models/weapons/magic_weapon.dart';
-import 'package:FrostLibrary/src/models/weapons/magic_weapons.dart';
-import 'package:FrostLibrary/src/models/weapons/weapon.dart';
-import 'package:FrostLibrary/src/models/weapons/weapons.dart';
+import 'package:FrostLibrary/src/models/expansions/expansion.dart';
+import 'package:FrostLibrary/src/models/items/armour/magic_armour.dart';
+import 'package:FrostLibrary/src/models/items/armour/magic_armours.dart';
+import 'package:FrostLibrary/src/models/items/item/item.dart';
+import 'package:FrostLibrary/src/models/items/item/itemtype.dart';
+import 'package:FrostLibrary/src/models/items/magic_item/magic_item.dart';
+import 'package:FrostLibrary/src/models/items/magic_item/magic_items.dart';
+import 'package:FrostLibrary/src/models/items/potion/potion.dart';
+import 'package:FrostLibrary/src/models/items/potion/potions.dart';
+import 'package:FrostLibrary/src/models/items/spell/spell.dart';
+import 'package:FrostLibrary/src/models/items/spell/spells.dart';
+import 'package:FrostLibrary/src/models/items/weapons/magic_weapon.dart';
+import 'package:FrostLibrary/src/models/items/weapons/magic_weapons.dart';
+import 'package:FrostLibrary/src/models/items/weapons/weapon.dart';
+import 'package:FrostLibrary/src/models/items/weapons/weapons.dart';
 import 'package:flutter/services.dart';
 import 'package:yaml/yaml.dart';
 
@@ -43,7 +43,7 @@ abstract class ItemProvider<T extends Item> {
     return loadYaml(await yamlString);
   }
 
-  Future<String> _getItemsAsJsonString() async {
+  Future<String> _getDefinitionsAsJsonString() async {
     var doc = await _LoadYaml();
     return await jsonEncode(doc);
   }

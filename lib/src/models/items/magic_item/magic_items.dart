@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:FrostLibrary/src/models/magic_item/magic_item.dart';
+import 'package:FrostLibrary/src/models/items/magic_item/magic_item.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';

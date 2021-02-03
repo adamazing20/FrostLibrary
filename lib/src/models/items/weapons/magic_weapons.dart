@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:FrostLibrary/src/models/items/weapons/magic_weapon.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
-import 'package:FrostLibrary/src/models/weapons/magic_weapon.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

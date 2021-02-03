@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:FrostLibrary/src/models/potion/potion.dart';
+import 'package:FrostLibrary/src/models/items/potion/potion.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
