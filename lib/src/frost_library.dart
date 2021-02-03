@@ -1,6 +1,6 @@
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
-import 'package:FrostLibrary/src/providers/item_provider.dart';
+import 'package:FrostLibrary/src/providers/definition_providers.dart';
 
 class FrostLibrary {
   static final WeaponProvider _weaponProvider = WeaponProvider();

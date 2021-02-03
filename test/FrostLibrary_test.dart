@@ -1,7 +1,7 @@
 import 'package:FrostLibrary/src/frost_library.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/models/items/weapons/weapon.dart';
-import 'package:FrostLibrary/src/providers/item_provider.dart';
+import 'package:FrostLibrary/src/providers/definition_providers.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

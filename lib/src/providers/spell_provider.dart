@@ -1,14 +1,16 @@
-part of 'item_provider.dart';
+part of 'definition_providers.dart';
 
 class SpellProvider extends ItemProvider<Spell> {
   //todo: Should make this a singleton with factory constructor to avoid
   //todo: re-pulling for scroll/grimoire/spell depending on the order.
-  @override
-  String filePath = 'packages/FrostLibrary/lib/item_defs/spells.yaml';
+
+  static const String filePath =
+      'packages/FrostLibrary/lib/item_defs/spells.yaml';
 
   @override
   Future load() async {
-    var jsonString = await _getDefinitionsAsJsonString();
+    definitionLoader.filePath = filePath;
+    var jsonString = await definitionLoader._getDefinitionsAsJsonString();
     items = Spells.fromJson(jsonString).spells.toList();
   }
 }
@@ -16,7 +18,8 @@ class SpellProvider extends ItemProvider<Spell> {
 class GrimoireProvider extends SpellProvider {
   @override
   Future load() async {
-    var jsonString = await _getDefinitionsAsJsonString();
+    definitionLoader.filePath = SpellProvider.filePath;
+    var jsonString = await definitionLoader._getDefinitionsAsJsonString();
     items = Spells.fromJson(jsonString).spells.toList();
     List<Spell> itemsUpdated = [];
 
@@ -34,7 +37,8 @@ class GrimoireProvider extends SpellProvider {
 class ScrollProvider extends SpellProvider {
   @override
   Future load() async {
-    var jsonString = await _getDefinitionsAsJsonString();
+    definitionLoader.filePath = SpellProvider.filePath;
+    var jsonString = await definitionLoader._getDefinitionsAsJsonString();
     items = Spells.fromJson(jsonString).spells.toList();
     List<Spell> itemsUpdated = [];
 

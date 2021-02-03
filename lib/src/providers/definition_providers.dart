@@ -3,6 +3,7 @@ library item_provider;
 import 'dart:async' show Future;
 import 'dart:convert';
 
+import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/armour/magic_armour.dart';
 import 'package:FrostLibrary/src/models/items/armour/magic_armours.dart';
@@ -28,11 +29,8 @@ part 'potion_provider.dart';
 part 'spell_provider.dart';
 part 'weapon_provider.dart';
 
-abstract class ItemProvider<T extends Item> {
+class DefinitionLoader {
   String filePath;
-  List<T> items;
-
-  void load();
 
   Future<String> _getFile() async {
     return await rootBundle.loadString("$filePath");
@@ -47,6 +45,13 @@ abstract class ItemProvider<T extends Item> {
     var doc = await _LoadYaml();
     return await jsonEncode(doc);
   }
+}
+
+abstract class ItemProvider<T extends Item> {
+  List<T> items;
+  DefinitionLoader definitionLoader = DefinitionLoader();
+
+  void load();
 
   T getItemByName(String name, {Expansion expansion}) {
     var filteredItems = items;
@@ -61,6 +66,34 @@ abstract class ItemProvider<T extends Item> {
 
   List<T> filterItemsByExpansion(Expansion expansion) {
     var filteredItems = items;
+
+    if (expansion != null) {
+      filteredItems.removeWhere((item) => item.expansion != expansion);
+    }
+    return filteredItems;
+  }
+}
+
+abstract class CharacterProvider<T extends Character> {
+  String filePath;
+  List<T> characters;
+
+  void load();
+
+  T getCharacterByName(String name, {Expansion expansion}) {
+    var filteredItems = characters;
+
+    if (expansion != null) {
+      filteredItems
+          .removeWhere((character) => character.expansion != expansion);
+    }
+    var characterWithName = filteredItems
+        .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
+    return characterWithName;
+  }
+
+  List<T> filterCharactersByExpansion(Expansion expansion) {
+    var filteredItems = characters;
 
     if (expansion != null) {
       filteredItems.removeWhere((item) => item.expansion != expansion);

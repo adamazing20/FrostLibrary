@@ -7,8 +7,10 @@ part of serializers;
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(Apprentice.serializer)
       ..add(ArmourType.serializer)
       ..add(Category.serializer)
+      ..add(CharacterType.serializer)
       ..add(Expansion.serializer)
       ..add(ItemType.serializer)
       ..add(MagicArmour.serializer)
@@ -21,11 +23,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Potion.serializer)
       ..add(Potions.serializer)
       ..add(School.serializer)
+      ..add(Soldier.serializer)
+      ..add(SoldierType.serializer)
       ..add(Spell.serializer)
       ..add(Spells.serializer)
       ..add(Weapon.serializer)
       ..add(WeaponType.serializer)
       ..add(Weapons.serializer)
+      ..add(Wizard.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(MagicArmour)]),
           () => new ListBuilder<MagicArmour>())

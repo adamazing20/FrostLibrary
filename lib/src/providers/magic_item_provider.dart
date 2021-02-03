@@ -1,12 +1,13 @@
-part of 'item_provider.dart';
+part of 'definition_providers.dart';
 
 class MagicItemProvider extends ItemProvider<MagicItem> {
-  @override
-  String filePath = 'packages/FrostLibrary/lib/item_defs/magic_item.yaml';
+  static const String filePath =
+      'packages/FrostLibrary/lib/item_defs/magic_item.yaml';
 
   @override
   Future load() async {
-    var jsonString = await _getDefinitionsAsJsonString();
+    definitionLoader.filePath = filePath;
+    var jsonString = await definitionLoader._getDefinitionsAsJsonString();
     items = MagicItems.fromJson(jsonString).magicItems.toList();
   }
 }

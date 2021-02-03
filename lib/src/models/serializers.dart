@@ -1,5 +1,10 @@
 library serializers;
 
+import 'package:FrostLibrary/src/models/character/apprentice/apprentice.dart';
+import 'package:FrostLibrary/src/models/character/charactertype.dart';
+import 'package:FrostLibrary/src/models/character/soldier/soldier.dart';
+import 'package:FrostLibrary/src/models/character/soldier/soldiertype.dart';
+import 'package:FrostLibrary/src/models/character/wizard/wizard.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/armour/amourtype.dart';
 import 'package:FrostLibrary/src/models/items/armour/magic_armour.dart';
@@ -28,6 +33,8 @@ part 'serializers.g.dart';
 @SerializersFor([
   MagicArmours,
   ArmourType,
+  Apprentice,
+  CharacterType,
   Expansion,
   ItemType,
   MagicArmour,
@@ -44,7 +51,10 @@ part 'serializers.g.dart';
   Spell,
   Spells,
   School,
+  SoldierType,
+  Soldier,
   Category,
+  Wizard,
 ])
 final Serializers serializers =
     (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();
