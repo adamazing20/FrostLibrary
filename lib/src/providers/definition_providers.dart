@@ -3,6 +3,8 @@ library item_provider;
 import 'dart:async' show Future;
 import 'dart:convert';
 
+import 'package:FrostLibrary/src/models/character/apprentice/apprentice.dart';
+import 'package:FrostLibrary/src/models/character/apprentice/apprentices.dart';
 import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldier.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldiers.dart';
@@ -35,6 +37,7 @@ part 'items/weapon_provider.dart';
 
 part 'characters/wizard_provider.dart';
 part 'characters/soldier_provider.dart';
+part 'characters/apprentice_provider.dart';
 
 class DefinitionLoader {
   String filePath;

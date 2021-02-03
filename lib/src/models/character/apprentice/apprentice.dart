@@ -43,6 +43,9 @@ abstract class Apprentice
   int get health;
 
   @override
+  int get cost;
+
+  @override
   CharacterType get characterType;
 
   @override

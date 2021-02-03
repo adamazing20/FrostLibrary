@@ -43,20 +43,26 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           specifiedType: const FullType(SoldierType)),
       'cost',
       serializers.serialize(object.cost, specifiedType: const FullType(int)),
-      'weapons',
-      serializers.serialize(object.weapons,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(WeaponType)])),
-      'armours',
-      serializers.serialize(object.armours,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(ArmourType)])),
     ];
     if (object.description != null) {
       result
         ..add('description')
         ..add(serializers.serialize(object.description,
             specifiedType: const FullType(String)));
+    }
+    if (object.weapons != null) {
+      result
+        ..add('weapons')
+        ..add(serializers.serialize(object.weapons,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(WeaponType)])));
+    }
+    if (object.armours != null) {
+      result
+        ..add('armours')
+        ..add(serializers.serialize(object.armours,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(ArmourType)])));
     }
     return result;
   }
@@ -220,12 +226,6 @@ class _$Soldier extends Soldier {
     }
     if (cost == null) {
       throw new BuiltValueNullFieldError('Soldier', 'cost');
-    }
-    if (weapons == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'weapons');
-    }
-    if (armours == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'armours');
     }
   }
 
@@ -423,15 +423,15 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
               soldierType: soldierType,
               cost: cost,
               description: description,
-              weapons: weapons.build(),
-              armours: armours.build());
+              weapons: _weapons?.build(),
+              armours: _armours?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'weapons';
-        weapons.build();
+        _weapons?.build();
         _$failedField = 'armours';
-        armours.build();
+        _armours?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Soldier', _$failedField, e.toString());

@@ -14,6 +14,7 @@ class FrostLibrary {
   static final MagicItemProvider _magicItemProvider = MagicItemProvider();
   static final WizardProvider _wizardProvider = WizardProvider();
   static final SoldierProvider _soldierProvider = SoldierProvider();
+  static final ApprenticeProvider _apprenticeProvider = ApprenticeProvider();
 
   static final List _itemProviderList = [
     _weaponProvider,
@@ -29,6 +30,7 @@ class FrostLibrary {
   static final List _characterProviderList = [
     _wizardProvider,
     _soldierProvider,
+    _apprenticeProvider,
   ];
 
   WeaponProvider get weapons => _weaponProvider;
@@ -51,6 +53,8 @@ class FrostLibrary {
 
   SoldierProvider get soldiers => _soldierProvider;
 
+  ApprenticeProvider get apprentices => _apprenticeProvider;
+
   Future init() async {
     await _weaponProvider.load();
     await _potionProvider.load();
@@ -62,6 +66,7 @@ class FrostLibrary {
     await _magicItemProvider.load();
     await _wizardProvider.load();
     await _soldierProvider.load();
+    await _apprenticeProvider.load();
   }
 
   List<Item> getAllItems({Expansion expansion}) {

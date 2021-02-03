@@ -35,6 +35,8 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
       serializers.serialize(object.will, specifiedType: const FullType(int)),
       'health',
       serializers.serialize(object.health, specifiedType: const FullType(int)),
+      'cost',
+      serializers.serialize(object.cost, specifiedType: const FullType(int)),
       'characterType',
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
@@ -105,6 +107,10 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
           result.health = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'cost':
+          result.cost = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
               specifiedType: const FullType(CharacterType)) as CharacterType;
@@ -150,6 +156,8 @@ class _$Apprentice extends Apprentice {
   @override
   final int health;
   @override
+  final int cost;
+  @override
   final CharacterType characterType;
   @override
   final String description;
@@ -170,6 +178,7 @@ class _$Apprentice extends Apprentice {
       this.armour,
       this.will,
       this.health,
+      this.cost,
       this.characterType,
       this.description,
       this.weapons,
@@ -199,6 +208,9 @@ class _$Apprentice extends Apprentice {
     if (health == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'health');
     }
+    if (cost == null) {
+      throw new BuiltValueNullFieldError('Apprentice', 'cost');
+    }
     if (characterType == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'characterType');
     }
@@ -223,6 +235,7 @@ class _$Apprentice extends Apprentice {
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
+        cost == other.cost &&
         characterType == other.characterType &&
         description == other.description &&
         weapons == other.weapons &&
@@ -241,14 +254,16 @@ class _$Apprentice extends Apprentice {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, name.hashCode),
-                                                expansion.hashCode),
-                                            move.hashCode),
-                                        fight.hashCode),
-                                    shoot.hashCode),
-                                armour.hashCode),
-                            will.hashCode),
-                        health.hashCode),
+                                            $jc(
+                                                $jc($jc(0, name.hashCode),
+                                                    expansion.hashCode),
+                                                move.hashCode),
+                                            fight.hashCode),
+                                        shoot.hashCode),
+                                    armour.hashCode),
+                                will.hashCode),
+                            health.hashCode),
+                        cost.hashCode),
                     characterType.hashCode),
                 description.hashCode),
             weapons.hashCode),
@@ -266,6 +281,7 @@ class _$Apprentice extends Apprentice {
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
+          ..add('cost', cost)
           ..add('characterType', characterType)
           ..add('description', description)
           ..add('weapons', weapons)
@@ -309,6 +325,10 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
 
+  int _cost;
+  int get cost => _$this._cost;
+  set cost(int cost) => _$this._cost = cost;
+
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
   set characterType(CharacterType characterType) =>
@@ -340,6 +360,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
+      _cost = _$v.cost;
       _characterType = _$v.characterType;
       _description = _$v.description;
       _weapons = _$v.weapons?.toBuilder();
@@ -376,6 +397,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
               armour: armour,
               will: will,
               health: health,
+              cost: cost,
               characterType: characterType,
               description: description,
               weapons: _weapons?.build(),

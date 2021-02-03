@@ -79,6 +79,12 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
             specifiedType:
                 const FullType(BuiltList, const [const FullType(ArmourType)])));
     }
+    if (object.cost != null) {
+      result
+        ..add('cost')
+        ..add(serializers.serialize(object.cost,
+            specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -175,6 +181,10 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
                       BuiltList, const [const FullType(ArmourType)]))
               as BuiltList<Object>);
           break;
+        case 'cost':
+          result.cost = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
       }
     }
 
@@ -219,6 +229,8 @@ class _$Wizard extends Wizard {
   final BuiltList<WeaponType> weapons;
   @override
   final BuiltList<ArmourType> armours;
+  @override
+  final int cost;
 
   factory _$Wizard([void Function(WizardBuilder) updates]) =>
       (new WizardBuilder()..update(updates)).build();
@@ -241,7 +253,8 @@ class _$Wizard extends Wizard {
       this.neutral,
       this.opposed,
       this.weapons,
-      this.armours})
+      this.armours,
+      this.cost})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Wizard', 'name');
@@ -318,7 +331,8 @@ class _$Wizard extends Wizard {
         neutral == other.neutral &&
         opposed == other.opposed &&
         weapons == other.weapons &&
-        armours == other.armours;
+        armours == other.armours &&
+        cost == other.cost;
   }
 
   @override
@@ -341,27 +355,26 @@ class _$Wizard extends Wizard {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            0,
-                                                                            name
-                                                                                .hashCode),
-                                                                        expansion
-                                                                            .hashCode),
-                                                                    move.hashCode),
-                                                                fight.hashCode),
-                                                            shoot.hashCode),
-                                                        armour.hashCode),
-                                                    will.hashCode),
-                                                health.hashCode),
-                                            characterType.hashCode),
-                                        experience.hashCode),
-                                    level.hashCode),
-                                wizardType.hashCode),
-                            description.hashCode),
-                        aligned.hashCode),
-                    neutral.hashCode),
-                opposed.hashCode),
-            weapons.hashCode),
-        armours.hashCode));
+                                                                            $jc(0,
+                                                                                name.hashCode),
+                                                                            expansion.hashCode),
+                                                                        move.hashCode),
+                                                                    fight.hashCode),
+                                                                shoot.hashCode),
+                                                            armour.hashCode),
+                                                        will.hashCode),
+                                                    health.hashCode),
+                                                characterType.hashCode),
+                                            experience.hashCode),
+                                        level.hashCode),
+                                    wizardType.hashCode),
+                                description.hashCode),
+                            aligned.hashCode),
+                        neutral.hashCode),
+                    opposed.hashCode),
+                weapons.hashCode),
+            armours.hashCode),
+        cost.hashCode));
   }
 
   @override
@@ -384,7 +397,8 @@ class _$Wizard extends Wizard {
           ..add('neutral', neutral)
           ..add('opposed', opposed)
           ..add('weapons', weapons)
-          ..add('armours', armours))
+          ..add('armours', armours)
+          ..add('cost', cost))
         .toString();
   }
 }
@@ -470,6 +484,10 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
       _$this._armours ??= new ListBuilder<ArmourType>();
   set armours(ListBuilder<ArmourType> armours) => _$this._armours = armours;
 
+  int _cost;
+  int get cost => _$this._cost;
+  set cost(int cost) => _$this._cost = cost;
+
   WizardBuilder();
 
   WizardBuilder get _$this {
@@ -492,6 +510,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
       _opposed = _$v.opposed?.toBuilder();
       _weapons = _$v.weapons?.toBuilder();
       _armours = _$v.armours?.toBuilder();
+      _cost = _$v.cost;
       _$v = null;
     }
     return this;
@@ -533,7 +552,8 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
               neutral: neutral.build(),
               opposed: opposed.build(),
               weapons: _weapons?.build(),
-              armours: _armours?.build());
+              armours: _armours?.build(),
+              cost: cost);
     } catch (_) {
       String _$failedField;
       try {

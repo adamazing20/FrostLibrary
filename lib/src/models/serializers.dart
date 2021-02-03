@@ -1,6 +1,7 @@
 library serializers;
 
 import 'package:FrostLibrary/src/models/character/apprentice/apprentice.dart';
+import 'package:FrostLibrary/src/models/character/apprentice/apprentices.dart';
 import 'package:FrostLibrary/src/models/character/charactertype.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldier.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldiers.dart';
@@ -36,6 +37,7 @@ part 'serializers.g.dart';
   MagicArmours,
   ArmourType,
   Apprentice,
+  Apprentices,
   CharacterType,
   Expansion,
   ItemType,

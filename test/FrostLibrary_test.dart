@@ -57,4 +57,22 @@ void main() {
       }
     }
   });
+
+
+  test('end to end test of a apprentice', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+
+    var frostLibrary = FrostLibrary();
+    await frostLibrary.init();
+
+    var apprenticeProvider = frostLibrary.apprentices;
+    var apprentices = apprenticeProvider.characters;
+
+    for (var apprentice in apprentices) {
+      assert(apprentice is Character);
+      if (apprentice is Character) {
+        print('$apprentices a character');
+      }
+    }
+  });
 }

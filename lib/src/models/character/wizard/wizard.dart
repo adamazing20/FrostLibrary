@@ -6,7 +6,6 @@ import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/character/charactertype.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/armour/amourtype.dart';
-import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/models/items/spell/school.dart';
 import 'package:FrostLibrary/src/models/items/weapons/weapontype.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
@@ -75,6 +74,10 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   @override
   @nullable
   BuiltList<ArmourType> get armours;
+
+  @override
+  @nullable
+  int get cost;
 
   String toJson() {
     return json.encode(serializers.serializeWith(Wizard.serializer, this));

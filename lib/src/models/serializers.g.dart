@@ -8,6 +8,7 @@ part of serializers;
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Apprentice.serializer)
+      ..add(Apprentices.serializer)
       ..add(ArmourType.serializer)
       ..add(Category.serializer)
       ..add(CharacterType.serializer)
@@ -33,6 +34,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Weapons.serializer)
       ..add(Wizard.serializer)
       ..add(Wizards.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Apprentice)]),
+          () => new ListBuilder<Apprentice>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(MagicArmour)]),
           () => new ListBuilder<MagicArmour>())
