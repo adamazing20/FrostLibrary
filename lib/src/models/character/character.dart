@@ -14,6 +14,7 @@ abstract class Character {
   int get will;
   int get health;
   int get cost;
+  int get additionalItemHoldCount;
   String get name;
   String get description;
   CharacterType get characterType;

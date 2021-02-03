@@ -7,6 +7,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -43,6 +44,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -79,6 +81,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -112,6 +115,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -146,6 +150,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -179,6 +184,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -213,6 +219,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -252,6 +259,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -286,6 +294,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0
@@ -322,6 +331,7 @@ wizards:
     shoot: 0
     armour: 10
     will: 4
+    additionalItemHoldCount: 5
     notes:
     characterType: Wizard
     experience: 0

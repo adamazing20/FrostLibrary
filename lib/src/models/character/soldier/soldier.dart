@@ -43,6 +43,9 @@ abstract class Soldier implements Built<Soldier, SoldierBuilder>, SoldierDef {
   int get health;
 
   @override
+  int get additionalItemHoldCount;
+
+  @override
   CharacterType get characterType;
 
   @override

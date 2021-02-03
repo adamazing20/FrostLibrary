@@ -43,6 +43,9 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           specifiedType: const FullType(int)),
       'level',
       serializers.serialize(object.level, specifiedType: const FullType(int)),
+      'additionalItemHoldCount',
+      serializers.serialize(object.additionalItemHoldCount,
+          specifiedType: const FullType(int)),
       'wizardType',
       serializers.serialize(object.wizardType,
           specifiedType: const FullType(School)),
@@ -143,6 +146,10 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           result.level = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'additionalItemHoldCount':
+          result.additionalItemHoldCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'wizardType':
           result.wizardType = serializers.deserialize(value,
               specifiedType: const FullType(School)) as School;
@@ -216,6 +223,8 @@ class _$Wizard extends Wizard {
   @override
   final int level;
   @override
+  final int additionalItemHoldCount;
+  @override
   final School wizardType;
   @override
   final String description;
@@ -247,6 +256,7 @@ class _$Wizard extends Wizard {
       this.characterType,
       this.experience,
       this.level,
+      this.additionalItemHoldCount,
       this.wizardType,
       this.description,
       this.aligned,
@@ -289,6 +299,9 @@ class _$Wizard extends Wizard {
     if (level == null) {
       throw new BuiltValueNullFieldError('Wizard', 'level');
     }
+    if (additionalItemHoldCount == null) {
+      throw new BuiltValueNullFieldError('Wizard', 'additionalItemHoldCount');
+    }
     if (wizardType == null) {
       throw new BuiltValueNullFieldError('Wizard', 'wizardType');
     }
@@ -325,6 +338,7 @@ class _$Wizard extends Wizard {
         characterType == other.characterType &&
         experience == other.experience &&
         level == other.level &&
+        additionalItemHoldCount == other.additionalItemHoldCount &&
         wizardType == other.wizardType &&
         description == other.description &&
         aligned == other.aligned &&
@@ -355,18 +369,18 @@ class _$Wizard extends Wizard {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc(0,
-                                                                                name.hashCode),
-                                                                            expansion.hashCode),
-                                                                        move.hashCode),
-                                                                    fight.hashCode),
-                                                                shoot.hashCode),
-                                                            armour.hashCode),
-                                                        will.hashCode),
-                                                    health.hashCode),
-                                                characterType.hashCode),
-                                            experience.hashCode),
-                                        level.hashCode),
+                                                                            $jc($jc(0, name.hashCode),
+                                                                                expansion.hashCode),
+                                                                            move.hashCode),
+                                                                        fight.hashCode),
+                                                                    shoot.hashCode),
+                                                                armour.hashCode),
+                                                            will.hashCode),
+                                                        health.hashCode),
+                                                    characterType.hashCode),
+                                                experience.hashCode),
+                                            level.hashCode),
+                                        additionalItemHoldCount.hashCode),
                                     wizardType.hashCode),
                                 description.hashCode),
                             aligned.hashCode),
@@ -391,6 +405,7 @@ class _$Wizard extends Wizard {
           ..add('characterType', characterType)
           ..add('experience', experience)
           ..add('level', level)
+          ..add('additionalItemHoldCount', additionalItemHoldCount)
           ..add('wizardType', wizardType)
           ..add('description', description)
           ..add('aligned', aligned)
@@ -451,6 +466,11 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   int get level => _$this._level;
   set level(int level) => _$this._level = level;
 
+  int _additionalItemHoldCount;
+  int get additionalItemHoldCount => _$this._additionalItemHoldCount;
+  set additionalItemHoldCount(int additionalItemHoldCount) =>
+      _$this._additionalItemHoldCount = additionalItemHoldCount;
+
   School _wizardType;
   School get wizardType => _$this._wizardType;
   set wizardType(School wizardType) => _$this._wizardType = wizardType;
@@ -503,6 +523,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
       _characterType = _$v.characterType;
       _experience = _$v.experience;
       _level = _$v.level;
+      _additionalItemHoldCount = _$v.additionalItemHoldCount;
       _wizardType = _$v.wizardType;
       _description = _$v.description;
       _aligned = _$v.aligned?.toBuilder();
@@ -546,6 +567,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
               characterType: characterType,
               experience: experience,
               level: level,
+              additionalItemHoldCount: additionalItemHoldCount,
               wizardType: wizardType,
               description: description,
               aligned: aligned.build(),

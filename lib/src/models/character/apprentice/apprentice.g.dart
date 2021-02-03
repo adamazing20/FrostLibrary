@@ -37,6 +37,9 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
       serializers.serialize(object.health, specifiedType: const FullType(int)),
       'cost',
       serializers.serialize(object.cost, specifiedType: const FullType(int)),
+      'additionalItemHoldCount',
+      serializers.serialize(object.additionalItemHoldCount,
+          specifiedType: const FullType(int)),
       'characterType',
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
@@ -111,6 +114,10 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
           result.cost = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'additionalItemHoldCount':
+          result.additionalItemHoldCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
               specifiedType: const FullType(CharacterType)) as CharacterType;
@@ -158,6 +165,8 @@ class _$Apprentice extends Apprentice {
   @override
   final int cost;
   @override
+  final int additionalItemHoldCount;
+  @override
   final CharacterType characterType;
   @override
   final String description;
@@ -179,6 +188,7 @@ class _$Apprentice extends Apprentice {
       this.will,
       this.health,
       this.cost,
+      this.additionalItemHoldCount,
       this.characterType,
       this.description,
       this.weapons,
@@ -211,6 +221,10 @@ class _$Apprentice extends Apprentice {
     if (cost == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'cost');
     }
+    if (additionalItemHoldCount == null) {
+      throw new BuiltValueNullFieldError(
+          'Apprentice', 'additionalItemHoldCount');
+    }
     if (characterType == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'characterType');
     }
@@ -236,6 +250,7 @@ class _$Apprentice extends Apprentice {
         will == other.will &&
         health == other.health &&
         cost == other.cost &&
+        additionalItemHoldCount == other.additionalItemHoldCount &&
         characterType == other.characterType &&
         description == other.description &&
         weapons == other.weapons &&
@@ -255,15 +270,17 @@ class _$Apprentice extends Apprentice {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc($jc(0, name.hashCode),
-                                                    expansion.hashCode),
-                                                move.hashCode),
-                                            fight.hashCode),
-                                        shoot.hashCode),
-                                    armour.hashCode),
-                                will.hashCode),
-                            health.hashCode),
-                        cost.hashCode),
+                                                $jc(
+                                                    $jc($jc(0, name.hashCode),
+                                                        expansion.hashCode),
+                                                    move.hashCode),
+                                                fight.hashCode),
+                                            shoot.hashCode),
+                                        armour.hashCode),
+                                    will.hashCode),
+                                health.hashCode),
+                            cost.hashCode),
+                        additionalItemHoldCount.hashCode),
                     characterType.hashCode),
                 description.hashCode),
             weapons.hashCode),
@@ -282,6 +299,7 @@ class _$Apprentice extends Apprentice {
           ..add('will', will)
           ..add('health', health)
           ..add('cost', cost)
+          ..add('additionalItemHoldCount', additionalItemHoldCount)
           ..add('characterType', characterType)
           ..add('description', description)
           ..add('weapons', weapons)
@@ -329,6 +347,11 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   int get cost => _$this._cost;
   set cost(int cost) => _$this._cost = cost;
 
+  int _additionalItemHoldCount;
+  int get additionalItemHoldCount => _$this._additionalItemHoldCount;
+  set additionalItemHoldCount(int additionalItemHoldCount) =>
+      _$this._additionalItemHoldCount = additionalItemHoldCount;
+
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
   set characterType(CharacterType characterType) =>
@@ -361,6 +384,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
       _will = _$v.will;
       _health = _$v.health;
       _cost = _$v.cost;
+      _additionalItemHoldCount = _$v.additionalItemHoldCount;
       _characterType = _$v.characterType;
       _description = _$v.description;
       _weapons = _$v.weapons?.toBuilder();
@@ -398,6 +422,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
               will: will,
               health: health,
               cost: cost,
+              additionalItemHoldCount: additionalItemHoldCount,
               characterType: characterType,
               description: description,
               weapons: _weapons?.build(),

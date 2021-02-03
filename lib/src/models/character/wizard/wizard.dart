@@ -52,6 +52,9 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   int get level;
 
   @override
+  int get additionalItemHoldCount;
+
+  @override
   School get wizardType;
 
   @override

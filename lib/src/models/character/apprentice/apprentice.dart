@@ -46,6 +46,9 @@ abstract class Apprentice
   int get cost;
 
   @override
+  int get additionalItemHoldCount;
+
+  @override
   CharacterType get characterType;
 
   @override

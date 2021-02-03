@@ -35,6 +35,9 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
       serializers.serialize(object.will, specifiedType: const FullType(int)),
       'health',
       serializers.serialize(object.health, specifiedType: const FullType(int)),
+      'additionalItemHoldCount',
+      serializers.serialize(object.additionalItemHoldCount,
+          specifiedType: const FullType(int)),
       'characterType',
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
@@ -110,6 +113,10 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           result.health = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'additionalItemHoldCount':
+          result.additionalItemHoldCount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
               specifiedType: const FullType(CharacterType)) as CharacterType;
@@ -163,6 +170,8 @@ class _$Soldier extends Soldier {
   @override
   final int health;
   @override
+  final int additionalItemHoldCount;
+  @override
   final CharacterType characterType;
   @override
   final SoldierType soldierType;
@@ -187,6 +196,7 @@ class _$Soldier extends Soldier {
       this.armour,
       this.will,
       this.health,
+      this.additionalItemHoldCount,
       this.characterType,
       this.soldierType,
       this.cost,
@@ -218,6 +228,9 @@ class _$Soldier extends Soldier {
     if (health == null) {
       throw new BuiltValueNullFieldError('Soldier', 'health');
     }
+    if (additionalItemHoldCount == null) {
+      throw new BuiltValueNullFieldError('Soldier', 'additionalItemHoldCount');
+    }
     if (characterType == null) {
       throw new BuiltValueNullFieldError('Soldier', 'characterType');
     }
@@ -248,6 +261,7 @@ class _$Soldier extends Soldier {
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
+        additionalItemHoldCount == other.additionalItemHoldCount &&
         characterType == other.characterType &&
         soldierType == other.soldierType &&
         cost == other.cost &&
@@ -270,14 +284,18 @@ class _$Soldier extends Soldier {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc($jc(0, name.hashCode),
-                                                        expansion.hashCode),
-                                                    move.hashCode),
-                                                fight.hashCode),
-                                            shoot.hashCode),
-                                        armour.hashCode),
-                                    will.hashCode),
-                                health.hashCode),
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(0,
+                                                                name.hashCode),
+                                                            expansion.hashCode),
+                                                        move.hashCode),
+                                                    fight.hashCode),
+                                                shoot.hashCode),
+                                            armour.hashCode),
+                                        will.hashCode),
+                                    health.hashCode),
+                                additionalItemHoldCount.hashCode),
                             characterType.hashCode),
                         soldierType.hashCode),
                     cost.hashCode),
@@ -297,6 +315,7 @@ class _$Soldier extends Soldier {
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
+          ..add('additionalItemHoldCount', additionalItemHoldCount)
           ..add('characterType', characterType)
           ..add('soldierType', soldierType)
           ..add('cost', cost)
@@ -342,6 +361,11 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
 
+  int _additionalItemHoldCount;
+  int get additionalItemHoldCount => _$this._additionalItemHoldCount;
+  set additionalItemHoldCount(int additionalItemHoldCount) =>
+      _$this._additionalItemHoldCount = additionalItemHoldCount;
+
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
   set characterType(CharacterType characterType) =>
@@ -381,6 +405,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
+      _additionalItemHoldCount = _$v.additionalItemHoldCount;
       _characterType = _$v.characterType;
       _soldierType = _$v.soldierType;
       _cost = _$v.cost;
@@ -419,6 +444,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
               armour: armour,
               will: will,
               health: health,
+              additionalItemHoldCount: additionalItemHoldCount,
               characterType: characterType,
               soldierType: soldierType,
               cost: cost,

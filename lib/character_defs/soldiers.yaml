@@ -8,6 +8,7 @@ soldiers:
     armour: 10
     will: -1
     cost: 0
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Thug
@@ -25,6 +26,7 @@ soldiers:
     armour: 10
     will: 0
     cost: 0
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Thief
@@ -42,6 +44,7 @@ soldiers:
     armour: 10
     will: -2
     cost: 10
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: WarHound
@@ -59,6 +62,7 @@ soldiers:
     will: 0
     cost: 50
     notes:
+    additionalItemHoldCount: 1
     characterType: Soldier
     soldierType: Infantryman
     description:
@@ -76,6 +80,7 @@ soldiers:
     armour: 12
     will: 1
     cost: 75
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: ManAtArms
@@ -95,6 +100,7 @@ soldiers:
     armour: 10
     will: 3
     cost: 75
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Thug
@@ -115,6 +121,7 @@ soldiers:
     armour: 11
     will: 0
     cost: 75
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Crossbowman
@@ -134,6 +141,7 @@ soldiers:
     armour: 11
     will: 0
     cost: 75
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Thug
@@ -153,6 +161,7 @@ soldiers:
     armour: 11
     will: 2
     cost: 100
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: TreasureHunter
@@ -172,6 +181,7 @@ soldiers:
     armour: 11
     will: 1
     cost: 100
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Tracker
@@ -191,6 +201,7 @@ soldiers:
     armour: 13
     will: 1
     cost: 125
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Knight
@@ -211,6 +222,7 @@ soldiers:
     armour: 12
     will: 1
     cost: 0
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Templar
@@ -229,6 +241,7 @@ soldiers:
     armour: 11
     will: 1
     cost: 125
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Ranger
@@ -248,6 +261,7 @@ soldiers:
     armour: 10
     will: 3
     cost: 125
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Barbarian
@@ -266,6 +280,7 @@ soldiers:
     armour: 12
     will: 1
     cost: 125
+    additionalItemHoldCount: 1
     notes:
     characterType: Soldier
     soldierType: Marksman
