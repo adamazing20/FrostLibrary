@@ -9,6 +9,7 @@ environment:
 flutter:
   assets:
     - lib/item_defs/
+    - lib/character_defs/
 
 dependencies:
   flutter:

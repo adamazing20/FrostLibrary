@@ -1,4 +1,4 @@
-part of 'definition_providers.dart';
+part of '../definition_providers.dart';
 
 class PotionProvider extends ItemProvider<Potion> {
   static const String filePath =

@@ -1,4 +1,4 @@
-part of 'definition_providers.dart';
+part of '../definition_providers.dart';
 
 class MagicItemProvider extends ItemProvider<MagicItem> {
   static const String filePath =

@@ -4,6 +4,10 @@ import 'dart:async' show Future;
 import 'dart:convert';
 
 import 'package:FrostLibrary/src/models/character/character.dart';
+import 'package:FrostLibrary/src/models/character/soldier/soldier.dart';
+import 'package:FrostLibrary/src/models/character/soldier/soldiers.dart';
+import 'package:FrostLibrary/src/models/character/wizard/wizard.dart';
+import 'package:FrostLibrary/src/models/character/wizard/wizards.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/armour/magic_armour.dart';
 import 'package:FrostLibrary/src/models/items/armour/magic_armours.dart';
@@ -22,12 +26,15 @@ import 'package:FrostLibrary/src/models/items/weapons/weapons.dart';
 import 'package:flutter/services.dart';
 import 'package:yaml/yaml.dart';
 
-part 'magic_armour_provider.dart';
-part 'magic_item_provider.dart';
-part 'magic_weapon_provider.dart';
-part 'potion_provider.dart';
-part 'spell_provider.dart';
-part 'weapon_provider.dart';
+part 'items/magic_armour_provider.dart';
+part 'items/magic_item_provider.dart';
+part 'items/magic_weapon_provider.dart';
+part 'items/potion_provider.dart';
+part 'items/spell_provider.dart';
+part 'items/weapon_provider.dart';
+
+part 'characters/wizard_provider.dart';
+part 'characters/soldier_provider.dart';
 
 class DefinitionLoader {
   String filePath;
@@ -75,8 +82,8 @@ abstract class ItemProvider<T extends Item> {
 }
 
 abstract class CharacterProvider<T extends Character> {
-  String filePath;
   List<T> characters;
+  DefinitionLoader definitionLoader = DefinitionLoader();
 
   void load();
 

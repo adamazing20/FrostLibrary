@@ -1,4 +1,4 @@
-part of 'definition_providers.dart';
+part of '../definition_providers.dart';
 
 class MagicWeaponProvider extends ItemProvider<MagicWeapon> {
   static const String filePath =

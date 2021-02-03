@@ -1,4 +1,4 @@
-part of 'definition_providers.dart';
+part of '../definition_providers.dart';
 
 class WeaponProvider extends ItemProvider<Weapon> {
   @override

@@ -23,9 +23,6 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'currentHealth',
-      serializers.serialize(object.currentHealth,
-          specifiedType: const FullType(int)),
       'move',
       serializers.serialize(object.move, specifiedType: const FullType(int)),
       'fight',
@@ -38,13 +35,30 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
       serializers.serialize(object.will, specifiedType: const FullType(int)),
       'health',
       serializers.serialize(object.health, specifiedType: const FullType(int)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'characterType',
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
     ];
-
+    if (object.description != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(object.description,
+            specifiedType: const FullType(String)));
+    }
+    if (object.weapons != null) {
+      result
+        ..add('weapons')
+        ..add(serializers.serialize(object.weapons,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(WeaponType)])));
+    }
+    if (object.armours != null) {
+      result
+        ..add('armours')
+        ..add(serializers.serialize(object.armours,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(ArmourType)])));
+    }
     return result;
   }
 
@@ -66,10 +80,6 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
         case 'expansion':
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
-          break;
-        case 'currentHealth':
-          result.currentHealth = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
           break;
         case 'move':
           result.move = serializers.deserialize(value,
@@ -95,13 +105,25 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
           result.health = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
               specifiedType: const FullType(CharacterType)) as CharacterType;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'weapons':
+          result.weapons.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(WeaponType)]))
+              as BuiltList<Object>);
+          break;
+        case 'armours':
+          result.armours.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(ArmourType)]))
+              as BuiltList<Object>);
           break;
       }
     }
@@ -116,8 +138,6 @@ class _$Apprentice extends Apprentice {
   @override
   final Expansion expansion;
   @override
-  final int currentHealth;
-  @override
   final int move;
   @override
   final int fight;
@@ -130,9 +150,13 @@ class _$Apprentice extends Apprentice {
   @override
   final int health;
   @override
-  final String id;
-  @override
   final CharacterType characterType;
+  @override
+  final String description;
+  @override
+  final BuiltList<WeaponType> weapons;
+  @override
+  final BuiltList<ArmourType> armours;
 
   factory _$Apprentice([void Function(ApprenticeBuilder) updates]) =>
       (new ApprenticeBuilder()..update(updates)).build();
@@ -140,24 +164,22 @@ class _$Apprentice extends Apprentice {
   _$Apprentice._(
       {this.name,
       this.expansion,
-      this.currentHealth,
       this.move,
       this.fight,
       this.shoot,
       this.armour,
       this.will,
       this.health,
-      this.id,
-      this.characterType})
+      this.characterType,
+      this.description,
+      this.weapons,
+      this.armours})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'name');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'expansion');
-    }
-    if (currentHealth == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'currentHealth');
     }
     if (move == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'move');
@@ -177,9 +199,6 @@ class _$Apprentice extends Apprentice {
     if (health == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'health');
     }
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'id');
-    }
     if (characterType == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'characterType');
     }
@@ -198,15 +217,16 @@ class _$Apprentice extends Apprentice {
     return other is Apprentice &&
         name == other.name &&
         expansion == other.expansion &&
-        currentHealth == other.currentHealth &&
         move == other.move &&
         fight == other.fight &&
         shoot == other.shoot &&
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
-        id == other.id &&
-        characterType == other.characterType;
+        characterType == other.characterType &&
+        description == other.description &&
+        weapons == other.weapons &&
+        armours == other.armours;
   }
 
   @override
@@ -220,17 +240,19 @@ class _$Apprentice extends Apprentice {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, name.hashCode),
-                                            expansion.hashCode),
-                                        currentHealth.hashCode),
-                                    move.hashCode),
-                                fight.hashCode),
-                            shoot.hashCode),
-                        armour.hashCode),
-                    will.hashCode),
-                health.hashCode),
-            id.hashCode),
-        characterType.hashCode));
+                                        $jc(
+                                            $jc($jc(0, name.hashCode),
+                                                expansion.hashCode),
+                                            move.hashCode),
+                                        fight.hashCode),
+                                    shoot.hashCode),
+                                armour.hashCode),
+                            will.hashCode),
+                        health.hashCode),
+                    characterType.hashCode),
+                description.hashCode),
+            weapons.hashCode),
+        armours.hashCode));
   }
 
   @override
@@ -238,15 +260,16 @@ class _$Apprentice extends Apprentice {
     return (newBuiltValueToStringHelper('Apprentice')
           ..add('name', name)
           ..add('expansion', expansion)
-          ..add('currentHealth', currentHealth)
           ..add('move', move)
           ..add('fight', fight)
           ..add('shoot', shoot)
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
-          ..add('id', id)
-          ..add('characterType', characterType))
+          ..add('characterType', characterType)
+          ..add('description', description)
+          ..add('weapons', weapons)
+          ..add('armours', armours))
         .toString();
   }
 }
@@ -261,10 +284,6 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   Expansion _expansion;
   Expansion get expansion => _$this._expansion;
   set expansion(Expansion expansion) => _$this._expansion = expansion;
-
-  int _currentHealth;
-  int get currentHealth => _$this._currentHealth;
-  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
 
   int _move;
   int get move => _$this._move;
@@ -290,14 +309,24 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
-
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
   set characterType(CharacterType characterType) =>
       _$this._characterType = characterType;
+
+  String _description;
+  String get description => _$this._description;
+  set description(String description) => _$this._description = description;
+
+  ListBuilder<WeaponType> _weapons;
+  ListBuilder<WeaponType> get weapons =>
+      _$this._weapons ??= new ListBuilder<WeaponType>();
+  set weapons(ListBuilder<WeaponType> weapons) => _$this._weapons = weapons;
+
+  ListBuilder<ArmourType> _armours;
+  ListBuilder<ArmourType> get armours =>
+      _$this._armours ??= new ListBuilder<ArmourType>();
+  set armours(ListBuilder<ArmourType> armours) => _$this._armours = armours;
 
   ApprenticeBuilder();
 
@@ -305,15 +334,16 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
     if (_$v != null) {
       _name = _$v.name;
       _expansion = _$v.expansion;
-      _currentHealth = _$v.currentHealth;
       _move = _$v.move;
       _fight = _$v.fight;
       _shoot = _$v.shoot;
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
-      _id = _$v.id;
       _characterType = _$v.characterType;
+      _description = _$v.description;
+      _weapons = _$v.weapons?.toBuilder();
+      _armours = _$v.armours?.toBuilder();
       _$v = null;
     }
     return this;
@@ -334,19 +364,35 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
 
   @override
   _$Apprentice build() {
-    final _$result = _$v ??
-        new _$Apprentice._(
-            name: name,
-            expansion: expansion,
-            currentHealth: currentHealth,
-            move: move,
-            fight: fight,
-            shoot: shoot,
-            armour: armour,
-            will: will,
-            health: health,
-            id: id,
-            characterType: characterType);
+    _$Apprentice _$result;
+    try {
+      _$result = _$v ??
+          new _$Apprentice._(
+              name: name,
+              expansion: expansion,
+              move: move,
+              fight: fight,
+              shoot: shoot,
+              armour: armour,
+              will: will,
+              health: health,
+              characterType: characterType,
+              description: description,
+              weapons: _weapons?.build(),
+              armours: _armours?.build());
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'weapons';
+        _weapons?.build();
+        _$failedField = 'armours';
+        _armours?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'Apprentice', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

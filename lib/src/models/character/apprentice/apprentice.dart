@@ -5,7 +5,10 @@ import 'dart:convert';
 import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/character/charactertype.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
+import 'package:FrostLibrary/src/models/items/armour/amourtype.dart';
+import 'package:FrostLibrary/src/models/items/weapons/weapontype.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,9 +23,6 @@ abstract class Apprentice
 
   @override
   Expansion get expansion;
-
-  @override
-  int get currentHealth;
 
   @override
   int get move;
@@ -43,10 +43,20 @@ abstract class Apprentice
   int get health;
 
   @override
-  String get id;
+  CharacterType get characterType;
 
   @override
-  CharacterType get characterType;
+  @nullable
+  String get description;
+
+  @override
+  @nullable
+  BuiltList<WeaponType> get weapons;
+
+  @override
+  @nullable
+  BuiltList<ArmourType> get armours;
+
 
   String toJson() {
     return json.encode(serializers.serializeWith(Apprentice.serializer, this));

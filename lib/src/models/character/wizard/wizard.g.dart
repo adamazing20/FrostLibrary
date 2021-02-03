@@ -23,9 +23,6 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'currentHealth',
-      serializers.serialize(object.currentHealth,
-          specifiedType: const FullType(int)),
       'move',
       serializers.serialize(object.move, specifiedType: const FullType(int)),
       'fight',
@@ -38,8 +35,6 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
       serializers.serialize(object.will, specifiedType: const FullType(int)),
       'health',
       serializers.serialize(object.health, specifiedType: const FullType(int)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'characterType',
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
@@ -51,8 +46,39 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
       'wizardType',
       serializers.serialize(object.wizardType,
           specifiedType: const FullType(School)),
+      'aligned',
+      serializers.serialize(object.aligned,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(School)])),
+      'neutral',
+      serializers.serialize(object.neutral,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(School)])),
+      'opposed',
+      serializers.serialize(object.opposed,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(School)])),
     ];
-
+    if (object.description != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(object.description,
+            specifiedType: const FullType(String)));
+    }
+    if (object.weapons != null) {
+      result
+        ..add('weapons')
+        ..add(serializers.serialize(object.weapons,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(WeaponType)])));
+    }
+    if (object.armours != null) {
+      result
+        ..add('armours')
+        ..add(serializers.serialize(object.armours,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(ArmourType)])));
+    }
     return result;
   }
 
@@ -74,10 +100,6 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
         case 'expansion':
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
-          break;
-        case 'currentHealth':
-          result.currentHealth = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
           break;
         case 'move':
           result.move = serializers.deserialize(value,
@@ -103,10 +125,6 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           result.health = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
               specifiedType: const FullType(CharacterType)) as CharacterType;
@@ -123,6 +141,40 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           result.wizardType = serializers.deserialize(value,
               specifiedType: const FullType(School)) as School;
           break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'aligned':
+          result.aligned.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(School)]))
+              as BuiltList<Object>);
+          break;
+        case 'neutral':
+          result.neutral.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(School)]))
+              as BuiltList<Object>);
+          break;
+        case 'opposed':
+          result.opposed.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(School)]))
+              as BuiltList<Object>);
+          break;
+        case 'weapons':
+          result.weapons.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(WeaponType)]))
+              as BuiltList<Object>);
+          break;
+        case 'armours':
+          result.armours.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(ArmourType)]))
+              as BuiltList<Object>);
+          break;
       }
     }
 
@@ -136,8 +188,6 @@ class _$Wizard extends Wizard {
   @override
   final Expansion expansion;
   @override
-  final int currentHealth;
-  @override
   final int move;
   @override
   final int fight;
@@ -150,8 +200,6 @@ class _$Wizard extends Wizard {
   @override
   final int health;
   @override
-  final String id;
-  @override
   final CharacterType characterType;
   @override
   final int experience;
@@ -159,6 +207,18 @@ class _$Wizard extends Wizard {
   final int level;
   @override
   final School wizardType;
+  @override
+  final String description;
+  @override
+  final BuiltList<School> aligned;
+  @override
+  final BuiltList<School> neutral;
+  @override
+  final BuiltList<School> opposed;
+  @override
+  final BuiltList<WeaponType> weapons;
+  @override
+  final BuiltList<ArmourType> armours;
 
   factory _$Wizard([void Function(WizardBuilder) updates]) =>
       (new WizardBuilder()..update(updates)).build();
@@ -166,27 +226,28 @@ class _$Wizard extends Wizard {
   _$Wizard._(
       {this.name,
       this.expansion,
-      this.currentHealth,
       this.move,
       this.fight,
       this.shoot,
       this.armour,
       this.will,
       this.health,
-      this.id,
       this.characterType,
       this.experience,
       this.level,
-      this.wizardType})
+      this.wizardType,
+      this.description,
+      this.aligned,
+      this.neutral,
+      this.opposed,
+      this.weapons,
+      this.armours})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Wizard', 'name');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Wizard', 'expansion');
-    }
-    if (currentHealth == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'currentHealth');
     }
     if (move == null) {
       throw new BuiltValueNullFieldError('Wizard', 'move');
@@ -206,9 +267,6 @@ class _$Wizard extends Wizard {
     if (health == null) {
       throw new BuiltValueNullFieldError('Wizard', 'health');
     }
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'id');
-    }
     if (characterType == null) {
       throw new BuiltValueNullFieldError('Wizard', 'characterType');
     }
@@ -220,6 +278,15 @@ class _$Wizard extends Wizard {
     }
     if (wizardType == null) {
       throw new BuiltValueNullFieldError('Wizard', 'wizardType');
+    }
+    if (aligned == null) {
+      throw new BuiltValueNullFieldError('Wizard', 'aligned');
+    }
+    if (neutral == null) {
+      throw new BuiltValueNullFieldError('Wizard', 'neutral');
+    }
+    if (opposed == null) {
+      throw new BuiltValueNullFieldError('Wizard', 'opposed');
     }
   }
 
@@ -236,18 +303,22 @@ class _$Wizard extends Wizard {
     return other is Wizard &&
         name == other.name &&
         expansion == other.expansion &&
-        currentHealth == other.currentHealth &&
         move == other.move &&
         fight == other.fight &&
         shoot == other.shoot &&
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
-        id == other.id &&
         characterType == other.characterType &&
         experience == other.experience &&
         level == other.level &&
-        wizardType == other.wizardType;
+        wizardType == other.wizardType &&
+        description == other.description &&
+        aligned == other.aligned &&
+        neutral == other.neutral &&
+        opposed == other.opposed &&
+        weapons == other.weapons &&
+        armours == other.armours;
   }
 
   @override
@@ -264,20 +335,33 @@ class _$Wizard extends Wizard {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc($jc(0, name.hashCode),
-                                                        expansion.hashCode),
-                                                    currentHealth.hashCode),
-                                                move.hashCode),
-                                            fight.hashCode),
-                                        shoot.hashCode),
-                                    armour.hashCode),
-                                will.hashCode),
-                            health.hashCode),
-                        id.hashCode),
-                    characterType.hashCode),
-                experience.hashCode),
-            level.hashCode),
-        wizardType.hashCode));
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        $jc(
+                                                                            0,
+                                                                            name
+                                                                                .hashCode),
+                                                                        expansion
+                                                                            .hashCode),
+                                                                    move.hashCode),
+                                                                fight.hashCode),
+                                                            shoot.hashCode),
+                                                        armour.hashCode),
+                                                    will.hashCode),
+                                                health.hashCode),
+                                            characterType.hashCode),
+                                        experience.hashCode),
+                                    level.hashCode),
+                                wizardType.hashCode),
+                            description.hashCode),
+                        aligned.hashCode),
+                    neutral.hashCode),
+                opposed.hashCode),
+            weapons.hashCode),
+        armours.hashCode));
   }
 
   @override
@@ -285,18 +369,22 @@ class _$Wizard extends Wizard {
     return (newBuiltValueToStringHelper('Wizard')
           ..add('name', name)
           ..add('expansion', expansion)
-          ..add('currentHealth', currentHealth)
           ..add('move', move)
           ..add('fight', fight)
           ..add('shoot', shoot)
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
-          ..add('id', id)
           ..add('characterType', characterType)
           ..add('experience', experience)
           ..add('level', level)
-          ..add('wizardType', wizardType))
+          ..add('wizardType', wizardType)
+          ..add('description', description)
+          ..add('aligned', aligned)
+          ..add('neutral', neutral)
+          ..add('opposed', opposed)
+          ..add('weapons', weapons)
+          ..add('armours', armours))
         .toString();
   }
 }
@@ -311,10 +399,6 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   Expansion _expansion;
   Expansion get expansion => _$this._expansion;
   set expansion(Expansion expansion) => _$this._expansion = expansion;
-
-  int _currentHealth;
-  int get currentHealth => _$this._currentHealth;
-  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
 
   int _move;
   int get move => _$this._move;
@@ -340,10 +424,6 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
-
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
   set characterType(CharacterType characterType) =>
@@ -361,24 +441,57 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   School get wizardType => _$this._wizardType;
   set wizardType(School wizardType) => _$this._wizardType = wizardType;
 
+  String _description;
+  String get description => _$this._description;
+  set description(String description) => _$this._description = description;
+
+  ListBuilder<School> _aligned;
+  ListBuilder<School> get aligned =>
+      _$this._aligned ??= new ListBuilder<School>();
+  set aligned(ListBuilder<School> aligned) => _$this._aligned = aligned;
+
+  ListBuilder<School> _neutral;
+  ListBuilder<School> get neutral =>
+      _$this._neutral ??= new ListBuilder<School>();
+  set neutral(ListBuilder<School> neutral) => _$this._neutral = neutral;
+
+  ListBuilder<School> _opposed;
+  ListBuilder<School> get opposed =>
+      _$this._opposed ??= new ListBuilder<School>();
+  set opposed(ListBuilder<School> opposed) => _$this._opposed = opposed;
+
+  ListBuilder<WeaponType> _weapons;
+  ListBuilder<WeaponType> get weapons =>
+      _$this._weapons ??= new ListBuilder<WeaponType>();
+  set weapons(ListBuilder<WeaponType> weapons) => _$this._weapons = weapons;
+
+  ListBuilder<ArmourType> _armours;
+  ListBuilder<ArmourType> get armours =>
+      _$this._armours ??= new ListBuilder<ArmourType>();
+  set armours(ListBuilder<ArmourType> armours) => _$this._armours = armours;
+
   WizardBuilder();
 
   WizardBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
       _expansion = _$v.expansion;
-      _currentHealth = _$v.currentHealth;
       _move = _$v.move;
       _fight = _$v.fight;
       _shoot = _$v.shoot;
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
-      _id = _$v.id;
       _characterType = _$v.characterType;
       _experience = _$v.experience;
       _level = _$v.level;
       _wizardType = _$v.wizardType;
+      _description = _$v.description;
+      _aligned = _$v.aligned?.toBuilder();
+      _neutral = _$v.neutral?.toBuilder();
+      _opposed = _$v.opposed?.toBuilder();
+      _weapons = _$v.weapons?.toBuilder();
+      _armours = _$v.armours?.toBuilder();
       _$v = null;
     }
     return this;
@@ -399,22 +512,47 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
 
   @override
   _$Wizard build() {
-    final _$result = _$v ??
-        new _$Wizard._(
-            name: name,
-            expansion: expansion,
-            currentHealth: currentHealth,
-            move: move,
-            fight: fight,
-            shoot: shoot,
-            armour: armour,
-            will: will,
-            health: health,
-            id: id,
-            characterType: characterType,
-            experience: experience,
-            level: level,
-            wizardType: wizardType);
+    _$Wizard _$result;
+    try {
+      _$result = _$v ??
+          new _$Wizard._(
+              name: name,
+              expansion: expansion,
+              move: move,
+              fight: fight,
+              shoot: shoot,
+              armour: armour,
+              will: will,
+              health: health,
+              characterType: characterType,
+              experience: experience,
+              level: level,
+              wizardType: wizardType,
+              description: description,
+              aligned: aligned.build(),
+              neutral: neutral.build(),
+              opposed: opposed.build(),
+              weapons: _weapons?.build(),
+              armours: _armours?.build());
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'aligned';
+        aligned.build();
+        _$failedField = 'neutral';
+        neutral.build();
+        _$failedField = 'opposed';
+        opposed.build();
+        _$failedField = 'weapons';
+        _weapons?.build();
+        _$failedField = 'armours';
+        _armours?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'Wizard', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -23,9 +23,6 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'currentHealth',
-      serializers.serialize(object.currentHealth,
-          specifiedType: const FullType(int)),
       'move',
       serializers.serialize(object.move, specifiedType: const FullType(int)),
       'fight',
@@ -38,16 +35,29 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
       serializers.serialize(object.will, specifiedType: const FullType(int)),
       'health',
       serializers.serialize(object.health, specifiedType: const FullType(int)),
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'characterType',
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
       'soldierType',
       serializers.serialize(object.soldierType,
           specifiedType: const FullType(SoldierType)),
+      'cost',
+      serializers.serialize(object.cost, specifiedType: const FullType(int)),
+      'weapons',
+      serializers.serialize(object.weapons,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(WeaponType)])),
+      'armours',
+      serializers.serialize(object.armours,
+          specifiedType:
+              const FullType(BuiltList, const [const FullType(ArmourType)])),
     ];
-
+    if (object.description != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(object.description,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -69,10 +79,6 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
         case 'expansion':
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
-          break;
-        case 'currentHealth':
-          result.currentHealth = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
           break;
         case 'move':
           result.move = serializers.deserialize(value,
@@ -98,10 +104,6 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           result.health = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
               specifiedType: const FullType(CharacterType)) as CharacterType;
@@ -109,6 +111,26 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
         case 'soldierType':
           result.soldierType = serializers.deserialize(value,
               specifiedType: const FullType(SoldierType)) as SoldierType;
+          break;
+        case 'cost':
+          result.cost = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'weapons':
+          result.weapons.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(WeaponType)]))
+              as BuiltList<Object>);
+          break;
+        case 'armours':
+          result.armours.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(ArmourType)]))
+              as BuiltList<Object>);
           break;
       }
     }
@@ -123,8 +145,6 @@ class _$Soldier extends Soldier {
   @override
   final Expansion expansion;
   @override
-  final int currentHealth;
-  @override
   final int move;
   @override
   final int fight;
@@ -137,11 +157,17 @@ class _$Soldier extends Soldier {
   @override
   final int health;
   @override
-  final String id;
-  @override
   final CharacterType characterType;
   @override
   final SoldierType soldierType;
+  @override
+  final int cost;
+  @override
+  final String description;
+  @override
+  final BuiltList<WeaponType> weapons;
+  @override
+  final BuiltList<ArmourType> armours;
 
   factory _$Soldier([void Function(SoldierBuilder) updates]) =>
       (new SoldierBuilder()..update(updates)).build();
@@ -149,25 +175,24 @@ class _$Soldier extends Soldier {
   _$Soldier._(
       {this.name,
       this.expansion,
-      this.currentHealth,
       this.move,
       this.fight,
       this.shoot,
       this.armour,
       this.will,
       this.health,
-      this.id,
       this.characterType,
-      this.soldierType})
+      this.soldierType,
+      this.cost,
+      this.description,
+      this.weapons,
+      this.armours})
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Soldier', 'name');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Soldier', 'expansion');
-    }
-    if (currentHealth == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'currentHealth');
     }
     if (move == null) {
       throw new BuiltValueNullFieldError('Soldier', 'move');
@@ -187,14 +212,20 @@ class _$Soldier extends Soldier {
     if (health == null) {
       throw new BuiltValueNullFieldError('Soldier', 'health');
     }
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'id');
-    }
     if (characterType == null) {
       throw new BuiltValueNullFieldError('Soldier', 'characterType');
     }
     if (soldierType == null) {
       throw new BuiltValueNullFieldError('Soldier', 'soldierType');
+    }
+    if (cost == null) {
+      throw new BuiltValueNullFieldError('Soldier', 'cost');
+    }
+    if (weapons == null) {
+      throw new BuiltValueNullFieldError('Soldier', 'weapons');
+    }
+    if (armours == null) {
+      throw new BuiltValueNullFieldError('Soldier', 'armours');
     }
   }
 
@@ -211,16 +242,18 @@ class _$Soldier extends Soldier {
     return other is Soldier &&
         name == other.name &&
         expansion == other.expansion &&
-        currentHealth == other.currentHealth &&
         move == other.move &&
         fight == other.fight &&
         shoot == other.shoot &&
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
-        id == other.id &&
         characterType == other.characterType &&
-        soldierType == other.soldierType;
+        soldierType == other.soldierType &&
+        cost == other.cost &&
+        description == other.description &&
+        weapons == other.weapons &&
+        armours == other.armours;
   }
 
   @override
@@ -235,18 +268,22 @@ class _$Soldier extends Soldier {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, name.hashCode),
-                                                expansion.hashCode),
-                                            currentHealth.hashCode),
-                                        move.hashCode),
-                                    fight.hashCode),
-                                shoot.hashCode),
-                            armour.hashCode),
-                        will.hashCode),
-                    health.hashCode),
-                id.hashCode),
-            characterType.hashCode),
-        soldierType.hashCode));
+                                            $jc(
+                                                $jc(
+                                                    $jc($jc(0, name.hashCode),
+                                                        expansion.hashCode),
+                                                    move.hashCode),
+                                                fight.hashCode),
+                                            shoot.hashCode),
+                                        armour.hashCode),
+                                    will.hashCode),
+                                health.hashCode),
+                            characterType.hashCode),
+                        soldierType.hashCode),
+                    cost.hashCode),
+                description.hashCode),
+            weapons.hashCode),
+        armours.hashCode));
   }
 
   @override
@@ -254,16 +291,18 @@ class _$Soldier extends Soldier {
     return (newBuiltValueToStringHelper('Soldier')
           ..add('name', name)
           ..add('expansion', expansion)
-          ..add('currentHealth', currentHealth)
           ..add('move', move)
           ..add('fight', fight)
           ..add('shoot', shoot)
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
-          ..add('id', id)
           ..add('characterType', characterType)
-          ..add('soldierType', soldierType))
+          ..add('soldierType', soldierType)
+          ..add('cost', cost)
+          ..add('description', description)
+          ..add('weapons', weapons)
+          ..add('armours', armours))
         .toString();
   }
 }
@@ -278,10 +317,6 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   Expansion _expansion;
   Expansion get expansion => _$this._expansion;
   set expansion(Expansion expansion) => _$this._expansion = expansion;
-
-  int _currentHealth;
-  int get currentHealth => _$this._currentHealth;
-  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
 
   int _move;
   int get move => _$this._move;
@@ -307,10 +342,6 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
-
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
   set characterType(CharacterType characterType) =>
@@ -320,22 +351,42 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   SoldierType get soldierType => _$this._soldierType;
   set soldierType(SoldierType soldierType) => _$this._soldierType = soldierType;
 
+  int _cost;
+  int get cost => _$this._cost;
+  set cost(int cost) => _$this._cost = cost;
+
+  String _description;
+  String get description => _$this._description;
+  set description(String description) => _$this._description = description;
+
+  ListBuilder<WeaponType> _weapons;
+  ListBuilder<WeaponType> get weapons =>
+      _$this._weapons ??= new ListBuilder<WeaponType>();
+  set weapons(ListBuilder<WeaponType> weapons) => _$this._weapons = weapons;
+
+  ListBuilder<ArmourType> _armours;
+  ListBuilder<ArmourType> get armours =>
+      _$this._armours ??= new ListBuilder<ArmourType>();
+  set armours(ListBuilder<ArmourType> armours) => _$this._armours = armours;
+
   SoldierBuilder();
 
   SoldierBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
       _expansion = _$v.expansion;
-      _currentHealth = _$v.currentHealth;
       _move = _$v.move;
       _fight = _$v.fight;
       _shoot = _$v.shoot;
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
-      _id = _$v.id;
       _characterType = _$v.characterType;
       _soldierType = _$v.soldierType;
+      _cost = _$v.cost;
+      _description = _$v.description;
+      _weapons = _$v.weapons?.toBuilder();
+      _armours = _$v.armours?.toBuilder();
       _$v = null;
     }
     return this;
@@ -356,20 +407,37 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
 
   @override
   _$Soldier build() {
-    final _$result = _$v ??
-        new _$Soldier._(
-            name: name,
-            expansion: expansion,
-            currentHealth: currentHealth,
-            move: move,
-            fight: fight,
-            shoot: shoot,
-            armour: armour,
-            will: will,
-            health: health,
-            id: id,
-            characterType: characterType,
-            soldierType: soldierType);
+    _$Soldier _$result;
+    try {
+      _$result = _$v ??
+          new _$Soldier._(
+              name: name,
+              expansion: expansion,
+              move: move,
+              fight: fight,
+              shoot: shoot,
+              armour: armour,
+              will: will,
+              health: health,
+              characterType: characterType,
+              soldierType: soldierType,
+              cost: cost,
+              description: description,
+              weapons: weapons.build(),
+              armours: armours.build());
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'weapons';
+        weapons.build();
+        _$failedField = 'armours';
+        armours.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'Soldier', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

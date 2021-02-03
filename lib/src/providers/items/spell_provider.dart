@@ -1,4 +1,4 @@
-part of 'definition_providers.dart';
+part of '../definition_providers.dart';
 
 class SpellProvider extends ItemProvider<Spell> {
   //todo: Should make this a singleton with factory constructor to avoid

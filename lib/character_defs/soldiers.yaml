@@ -1,0 +1,17 @@
+soldiers:
+  - name: "Thug"
+    expansion: Core
+    health: 10
+    move: 6
+    fight: 2
+    shoot: 0
+    armour: 10
+    will: -1
+    cost: 0
+    notes:
+    characterType: Soldier
+    soldierType: Thug
+    description:
+    weapons:
+      - HandWeapon
+    armours:

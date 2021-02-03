@@ -1,3 +1,4 @@
+import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/providers/definition_providers.dart';
@@ -11,7 +12,10 @@ class FrostLibrary {
   static final MagicArmourProvider _magicArmourProvider = MagicArmourProvider();
   static final MagicWeaponProvider _magicWeaponProvider = MagicWeaponProvider();
   static final MagicItemProvider _magicItemProvider = MagicItemProvider();
-  static final List _providerList = [
+  static final WizardProvider _wizardProvider = WizardProvider();
+  static final SoldierProvider _soldierProvider = SoldierProvider();
+
+  static final List _itemProviderList = [
     _weaponProvider,
     _potionProvider,
     _spellProvider,
@@ -20,6 +24,11 @@ class FrostLibrary {
     _magicArmourProvider,
     _magicWeaponProvider,
     _magicItemProvider,
+  ];
+
+  static final List _characterProviderList = [
+    _wizardProvider,
+    _soldierProvider,
   ];
 
   WeaponProvider get weapons => _weaponProvider;
@@ -38,6 +47,10 @@ class FrostLibrary {
 
   MagicItemProvider get magicItems => _magicItemProvider;
 
+  WizardProvider get wizards => _wizardProvider;
+
+  SoldierProvider get soldiers => _soldierProvider;
+
   Future init() async {
     await _weaponProvider.load();
     await _potionProvider.load();
@@ -47,11 +60,13 @@ class FrostLibrary {
     await _magicArmourProvider.load();
     await _magicWeaponProvider.load();
     await _magicItemProvider.load();
+    await _wizardProvider.load();
+    await _soldierProvider.load();
   }
 
   List<Item> getAllItems({Expansion expansion}) {
     List<Item> itemsList = [];
-    _providerList.forEach((provider) {
+    _itemProviderList.forEach((provider) {
       itemsList.addAll(provider.items);
     });
 
@@ -66,6 +81,26 @@ class FrostLibrary {
     List<Item> itemList = getAllItems(expansion: expansion);
 
     return itemList
+        .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
+  }
+
+  List<Character> getAllCharacters({Expansion expansion}) {
+    List<Character> charactersList = [];
+    _characterProviderList.forEach((provider) {
+      charactersList.addAll(provider.items);
+    });
+
+    if (expansion != null) {
+      charactersList.removeWhere((item) => item.expansion != expansion);
+    }
+
+    return charactersList;
+  }
+
+  Character getCharacterByName(String name, {Expansion expansion}) {
+    List<Character> characterList = getAllCharacters(expansion: expansion);
+
+    return characterList
         .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
   }
 }

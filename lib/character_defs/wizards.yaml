@@ -1,0 +1,28 @@
+wizards:
+  - name: "Chronomancer"
+    expansion: Core
+    health: 14
+    move: 6
+    fight: 2
+    shoot: 0
+    armour: 10
+    will: 4
+    notes:
+    characterType: Wizard
+    experience: 0
+    level: 0
+    wizardType: Chronomancer
+    description:
+    items:
+    aligned:
+      - Elementalist
+      - Necromancer
+      - Soothsayer
+    neutral:
+      - Illusionist
+      - Sigilist
+      - Summoner
+      - Thaumaturge
+      - Witch
+    opposed:
+      - Enchanter
