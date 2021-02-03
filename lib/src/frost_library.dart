@@ -92,7 +92,7 @@ class FrostLibrary {
   List<Character> getAllCharacters({Expansion expansion}) {
     List<Character> charactersList = [];
     _characterProviderList.forEach((provider) {
-      charactersList.addAll(provider.items);
+      charactersList.addAll(provider.characters);
     });
 
     if (expansion != null) {

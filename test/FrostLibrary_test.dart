@@ -75,4 +75,18 @@ void main() {
       }
     }
   });
+
+
+  test('test get all characters', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+
+    var frostLibrary = FrostLibrary();
+    await frostLibrary.init();
+
+    var characters = frostLibrary.getAllCharacters();
+
+    characters.forEach((element) => print(element));
+
+  });
 }
+
