@@ -1,0 +1,17 @@
+apprentices:
+  - name: "Apprentice"
+    expansion: Core
+    health: 12
+    move: 6
+    fight: 0
+    shoot: 0
+    armour: 10
+    will: 2
+    cost: 100
+    additionalItemHoldCount: 5
+    notes:
+    characterType: Apprentice
+    experience: 0
+    level: 0
+    description:
+    items:
