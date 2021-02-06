@@ -18,8 +18,9 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
   Iterable<Object> serialize(Serializers serializers, Soldier object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
@@ -47,6 +48,18 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
       'cost',
       serializers.serialize(object.cost, specifiedType: const FullType(int)),
     ];
+    if (object.name != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(object.name,
+            specifiedType: const FullType(String)));
+    }
+    if (object.currentHealth != null) {
+      result
+        ..add('currentHealth')
+        ..add(serializers.serialize(object.currentHealth,
+            specifiedType: const FullType(int)));
+    }
     if (object.description != null) {
       result
         ..add('description')
@@ -85,6 +98,10 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'expansion':
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
@@ -111,6 +128,10 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           break;
         case 'health':
           result.health = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'currentHealth':
+          result.currentHealth = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
         case 'additionalItemHoldCount':
@@ -156,6 +177,8 @@ class _$Soldier extends Soldier {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final Expansion expansion;
   @override
   final int move;
@@ -169,6 +192,8 @@ class _$Soldier extends Soldier {
   final int will;
   @override
   final int health;
+  @override
+  final int currentHealth;
   @override
   final int additionalItemHoldCount;
   @override
@@ -189,6 +214,7 @@ class _$Soldier extends Soldier {
 
   _$Soldier._(
       {this.name,
+      this.displayFormattedTypeName,
       this.expansion,
       this.move,
       this.fight,
@@ -196,6 +222,7 @@ class _$Soldier extends Soldier {
       this.armour,
       this.will,
       this.health,
+      this.currentHealth,
       this.additionalItemHoldCount,
       this.characterType,
       this.soldierType,
@@ -204,8 +231,8 @@ class _$Soldier extends Soldier {
       this.weapons,
       this.armours})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'name');
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError('Soldier', 'displayFormattedTypeName');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Soldier', 'expansion');
@@ -254,6 +281,7 @@ class _$Soldier extends Soldier {
     if (identical(other, this)) return true;
     return other is Soldier &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         expansion == other.expansion &&
         move == other.move &&
         fight == other.fight &&
@@ -261,6 +289,7 @@ class _$Soldier extends Soldier {
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
+        currentHealth == other.currentHealth &&
         additionalItemHoldCount == other.additionalItemHoldCount &&
         characterType == other.characterType &&
         soldierType == other.soldierType &&
@@ -286,15 +315,23 @@ class _$Soldier extends Soldier {
                                                 $jc(
                                                     $jc(
                                                         $jc(
-                                                            $jc(0,
-                                                                name.hashCode),
-                                                            expansion.hashCode),
-                                                        move.hashCode),
-                                                    fight.hashCode),
-                                                shoot.hashCode),
-                                            armour.hashCode),
-                                        will.hashCode),
-                                    health.hashCode),
+                                                            $jc(
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        name
+                                                                            .hashCode),
+                                                                    displayFormattedTypeName
+                                                                        .hashCode),
+                                                                expansion
+                                                                    .hashCode),
+                                                            move.hashCode),
+                                                        fight.hashCode),
+                                                    shoot.hashCode),
+                                                armour.hashCode),
+                                            will.hashCode),
+                                        health.hashCode),
+                                    currentHealth.hashCode),
                                 additionalItemHoldCount.hashCode),
                             characterType.hashCode),
                         soldierType.hashCode),
@@ -308,6 +345,7 @@ class _$Soldier extends Soldier {
   String toString() {
     return (newBuiltValueToStringHelper('Soldier')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('expansion', expansion)
           ..add('move', move)
           ..add('fight', fight)
@@ -315,6 +353,7 @@ class _$Soldier extends Soldier {
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
+          ..add('currentHealth', currentHealth)
           ..add('additionalItemHoldCount', additionalItemHoldCount)
           ..add('characterType', characterType)
           ..add('soldierType', soldierType)
@@ -332,6 +371,11 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   Expansion _expansion;
   Expansion get expansion => _$this._expansion;
@@ -360,6 +404,10 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   int _health;
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
+
+  int _currentHealth;
+  int get currentHealth => _$this._currentHealth;
+  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
 
   int _additionalItemHoldCount;
   int get additionalItemHoldCount => _$this._additionalItemHoldCount;
@@ -398,6 +446,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   SoldierBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _expansion = _$v.expansion;
       _move = _$v.move;
       _fight = _$v.fight;
@@ -405,6 +454,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
+      _currentHealth = _$v.currentHealth;
       _additionalItemHoldCount = _$v.additionalItemHoldCount;
       _characterType = _$v.characterType;
       _soldierType = _$v.soldierType;
@@ -437,6 +487,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
       _$result = _$v ??
           new _$Soldier._(
               name: name,
+              displayFormattedTypeName: displayFormattedTypeName,
               expansion: expansion,
               move: move,
               fight: fight,
@@ -444,6 +495,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
               armour: armour,
               will: will,
               health: health,
+              currentHealth: currentHealth,
               additionalItemHoldCount: additionalItemHoldCount,
               characterType: characterType,
               soldierType: soldierType,

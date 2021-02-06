@@ -9,5 +9,16 @@ class SoldierProvider extends CharacterProvider<Soldier> {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
     characters = Soldiers.fromJson(jsonString).soldiers.toList();
+
+    List<Soldier> updatedCharacters = [];
+
+    for (Soldier character in characters) {
+      var updatedcharacter = character
+          .rebuild((character) => character.currentHealth = character.health);
+
+      updatedCharacters.add(updatedcharacter);
+    }
+
+    characters = updatedCharacters;
   }
 }

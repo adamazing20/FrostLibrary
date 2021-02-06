@@ -1,5 +1,6 @@
 wizards:
-  - name: "Chronomancer"
+  - name:
+    displayFormattedTypeName: "Chronomancer"
     expansion: Core
     health: 14
     move: 6
@@ -36,7 +37,8 @@ wizards:
     opposed:
       - Enchanter
 
-  - name: "Elementalist"
+  - name:
+    displayFormattedTypeName: "Elementalist"
     expansion: Core
     health: 14
     move: 6
@@ -73,7 +75,8 @@ wizards:
     opposed:
       - Illusionist
 
-  - name: "Enchanter"
+  - name:
+    displayFormattedTypeName: "Enchanter"
     expansion: Core
     health: 14
     move: 6
@@ -107,7 +110,8 @@ wizards:
     opposed:
       - Chronomancer
 
-  - name: "Illusionist"
+  - name:
+    displayFormattedTypeName: "Illusionist"
     expansion: Core
     health: 14
     move: 6
@@ -142,7 +146,8 @@ wizards:
     opposed:
       - Elementalist
 
-  - name: "Necromancer"
+  - name:
+    displayFormattedTypeName: "Necromancer"
     expansion: Core
     health: 14
     move: 6
@@ -176,7 +181,8 @@ wizards:
     opposed:
       - Thaumaturge
 
-  - name: "Sigilist"
+  - name:
+    displayFormattedTypeName: "Sigilist"
     expansion: Core
     health: 14
     move: 6
@@ -211,7 +217,8 @@ wizards:
     opposed:
       - Summoner
 
-  - name: "Soothsayer"
+  - name:
+    displayFormattedTypeName: "Soothsayer"
     expansion: Core
     health: 14
     move: 6
@@ -251,7 +258,8 @@ wizards:
     opposed:
       - Witch
 
-  - name: "Summoner"
+  - name:
+    displayFormattedTypeName: "Summoner"
     expansion: Core
     health: 14
     move: 6
@@ -286,7 +294,8 @@ wizards:
     opposed:
       - Sigilist
 
-  - name: "Thaumaturge"
+  - name:
+    displayFormattedTypeName: "Thaumaturge"
     expansion: Core
     health: 14
     move: 6
@@ -323,7 +332,8 @@ wizards:
     opposed:
       - Necromancer
 
-  - name: "Witch"
+  - name:
+    displayFormattedTypeName: "Witch"
     expansion: Core
     health: 14
     move: 6

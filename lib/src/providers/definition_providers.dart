@@ -28,16 +28,15 @@ import 'package:FrostLibrary/src/models/items/weapons/weapons.dart';
 import 'package:flutter/services.dart';
 import 'package:yaml/yaml.dart';
 
+part 'characters/apprentice_provider.dart';
+part 'characters/soldier_provider.dart';
+part 'characters/wizard_provider.dart';
 part 'items/magic_armour_provider.dart';
 part 'items/magic_item_provider.dart';
 part 'items/magic_weapon_provider.dart';
 part 'items/potion_provider.dart';
 part 'items/spell_provider.dart';
 part 'items/weapon_provider.dart';
-
-part 'characters/wizard_provider.dart';
-part 'characters/soldier_provider.dart';
-part 'characters/apprentice_provider.dart';
 
 class DefinitionLoader {
   String filePath;

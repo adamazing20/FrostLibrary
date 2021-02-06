@@ -1,4 +1,5 @@
 import 'package:FrostLibrary/src/frost_library.dart';
+import 'package:FrostLibrary/src/models/character/apprentice/apprentice.dart';
 import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -22,7 +23,6 @@ void main() {
       }
     }
   });
-
 
   test('end to end test of a wizard', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -58,7 +58,6 @@ void main() {
     }
   });
 
-
   test('end to end test of a apprentice', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -76,7 +75,6 @@ void main() {
     }
   });
 
-
   test('test get all characters', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -86,7 +84,20 @@ void main() {
     var characters = frostLibrary.getAllCharacters();
 
     characters.forEach((element) => print(element));
+  });
 
+  test('Create some random objects', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    var frostLibrary = FrostLibrary();
+    await frostLibrary.init();
+
+    Apprentice apprentice = frostLibrary.apprentices.characters[0];
+
+    print(apprentice.characterType.toString());
+
+    var pren2 = apprentice.toBuilder()
+      ..description = "foobar"
+      ..build();
+    print(pren2.description);
   });
 }
-

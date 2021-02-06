@@ -18,8 +18,9 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
   Iterable<Object> serialize(Serializers serializers, Apprentice object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
@@ -44,6 +45,18 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
     ];
+    if (object.name != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(object.name,
+            specifiedType: const FullType(String)));
+    }
+    if (object.currentHealth != null) {
+      result
+        ..add('currentHealth')
+        ..add(serializers.serialize(object.currentHealth,
+            specifiedType: const FullType(int)));
+    }
     if (object.description != null) {
       result
         ..add('description')
@@ -82,6 +95,10 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'expansion':
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
@@ -108,6 +125,10 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
           break;
         case 'health':
           result.health = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'currentHealth':
+          result.currentHealth = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
         case 'cost':
@@ -149,6 +170,8 @@ class _$Apprentice extends Apprentice {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final Expansion expansion;
   @override
   final int move;
@@ -162,6 +185,8 @@ class _$Apprentice extends Apprentice {
   final int will;
   @override
   final int health;
+  @override
+  final int currentHealth;
   @override
   final int cost;
   @override
@@ -180,6 +205,7 @@ class _$Apprentice extends Apprentice {
 
   _$Apprentice._(
       {this.name,
+      this.displayFormattedTypeName,
       this.expansion,
       this.move,
       this.fight,
@@ -187,6 +213,7 @@ class _$Apprentice extends Apprentice {
       this.armour,
       this.will,
       this.health,
+      this.currentHealth,
       this.cost,
       this.additionalItemHoldCount,
       this.characterType,
@@ -194,8 +221,9 @@ class _$Apprentice extends Apprentice {
       this.weapons,
       this.armours})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'name');
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError(
+          'Apprentice', 'displayFormattedTypeName');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Apprentice', 'expansion');
@@ -242,6 +270,7 @@ class _$Apprentice extends Apprentice {
     if (identical(other, this)) return true;
     return other is Apprentice &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         expansion == other.expansion &&
         move == other.move &&
         fight == other.fight &&
@@ -249,6 +278,7 @@ class _$Apprentice extends Apprentice {
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
+        currentHealth == other.currentHealth &&
         cost == other.cost &&
         additionalItemHoldCount == other.additionalItemHoldCount &&
         characterType == other.characterType &&
@@ -271,14 +301,23 @@ class _$Apprentice extends Apprentice {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc($jc(0, name.hashCode),
-                                                        expansion.hashCode),
-                                                    move.hashCode),
-                                                fight.hashCode),
-                                            shoot.hashCode),
-                                        armour.hashCode),
-                                    will.hashCode),
-                                health.hashCode),
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    name
+                                                                        .hashCode),
+                                                                displayFormattedTypeName
+                                                                    .hashCode),
+                                                            expansion.hashCode),
+                                                        move.hashCode),
+                                                    fight.hashCode),
+                                                shoot.hashCode),
+                                            armour.hashCode),
+                                        will.hashCode),
+                                    health.hashCode),
+                                currentHealth.hashCode),
                             cost.hashCode),
                         additionalItemHoldCount.hashCode),
                     characterType.hashCode),
@@ -291,6 +330,7 @@ class _$Apprentice extends Apprentice {
   String toString() {
     return (newBuiltValueToStringHelper('Apprentice')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('expansion', expansion)
           ..add('move', move)
           ..add('fight', fight)
@@ -298,6 +338,7 @@ class _$Apprentice extends Apprentice {
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
+          ..add('currentHealth', currentHealth)
           ..add('cost', cost)
           ..add('additionalItemHoldCount', additionalItemHoldCount)
           ..add('characterType', characterType)
@@ -314,6 +355,11 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   Expansion _expansion;
   Expansion get expansion => _$this._expansion;
@@ -342,6 +388,10 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   int _health;
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
+
+  int _currentHealth;
+  int get currentHealth => _$this._currentHealth;
+  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
 
   int _cost;
   int get cost => _$this._cost;
@@ -376,6 +426,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   ApprenticeBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _expansion = _$v.expansion;
       _move = _$v.move;
       _fight = _$v.fight;
@@ -383,6 +434,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
+      _currentHealth = _$v.currentHealth;
       _cost = _$v.cost;
       _additionalItemHoldCount = _$v.additionalItemHoldCount;
       _characterType = _$v.characterType;
@@ -414,6 +466,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
       _$result = _$v ??
           new _$Apprentice._(
               name: name,
+              displayFormattedTypeName: displayFormattedTypeName,
               expansion: expansion,
               move: move,
               fight: fight,
@@ -421,6 +474,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
               armour: armour,
               will: will,
               health: health,
+              currentHealth: currentHealth,
               cost: cost,
               additionalItemHoldCount: additionalItemHoldCount,
               characterType: characterType,

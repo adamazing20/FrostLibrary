@@ -13,9 +13,13 @@ abstract class Character {
   int get armour;
   int get will;
   int get health;
+  int get currentHealth;
   int get cost;
   int get additionalItemHoldCount;
   String get name;
+  // There is a way to override toString in builtValue but not sure how to do it
+  // for enums
+  String get displayFormattedTypeName;
   String get description;
   CharacterType get characterType;
   Expansion get expansion;

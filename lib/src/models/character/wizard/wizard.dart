@@ -19,7 +19,11 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   static Serializer<Wizard> get serializer => _$wizardSerializer;
 
   @override
+  @nullable
   String get name;
+
+  @override
+  String get displayFormattedTypeName;
 
   @override
   Expansion get expansion;
@@ -41,6 +45,10 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
 
   @override
   int get health;
+
+  @override
+  @nullable
+  int get currentHealth;
 
   @override
   CharacterType get characterType;

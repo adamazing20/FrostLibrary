@@ -1,5 +1,6 @@
 soldiers:
-  - name: "Thug"
+  - name:
+    displayFormattedTypeName: "Thug"
     expansion: Core
     health: 10
     move: 6
@@ -18,6 +19,7 @@ soldiers:
     armours:
 
   - name: "Thief"
+    displayFormattedTypeName: "Thief"
     expansion: Core
     health: 10
     move: 7
@@ -35,7 +37,8 @@ soldiers:
       - Dagger
     armours:
 
-  - name: "War Hound"
+  - name:
+    displayFormattedTypeName: "War Hound"
     expansion: Core
     health: 8
     move: 8
@@ -52,7 +55,8 @@ soldiers:
     weapons:
     armours:
 
-  - name: "Infantryman"
+  - name:
+    displayFormattedTypeName: "Infantryman"
     expansion: Core
     health: 10
     move: 6
@@ -71,7 +75,8 @@ soldiers:
     armours:
       - LightArmour
 
-  - name: "Man-at-Arms"
+  - name:
+    displayFormattedTypeName: "Man-at-Arms"
     expansion: Core
     health: 12
     move: 6
@@ -91,7 +96,8 @@ soldiers:
       - Shield
       - LightArmour
 
-  - name: "Apothecary"
+  - name:
+    displayFormattedTypeName: "Apothecary"
     expansion: Core
     health: 12
     move: 6
@@ -112,7 +118,8 @@ soldiers:
       - HandWeapon
     armours:
 
-  - name: "Archer"
+  - name:
+    displayFormattedTypeName: "Archer"
     expansion: Core
     health: 10
     move: 6
@@ -132,7 +139,8 @@ soldiers:
     armours:
       - LightArmour
 
-  - name: "Crossbowman"
+  - name:
+    displayFormattedTypeName: "Crossbowman"
     expansion: Core
     health: 10
     move: 6
@@ -152,7 +160,8 @@ soldiers:
     armours:
       - LightArmour
 
-  - name: "Treasure Hunter"
+  - name:
+    displayFormattedTypeName: "Treasure Hunter"
     expansion: Core
     health: 12
     move: 7
@@ -172,7 +181,8 @@ soldiers:
     armours:
       - LightArmour
 
-  - name: "Tracker"
+  - name:
+    displayFormattedTypeName: "Tracker"
     expansion: Core
     health: 12
     move: 7
@@ -192,7 +202,8 @@ soldiers:
     armours:
       - LightArmour
 
-  - name: "Knight"
+  - name:
+    displayFormattedTypeName: "Knight"
     expansion: Core
     health: 12
     move: 5
@@ -213,7 +224,8 @@ soldiers:
       - Shield
       - HeavyArmour
 
-  - name: "Templar"
+  - name:
+    displayFormattedTypeName: "Templar"
     expansion: Core
     health: 12
     move: 5
@@ -232,7 +244,8 @@ soldiers:
     armours:
       - HeavyArmour
 
-  - name: "Ranger"
+  - name:
+    displayFormattedTypeName: "Ranger"
     expansion: Core
     health: 12
     move: 7
@@ -252,7 +265,8 @@ soldiers:
     armours:
       - LightArmour
 
-  - name: "Barbarian"
+  - name:
+    displayFormattedTypeName: "Barbarian"
     expansion: Core
     health: 14
     move: 6
@@ -271,7 +285,8 @@ soldiers:
       - Dagger
     armours:
 
-  - name: "Marksman"
+  - name:
+    displayFormattedTypeName: "Marksman"
     expansion: Core
     health: 12
     move: 5

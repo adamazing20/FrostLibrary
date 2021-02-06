@@ -1,5 +1,6 @@
 apprentices:
-  - name: "Apprentice"
+  - name:
+    displayFormattedTypeName: "Apprentice"
     expansion: Core
     health: 12
     move: 6

@@ -18,8 +18,9 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
   Iterable<Object> serialize(Serializers serializers, Wizard object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
@@ -62,6 +63,18 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(School)])),
     ];
+    if (object.name != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(object.name,
+            specifiedType: const FullType(String)));
+    }
+    if (object.currentHealth != null) {
+      result
+        ..add('currentHealth')
+        ..add(serializers.serialize(object.currentHealth,
+            specifiedType: const FullType(int)));
+    }
     if (object.description != null) {
       result
         ..add('description')
@@ -106,6 +119,10 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'expansion':
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
@@ -132,6 +149,10 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           break;
         case 'health':
           result.health = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+        case 'currentHealth':
+          result.currentHealth = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
         case 'characterType':
@@ -203,6 +224,8 @@ class _$Wizard extends Wizard {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final Expansion expansion;
   @override
   final int move;
@@ -216,6 +239,8 @@ class _$Wizard extends Wizard {
   final int will;
   @override
   final int health;
+  @override
+  final int currentHealth;
   @override
   final CharacterType characterType;
   @override
@@ -246,6 +271,7 @@ class _$Wizard extends Wizard {
 
   _$Wizard._(
       {this.name,
+      this.displayFormattedTypeName,
       this.expansion,
       this.move,
       this.fight,
@@ -253,6 +279,7 @@ class _$Wizard extends Wizard {
       this.armour,
       this.will,
       this.health,
+      this.currentHealth,
       this.characterType,
       this.experience,
       this.level,
@@ -266,8 +293,8 @@ class _$Wizard extends Wizard {
       this.armours,
       this.cost})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'name');
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError('Wizard', 'displayFormattedTypeName');
     }
     if (expansion == null) {
       throw new BuiltValueNullFieldError('Wizard', 'expansion');
@@ -328,6 +355,7 @@ class _$Wizard extends Wizard {
     if (identical(other, this)) return true;
     return other is Wizard &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         expansion == other.expansion &&
         move == other.move &&
         fight == other.fight &&
@@ -335,6 +363,7 @@ class _$Wizard extends Wizard {
         armour == other.armour &&
         will == other.will &&
         health == other.health &&
+        currentHealth == other.currentHealth &&
         characterType == other.characterType &&
         experience == other.experience &&
         level == other.level &&
@@ -369,14 +398,14 @@ class _$Wizard extends Wizard {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc(0, name.hashCode),
-                                                                                expansion.hashCode),
-                                                                            move.hashCode),
-                                                                        fight.hashCode),
-                                                                    shoot.hashCode),
-                                                                armour.hashCode),
-                                                            will.hashCode),
-                                                        health.hashCode),
+                                                                            $jc($jc($jc($jc(0, name.hashCode), displayFormattedTypeName.hashCode), expansion.hashCode),
+                                                                                move.hashCode),
+                                                                            fight.hashCode),
+                                                                        shoot.hashCode),
+                                                                    armour.hashCode),
+                                                                will.hashCode),
+                                                            health.hashCode),
+                                                        currentHealth.hashCode),
                                                     characterType.hashCode),
                                                 experience.hashCode),
                                             level.hashCode),
@@ -395,6 +424,7 @@ class _$Wizard extends Wizard {
   String toString() {
     return (newBuiltValueToStringHelper('Wizard')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('expansion', expansion)
           ..add('move', move)
           ..add('fight', fight)
@@ -402,6 +432,7 @@ class _$Wizard extends Wizard {
           ..add('armour', armour)
           ..add('will', will)
           ..add('health', health)
+          ..add('currentHealth', currentHealth)
           ..add('characterType', characterType)
           ..add('experience', experience)
           ..add('level', level)
@@ -424,6 +455,11 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   Expansion _expansion;
   Expansion get expansion => _$this._expansion;
@@ -452,6 +488,10 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   int _health;
   int get health => _$this._health;
   set health(int health) => _$this._health = health;
+
+  int _currentHealth;
+  int get currentHealth => _$this._currentHealth;
+  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
 
   CharacterType _characterType;
   CharacterType get characterType => _$this._characterType;
@@ -513,6 +553,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   WizardBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _expansion = _$v.expansion;
       _move = _$v.move;
       _fight = _$v.fight;
@@ -520,6 +561,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
       _armour = _$v.armour;
       _will = _$v.will;
       _health = _$v.health;
+      _currentHealth = _$v.currentHealth;
       _characterType = _$v.characterType;
       _experience = _$v.experience;
       _level = _$v.level;
@@ -557,6 +599,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
       _$result = _$v ??
           new _$Wizard._(
               name: name,
+              displayFormattedTypeName: displayFormattedTypeName,
               expansion: expansion,
               move: move,
               fight: fight,
@@ -564,6 +607,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
               armour: armour,
               will: will,
               health: health,
+              currentHealth: currentHealth,
               characterType: characterType,
               experience: experience,
               level: level,

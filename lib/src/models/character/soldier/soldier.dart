@@ -19,7 +19,11 @@ abstract class Soldier implements Built<Soldier, SoldierBuilder>, SoldierDef {
   static Serializer<Soldier> get serializer => _$soldierSerializer;
 
   @override
+  @nullable
   String get name;
+
+  @override
+  String get displayFormattedTypeName;
 
   @override
   Expansion get expansion;
@@ -41,6 +45,10 @@ abstract class Soldier implements Built<Soldier, SoldierBuilder>, SoldierDef {
 
   @override
   int get health;
+
+  @override
+  @nullable
+  int get currentHealth;
 
   @override
   int get additionalItemHoldCount;
