@@ -20,6 +20,9 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
     final result = <Object>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
@@ -66,6 +69,10 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'itemType':
           result.itemType = serializers.deserialize(value,
               specifiedType: const FullType(ItemType)) as ItemType;
@@ -101,6 +108,8 @@ class _$Weapon extends Weapon {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final ItemType itemType;
   @override
   final WeaponType weaponType;
@@ -118,6 +127,7 @@ class _$Weapon extends Weapon {
 
   _$Weapon._(
       {this.name,
+      this.displayFormattedTypeName,
       this.itemType,
       this.weaponType,
       this.damageModified,
@@ -127,6 +137,9 @@ class _$Weapon extends Weapon {
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Weapon', 'name');
+    }
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError('Weapon', 'displayFormattedTypeName');
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Weapon', 'itemType');
@@ -151,6 +164,7 @@ class _$Weapon extends Weapon {
     if (identical(other, this)) return true;
     return other is Weapon &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         itemType == other.itemType &&
         weaponType == other.weaponType &&
         damageModified == other.damageModified &&
@@ -165,7 +179,11 @@ class _$Weapon extends Weapon {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                    $jc(
+                        $jc(
+                            $jc($jc(0, name.hashCode),
+                                displayFormattedTypeName.hashCode),
+                            itemType.hashCode),
                         weaponType.hashCode),
                     damageModified.hashCode),
                 description.hashCode),
@@ -177,6 +195,7 @@ class _$Weapon extends Weapon {
   String toString() {
     return (newBuiltValueToStringHelper('Weapon')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('itemType', itemType)
           ..add('weaponType', weaponType)
           ..add('damageModified', damageModified)
@@ -193,6 +212,11 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   ItemType _itemType;
   ItemType get itemType => _$this._itemType;
@@ -224,6 +248,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
   WeaponBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _itemType = _$v.itemType;
       _weaponType = _$v.weaponType;
       _damageModified = _$v.damageModified;
@@ -253,6 +278,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
     final _$result = _$v ??
         new _$Weapon._(
             name: name,
+            displayFormattedTypeName: displayFormattedTypeName,
             itemType: itemType,
             weaponType: weaponType,
             damageModified: damageModified,

@@ -20,6 +20,9 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
     final result = <Object>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'price',
       serializers.serialize(object.price, specifiedType: const FullType(int)),
       'sellValue',
@@ -89,6 +92,10 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -144,6 +151,8 @@ class _$MagicWeapon extends MagicWeapon {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final int price;
   @override
   final int sellValue;
@@ -171,6 +180,7 @@ class _$MagicWeapon extends MagicWeapon {
 
   _$MagicWeapon._(
       {this.name,
+      this.displayFormattedTypeName,
       this.price,
       this.sellValue,
       this.weaponType,
@@ -185,6 +195,10 @@ class _$MagicWeapon extends MagicWeapon {
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('MagicWeapon', 'name');
+    }
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError(
+          'MagicWeapon', 'displayFormattedTypeName');
     }
     if (price == null) {
       throw new BuiltValueNullFieldError('MagicWeapon', 'price');
@@ -215,6 +229,7 @@ class _$MagicWeapon extends MagicWeapon {
     if (identical(other, this)) return true;
     return other is MagicWeapon &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         price == other.price &&
         sellValue == other.sellValue &&
         weaponType == other.weaponType &&
@@ -240,7 +255,11 @@ class _$MagicWeapon extends MagicWeapon {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, name.hashCode),
+                                            $jc(
+                                                $jc(
+                                                    $jc(0, name.hashCode),
+                                                    displayFormattedTypeName
+                                                        .hashCode),
                                                 price.hashCode),
                                             sellValue.hashCode),
                                         weaponType.hashCode),
@@ -258,6 +277,7 @@ class _$MagicWeapon extends MagicWeapon {
   String toString() {
     return (newBuiltValueToStringHelper('MagicWeapon')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('price', price)
           ..add('sellValue', sellValue)
           ..add('weaponType', weaponType)
@@ -279,6 +299,11 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   int _price;
   int get price => _$this._price;
@@ -330,6 +355,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   MagicWeaponBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _price = _$v.price;
       _sellValue = _$v.sellValue;
       _weaponType = _$v.weaponType;
@@ -364,6 +390,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
     final _$result = _$v ??
         new _$MagicWeapon._(
             name: name,
+            displayFormattedTypeName: displayFormattedTypeName,
             price: price,
             sellValue: sellValue,
             weaponType: weaponType,

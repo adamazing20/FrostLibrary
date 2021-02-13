@@ -9,7 +9,7 @@ apprentices:
     armour: 10
     will: 2
     cost: 100
-    additionalItemHoldCount: 5
+    additionalItemHoldCount: 4
     notes:
     characterType: Apprentice
     experience: 0

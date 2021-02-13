@@ -1,5 +1,6 @@
 magicWeapons:
   - name: "magic weapon name"
+    displayFormattedTypeName: "Magic Weapon Name"
     price: 100
     sellValue: 50
     weaponType: HandWeapon
@@ -12,7 +13,8 @@ magicWeapons:
     notes: "some notes about the item"
     expansion: Core
 
-  - name: "Hand Weapon"
+  - name: "Hand Weapon(1)"
+    displayFormattedTypeName: "Hand Weapon"
     price: 300
     sellValue: 125
     weaponType: HandWeapon
@@ -25,7 +27,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Hand Weapon"
+  - name: "Hand Weapon(2)"
+    displayFormattedTypeName: "Hand Weapon"
     price: 500
     sellValue: 200
     weaponType: HandWeapon
@@ -38,7 +41,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Hand Weapon"
+  - name: "Hand Weapon(3)"
+    displayFormattedTypeName: "Hand Weapon"
     price: 300
     sellValue: 125
     weaponType: HandWeapon
@@ -51,7 +55,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Two Handed Weapon"
+  - name: "Two Handed Weapon(1)"
+    displayFormattedTypeName: "Two Handed Weapon"
     price: 300
     sellValue: 125
     weaponType: TwoHandedWeapon
@@ -64,7 +69,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Two Handed Weapon"
+  - name: "Two Handed Weapon(2)"
+    displayFormattedTypeName: "Two Handed Weapon"
     price: 500
     sellValue: 200
     weaponType: TwoHandedWeapon
@@ -77,7 +83,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Two Handed Weapon"
+  - name: "Two Handed Weapon(3)"
+    displayFormattedTypeName: "Two Handed Weapon"
     price: 300
     sellValue: 125
     weaponType: TwoHandedWeapon
@@ -90,8 +97,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-
-  - name: "Bow"
+  - name: "Bow(1)"
+    displayFormattedTypeName: "Bow"
     price: 300
     sellValue: 125
     weaponType: Bow
@@ -104,7 +111,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Bow"
+  - name: "Bow(2)"
+    displayFormattedTypeName: "Bow"
     price: 600
     sellValue: 250
     weaponType: Bow
@@ -117,7 +125,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Crossbow"
+  - name: "Crossbow(1)"
+    displayFormattedTypeName: "Crossbow"
     price: 300
     sellValue: 125
     weaponType: Crossbow
@@ -130,7 +139,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Crossbow"
+  - name: "Crossbow(2)"
+    displayFormattedTypeName: "Crossbow"
     price: 600
     sellValue: 250
     weaponType: Crossbow
@@ -143,7 +153,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Dagger"
+  - name: "Dagger(1)"
+    displayFormattedTypeName: "Dagger"
     price: 400
     sellValue: 200
     weaponType: Dagger
@@ -156,7 +167,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Dagger"
+  - name: "Dagger(2)"
+    displayFormattedTypeName: "Dagger"
     price: 400
     sellValue: 150
     weaponType: Dagger
@@ -169,7 +181,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Dagger"
+  - name: "Dagger(3)"
+    displayFormattedTypeName: "Dagger"
     price: 500
     sellValue: 200
     weaponType: Dagger
@@ -182,7 +195,8 @@ magicWeapons:
     notes:
     expansion: Core
 
-  - name: "Staff"
+  - name: "Staff(1)"
+    displayFormattedTypeName: "Staff"
     price: 300
     sellValue: 125
     weaponType: Staff

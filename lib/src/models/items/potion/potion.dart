@@ -18,6 +18,9 @@ abstract class Potion implements Built<Potion, PotionBuilder>, Item {
   String get name;
 
   @override
+  String get displayFormattedTypeName;
+
+  @override
   ItemType get itemType;
 
   @nullable

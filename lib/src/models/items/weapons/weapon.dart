@@ -19,6 +19,9 @@ abstract class Weapon implements Built<Weapon, WeaponBuilder>, Item {
   String get name;
 
   @override
+  String get displayFormattedTypeName;
+
+  @override
   ItemType get itemType;
 
   WeaponType get weaponType;

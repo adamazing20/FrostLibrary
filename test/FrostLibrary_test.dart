@@ -98,6 +98,33 @@ void main() {
     var pren2 = apprentice.toBuilder()
       ..description = "foobar"
       ..build();
+
+    assert(pren2.expansion.toString() == "Core");
+
     print(pren2.description);
+  });
+
+  test('get all items', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    var frostLibrary = FrostLibrary();
+    await frostLibrary.init();
+
+    List<Item> listOfCrap = frostLibrary.getItemsByName(["HAND WEAPON(1)"]);
+    print(listOfCrap);
+  });
+
+  test('get character by name', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    var frostLibrary = FrostLibrary();
+    await frostLibrary.init();
+
+    List<String> names = [
+      "Thug",
+      "Archer",
+      "Necromancer",
+      "Apprentice",
+      "Ranger",
+      "Templar"
+    ];
   });
 }

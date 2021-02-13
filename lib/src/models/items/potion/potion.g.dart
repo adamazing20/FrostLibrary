@@ -20,6 +20,9 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
     final result = <Object>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
@@ -63,6 +66,10 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'itemType':
           result.itemType = serializers.deserialize(value,
               specifiedType: const FullType(ItemType)) as ItemType;
@@ -94,6 +101,8 @@ class _$Potion extends Potion {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final ItemType itemType;
   @override
   final String description;
@@ -109,6 +118,7 @@ class _$Potion extends Potion {
 
   _$Potion._(
       {this.name,
+      this.displayFormattedTypeName,
       this.itemType,
       this.description,
       this.effect,
@@ -117,6 +127,9 @@ class _$Potion extends Potion {
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Potion', 'name');
+    }
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError('Potion', 'displayFormattedTypeName');
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Potion', 'itemType');
@@ -138,6 +151,7 @@ class _$Potion extends Potion {
     if (identical(other, this)) return true;
     return other is Potion &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         itemType == other.itemType &&
         description == other.description &&
         effect == other.effect &&
@@ -150,7 +164,11 @@ class _$Potion extends Potion {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                $jc(
+                    $jc(
+                        $jc($jc(0, name.hashCode),
+                            displayFormattedTypeName.hashCode),
+                        itemType.hashCode),
                     description.hashCode),
                 effect.hashCode),
             price.hashCode),
@@ -161,6 +179,7 @@ class _$Potion extends Potion {
   String toString() {
     return (newBuiltValueToStringHelper('Potion')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('itemType', itemType)
           ..add('description', description)
           ..add('effect', effect)
@@ -176,6 +195,11 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   ItemType _itemType;
   ItemType get itemType => _$this._itemType;
@@ -202,6 +226,7 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   PotionBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _itemType = _$v.itemType;
       _description = _$v.description;
       _effect = _$v.effect;
@@ -230,6 +255,7 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
     final _$result = _$v ??
         new _$Potion._(
             name: name,
+            displayFormattedTypeName: displayFormattedTypeName,
             itemType: itemType,
             description: description,
             effect: effect,

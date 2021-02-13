@@ -15,6 +15,8 @@ abstract class Item {
   String get description;
 
   Expansion get expansion;
+
+  String get displayFormattedTypeName;
 }
 
 abstract class SpellDefinition extends Item {

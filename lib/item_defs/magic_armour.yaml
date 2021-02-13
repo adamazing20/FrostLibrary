@@ -1,15 +1,6 @@
 magicArmours:
-  - name: "test name"
-    itemType: MagicArmour
-    description: "Some description"
-    notes:
-    price: 100
-    sellValue: 100
-    armourType: Cloak
-    armourModified: 1
-    expansion: Core
-
   - name: "Light Armour"
+    displayFormattedTypeName: "Light Armour"
     itemType: MagicArmour
     description: "+1 Armour"
     notes:
@@ -20,6 +11,7 @@ magicArmours:
     expansion: Core
 
   - name: "Heavy Armour"
+    displayFormattedTypeName: "Heavy Armour"
     itemType: MagicArmour
     description: "Elemental Absorption"
     notes:
@@ -30,6 +22,7 @@ magicArmours:
     expansion: Core
 
   - name: "Ring of Protection"
+    displayFormattedTypeName: "Ring of Protection"
     itemType: MagicArmour
     description: "+1 Armour"
     notes:
@@ -40,6 +33,7 @@ magicArmours:
     expansion: Core
 
   - name: "Cloak of Protection"
+    displayFormattedTypeName: "Cloak of Protection"
     itemType: MagicArmour
     description: "+1 Armour"
     notes:
@@ -50,6 +44,7 @@ magicArmours:
     expansion: Core
 
   - name: "Cloak of Night"
+    displayFormattedTypeName: "Cloak of Night"
     itemType: MagicArmour
     description: "Elemental Absorption"
     notes:
@@ -60,6 +55,7 @@ magicArmours:
     expansion: Core
 
   - name: "Shield"
+    displayFormattedTypeName: "Shield"
     itemType: MagicArmour
     description: "+1 Armour"
     notes:

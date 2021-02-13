@@ -1,3 +1,4 @@
+import 'package:FrostLibrary/FrostLibrary.dart';
 import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
@@ -82,11 +83,22 @@ class FrostLibrary {
     return itemsList;
   }
 
-  Item getItemByName(String name, {Expansion expansion}) {
+  Item getFirstItemByName(String name, {Expansion expansion}) {
     List<Item> itemList = getAllItems(expansion: expansion);
 
     return itemList
         .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
+  }
+
+  List<Item> getItemsByName(List<String> itemNames,
+      {ItemType itemType, Expansion expansion}) {
+    List<String> lowerCaseNames =
+        itemNames.map((name) => name.toLowerCase()).toList();
+
+    return getAllItems(expansion: expansion)
+        .where((item) => lowerCaseNames.contains(item.name.toLowerCase()))
+        .where((item) => itemType == null ? true : itemType == item.itemType)
+        .toList();
   }
 
   List<Character> getAllCharacters({Expansion expansion}) {
@@ -102,10 +114,27 @@ class FrostLibrary {
     return charactersList;
   }
 
-  Character getCharacterByName(String name, {Expansion expansion}) {
+  Character getCharacterByFormattedDisplayName(String name,
+      {Expansion expansion}) {
+    //    TODO: add expansion logic as needed
+    List<Character> characterList = getAllCharacters(expansion: expansion);
+    return characterList.firstWhere((character) =>
+        character.displayFormattedTypeName.toLowerCase() == name.toLowerCase());
+  }
+
+  List<Character> getCharactersByFormatterDisplayName(List<String> displayNames,
+      {Expansion expansion}) {
+    //    TODO: add expansion logic as needed
+    List<Character> charactersToReturn = [];
     List<Character> characterList = getAllCharacters(expansion: expansion);
 
-    return characterList
-        .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
+    displayNames.forEach((name) {
+      characterList.forEach((character) {
+        if (character.displayFormattedTypeName == name) {
+          charactersToReturn.add(character);
+        }
+      });
+    });
+    return charactersToReturn;
   }
 }

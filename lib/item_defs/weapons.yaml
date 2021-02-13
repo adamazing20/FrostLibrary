@@ -1,5 +1,6 @@
 weapons:
   - name: "Two Handed Weapon"
+    displayFormattedTypeName: "Two Handed Weapon"
     itemType: Weapon
     weaponType: TwoHandedWeapon
     damageModified: 2
@@ -8,6 +9,7 @@ weapons:
     notes:
     
   - name: "Hand Weapon"
+    displayFormattedTypeName: "Hand Weapon"
     itemType: Weapon
     weaponType: HandWeapon
     damageModified: 0
@@ -16,6 +18,7 @@ weapons:
     notes:
 
   - name: "Staff"
+    displayFormattedTypeName: "Staff"
     itemType: Weapon
     weaponType: Staff
     damageModified:
@@ -24,6 +27,7 @@ weapons:
     notes: "In hand to hand combat, your opponent has -1 to attack."
 
   - name: "Dagger"
+    displayFormattedTypeName: "Dagger"
     itemType: Weapon
     weaponType: Dagger
     damageModified: -1
@@ -32,6 +36,7 @@ weapons:
     notes:
 
   - name: "Bow"
+    displayFormattedTypeName: "Bow"
     itemType: Weapon
     weaponType: Bow
     damage_modified: 0
@@ -40,6 +45,7 @@ weapons:
     notes: 'load and fire as a single action. 24" range.'
 
   - name: "Cross Bow"
+    displayFormattedTypeName: "Cross Bow"
     itemType: Weapon
     weaponType: Crossbow
     damage_modified:

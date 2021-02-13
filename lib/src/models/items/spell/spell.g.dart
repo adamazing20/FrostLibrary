@@ -20,6 +20,9 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
     final result = <Object>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
@@ -72,6 +75,10 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'itemType':
           result.itemType = serializers.deserialize(value,
               specifiedType: const FullType(ItemType)) as ItemType;
@@ -115,6 +122,8 @@ class _$Spell extends Spell {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final ItemType itemType;
   @override
   final String description;
@@ -136,6 +145,7 @@ class _$Spell extends Spell {
 
   _$Spell._(
       {this.name,
+      this.displayFormattedTypeName,
       this.itemType,
       this.description,
       this.sellValue,
@@ -147,6 +157,9 @@ class _$Spell extends Spell {
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('Spell', 'name');
+    }
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError('Spell', 'displayFormattedTypeName');
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('Spell', 'itemType');
@@ -177,6 +190,7 @@ class _$Spell extends Spell {
     if (identical(other, this)) return true;
     return other is Spell &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         itemType == other.itemType &&
         description == other.description &&
         sellValue == other.sellValue &&
@@ -195,7 +209,11 @@ class _$Spell extends Spell {
                 $jc(
                     $jc(
                         $jc(
-                            $jc($jc($jc(0, name.hashCode), itemType.hashCode),
+                            $jc(
+                                $jc(
+                                    $jc($jc(0, name.hashCode),
+                                        displayFormattedTypeName.hashCode),
+                                    itemType.hashCode),
                                 description.hashCode),
                             sellValue.hashCode),
                         price.hashCode),
@@ -209,6 +227,7 @@ class _$Spell extends Spell {
   String toString() {
     return (newBuiltValueToStringHelper('Spell')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('itemType', itemType)
           ..add('description', description)
           ..add('sellValue', sellValue)
@@ -227,6 +246,11 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   ItemType _itemType;
   ItemType get itemType => _$this._itemType;
@@ -266,6 +290,7 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   SpellBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _itemType = _$v.itemType;
       _description = _$v.description;
       _sellValue = _$v.sellValue;
@@ -297,6 +322,7 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
     final _$result = _$v ??
         new _$Spell._(
             name: name,
+            displayFormattedTypeName: displayFormattedTypeName,
             itemType: itemType,
             description: description,
             sellValue: sellValue,

@@ -1,5 +1,6 @@
 magicItems:
   - name: "Some magic ItemName"
+    displayFormattedTypeName: "Some magic Item"
     price: 10
     sellValue: 10
     magicItemType: Ring
@@ -17,6 +18,7 @@ magicItems:
     expansion: Core
 
   - name: "Staff of Power(1)"
+    displayFormattedTypeName: "Staff of Power(1)"
     price: 300
     sellValue: 150
     magicItemType: Staff
@@ -33,7 +35,8 @@ magicItems:
     notes:
     expansion: Core
 
-  - name: "Staff of Power 2"
+  - name: "Staff of Power(2)"
+    displayFormattedTypeName: "Staff of Power(2)"
     price: 400
     sellValue: 200
     magicItemType: Staff
@@ -51,6 +54,7 @@ magicItems:
     expansion: Core
 
   - name: "Ring of Transference"
+    displayFormattedTypeName: "Ring of Transference"
     price: 400
     sellValue: 150
     magicItemType: Ring
@@ -69,6 +73,7 @@ magicItems:
     expansion: Core
 
   - name: "Ring of Power(1)"
+    displayFormattedTypeName: "Ring of Power(1)"
     price: 200
     sellValue: 100
     magicItemType: Ring
@@ -86,6 +91,7 @@ magicItems:
     expansion: Core
 
   - name: "Orb of Power(6)"
+    displayFormattedTypeName: "Orb of Power(6)"
     price: 500
     sellValue: 200
     magicItemType: Orb
@@ -103,6 +109,7 @@ magicItems:
     expansion: Core
 
   - name: "Staff of Casting"
+    displayFormattedTypeName: "Staff of Casting"
     price: 500
     sellValue: 200
     magicItemType: Staff
@@ -120,6 +127,7 @@ magicItems:
     expansion: Core
 
   - name: "Boots of Speed"
+    displayFormattedTypeName: "Boots of Speed"
     price: 300
     sellValue: 130
     magicItemType: Boots
@@ -137,6 +145,7 @@ magicItems:
     expansion: Core
 
   - name: "Ring of Slow Fall"
+    displayFormattedTypeName: "Ring of Slow Fall"
     price: 200
     sellValue: 100
     magicItemType: Ring
@@ -154,6 +163,7 @@ magicItems:
     expansion: Core
 
   - name: "Ring of Will"
+    displayFormattedTypeName: "Ring of Will"
     price: 300
     sellValue: 150
     magicItemType: Ring
@@ -171,6 +181,7 @@ magicItems:
     expansion: Core
 
   - name: "Ring of Teleportation"
+    displayFormattedTypeName: "Ring of Teleportation"
     price: 400
     sellValue: 150
     magicItemType: Ring
@@ -188,6 +199,7 @@ magicItems:
     expansion: Core
 
   - name: "Gloves of Strength"
+    displayFormattedTypeName: "Gloves of Strength"
     price: 300
     sellValue: 150
     magicItemType: Gloves
@@ -205,6 +217,7 @@ magicItems:
     expansion: Core
 
   - name: "Robes of Arrow Turning"
+    displayFormattedTypeName: "Robes of Arrow Turning"
     price: 500
     sellValue: 250
     magicItemType: Robes
@@ -222,6 +235,7 @@ magicItems:
     expansion: Core
 
   - name: "Amulet of Resistance"
+    displayFormattedTypeName: "Amulet of Resistance"
     price: 300
     sellValue: 100
     magicItemType: Amulet
@@ -239,6 +253,7 @@ magicItems:
     expansion: Core
 
   - name: "Construct Hammer"
+    displayFormattedTypeName: "Construct Hammer"
     price: 300
     sellValue: 100
     magicItemType: Hammer
@@ -257,6 +272,7 @@ magicItems:
     expansion: Core
 
   - name: "Gloves of Casting"
+    displayFormattedTypeName: "Gloves of Casting"
     price: 200
     sellValue: 10
     magicItemType: Ring

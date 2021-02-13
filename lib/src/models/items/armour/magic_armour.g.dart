@@ -20,6 +20,9 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
     final result = <Object>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'itemType',
       serializers.serialize(object.itemType,
           specifiedType: const FullType(ItemType)),
@@ -74,6 +77,10 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'itemType':
           result.itemType = serializers.deserialize(value,
               specifiedType: const FullType(ItemType)) as ItemType;
@@ -121,6 +128,8 @@ class _$MagicArmour extends MagicArmour {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final ItemType itemType;
   @override
   final int damageModified;
@@ -144,6 +153,7 @@ class _$MagicArmour extends MagicArmour {
 
   _$MagicArmour._(
       {this.name,
+      this.displayFormattedTypeName,
       this.itemType,
       this.damageModified,
       this.description,
@@ -156,6 +166,10 @@ class _$MagicArmour extends MagicArmour {
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('MagicArmour', 'name');
+    }
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError(
+          'MagicArmour', 'displayFormattedTypeName');
     }
     if (itemType == null) {
       throw new BuiltValueNullFieldError('MagicArmour', 'itemType');
@@ -189,6 +203,7 @@ class _$MagicArmour extends MagicArmour {
     if (identical(other, this)) return true;
     return other is MagicArmour &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         itemType == other.itemType &&
         damageModified == other.damageModified &&
         description == other.description &&
@@ -210,7 +225,9 @@ class _$MagicArmour extends MagicArmour {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, name.hashCode),
+                                    $jc(
+                                        $jc($jc(0, name.hashCode),
+                                            displayFormattedTypeName.hashCode),
                                         itemType.hashCode),
                                     damageModified.hashCode),
                                 description.hashCode),
@@ -226,6 +243,7 @@ class _$MagicArmour extends MagicArmour {
   String toString() {
     return (newBuiltValueToStringHelper('MagicArmour')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('itemType', itemType)
           ..add('damageModified', damageModified)
           ..add('description', description)
@@ -245,6 +263,11 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   ItemType _itemType;
   ItemType get itemType => _$this._itemType;
@@ -289,6 +312,7 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
   MagicArmourBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _itemType = _$v.itemType;
       _damageModified = _$v.damageModified;
       _description = _$v.description;
@@ -321,6 +345,7 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
     final _$result = _$v ??
         new _$MagicArmour._(
             name: name,
+            displayFormattedTypeName: displayFormattedTypeName,
             itemType: itemType,
             damageModified: damageModified,
             description: description,

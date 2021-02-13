@@ -20,6 +20,9 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
     final result = <Object>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
+      'displayFormattedTypeName',
+      serializers.serialize(object.displayFormattedTypeName,
+          specifiedType: const FullType(String)),
       'price',
       serializers.serialize(object.price, specifiedType: const FullType(int)),
       'sellValue',
@@ -113,6 +116,10 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
           result.name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'displayFormattedTypeName':
+          result.displayFormattedTypeName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'price':
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -184,6 +191,8 @@ class _$MagicItem extends MagicItem {
   @override
   final String name;
   @override
+  final String displayFormattedTypeName;
+  @override
   final int price;
   @override
   final int sellValue;
@@ -219,6 +228,7 @@ class _$MagicItem extends MagicItem {
 
   _$MagicItem._(
       {this.name,
+      this.displayFormattedTypeName,
       this.price,
       this.sellValue,
       this.magicItemType,
@@ -237,6 +247,10 @@ class _$MagicItem extends MagicItem {
       : super._() {
     if (name == null) {
       throw new BuiltValueNullFieldError('MagicItem', 'name');
+    }
+    if (displayFormattedTypeName == null) {
+      throw new BuiltValueNullFieldError(
+          'MagicItem', 'displayFormattedTypeName');
     }
     if (price == null) {
       throw new BuiltValueNullFieldError('MagicItem', 'price');
@@ -267,6 +281,7 @@ class _$MagicItem extends MagicItem {
     if (identical(other, this)) return true;
     return other is MagicItem &&
         name == other.name &&
+        displayFormattedTypeName == other.displayFormattedTypeName &&
         price == other.price &&
         sellValue == other.sellValue &&
         magicItemType == other.magicItemType &&
@@ -301,8 +316,13 @@ class _$MagicItem extends MagicItem {
                                                     $jc(
                                                         $jc(
                                                             $jc(
-                                                                $jc(0,
-                                                                    name.hashCode),
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        name
+                                                                            .hashCode),
+                                                                    displayFormattedTypeName
+                                                                        .hashCode),
                                                                 price.hashCode),
                                                             sellValue.hashCode),
                                                         magicItemType.hashCode),
@@ -324,6 +344,7 @@ class _$MagicItem extends MagicItem {
   String toString() {
     return (newBuiltValueToStringHelper('MagicItem')
           ..add('name', name)
+          ..add('displayFormattedTypeName', displayFormattedTypeName)
           ..add('price', price)
           ..add('sellValue', sellValue)
           ..add('magicItemType', magicItemType)
@@ -349,6 +370,11 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
   String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
+
+  String _displayFormattedTypeName;
+  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String displayFormattedTypeName) =>
+      _$this._displayFormattedTypeName = displayFormattedTypeName;
 
   int _price;
   int get price => _$this._price;
@@ -421,6 +447,7 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
   MagicItemBuilder get _$this {
     if (_$v != null) {
       _name = _$v.name;
+      _displayFormattedTypeName = _$v.displayFormattedTypeName;
       _price = _$v.price;
       _sellValue = _$v.sellValue;
       _magicItemType = _$v.magicItemType;
@@ -459,6 +486,7 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
     final _$result = _$v ??
         new _$MagicItem._(
             name: name,
+            displayFormattedTypeName: displayFormattedTypeName,
             price: price,
             sellValue: sellValue,
             magicItemType: magicItemType,

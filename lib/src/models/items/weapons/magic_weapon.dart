@@ -20,6 +20,9 @@ abstract class MagicWeapon
   String get name;
 
   @override
+  String get displayFormattedTypeName;
+
+  @override
   int get price;
 
   @override

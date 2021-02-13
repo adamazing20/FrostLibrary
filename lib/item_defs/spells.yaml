@@ -18,6 +18,7 @@ spells:
   #    TheMazeOfMalcor, LostColossus, TheWizardsConclave, and Core
 
   - name: "Absorb Knowledge"
+    displayFormattedTypeName: "Absorb Knowledge"
     itemType: Spell
     description: "This spell can only be cast by a wizard, and allows him to absorb the knowledge
     from a written work without having to read it. A wizard immeadiately gains 50 experience
@@ -32,6 +33,7 @@ spells:
     expansion: Core
 
   - name: "Arcane Something Spell"
+    displayFormattedTypeName: "Arcane Something Spell"
     itemType: Spell
     description: "This spell can only be cast by a wizard, and allows him to absorb the knowledge
     from a written work without having to read it. A wizard immeadiately gains 50 experience

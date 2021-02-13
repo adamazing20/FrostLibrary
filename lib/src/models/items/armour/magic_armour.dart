@@ -20,6 +20,9 @@ abstract class MagicArmour
   String get name;
 
   @override
+  String get displayFormattedTypeName;
+
+  @override
   ItemType get itemType;
 
   @nullable

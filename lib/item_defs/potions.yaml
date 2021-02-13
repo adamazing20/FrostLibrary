@@ -1,5 +1,6 @@
 potions:
 - name: "Healing"
+  displayFormattedTypeName: "Healing"
   itemType: Potion
   effect: "Restores up to 5 lost health."
   price: 50
@@ -8,6 +9,7 @@ potions:
   notes:
 
 - name: "Strength"
+  displayFormattedTypeName: "Strength"
   itemType: Potion
   effect: "+2 fight for the rest of the game."
   price: 50
@@ -16,6 +18,7 @@ potions:
   notes:
 
 - name: "Toughness"
+  displayFormattedTypeName: "Toughness"
   itemType: Potion
   effect: "+1 Armour for the rest of the game."
   price: 50
@@ -24,6 +27,7 @@ potions:
   notes:
 
 - name: "Elixir of Speed"
+  displayFormattedTypeName: "Elixir of Speed"
   itemType: Potion
   effect: "+1 Move for the rest of the game."
   price: 50
@@ -32,6 +36,7 @@ potions:
   notes:
 
 - name: "Invisibility"
+  displayFormattedTypeName: "Invisibility"
   itemType: Potion
   effect: "As an invisibility spell, no casting roll needed."
   price: 100
@@ -40,6 +45,7 @@ potions:
   notes:
 
 - name: "Explosive Cocktail"
+  displayFormattedTypeName: "Explosive Cocktail"
   itemType: Potion
   effect: "As a grenade spell, no casting roll needed."
   price: 50
@@ -48,6 +54,7 @@ potions:
   notes:
 
 - name: "Invulnerability"
+  displayFormattedTypeName: "Invulnerability"
   itemType: Potion
   effect: "Drinker cannot be damaged until after its next activation."
   price: 100
@@ -56,6 +63,7 @@ potions:
   notes:
 
 - name: "Teleportation"
+  displayFormattedTypeName: "Teleportation"
   itemType: Potion
   effect: "As a Teleport spell, no casting roll needed."
   price: 100
@@ -64,6 +72,7 @@ potions:
   notes:
 
 - name: "Demon in a Bottle"
+  displayFormattedTypeName: "Demon in a Bottle"
   itemType: Potion
   effect: "When smashed, summons and binds a minor demon to fight for the warband until the end of the game."
   price: 200
@@ -72,6 +81,7 @@ potions:
   notes:
 
 - name: "Elixir of Life"
+  displayFormattedTypeName: "Elixir of Life"
   itemType: Potion
   effect: "As a Restore potion, no casting roll needed."
   price: 500
