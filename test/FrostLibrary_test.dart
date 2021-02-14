@@ -1,3 +1,4 @@
+import 'package:FrostLibrary/FrostLibrary.dart';
 import 'package:FrostLibrary/src/frost_library.dart';
 import 'package:FrostLibrary/src/models/character/apprentice/apprentice.dart';
 import 'package:FrostLibrary/src/models/character/character.dart';
@@ -118,13 +119,40 @@ void main() {
     var frostLibrary = FrostLibrary();
     await frostLibrary.init();
 
-    List<String> names = [
-      "Thug",
-      "Archer",
-      "Necromancer",
-      "Apprentice",
-      "Ranger",
-      "Templar"
-    ];
+    Character character =
+        frostLibrary.getCharacterByFormattedDisplayName("Thaumaturge");
+
+//    print(character);
+
+    print(character.characterType);
+
+    switch (character.characterType) {
+      case CharacterType.Apprentice:
+        character = character as Apprentice;
+        break;
+
+      case CharacterType.Wizard:
+        Wizard wizard = character;
+        wizard.toBuilder()
+          ..name = 'Unbelievable'
+          ..build();
+        break;
+
+      case CharacterType.Soldier:
+        character = character as Soldier;
+        break;
+    }
+  });
+
+  test('Showing kaitlyn Stuff', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    var frostLibrary = FrostLibrary();
+    await frostLibrary.init();
+
+    List<String> itemNames = ["Dagger(1)", "Hand Weapon(1)", "Shield"];
+
+    var items = frostLibrary.getItemsByName(itemNames);
+
+    print(items);
   });
 }
