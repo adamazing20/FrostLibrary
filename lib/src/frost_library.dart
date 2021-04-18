@@ -34,27 +34,27 @@ class FrostLibrary {
     _apprenticeProvider,
   ];
 
-  WeaponProvider get weapons => _weaponProvider;
-
-  MagicWeaponProvider get magicWeapons => _magicWeaponProvider;
-
-  PotionProvider get potions => _potionProvider;
-
-  SpellProvider get spells => _spellProvider;
-
-  GrimoireProvider get grimoires => _grimoireProvider;
-
-  ScrollProvider get scrolls => _scrollProvider;
-
-  MagicArmourProvider get magicArmours => _magicArmourProvider;
-
-  MagicItemProvider get magicItems => _magicItemProvider;
-
-  WizardProvider get wizards => _wizardProvider;
-
-  SoldierProvider get soldiers => _soldierProvider;
-
-  ApprenticeProvider get apprentices => _apprenticeProvider;
+  // WeaponProvider get weapons => _weaponProvider;
+  //
+  // MagicWeaponProvider get magicWeapons => _magicWeaponProvider;
+  //
+  // PotionProvider get potions => _potionProvider;
+  //
+  // SpellProvider get spells => _spellProvider;
+  //
+  // GrimoireProvider get grimoires => _grimoireProvider;
+  //
+  // ScrollProvider get scrolls => _scrollProvider;
+  //
+  // MagicArmourProvider get magicArmours => _magicArmourProvider;
+  //
+  // MagicItemProvider get magicItems => _magicItemProvider;
+  //
+  // WizardProvider get wizards => _wizardProvider;
+  //
+  // SoldierProvider get soldiers => _soldierProvider;
+  //
+  // ApprenticeProvider get apprentices => _apprenticeProvider;
 
   Future init() async {
     await _weaponProvider.load();
@@ -122,7 +122,7 @@ class FrostLibrary {
         character.displayFormattedTypeName.toLowerCase() == name.toLowerCase());
   }
 
-  List<Character> getCharactersByFormatterDisplayName(List<String> displayNames,
+  List<Character> getCharactersByFormattedDisplayName(List<String> displayNames,
       {Expansion expansion}) {
     //    TODO: add expansion logic as needed
     List<Character> charactersToReturn = [];
