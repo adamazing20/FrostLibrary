@@ -3,6 +3,7 @@ import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/providers/definition_providers.dart';
+import 'package:flutter/cupertino.dart';
 
 class FrostLibrary {
   static final WeaponProvider _weaponProvider = WeaponProvider();
@@ -112,6 +113,19 @@ class FrostLibrary {
     }
 
     return charactersList;
+  }
+
+  List<Character> getCharactersByType(
+      {@required CharacterType characterType, Expansion expansion}) {
+    List<Character> allCharacters;
+    if (expansion != null) {
+      allCharacters = getAllCharacters(expansion: expansion);
+    }
+
+    allCharacters = getAllCharacters();
+    allCharacters
+        .removeWhere((character) => character.characterType != characterType);
+    return allCharacters;
   }
 
   Character getCharacterByFormattedDisplayName(String name,
