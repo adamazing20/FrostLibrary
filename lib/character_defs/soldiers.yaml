@@ -109,7 +109,7 @@ soldiers:
     additionalItemHoldCount: 1
     notes:
     characterType: Soldier
-    soldierType: Thug
+    soldierType: Apothecary
     description: "Apothecaries start each game with a potion of healing. An apothecary may spend and action to give a potion
                      to a member of the same warband within 1'', provided neither are in combat. The figure receiving the potion counts as having drunk it,
                      and effects are applied immediately. Note that this rule applies to any potion carried by an apothecary,
@@ -152,7 +152,7 @@ soldiers:
     additionalItemHoldCount: 1
     notes:
     characterType: Soldier
-    soldierType: Thug
+    soldierType: Crossbowman
     description:
     weapons:
       - Crossbow

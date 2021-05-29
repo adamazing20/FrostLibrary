@@ -103,7 +103,7 @@ class FrostLibrary {
   }
 
   List<Character> getAllCharacters({Expansion expansion}) {
-    List<Character> charactersList = [];
+    List<Character> charactersList = <Character>[];
     _characterProviderList.forEach((provider) {
       charactersList.addAll(provider.characters);
     });
@@ -126,6 +126,21 @@ class FrostLibrary {
     allCharacters
         .removeWhere((character) => character.characterType != characterType);
     return allCharacters;
+  }
+
+  Wizard getWizardBySchool({@required School school}) {
+    List<Wizard> wizards =
+        getCharactersByType(characterType: CharacterType.Wizard).cast<Wizard>();
+
+    return wizards.firstWhere((wizard) => wizard.wizardType == school);
+  }
+
+  Soldier getSoldierBySoldierType({@required SoldierType soldierType}) {
+    List<Soldier> soldiers =
+        getCharactersByType(characterType: CharacterType.Soldier)
+            .cast<Soldier>();
+
+    return soldiers.firstWhere((soldier) => soldier.soldierType == soldierType);
   }
 
   Character getCharacterByFormattedDisplayName(String name,
