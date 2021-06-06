@@ -36,7 +36,7 @@ class _$WizardsSerializer implements StructuredSerializer<Wizards> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'wizards':
           result.wizards.replace(serializers.deserialize(value,
@@ -59,9 +59,7 @@ class _$Wizards extends Wizards {
       (new WizardsBuilder()..update(updates)).build();
 
   _$Wizards._({this.wizards}) : super._() {
-    if (wizards == null) {
-      throw new BuiltValueNullFieldError('Wizards', 'wizards');
-    }
+    BuiltValueNullFieldError.checkNotNull(wizards, 'Wizards', 'wizards');
   }
 
   @override
@@ -100,8 +98,9 @@ class WizardsBuilder implements Builder<Wizards, WizardsBuilder> {
   WizardsBuilder();
 
   WizardsBuilder get _$this {
-    if (_$v != null) {
-      _wizards = _$v.wizards?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _wizards = $v.wizards.toBuilder();
       _$v = null;
     }
     return this;
@@ -109,9 +108,7 @@ class WizardsBuilder implements Builder<Wizards, WizardsBuilder> {
 
   @override
   void replace(Wizards other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Wizards;
   }
 

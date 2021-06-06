@@ -63,43 +63,48 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(School)])),
     ];
-    if (object.name != null) {
+    Object value;
+    value = object.name;
+    if (value != null) {
       result
         ..add('name')
-        ..add(serializers.serialize(object.name,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.currentHealth != null) {
+    value = object.currentHealth;
+    if (value != null) {
       result
         ..add('currentHealth')
-        ..add(serializers.serialize(object.currentHealth,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.description != null) {
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.weapons != null) {
+    value = object.weapons;
+    if (value != null) {
       result
         ..add('weapons')
-        ..add(serializers.serialize(object.weapons,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(WeaponType)])));
     }
-    if (object.armours != null) {
+    value = object.armours;
+    if (value != null) {
       result
         ..add('armours')
-        ..add(serializers.serialize(object.armours,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(ArmourType)])));
     }
-    if (object.cost != null) {
+    value = object.cost;
+    if (value != null) {
       result
         ..add('cost')
-        ..add(serializers.serialize(object.cost,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -113,7 +118,7 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -293,54 +298,25 @@ class _$Wizard extends Wizard {
       this.armours,
       this.cost})
       : super._() {
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'displayFormattedTypeName');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'expansion');
-    }
-    if (move == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'move');
-    }
-    if (fight == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'fight');
-    }
-    if (shoot == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'shoot');
-    }
-    if (armour == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'armour');
-    }
-    if (will == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'will');
-    }
-    if (health == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'health');
-    }
-    if (characterType == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'characterType');
-    }
-    if (experience == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'experience');
-    }
-    if (level == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'level');
-    }
-    if (additionalItemHoldCount == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'additionalItemHoldCount');
-    }
-    if (wizardType == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'wizardType');
-    }
-    if (aligned == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'aligned');
-    }
-    if (neutral == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'neutral');
-    }
-    if (opposed == null) {
-      throw new BuiltValueNullFieldError('Wizard', 'opposed');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'Wizard', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(expansion, 'Wizard', 'expansion');
+    BuiltValueNullFieldError.checkNotNull(move, 'Wizard', 'move');
+    BuiltValueNullFieldError.checkNotNull(fight, 'Wizard', 'fight');
+    BuiltValueNullFieldError.checkNotNull(shoot, 'Wizard', 'shoot');
+    BuiltValueNullFieldError.checkNotNull(armour, 'Wizard', 'armour');
+    BuiltValueNullFieldError.checkNotNull(will, 'Wizard', 'will');
+    BuiltValueNullFieldError.checkNotNull(health, 'Wizard', 'health');
+    BuiltValueNullFieldError.checkNotNull(
+        characterType, 'Wizard', 'characterType');
+    BuiltValueNullFieldError.checkNotNull(experience, 'Wizard', 'experience');
+    BuiltValueNullFieldError.checkNotNull(level, 'Wizard', 'level');
+    BuiltValueNullFieldError.checkNotNull(
+        additionalItemHoldCount, 'Wizard', 'additionalItemHoldCount');
+    BuiltValueNullFieldError.checkNotNull(wizardType, 'Wizard', 'wizardType');
+    BuiltValueNullFieldError.checkNotNull(aligned, 'Wizard', 'aligned');
+    BuiltValueNullFieldError.checkNotNull(neutral, 'Wizard', 'neutral');
+    BuiltValueNullFieldError.checkNotNull(opposed, 'Wizard', 'opposed');
   }
 
   @override
@@ -551,29 +527,30 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   WizardBuilder();
 
   WizardBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _expansion = _$v.expansion;
-      _move = _$v.move;
-      _fight = _$v.fight;
-      _shoot = _$v.shoot;
-      _armour = _$v.armour;
-      _will = _$v.will;
-      _health = _$v.health;
-      _currentHealth = _$v.currentHealth;
-      _characterType = _$v.characterType;
-      _experience = _$v.experience;
-      _level = _$v.level;
-      _additionalItemHoldCount = _$v.additionalItemHoldCount;
-      _wizardType = _$v.wizardType;
-      _description = _$v.description;
-      _aligned = _$v.aligned?.toBuilder();
-      _neutral = _$v.neutral?.toBuilder();
-      _opposed = _$v.opposed?.toBuilder();
-      _weapons = _$v.weapons?.toBuilder();
-      _armours = _$v.armours?.toBuilder();
-      _cost = _$v.cost;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _expansion = $v.expansion;
+      _move = $v.move;
+      _fight = $v.fight;
+      _shoot = $v.shoot;
+      _armour = $v.armour;
+      _will = $v.will;
+      _health = $v.health;
+      _currentHealth = $v.currentHealth;
+      _characterType = $v.characterType;
+      _experience = $v.experience;
+      _level = $v.level;
+      _additionalItemHoldCount = $v.additionalItemHoldCount;
+      _wizardType = $v.wizardType;
+      _description = $v.description;
+      _aligned = $v.aligned.toBuilder();
+      _neutral = $v.neutral.toBuilder();
+      _opposed = $v.opposed.toBuilder();
+      _weapons = $v.weapons?.toBuilder();
+      _armours = $v.armours?.toBuilder();
+      _cost = $v.cost;
       _$v = null;
     }
     return this;
@@ -581,9 +558,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
 
   @override
   void replace(Wizard other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Wizard;
   }
 
@@ -599,20 +574,30 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
       _$result = _$v ??
           new _$Wizard._(
               name: name,
-              displayFormattedTypeName: displayFormattedTypeName,
-              expansion: expansion,
-              move: move,
-              fight: fight,
-              shoot: shoot,
-              armour: armour,
-              will: will,
-              health: health,
+              displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                  displayFormattedTypeName, 'Wizard', 'displayFormattedTypeName'),
+              expansion: BuiltValueNullFieldError.checkNotNull(
+                  expansion, 'Wizard', 'expansion'),
+              move:
+                  BuiltValueNullFieldError.checkNotNull(move, 'Wizard', 'move'),
+              fight: BuiltValueNullFieldError.checkNotNull(
+                  fight, 'Wizard', 'fight'),
+              shoot: BuiltValueNullFieldError.checkNotNull(
+                  shoot, 'Wizard', 'shoot'),
+              armour: BuiltValueNullFieldError.checkNotNull(
+                  armour, 'Wizard', 'armour'),
+              will:
+                  BuiltValueNullFieldError.checkNotNull(will, 'Wizard', 'will'),
+              health: BuiltValueNullFieldError.checkNotNull(
+                  health, 'Wizard', 'health'),
               currentHealth: currentHealth,
-              characterType: characterType,
-              experience: experience,
-              level: level,
-              additionalItemHoldCount: additionalItemHoldCount,
-              wizardType: wizardType,
+              characterType: BuiltValueNullFieldError.checkNotNull(
+                  characterType, 'Wizard', 'characterType'),
+              experience: BuiltValueNullFieldError.checkNotNull(
+                  experience, 'Wizard', 'experience'),
+              level: BuiltValueNullFieldError.checkNotNull(level, 'Wizard', 'level'),
+              additionalItemHoldCount: BuiltValueNullFieldError.checkNotNull(additionalItemHoldCount, 'Wizard', 'additionalItemHoldCount'),
+              wizardType: BuiltValueNullFieldError.checkNotNull(wizardType, 'Wizard', 'wizardType'),
               description: description,
               aligned: aligned.build(),
               neutral: neutral.build(),

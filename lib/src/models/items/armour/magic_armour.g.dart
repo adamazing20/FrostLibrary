@@ -41,22 +41,25 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    if (object.damageModified != null) {
+    Object value;
+    value = object.damageModified;
+    if (value != null) {
       result
         ..add('damageModified')
-        ..add(serializers.serialize(object.damageModified,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.description != null) {
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.notes != null) {
+    value = object.notes;
+    if (value != null) {
       result
         ..add('notes')
-        ..add(serializers.serialize(object.notes,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -71,7 +74,7 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -164,31 +167,19 @@ class _$MagicArmour extends MagicArmour {
       this.armourModified,
       this.expansion})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'name');
-    }
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError(
-          'MagicArmour', 'displayFormattedTypeName');
-    }
-    if (itemType == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'itemType');
-    }
-    if (price == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'price');
-    }
-    if (sellValue == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'sellValue');
-    }
-    if (armourType == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'armourType');
-    }
-    if (armourModified == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'armourModified');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('MagicArmour', 'expansion');
-    }
+    BuiltValueNullFieldError.checkNotNull(name, 'MagicArmour', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'MagicArmour', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(itemType, 'MagicArmour', 'itemType');
+    BuiltValueNullFieldError.checkNotNull(price, 'MagicArmour', 'price');
+    BuiltValueNullFieldError.checkNotNull(
+        sellValue, 'MagicArmour', 'sellValue');
+    BuiltValueNullFieldError.checkNotNull(
+        armourType, 'MagicArmour', 'armourType');
+    BuiltValueNullFieldError.checkNotNull(
+        armourModified, 'MagicArmour', 'armourModified');
+    BuiltValueNullFieldError.checkNotNull(
+        expansion, 'MagicArmour', 'expansion');
   }
 
   @override
@@ -310,18 +301,19 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
   MagicArmourBuilder();
 
   MagicArmourBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _itemType = _$v.itemType;
-      _damageModified = _$v.damageModified;
-      _description = _$v.description;
-      _notes = _$v.notes;
-      _price = _$v.price;
-      _sellValue = _$v.sellValue;
-      _armourType = _$v.armourType;
-      _armourModified = _$v.armourModified;
-      _expansion = _$v.expansion;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _itemType = $v.itemType;
+      _damageModified = $v.damageModified;
+      _description = $v.description;
+      _notes = $v.notes;
+      _price = $v.price;
+      _sellValue = $v.sellValue;
+      _armourType = $v.armourType;
+      _armourModified = $v.armourModified;
+      _expansion = $v.expansion;
       _$v = null;
     }
     return this;
@@ -329,9 +321,7 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
 
   @override
   void replace(MagicArmour other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MagicArmour;
   }
 
@@ -344,17 +334,27 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
   _$MagicArmour build() {
     final _$result = _$v ??
         new _$MagicArmour._(
-            name: name,
-            displayFormattedTypeName: displayFormattedTypeName,
-            itemType: itemType,
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, 'MagicArmour', 'name'),
+            displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                displayFormattedTypeName,
+                'MagicArmour',
+                'displayFormattedTypeName'),
+            itemType: BuiltValueNullFieldError.checkNotNull(
+                itemType, 'MagicArmour', 'itemType'),
             damageModified: damageModified,
             description: description,
             notes: notes,
-            price: price,
-            sellValue: sellValue,
-            armourType: armourType,
-            armourModified: armourModified,
-            expansion: expansion);
+            price: BuiltValueNullFieldError.checkNotNull(
+                price, 'MagicArmour', 'price'),
+            sellValue: BuiltValueNullFieldError.checkNotNull(
+                sellValue, 'MagicArmour', 'sellValue'),
+            armourType: BuiltValueNullFieldError.checkNotNull(
+                armourType, 'MagicArmour', 'armourType'),
+            armourModified: BuiltValueNullFieldError.checkNotNull(
+                armourModified, 'MagicArmour', 'armourModified'),
+            expansion: BuiltValueNullFieldError.checkNotNull(
+                expansion, 'MagicArmour', 'expansion'));
     replace(_$result);
     return _$result;
   }

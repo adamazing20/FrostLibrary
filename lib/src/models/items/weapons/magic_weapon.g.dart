@@ -38,40 +38,43 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    if (object.damageModified != null) {
+    Object value;
+    value = object.damageModified;
+    if (value != null) {
       result
         ..add('damageModified')
-        ..add(serializers.serialize(object.damageModified,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.fightModified != null) {
+    value = object.fightModified;
+    if (value != null) {
       result
         ..add('fightModified')
-        ..add(serializers.serialize(object.fightModified,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.willModified != null) {
+    value = object.willModified;
+    if (value != null) {
       result
         ..add('willModified')
-        ..add(serializers.serialize(object.willModified,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.shootModified != null) {
+    value = object.shootModified;
+    if (value != null) {
       result
         ..add('shootModified')
-        ..add(serializers.serialize(object.shootModified,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.description != null) {
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.notes != null) {
+    value = object.notes;
+    if (value != null) {
       result
         ..add('notes')
-        ..add(serializers.serialize(object.notes,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -86,7 +89,7 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -193,28 +196,17 @@ class _$MagicWeapon extends MagicWeapon {
       this.notes,
       this.expansion})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('MagicWeapon', 'name');
-    }
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError(
-          'MagicWeapon', 'displayFormattedTypeName');
-    }
-    if (price == null) {
-      throw new BuiltValueNullFieldError('MagicWeapon', 'price');
-    }
-    if (sellValue == null) {
-      throw new BuiltValueNullFieldError('MagicWeapon', 'sellValue');
-    }
-    if (weaponType == null) {
-      throw new BuiltValueNullFieldError('MagicWeapon', 'weaponType');
-    }
-    if (itemType == null) {
-      throw new BuiltValueNullFieldError('MagicWeapon', 'itemType');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('MagicWeapon', 'expansion');
-    }
+    BuiltValueNullFieldError.checkNotNull(name, 'MagicWeapon', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'MagicWeapon', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(price, 'MagicWeapon', 'price');
+    BuiltValueNullFieldError.checkNotNull(
+        sellValue, 'MagicWeapon', 'sellValue');
+    BuiltValueNullFieldError.checkNotNull(
+        weaponType, 'MagicWeapon', 'weaponType');
+    BuiltValueNullFieldError.checkNotNull(itemType, 'MagicWeapon', 'itemType');
+    BuiltValueNullFieldError.checkNotNull(
+        expansion, 'MagicWeapon', 'expansion');
   }
 
   @override
@@ -353,20 +345,21 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   MagicWeaponBuilder();
 
   MagicWeaponBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _price = _$v.price;
-      _sellValue = _$v.sellValue;
-      _weaponType = _$v.weaponType;
-      _itemType = _$v.itemType;
-      _damageModified = _$v.damageModified;
-      _fightModified = _$v.fightModified;
-      _willModified = _$v.willModified;
-      _shootModified = _$v.shootModified;
-      _description = _$v.description;
-      _notes = _$v.notes;
-      _expansion = _$v.expansion;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _price = $v.price;
+      _sellValue = $v.sellValue;
+      _weaponType = $v.weaponType;
+      _itemType = $v.itemType;
+      _damageModified = $v.damageModified;
+      _fightModified = $v.fightModified;
+      _willModified = $v.willModified;
+      _shootModified = $v.shootModified;
+      _description = $v.description;
+      _notes = $v.notes;
+      _expansion = $v.expansion;
       _$v = null;
     }
     return this;
@@ -374,9 +367,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
 
   @override
   void replace(MagicWeapon other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MagicWeapon;
   }
 
@@ -389,19 +380,28 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   _$MagicWeapon build() {
     final _$result = _$v ??
         new _$MagicWeapon._(
-            name: name,
-            displayFormattedTypeName: displayFormattedTypeName,
-            price: price,
-            sellValue: sellValue,
-            weaponType: weaponType,
-            itemType: itemType,
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, 'MagicWeapon', 'name'),
+            displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                displayFormattedTypeName,
+                'MagicWeapon',
+                'displayFormattedTypeName'),
+            price: BuiltValueNullFieldError.checkNotNull(
+                price, 'MagicWeapon', 'price'),
+            sellValue: BuiltValueNullFieldError.checkNotNull(
+                sellValue, 'MagicWeapon', 'sellValue'),
+            weaponType: BuiltValueNullFieldError.checkNotNull(
+                weaponType, 'MagicWeapon', 'weaponType'),
+            itemType: BuiltValueNullFieldError.checkNotNull(
+                itemType, 'MagicWeapon', 'itemType'),
             damageModified: damageModified,
             fightModified: fightModified,
             willModified: willModified,
             shootModified: shootModified,
             description: description,
             notes: notes,
-            expansion: expansion);
+            expansion: BuiltValueNullFieldError.checkNotNull(
+                expansion, 'MagicWeapon', 'expansion'));
     replace(_$result);
     return _$result;
   }

@@ -36,7 +36,7 @@ class _$MagicItemsSerializer implements StructuredSerializer<MagicItems> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'magicItems':
           result.magicItems.replace(serializers.deserialize(value,
@@ -59,9 +59,8 @@ class _$MagicItems extends MagicItems {
       (new MagicItemsBuilder()..update(updates)).build();
 
   _$MagicItems._({this.magicItems}) : super._() {
-    if (magicItems == null) {
-      throw new BuiltValueNullFieldError('MagicItems', 'magicItems');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        magicItems, 'MagicItems', 'magicItems');
   }
 
   @override
@@ -102,8 +101,9 @@ class MagicItemsBuilder implements Builder<MagicItems, MagicItemsBuilder> {
   MagicItemsBuilder();
 
   MagicItemsBuilder get _$this {
-    if (_$v != null) {
-      _magicItems = _$v.magicItems?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _magicItems = $v.magicItems.toBuilder();
       _$v = null;
     }
     return this;
@@ -111,9 +111,7 @@ class MagicItemsBuilder implements Builder<MagicItems, MagicItemsBuilder> {
 
   @override
   void replace(MagicItems other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MagicItems;
   }
 

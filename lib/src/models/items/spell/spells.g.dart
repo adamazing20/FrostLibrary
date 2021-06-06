@@ -36,7 +36,7 @@ class _$SpellsSerializer implements StructuredSerializer<Spells> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'spells':
           result.spells.replace(serializers.deserialize(value,
@@ -59,9 +59,7 @@ class _$Spells extends Spells {
       (new SpellsBuilder()..update(updates)).build();
 
   _$Spells._({this.spells}) : super._() {
-    if (spells == null) {
-      throw new BuiltValueNullFieldError('Spells', 'spells');
-    }
+    BuiltValueNullFieldError.checkNotNull(spells, 'Spells', 'spells');
   }
 
   @override
@@ -99,8 +97,9 @@ class SpellsBuilder implements Builder<Spells, SpellsBuilder> {
   SpellsBuilder();
 
   SpellsBuilder get _$this {
-    if (_$v != null) {
-      _spells = _$v.spells?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _spells = $v.spells.toBuilder();
       _$v = null;
     }
     return this;
@@ -108,9 +107,7 @@ class SpellsBuilder implements Builder<Spells, SpellsBuilder> {
 
   @override
   void replace(Spells other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Spells;
   }
 

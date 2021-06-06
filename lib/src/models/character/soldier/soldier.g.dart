@@ -48,35 +48,40 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
       'cost',
       serializers.serialize(object.cost, specifiedType: const FullType(int)),
     ];
-    if (object.name != null) {
+    Object value;
+    value = object.name;
+    if (value != null) {
       result
         ..add('name')
-        ..add(serializers.serialize(object.name,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.currentHealth != null) {
+    value = object.currentHealth;
+    if (value != null) {
       result
         ..add('currentHealth')
-        ..add(serializers.serialize(object.currentHealth,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.description != null) {
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.weapons != null) {
+    value = object.weapons;
+    if (value != null) {
       result
         ..add('weapons')
-        ..add(serializers.serialize(object.weapons,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(WeaponType)])));
     }
-    if (object.armours != null) {
+    value = object.armours;
+    if (value != null) {
       result
         ..add('armours')
-        ..add(serializers.serialize(object.armours,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(ArmourType)])));
     }
@@ -92,7 +97,7 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -231,42 +236,22 @@ class _$Soldier extends Soldier {
       this.weapons,
       this.armours})
       : super._() {
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'displayFormattedTypeName');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'expansion');
-    }
-    if (move == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'move');
-    }
-    if (fight == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'fight');
-    }
-    if (shoot == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'shoot');
-    }
-    if (armour == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'armour');
-    }
-    if (will == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'will');
-    }
-    if (health == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'health');
-    }
-    if (additionalItemHoldCount == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'additionalItemHoldCount');
-    }
-    if (characterType == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'characterType');
-    }
-    if (soldierType == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'soldierType');
-    }
-    if (cost == null) {
-      throw new BuiltValueNullFieldError('Soldier', 'cost');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'Soldier', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(expansion, 'Soldier', 'expansion');
+    BuiltValueNullFieldError.checkNotNull(move, 'Soldier', 'move');
+    BuiltValueNullFieldError.checkNotNull(fight, 'Soldier', 'fight');
+    BuiltValueNullFieldError.checkNotNull(shoot, 'Soldier', 'shoot');
+    BuiltValueNullFieldError.checkNotNull(armour, 'Soldier', 'armour');
+    BuiltValueNullFieldError.checkNotNull(will, 'Soldier', 'will');
+    BuiltValueNullFieldError.checkNotNull(health, 'Soldier', 'health');
+    BuiltValueNullFieldError.checkNotNull(
+        additionalItemHoldCount, 'Soldier', 'additionalItemHoldCount');
+    BuiltValueNullFieldError.checkNotNull(
+        characterType, 'Soldier', 'characterType');
+    BuiltValueNullFieldError.checkNotNull(
+        soldierType, 'Soldier', 'soldierType');
+    BuiltValueNullFieldError.checkNotNull(cost, 'Soldier', 'cost');
   }
 
   @override
@@ -444,24 +429,25 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   SoldierBuilder();
 
   SoldierBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _expansion = _$v.expansion;
-      _move = _$v.move;
-      _fight = _$v.fight;
-      _shoot = _$v.shoot;
-      _armour = _$v.armour;
-      _will = _$v.will;
-      _health = _$v.health;
-      _currentHealth = _$v.currentHealth;
-      _additionalItemHoldCount = _$v.additionalItemHoldCount;
-      _characterType = _$v.characterType;
-      _soldierType = _$v.soldierType;
-      _cost = _$v.cost;
-      _description = _$v.description;
-      _weapons = _$v.weapons?.toBuilder();
-      _armours = _$v.armours?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _expansion = $v.expansion;
+      _move = $v.move;
+      _fight = $v.fight;
+      _shoot = $v.shoot;
+      _armour = $v.armour;
+      _will = $v.will;
+      _health = $v.health;
+      _currentHealth = $v.currentHealth;
+      _additionalItemHoldCount = $v.additionalItemHoldCount;
+      _characterType = $v.characterType;
+      _soldierType = $v.soldierType;
+      _cost = $v.cost;
+      _description = $v.description;
+      _weapons = $v.weapons?.toBuilder();
+      _armours = $v.armours?.toBuilder();
       _$v = null;
     }
     return this;
@@ -469,9 +455,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
 
   @override
   void replace(Soldier other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Soldier;
   }
 
@@ -487,19 +471,29 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
       _$result = _$v ??
           new _$Soldier._(
               name: name,
-              displayFormattedTypeName: displayFormattedTypeName,
-              expansion: expansion,
-              move: move,
-              fight: fight,
-              shoot: shoot,
-              armour: armour,
-              will: will,
-              health: health,
+              displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                  displayFormattedTypeName, 'Soldier', 'displayFormattedTypeName'),
+              expansion: BuiltValueNullFieldError.checkNotNull(
+                  expansion, 'Soldier', 'expansion'),
+              move: BuiltValueNullFieldError.checkNotNull(
+                  move, 'Soldier', 'move'),
+              fight: BuiltValueNullFieldError.checkNotNull(
+                  fight, 'Soldier', 'fight'),
+              shoot: BuiltValueNullFieldError.checkNotNull(
+                  shoot, 'Soldier', 'shoot'),
+              armour: BuiltValueNullFieldError.checkNotNull(
+                  armour, 'Soldier', 'armour'),
+              will: BuiltValueNullFieldError.checkNotNull(
+                  will, 'Soldier', 'will'),
+              health: BuiltValueNullFieldError.checkNotNull(
+                  health, 'Soldier', 'health'),
               currentHealth: currentHealth,
-              additionalItemHoldCount: additionalItemHoldCount,
-              characterType: characterType,
-              soldierType: soldierType,
-              cost: cost,
+              additionalItemHoldCount: BuiltValueNullFieldError.checkNotNull(
+                  additionalItemHoldCount, 'Soldier', 'additionalItemHoldCount'),
+              characterType:
+                  BuiltValueNullFieldError.checkNotNull(characterType, 'Soldier', 'characterType'),
+              soldierType: BuiltValueNullFieldError.checkNotNull(soldierType, 'Soldier', 'soldierType'),
+              cost: BuiltValueNullFieldError.checkNotNull(cost, 'Soldier', 'cost'),
               description: description,
               weapons: _weapons?.build(),
               armours: _armours?.build());

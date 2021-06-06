@@ -36,7 +36,7 @@ class _$WeaponsSerializer implements StructuredSerializer<Weapons> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'weapons':
           result.weapons.replace(serializers.deserialize(value,
@@ -59,9 +59,7 @@ class _$Weapons extends Weapons {
       (new WeaponsBuilder()..update(updates)).build();
 
   _$Weapons._({this.weapons}) : super._() {
-    if (weapons == null) {
-      throw new BuiltValueNullFieldError('Weapons', 'weapons');
-    }
+    BuiltValueNullFieldError.checkNotNull(weapons, 'Weapons', 'weapons');
   }
 
   @override
@@ -100,8 +98,9 @@ class WeaponsBuilder implements Builder<Weapons, WeaponsBuilder> {
   WeaponsBuilder();
 
   WeaponsBuilder get _$this {
-    if (_$v != null) {
-      _weapons = _$v.weapons?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _weapons = $v.weapons.toBuilder();
       _$v = null;
     }
     return this;
@@ -109,9 +108,7 @@ class WeaponsBuilder implements Builder<Weapons, WeaponsBuilder> {
 
   @override
   void replace(Weapons other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Weapons;
   }
 

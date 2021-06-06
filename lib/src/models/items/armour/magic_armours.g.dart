@@ -37,7 +37,7 @@ class _$MagicArmoursSerializer implements StructuredSerializer<MagicArmours> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'magicArmours':
           result.magicArmours.replace(serializers.deserialize(value,
@@ -60,9 +60,8 @@ class _$MagicArmours extends MagicArmours {
       (new MagicArmoursBuilder()..update(updates)).build();
 
   _$MagicArmours._({this.magicArmours}) : super._() {
-    if (magicArmours == null) {
-      throw new BuiltValueNullFieldError('MagicArmours', 'magicArmours');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        magicArmours, 'MagicArmours', 'magicArmours');
   }
 
   @override
@@ -104,8 +103,9 @@ class MagicArmoursBuilder
   MagicArmoursBuilder();
 
   MagicArmoursBuilder get _$this {
-    if (_$v != null) {
-      _magicArmours = _$v.magicArmours?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _magicArmours = $v.magicArmours.toBuilder();
       _$v = null;
     }
     return this;
@@ -113,9 +113,7 @@ class MagicArmoursBuilder
 
   @override
   void replace(MagicArmours other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$MagicArmours;
   }
 

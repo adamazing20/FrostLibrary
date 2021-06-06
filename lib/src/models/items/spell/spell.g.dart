@@ -39,23 +39,25 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    if (object.description != null) {
+    Object value;
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.sellValue != null) {
+    value = object.sellValue;
+    if (value != null) {
       result
         ..add('sellValue')
-        ..add(serializers.serialize(object.sellValue,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.price != null) {
+    value = object.price;
+    if (value != null) {
       result
         ..add('price')
-        ..add(serializers.serialize(object.price,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -69,7 +71,7 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -155,27 +157,15 @@ class _$Spell extends Spell {
       this.category,
       this.expansion})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Spell', 'name');
-    }
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError('Spell', 'displayFormattedTypeName');
-    }
-    if (itemType == null) {
-      throw new BuiltValueNullFieldError('Spell', 'itemType');
-    }
-    if (school == null) {
-      throw new BuiltValueNullFieldError('Spell', 'school');
-    }
-    if (baseCastingNumber == null) {
-      throw new BuiltValueNullFieldError('Spell', 'baseCastingNumber');
-    }
-    if (category == null) {
-      throw new BuiltValueNullFieldError('Spell', 'category');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('Spell', 'expansion');
-    }
+    BuiltValueNullFieldError.checkNotNull(name, 'Spell', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'Spell', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(itemType, 'Spell', 'itemType');
+    BuiltValueNullFieldError.checkNotNull(school, 'Spell', 'school');
+    BuiltValueNullFieldError.checkNotNull(
+        baseCastingNumber, 'Spell', 'baseCastingNumber');
+    BuiltValueNullFieldError.checkNotNull(category, 'Spell', 'category');
+    BuiltValueNullFieldError.checkNotNull(expansion, 'Spell', 'expansion');
   }
 
   @override
@@ -288,17 +278,18 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   SpellBuilder();
 
   SpellBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _itemType = _$v.itemType;
-      _description = _$v.description;
-      _sellValue = _$v.sellValue;
-      _price = _$v.price;
-      _school = _$v.school;
-      _baseCastingNumber = _$v.baseCastingNumber;
-      _category = _$v.category;
-      _expansion = _$v.expansion;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _itemType = $v.itemType;
+      _description = $v.description;
+      _sellValue = $v.sellValue;
+      _price = $v.price;
+      _school = $v.school;
+      _baseCastingNumber = $v.baseCastingNumber;
+      _category = $v.category;
+      _expansion = $v.expansion;
       _$v = null;
     }
     return this;
@@ -306,9 +297,7 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
 
   @override
   void replace(Spell other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Spell;
   }
 
@@ -321,16 +310,22 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   _$Spell build() {
     final _$result = _$v ??
         new _$Spell._(
-            name: name,
-            displayFormattedTypeName: displayFormattedTypeName,
-            itemType: itemType,
+            name: BuiltValueNullFieldError.checkNotNull(name, 'Spell', 'name'),
+            displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                displayFormattedTypeName, 'Spell', 'displayFormattedTypeName'),
+            itemType: BuiltValueNullFieldError.checkNotNull(
+                itemType, 'Spell', 'itemType'),
             description: description,
             sellValue: sellValue,
             price: price,
-            school: school,
-            baseCastingNumber: baseCastingNumber,
-            category: category,
-            expansion: expansion);
+            school: BuiltValueNullFieldError.checkNotNull(
+                school, 'Spell', 'school'),
+            baseCastingNumber: BuiltValueNullFieldError.checkNotNull(
+                baseCastingNumber, 'Spell', 'baseCastingNumber'),
+            category: BuiltValueNullFieldError.checkNotNull(
+                category, 'Spell', 'category'),
+            expansion: BuiltValueNullFieldError.checkNotNull(
+                expansion, 'Spell', 'expansion'));
     replace(_$result);
     return _$result;
   }

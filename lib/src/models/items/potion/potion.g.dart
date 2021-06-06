@@ -30,23 +30,26 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    if (object.description != null) {
+    Object value;
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.effect != null) {
+    value = object.effect;
+    if (value != null) {
       result
         ..add('effect')
-        ..add(serializers.serialize(object.effect,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.price != null) {
+    value = object.price;
+    if (value != null) {
       result
         ..add('price')
-        ..add(serializers.serialize(object.price,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -60,7 +63,7 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -125,18 +128,11 @@ class _$Potion extends Potion {
       this.price,
       this.expansion})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Potion', 'name');
-    }
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError('Potion', 'displayFormattedTypeName');
-    }
-    if (itemType == null) {
-      throw new BuiltValueNullFieldError('Potion', 'itemType');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('Potion', 'expansion');
-    }
+    BuiltValueNullFieldError.checkNotNull(name, 'Potion', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'Potion', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(itemType, 'Potion', 'itemType');
+    BuiltValueNullFieldError.checkNotNull(expansion, 'Potion', 'expansion');
   }
 
   @override
@@ -224,14 +220,15 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   PotionBuilder();
 
   PotionBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _itemType = _$v.itemType;
-      _description = _$v.description;
-      _effect = _$v.effect;
-      _price = _$v.price;
-      _expansion = _$v.expansion;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _itemType = $v.itemType;
+      _description = $v.description;
+      _effect = $v.effect;
+      _price = $v.price;
+      _expansion = $v.expansion;
       _$v = null;
     }
     return this;
@@ -239,9 +236,7 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
 
   @override
   void replace(Potion other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Potion;
   }
 
@@ -254,13 +249,16 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   _$Potion build() {
     final _$result = _$v ??
         new _$Potion._(
-            name: name,
-            displayFormattedTypeName: displayFormattedTypeName,
-            itemType: itemType,
+            name: BuiltValueNullFieldError.checkNotNull(name, 'Potion', 'name'),
+            displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                displayFormattedTypeName, 'Potion', 'displayFormattedTypeName'),
+            itemType: BuiltValueNullFieldError.checkNotNull(
+                itemType, 'Potion', 'itemType'),
             description: description,
             effect: effect,
             price: price,
-            expansion: expansion);
+            expansion: BuiltValueNullFieldError.checkNotNull(
+                expansion, 'Potion', 'expansion'));
     replace(_$result);
     return _$result;
   }

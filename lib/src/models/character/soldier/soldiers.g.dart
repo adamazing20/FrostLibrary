@@ -36,7 +36,7 @@ class _$SoldiersSerializer implements StructuredSerializer<Soldiers> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'soldiers':
           result.soldiers.replace(serializers.deserialize(value,
@@ -59,9 +59,7 @@ class _$Soldiers extends Soldiers {
       (new SoldiersBuilder()..update(updates)).build();
 
   _$Soldiers._({this.soldiers}) : super._() {
-    if (soldiers == null) {
-      throw new BuiltValueNullFieldError('Soldiers', 'soldiers');
-    }
+    BuiltValueNullFieldError.checkNotNull(soldiers, 'Soldiers', 'soldiers');
   }
 
   @override
@@ -100,8 +98,9 @@ class SoldiersBuilder implements Builder<Soldiers, SoldiersBuilder> {
   SoldiersBuilder();
 
   SoldiersBuilder get _$this {
-    if (_$v != null) {
-      _soldiers = _$v.soldiers?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _soldiers = $v.soldiers.toBuilder();
       _$v = null;
     }
     return this;
@@ -109,9 +108,7 @@ class SoldiersBuilder implements Builder<Soldiers, SoldiersBuilder> {
 
   @override
   void replace(Soldiers other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Soldiers;
   }
 

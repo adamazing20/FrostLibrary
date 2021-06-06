@@ -36,7 +36,7 @@ class _$ApprenticesSerializer implements StructuredSerializer<Apprentices> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'apprentices':
           result.apprentices.replace(serializers.deserialize(value,
@@ -59,9 +59,8 @@ class _$Apprentices extends Apprentices {
       (new ApprenticesBuilder()..update(updates)).build();
 
   _$Apprentices._({this.apprentices}) : super._() {
-    if (apprentices == null) {
-      throw new BuiltValueNullFieldError('Apprentices', 'apprentices');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        apprentices, 'Apprentices', 'apprentices');
   }
 
   @override
@@ -102,8 +101,9 @@ class ApprenticesBuilder implements Builder<Apprentices, ApprenticesBuilder> {
   ApprenticesBuilder();
 
   ApprenticesBuilder get _$this {
-    if (_$v != null) {
-      _apprentices = _$v.apprentices?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _apprentices = $v.apprentices.toBuilder();
       _$v = null;
     }
     return this;
@@ -111,9 +111,7 @@ class ApprenticesBuilder implements Builder<Apprentices, ApprenticesBuilder> {
 
   @override
   void replace(Apprentices other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Apprentices;
   }
 

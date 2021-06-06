@@ -33,22 +33,25 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    if (object.damageModified != null) {
+    Object value;
+    value = object.damageModified;
+    if (value != null) {
       result
         ..add('damageModified')
-        ..add(serializers.serialize(object.damageModified,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.description != null) {
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.notes != null) {
+    value = object.notes;
+    if (value != null) {
       result
         ..add('notes')
-        ..add(serializers.serialize(object.notes,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -63,7 +66,7 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -135,21 +138,12 @@ class _$Weapon extends Weapon {
       this.notes,
       this.expansion})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Weapon', 'name');
-    }
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError('Weapon', 'displayFormattedTypeName');
-    }
-    if (itemType == null) {
-      throw new BuiltValueNullFieldError('Weapon', 'itemType');
-    }
-    if (weaponType == null) {
-      throw new BuiltValueNullFieldError('Weapon', 'weaponType');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('Weapon', 'expansion');
-    }
+    BuiltValueNullFieldError.checkNotNull(name, 'Weapon', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'Weapon', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(itemType, 'Weapon', 'itemType');
+    BuiltValueNullFieldError.checkNotNull(weaponType, 'Weapon', 'weaponType');
+    BuiltValueNullFieldError.checkNotNull(expansion, 'Weapon', 'expansion');
   }
 
   @override
@@ -246,15 +240,16 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
   WeaponBuilder();
 
   WeaponBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _itemType = _$v.itemType;
-      _weaponType = _$v.weaponType;
-      _damageModified = _$v.damageModified;
-      _description = _$v.description;
-      _notes = _$v.notes;
-      _expansion = _$v.expansion;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _itemType = $v.itemType;
+      _weaponType = $v.weaponType;
+      _damageModified = $v.damageModified;
+      _description = $v.description;
+      _notes = $v.notes;
+      _expansion = $v.expansion;
       _$v = null;
     }
     return this;
@@ -262,9 +257,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
 
   @override
   void replace(Weapon other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Weapon;
   }
 
@@ -277,14 +270,18 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
   _$Weapon build() {
     final _$result = _$v ??
         new _$Weapon._(
-            name: name,
-            displayFormattedTypeName: displayFormattedTypeName,
-            itemType: itemType,
-            weaponType: weaponType,
+            name: BuiltValueNullFieldError.checkNotNull(name, 'Weapon', 'name'),
+            displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                displayFormattedTypeName, 'Weapon', 'displayFormattedTypeName'),
+            itemType: BuiltValueNullFieldError.checkNotNull(
+                itemType, 'Weapon', 'itemType'),
+            weaponType: BuiltValueNullFieldError.checkNotNull(
+                weaponType, 'Weapon', 'weaponType'),
             damageModified: damageModified,
             description: description,
             notes: notes,
-            expansion: expansion);
+            expansion: BuiltValueNullFieldError.checkNotNull(
+                expansion, 'Weapon', 'expansion'));
     replace(_$result);
     return _$result;
   }

@@ -36,7 +36,7 @@ class _$PotionsSerializer implements StructuredSerializer<Potions> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'potions':
           result.potions.replace(serializers.deserialize(value,
@@ -59,9 +59,7 @@ class _$Potions extends Potions {
       (new PotionsBuilder()..update(updates)).build();
 
   _$Potions._({this.potions}) : super._() {
-    if (potions == null) {
-      throw new BuiltValueNullFieldError('Potions', 'potions');
-    }
+    BuiltValueNullFieldError.checkNotNull(potions, 'Potions', 'potions');
   }
 
   @override
@@ -100,8 +98,9 @@ class PotionsBuilder implements Builder<Potions, PotionsBuilder> {
   PotionsBuilder();
 
   PotionsBuilder get _$this {
-    if (_$v != null) {
-      _potions = _$v.potions?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _potions = $v.potions.toBuilder();
       _$v = null;
     }
     return this;
@@ -109,9 +108,7 @@ class PotionsBuilder implements Builder<Potions, PotionsBuilder> {
 
   @override
   void replace(Potions other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Potions;
   }
 

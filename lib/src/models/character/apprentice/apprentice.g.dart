@@ -45,35 +45,40 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
       serializers.serialize(object.characterType,
           specifiedType: const FullType(CharacterType)),
     ];
-    if (object.name != null) {
+    Object value;
+    value = object.name;
+    if (value != null) {
       result
         ..add('name')
-        ..add(serializers.serialize(object.name,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.currentHealth != null) {
+    value = object.currentHealth;
+    if (value != null) {
       result
         ..add('currentHealth')
-        ..add(serializers.serialize(object.currentHealth,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.description != null) {
+    value = object.description;
+    if (value != null) {
       result
         ..add('description')
-        ..add(serializers.serialize(object.description,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.weapons != null) {
+    value = object.weapons;
+    if (value != null) {
       result
         ..add('weapons')
-        ..add(serializers.serialize(object.weapons,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(WeaponType)])));
     }
-    if (object.armours != null) {
+    value = object.armours;
+    if (value != null) {
       result
         ..add('armours')
-        ..add(serializers.serialize(object.armours,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(ArmourType)])));
     }
@@ -89,7 +94,7 @@ class _$ApprenticeSerializer implements StructuredSerializer<Apprentice> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -221,41 +226,20 @@ class _$Apprentice extends Apprentice {
       this.weapons,
       this.armours})
       : super._() {
-    if (displayFormattedTypeName == null) {
-      throw new BuiltValueNullFieldError(
-          'Apprentice', 'displayFormattedTypeName');
-    }
-    if (expansion == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'expansion');
-    }
-    if (move == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'move');
-    }
-    if (fight == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'fight');
-    }
-    if (shoot == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'shoot');
-    }
-    if (armour == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'armour');
-    }
-    if (will == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'will');
-    }
-    if (health == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'health');
-    }
-    if (cost == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'cost');
-    }
-    if (additionalItemHoldCount == null) {
-      throw new BuiltValueNullFieldError(
-          'Apprentice', 'additionalItemHoldCount');
-    }
-    if (characterType == null) {
-      throw new BuiltValueNullFieldError('Apprentice', 'characterType');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        displayFormattedTypeName, 'Apprentice', 'displayFormattedTypeName');
+    BuiltValueNullFieldError.checkNotNull(expansion, 'Apprentice', 'expansion');
+    BuiltValueNullFieldError.checkNotNull(move, 'Apprentice', 'move');
+    BuiltValueNullFieldError.checkNotNull(fight, 'Apprentice', 'fight');
+    BuiltValueNullFieldError.checkNotNull(shoot, 'Apprentice', 'shoot');
+    BuiltValueNullFieldError.checkNotNull(armour, 'Apprentice', 'armour');
+    BuiltValueNullFieldError.checkNotNull(will, 'Apprentice', 'will');
+    BuiltValueNullFieldError.checkNotNull(health, 'Apprentice', 'health');
+    BuiltValueNullFieldError.checkNotNull(cost, 'Apprentice', 'cost');
+    BuiltValueNullFieldError.checkNotNull(
+        additionalItemHoldCount, 'Apprentice', 'additionalItemHoldCount');
+    BuiltValueNullFieldError.checkNotNull(
+        characterType, 'Apprentice', 'characterType');
   }
 
   @override
@@ -424,23 +408,24 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
   ApprenticeBuilder();
 
   ApprenticeBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _displayFormattedTypeName = _$v.displayFormattedTypeName;
-      _expansion = _$v.expansion;
-      _move = _$v.move;
-      _fight = _$v.fight;
-      _shoot = _$v.shoot;
-      _armour = _$v.armour;
-      _will = _$v.will;
-      _health = _$v.health;
-      _currentHealth = _$v.currentHealth;
-      _cost = _$v.cost;
-      _additionalItemHoldCount = _$v.additionalItemHoldCount;
-      _characterType = _$v.characterType;
-      _description = _$v.description;
-      _weapons = _$v.weapons?.toBuilder();
-      _armours = _$v.armours?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _displayFormattedTypeName = $v.displayFormattedTypeName;
+      _expansion = $v.expansion;
+      _move = $v.move;
+      _fight = $v.fight;
+      _shoot = $v.shoot;
+      _armour = $v.armour;
+      _will = $v.will;
+      _health = $v.health;
+      _currentHealth = $v.currentHealth;
+      _cost = $v.cost;
+      _additionalItemHoldCount = $v.additionalItemHoldCount;
+      _characterType = $v.characterType;
+      _description = $v.description;
+      _weapons = $v.weapons?.toBuilder();
+      _armours = $v.armours?.toBuilder();
       _$v = null;
     }
     return this;
@@ -448,9 +433,7 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
 
   @override
   void replace(Apprentice other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Apprentice;
   }
 
@@ -466,18 +449,29 @@ class ApprenticeBuilder implements Builder<Apprentice, ApprenticeBuilder> {
       _$result = _$v ??
           new _$Apprentice._(
               name: name,
-              displayFormattedTypeName: displayFormattedTypeName,
-              expansion: expansion,
-              move: move,
-              fight: fight,
-              shoot: shoot,
-              armour: armour,
-              will: will,
-              health: health,
+              displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
+                  displayFormattedTypeName,
+                  'Apprentice',
+                  'displayFormattedTypeName'),
+              expansion: BuiltValueNullFieldError.checkNotNull(
+                  expansion, 'Apprentice', 'expansion'),
+              move: BuiltValueNullFieldError.checkNotNull(
+                  move, 'Apprentice', 'move'),
+              fight: BuiltValueNullFieldError.checkNotNull(
+                  fight, 'Apprentice', 'fight'),
+              shoot: BuiltValueNullFieldError.checkNotNull(
+                  shoot, 'Apprentice', 'shoot'),
+              armour: BuiltValueNullFieldError.checkNotNull(
+                  armour, 'Apprentice', 'armour'),
+              will: BuiltValueNullFieldError.checkNotNull(
+                  will, 'Apprentice', 'will'),
+              health: BuiltValueNullFieldError.checkNotNull(
+                  health, 'Apprentice', 'health'),
               currentHealth: currentHealth,
-              cost: cost,
-              additionalItemHoldCount: additionalItemHoldCount,
-              characterType: characterType,
+              cost:
+                  BuiltValueNullFieldError.checkNotNull(cost, 'Apprentice', 'cost'),
+              additionalItemHoldCount: BuiltValueNullFieldError.checkNotNull(additionalItemHoldCount, 'Apprentice', 'additionalItemHoldCount'),
+              characterType: BuiltValueNullFieldError.checkNotNull(characterType, 'Apprentice', 'characterType'),
               description: description,
               weapons: _weapons?.build(),
               armours: _armours?.build());
