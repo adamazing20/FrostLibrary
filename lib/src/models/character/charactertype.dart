@@ -10,8 +10,9 @@ class CharacterType extends EnumClass {
   static Serializer<CharacterType> get serializer => _$characterTypeSerializer;
 
   static const CharacterType Wizard = _$wizard;
-  static const CharacterType Soldier = _$soldier;
   static const CharacterType Apprentice = _$apprentice;
+  static const CharacterType Soldier = _$soldier;
+
 
   const CharacterType._(String name) : super(name);
 
