@@ -19,8 +19,7 @@ abstract class Soldier implements Built<Soldier, SoldierBuilder>, SoldierDef {
   static Serializer<Soldier> get serializer => _$soldierSerializer;
 
   @override
-  @nullable
-  String get name;
+  String? get name;
 
   @override
   String get displayFormattedTypeName;
@@ -47,8 +46,7 @@ abstract class Soldier implements Built<Soldier, SoldierBuilder>, SoldierDef {
   int get health;
 
   @override
-  @nullable
-  int get currentHealth;
+  int? get currentHealth;
 
   @override
   int get additionalItemHoldCount;
@@ -63,22 +61,19 @@ abstract class Soldier implements Built<Soldier, SoldierBuilder>, SoldierDef {
   int get cost;
 
   @override
-  @nullable
-  String get description;
+  String? get description;
 
   @override
-  @nullable
-  BuiltList<WeaponType> get weapons;
+  BuiltList<WeaponType>? get weapons;
 
   @override
-  @nullable
-  BuiltList<ArmourType> get armours;
+  BuiltList<ArmourType>? get armours;
 
   String toJson() {
     return json.encode(serializers.serializeWith(Soldier.serializer, this));
   }
 
-  static Soldier fromJson(String jsonString) {
+  static Soldier? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Soldier.serializer, jsonDecode(jsonString));
   }

@@ -17,7 +17,7 @@ abstract class Soldiers implements Built<Soldiers, SoldiersBuilder> {
     return json.encode(serializers.serializeWith(Soldiers.serializer, this));
   }
 
-  static Soldiers fromJson(String jsonString) {
+  static Soldiers? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Soldiers.serializer, jsonDecode(jsonString));
   }

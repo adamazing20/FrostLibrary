@@ -15,9 +15,9 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
   final String wireName = 'Wizard';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Wizard object,
+  Iterable<Object?> serialize(Serializers serializers, Wizard object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'displayFormattedTypeName',
       serializers.serialize(object.displayFormattedTypeName,
           specifiedType: const FullType(String)),
@@ -63,7 +63,7 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(School)])),
     ];
-    Object value;
+    Object? value;
     value = object.name;
     if (value != null) {
       result
@@ -110,7 +110,7 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
   }
 
   @override
-  Wizard deserialize(Serializers serializers, Iterable<Object> serialized,
+  Wizard deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new WizardBuilder();
 
@@ -118,11 +118,11 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'displayFormattedTypeName':
           result.displayFormattedTypeName = serializers.deserialize(value,
@@ -158,7 +158,7 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           break;
         case 'currentHealth':
           result.currentHealth = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'characterType':
           result.characterType = serializers.deserialize(value,
@@ -182,41 +182,41 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'aligned':
           result.aligned.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(School)]))
-              as BuiltList<Object>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(School)]))!
+              as BuiltList<Object?>);
           break;
         case 'neutral':
           result.neutral.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(School)]))
-              as BuiltList<Object>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(School)]))!
+              as BuiltList<Object?>);
           break;
         case 'opposed':
           result.opposed.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(School)]))
-              as BuiltList<Object>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(School)]))!
+              as BuiltList<Object?>);
           break;
         case 'weapons':
           result.weapons.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(WeaponType)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(WeaponType)]))!
+              as BuiltList<Object?>);
           break;
         case 'armours':
           result.armours.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(ArmourType)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(ArmourType)]))!
+              as BuiltList<Object?>);
           break;
         case 'cost':
           result.cost = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -227,7 +227,7 @@ class _$WizardSerializer implements StructuredSerializer<Wizard> {
 
 class _$Wizard extends Wizard {
   @override
-  final String name;
+  final String? name;
   @override
   final String displayFormattedTypeName;
   @override
@@ -245,7 +245,7 @@ class _$Wizard extends Wizard {
   @override
   final int health;
   @override
-  final int currentHealth;
+  final int? currentHealth;
   @override
   final CharacterType characterType;
   @override
@@ -257,7 +257,7 @@ class _$Wizard extends Wizard {
   @override
   final School wizardType;
   @override
-  final String description;
+  final String? description;
   @override
   final BuiltList<School> aligned;
   @override
@@ -265,35 +265,35 @@ class _$Wizard extends Wizard {
   @override
   final BuiltList<School> opposed;
   @override
-  final BuiltList<WeaponType> weapons;
+  final BuiltList<WeaponType>? weapons;
   @override
-  final BuiltList<ArmourType> armours;
+  final BuiltList<ArmourType>? armours;
   @override
-  final int cost;
+  final int? cost;
 
-  factory _$Wizard([void Function(WizardBuilder) updates]) =>
+  factory _$Wizard([void Function(WizardBuilder)? updates]) =>
       (new WizardBuilder()..update(updates)).build();
 
   _$Wizard._(
       {this.name,
-      this.displayFormattedTypeName,
-      this.expansion,
-      this.move,
-      this.fight,
-      this.shoot,
-      this.armour,
-      this.will,
-      this.health,
+      required this.displayFormattedTypeName,
+      required this.expansion,
+      required this.move,
+      required this.fight,
+      required this.shoot,
+      required this.armour,
+      required this.will,
+      required this.health,
       this.currentHealth,
-      this.characterType,
-      this.experience,
-      this.level,
-      this.additionalItemHoldCount,
-      this.wizardType,
+      required this.characterType,
+      required this.experience,
+      required this.level,
+      required this.additionalItemHoldCount,
+      required this.wizardType,
       this.description,
-      this.aligned,
-      this.neutral,
-      this.opposed,
+      required this.aligned,
+      required this.neutral,
+      required this.opposed,
       this.weapons,
       this.armours,
       this.cost})
@@ -426,103 +426,104 @@ class _$Wizard extends Wizard {
 }
 
 class WizardBuilder implements Builder<Wizard, WizardBuilder> {
-  _$Wizard _$v;
+  _$Wizard? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _displayFormattedTypeName;
-  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
-  set displayFormattedTypeName(String displayFormattedTypeName) =>
+  String? _displayFormattedTypeName;
+  String? get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String? displayFormattedTypeName) =>
       _$this._displayFormattedTypeName = displayFormattedTypeName;
 
-  Expansion _expansion;
-  Expansion get expansion => _$this._expansion;
-  set expansion(Expansion expansion) => _$this._expansion = expansion;
+  Expansion? _expansion;
+  Expansion? get expansion => _$this._expansion;
+  set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
-  int _move;
-  int get move => _$this._move;
-  set move(int move) => _$this._move = move;
+  int? _move;
+  int? get move => _$this._move;
+  set move(int? move) => _$this._move = move;
 
-  int _fight;
-  int get fight => _$this._fight;
-  set fight(int fight) => _$this._fight = fight;
+  int? _fight;
+  int? get fight => _$this._fight;
+  set fight(int? fight) => _$this._fight = fight;
 
-  int _shoot;
-  int get shoot => _$this._shoot;
-  set shoot(int shoot) => _$this._shoot = shoot;
+  int? _shoot;
+  int? get shoot => _$this._shoot;
+  set shoot(int? shoot) => _$this._shoot = shoot;
 
-  int _armour;
-  int get armour => _$this._armour;
-  set armour(int armour) => _$this._armour = armour;
+  int? _armour;
+  int? get armour => _$this._armour;
+  set armour(int? armour) => _$this._armour = armour;
 
-  int _will;
-  int get will => _$this._will;
-  set will(int will) => _$this._will = will;
+  int? _will;
+  int? get will => _$this._will;
+  set will(int? will) => _$this._will = will;
 
-  int _health;
-  int get health => _$this._health;
-  set health(int health) => _$this._health = health;
+  int? _health;
+  int? get health => _$this._health;
+  set health(int? health) => _$this._health = health;
 
-  int _currentHealth;
-  int get currentHealth => _$this._currentHealth;
-  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
+  int? _currentHealth;
+  int? get currentHealth => _$this._currentHealth;
+  set currentHealth(int? currentHealth) =>
+      _$this._currentHealth = currentHealth;
 
-  CharacterType _characterType;
-  CharacterType get characterType => _$this._characterType;
-  set characterType(CharacterType characterType) =>
+  CharacterType? _characterType;
+  CharacterType? get characterType => _$this._characterType;
+  set characterType(CharacterType? characterType) =>
       _$this._characterType = characterType;
 
-  int _experience;
-  int get experience => _$this._experience;
-  set experience(int experience) => _$this._experience = experience;
+  int? _experience;
+  int? get experience => _$this._experience;
+  set experience(int? experience) => _$this._experience = experience;
 
-  int _level;
-  int get level => _$this._level;
-  set level(int level) => _$this._level = level;
+  int? _level;
+  int? get level => _$this._level;
+  set level(int? level) => _$this._level = level;
 
-  int _additionalItemHoldCount;
-  int get additionalItemHoldCount => _$this._additionalItemHoldCount;
-  set additionalItemHoldCount(int additionalItemHoldCount) =>
+  int? _additionalItemHoldCount;
+  int? get additionalItemHoldCount => _$this._additionalItemHoldCount;
+  set additionalItemHoldCount(int? additionalItemHoldCount) =>
       _$this._additionalItemHoldCount = additionalItemHoldCount;
 
-  School _wizardType;
-  School get wizardType => _$this._wizardType;
-  set wizardType(School wizardType) => _$this._wizardType = wizardType;
+  School? _wizardType;
+  School? get wizardType => _$this._wizardType;
+  set wizardType(School? wizardType) => _$this._wizardType = wizardType;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  ListBuilder<School> _aligned;
+  ListBuilder<School>? _aligned;
   ListBuilder<School> get aligned =>
       _$this._aligned ??= new ListBuilder<School>();
-  set aligned(ListBuilder<School> aligned) => _$this._aligned = aligned;
+  set aligned(ListBuilder<School>? aligned) => _$this._aligned = aligned;
 
-  ListBuilder<School> _neutral;
+  ListBuilder<School>? _neutral;
   ListBuilder<School> get neutral =>
       _$this._neutral ??= new ListBuilder<School>();
-  set neutral(ListBuilder<School> neutral) => _$this._neutral = neutral;
+  set neutral(ListBuilder<School>? neutral) => _$this._neutral = neutral;
 
-  ListBuilder<School> _opposed;
+  ListBuilder<School>? _opposed;
   ListBuilder<School> get opposed =>
       _$this._opposed ??= new ListBuilder<School>();
-  set opposed(ListBuilder<School> opposed) => _$this._opposed = opposed;
+  set opposed(ListBuilder<School>? opposed) => _$this._opposed = opposed;
 
-  ListBuilder<WeaponType> _weapons;
+  ListBuilder<WeaponType>? _weapons;
   ListBuilder<WeaponType> get weapons =>
       _$this._weapons ??= new ListBuilder<WeaponType>();
-  set weapons(ListBuilder<WeaponType> weapons) => _$this._weapons = weapons;
+  set weapons(ListBuilder<WeaponType>? weapons) => _$this._weapons = weapons;
 
-  ListBuilder<ArmourType> _armours;
+  ListBuilder<ArmourType>? _armours;
   ListBuilder<ArmourType> get armours =>
       _$this._armours ??= new ListBuilder<ArmourType>();
-  set armours(ListBuilder<ArmourType> armours) => _$this._armours = armours;
+  set armours(ListBuilder<ArmourType>? armours) => _$this._armours = armours;
 
-  int _cost;
-  int get cost => _$this._cost;
-  set cost(int cost) => _$this._cost = cost;
+  int? _cost;
+  int? get cost => _$this._cost;
+  set cost(int? cost) => _$this._cost = cost;
 
   WizardBuilder();
 
@@ -563,7 +564,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   }
 
   @override
-  void update(void Function(WizardBuilder) updates) {
+  void update(void Function(WizardBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -606,7 +607,7 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
               armours: _armours?.build(),
               cost: cost);
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'aligned';
         aligned.build();
@@ -629,4 +630,4 @@ class WizardBuilder implements Builder<Wizard, WizardBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

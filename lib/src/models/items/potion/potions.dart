@@ -17,7 +17,7 @@ abstract class Potions implements Built<Potions, PotionsBuilder> {
     return json.encode(serializers.serializeWith(Potions.serializer, this));
   }
 
-  static Potions fromJson(String jsonString) {
+  static Potions? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Potions.serializer, jsonDecode(jsonString));
   }

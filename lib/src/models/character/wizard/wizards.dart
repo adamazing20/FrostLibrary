@@ -17,7 +17,7 @@ abstract class Wizards implements Built<Wizards, WizardsBuilder> {
     return json.encode(serializers.serializeWith(Wizards.serializer, this));
   }
 
-  static Wizards fromJson(String jsonString) {
+  static Wizards? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Wizards.serializer, jsonDecode(jsonString));
   }

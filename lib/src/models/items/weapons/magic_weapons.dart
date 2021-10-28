@@ -19,7 +19,7 @@ abstract class MagicWeapons
         .encode(serializers.serializeWith(MagicWeapons.serializer, this));
   }
 
-  static MagicWeapons fromJson(String jsonString) {
+  static MagicWeapons? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MagicWeapons.serializer, jsonDecode(jsonString));
   }

@@ -19,7 +19,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  FrostLibrary itemLibrary;
+  late FrostLibrary itemLibrary;
 
   @override
   void initState() {

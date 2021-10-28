@@ -15,9 +15,9 @@ class _$ApprenticesSerializer implements StructuredSerializer<Apprentices> {
   final String wireName = 'Apprentices';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Apprentices object,
+  Iterable<Object?> serialize(Serializers serializers, Apprentices object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'apprentices',
       serializers.serialize(object.apprentices,
           specifiedType:
@@ -28,7 +28,7 @@ class _$ApprenticesSerializer implements StructuredSerializer<Apprentices> {
   }
 
   @override
-  Apprentices deserialize(Serializers serializers, Iterable<Object> serialized,
+  Apprentices deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApprenticesBuilder();
 
@@ -36,13 +36,13 @@ class _$ApprenticesSerializer implements StructuredSerializer<Apprentices> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'apprentices':
           result.apprentices.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Apprentice)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Apprentice)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -55,10 +55,10 @@ class _$Apprentices extends Apprentices {
   @override
   final BuiltList<Apprentice> apprentices;
 
-  factory _$Apprentices([void Function(ApprenticesBuilder) updates]) =>
+  factory _$Apprentices([void Function(ApprenticesBuilder)? updates]) =>
       (new ApprenticesBuilder()..update(updates)).build();
 
-  _$Apprentices._({this.apprentices}) : super._() {
+  _$Apprentices._({required this.apprentices}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         apprentices, 'Apprentices', 'apprentices');
   }
@@ -90,12 +90,12 @@ class _$Apprentices extends Apprentices {
 }
 
 class ApprenticesBuilder implements Builder<Apprentices, ApprenticesBuilder> {
-  _$Apprentices _$v;
+  _$Apprentices? _$v;
 
-  ListBuilder<Apprentice> _apprentices;
+  ListBuilder<Apprentice>? _apprentices;
   ListBuilder<Apprentice> get apprentices =>
       _$this._apprentices ??= new ListBuilder<Apprentice>();
-  set apprentices(ListBuilder<Apprentice> apprentices) =>
+  set apprentices(ListBuilder<Apprentice>? apprentices) =>
       _$this._apprentices = apprentices;
 
   ApprenticesBuilder();
@@ -116,7 +116,7 @@ class ApprenticesBuilder implements Builder<Apprentices, ApprenticesBuilder> {
   }
 
   @override
-  void update(void Function(ApprenticesBuilder) updates) {
+  void update(void Function(ApprenticesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -126,7 +126,7 @@ class ApprenticesBuilder implements Builder<Apprentices, ApprenticesBuilder> {
     try {
       _$result = _$v ?? new _$Apprentices._(apprentices: apprentices.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'apprentices';
         apprentices.build();
@@ -141,4 +141,4 @@ class ApprenticesBuilder implements Builder<Apprentices, ApprenticesBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

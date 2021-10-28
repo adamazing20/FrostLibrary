@@ -25,15 +25,12 @@ abstract class MagicArmour
   @override
   ItemType get itemType;
 
-  @nullable
-  int get damageModified;
+  int? get damageModified;
 
-  @nullable
   @override
-  String get description;
+  String? get description;
 
-  @nullable
-  String get notes;
+  String? get notes;
 
   @override
   int get price;
@@ -54,7 +51,7 @@ abstract class MagicArmour
     return json.encode(serializers.serializeWith(MagicArmour.serializer, this));
   }
 
-  static MagicArmour fromJson(String jsonString) {
+  static MagicArmour? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MagicArmour.serializer, jsonDecode(jsonString));
   }

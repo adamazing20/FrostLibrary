@@ -19,8 +19,7 @@ abstract class Apprentice
   static Serializer<Apprentice> get serializer => _$apprenticeSerializer;
 
   @override
-  @nullable
-  String get name;
+  String? get name;
 
   @override
   String get displayFormattedTypeName;
@@ -47,8 +46,7 @@ abstract class Apprentice
   int get health;
 
   @override
-  @nullable
-  int get currentHealth;
+  int? get currentHealth;
 
   @override
   int get cost;
@@ -60,22 +58,19 @@ abstract class Apprentice
   CharacterType get characterType;
 
   @override
-  @nullable
-  String get description;
+  String? get description;
 
   @override
-  @nullable
-  BuiltList<WeaponType> get weapons;
+  BuiltList<WeaponType>? get weapons;
 
   @override
-  @nullable
-  BuiltList<ArmourType> get armours;
+  BuiltList<ArmourType>? get armours;
 
   String toJson() {
     return json.encode(serializers.serializeWith(Apprentice.serializer, this));
   }
 
-  static Apprentice fromJson(String jsonString) {
+  static Apprentice? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Apprentice.serializer, jsonDecode(jsonString));
   }

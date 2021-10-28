@@ -15,9 +15,9 @@ class _$WizardsSerializer implements StructuredSerializer<Wizards> {
   final String wireName = 'Wizards';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Wizards object,
+  Iterable<Object?> serialize(Serializers serializers, Wizards object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'wizards',
       serializers.serialize(object.wizards,
           specifiedType:
@@ -28,7 +28,7 @@ class _$WizardsSerializer implements StructuredSerializer<Wizards> {
   }
 
   @override
-  Wizards deserialize(Serializers serializers, Iterable<Object> serialized,
+  Wizards deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new WizardsBuilder();
 
@@ -36,13 +36,13 @@ class _$WizardsSerializer implements StructuredSerializer<Wizards> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'wizards':
           result.wizards.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Wizard)]))
-              as BuiltList<Object>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Wizard)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -55,10 +55,10 @@ class _$Wizards extends Wizards {
   @override
   final BuiltList<Wizard> wizards;
 
-  factory _$Wizards([void Function(WizardsBuilder) updates]) =>
+  factory _$Wizards([void Function(WizardsBuilder)? updates]) =>
       (new WizardsBuilder()..update(updates)).build();
 
-  _$Wizards._({this.wizards}) : super._() {
+  _$Wizards._({required this.wizards}) : super._() {
     BuiltValueNullFieldError.checkNotNull(wizards, 'Wizards', 'wizards');
   }
 
@@ -88,12 +88,12 @@ class _$Wizards extends Wizards {
 }
 
 class WizardsBuilder implements Builder<Wizards, WizardsBuilder> {
-  _$Wizards _$v;
+  _$Wizards? _$v;
 
-  ListBuilder<Wizard> _wizards;
+  ListBuilder<Wizard>? _wizards;
   ListBuilder<Wizard> get wizards =>
       _$this._wizards ??= new ListBuilder<Wizard>();
-  set wizards(ListBuilder<Wizard> wizards) => _$this._wizards = wizards;
+  set wizards(ListBuilder<Wizard>? wizards) => _$this._wizards = wizards;
 
   WizardsBuilder();
 
@@ -113,7 +113,7 @@ class WizardsBuilder implements Builder<Wizards, WizardsBuilder> {
   }
 
   @override
-  void update(void Function(WizardsBuilder) updates) {
+  void update(void Function(WizardsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -123,7 +123,7 @@ class WizardsBuilder implements Builder<Wizards, WizardsBuilder> {
     try {
       _$result = _$v ?? new _$Wizards._(wizards: wizards.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'wizards';
         wizards.build();
@@ -138,4 +138,4 @@ class WizardsBuilder implements Builder<Wizards, WizardsBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

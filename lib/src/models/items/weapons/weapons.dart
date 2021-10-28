@@ -17,7 +17,7 @@ abstract class Weapons implements Built<Weapons, WeaponsBuilder> {
     return json.encode(serializers.serializeWith(Weapons.serializer, this));
   }
 
-  static Weapons fromJson(String jsonString) {
+  static Weapons? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Weapons.serializer, jsonDecode(jsonString));
   }

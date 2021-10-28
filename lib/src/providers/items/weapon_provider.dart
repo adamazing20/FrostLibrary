@@ -8,6 +8,6 @@ class WeaponProvider extends ItemProvider<Weapon> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = Weapons.fromJson(jsonString).weapons.toList();
+    items = Weapons.fromJson(jsonString)!.weapons.toList();
   }
 }

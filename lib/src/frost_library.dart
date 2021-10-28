@@ -71,7 +71,7 @@ class FrostLibrary {
     await _apprenticeProvider.load();
   }
 
-  List<Item> getAllItems({Expansion expansion}) {
+  List<Item> getAllItems({Expansion? expansion}) {
     List<Item> itemsList = [];
     _itemProviderList.forEach((provider) {
       itemsList.addAll(provider.items);
@@ -84,7 +84,7 @@ class FrostLibrary {
     return itemsList;
   }
 
-  Item getFirstItemByName(String name, {Expansion expansion}) {
+  Item getFirstItemByName(String name, {Expansion? expansion}) {
     List<Item> itemList = getAllItems(expansion: expansion);
 
     return itemList
@@ -92,7 +92,7 @@ class FrostLibrary {
   }
 
   List<Item> getItemsByName(List<String> itemNames,
-      {ItemType itemType, Expansion expansion}) {
+      {ItemType? itemType, Expansion? expansion}) {
     List<String> lowerCaseNames =
         itemNames.map((name) => name.toLowerCase()).toList();
 
@@ -102,7 +102,7 @@ class FrostLibrary {
         .toList();
   }
 
-  List<Character> getAllCharacters({Expansion expansion}) {
+  List<Character> getAllCharacters({Expansion? expansion}) {
     List<Character> charactersList = <Character>[];
     _characterProviderList.forEach((provider) {
       charactersList.addAll(provider.characters);
@@ -116,7 +116,7 @@ class FrostLibrary {
   }
 
   List<Character> getCharactersByType(
-      {@required CharacterType characterType, Expansion expansion}) {
+      {required CharacterType characterType, Expansion? expansion}) {
     List<Character> allCharacters;
     if (expansion != null) {
       allCharacters = getAllCharacters(expansion: expansion);
@@ -128,14 +128,14 @@ class FrostLibrary {
     return allCharacters;
   }
 
-  Wizard getWizardBySchool({@required School school}) {
+  Wizard getWizardBySchool({required School school}) {
     List<Wizard> wizards =
         getCharactersByType(characterType: CharacterType.Wizard).cast<Wizard>();
 
     return wizards.firstWhere((wizard) => wizard.wizardType == school);
   }
 
-  Soldier getSoldierBySoldierType({@required SoldierType soldierType}) {
+  Soldier getSoldierBySoldierType({required SoldierType soldierType}) {
     List<Soldier> soldiers =
         getCharactersByType(characterType: CharacterType.Soldier)
             .cast<Soldier>();
@@ -144,7 +144,7 @@ class FrostLibrary {
   }
 
   Character getCharacterByFormattedDisplayName(String name,
-      {Expansion expansion}) {
+      {Expansion? expansion}) {
     //    TODO: add expansion logic as needed
     List<Character> characterList = getAllCharacters(expansion: expansion);
     return characterList.firstWhere((character) =>
@@ -152,7 +152,7 @@ class FrostLibrary {
   }
 
   List<Character> getCharactersByFormattedDisplayName(List<String> displayNames,
-      {Expansion expansion}) {
+      {Expansion? expansion}) {
     //    TODO: add expansion logic as needed
     List<Character> charactersToReturn = [];
     List<Character> characterList = getAllCharacters(expansion: expansion);

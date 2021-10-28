@@ -15,9 +15,9 @@ class _$WeaponsSerializer implements StructuredSerializer<Weapons> {
   final String wireName = 'Weapons';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Weapons object,
+  Iterable<Object?> serialize(Serializers serializers, Weapons object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'weapons',
       serializers.serialize(object.weapons,
           specifiedType:
@@ -28,7 +28,7 @@ class _$WeaponsSerializer implements StructuredSerializer<Weapons> {
   }
 
   @override
-  Weapons deserialize(Serializers serializers, Iterable<Object> serialized,
+  Weapons deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new WeaponsBuilder();
 
@@ -36,13 +36,13 @@ class _$WeaponsSerializer implements StructuredSerializer<Weapons> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'weapons':
           result.weapons.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Weapon)]))
-              as BuiltList<Object>);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Weapon)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -55,10 +55,10 @@ class _$Weapons extends Weapons {
   @override
   final BuiltList<Weapon> weapons;
 
-  factory _$Weapons([void Function(WeaponsBuilder) updates]) =>
+  factory _$Weapons([void Function(WeaponsBuilder)? updates]) =>
       (new WeaponsBuilder()..update(updates)).build();
 
-  _$Weapons._({this.weapons}) : super._() {
+  _$Weapons._({required this.weapons}) : super._() {
     BuiltValueNullFieldError.checkNotNull(weapons, 'Weapons', 'weapons');
   }
 
@@ -88,12 +88,12 @@ class _$Weapons extends Weapons {
 }
 
 class WeaponsBuilder implements Builder<Weapons, WeaponsBuilder> {
-  _$Weapons _$v;
+  _$Weapons? _$v;
 
-  ListBuilder<Weapon> _weapons;
+  ListBuilder<Weapon>? _weapons;
   ListBuilder<Weapon> get weapons =>
       _$this._weapons ??= new ListBuilder<Weapon>();
-  set weapons(ListBuilder<Weapon> weapons) => _$this._weapons = weapons;
+  set weapons(ListBuilder<Weapon>? weapons) => _$this._weapons = weapons;
 
   WeaponsBuilder();
 
@@ -113,7 +113,7 @@ class WeaponsBuilder implements Builder<Weapons, WeaponsBuilder> {
   }
 
   @override
-  void update(void Function(WeaponsBuilder) updates) {
+  void update(void Function(WeaponsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -123,7 +123,7 @@ class WeaponsBuilder implements Builder<Weapons, WeaponsBuilder> {
     try {
       _$result = _$v ?? new _$Weapons._(weapons: weapons.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'weapons';
         weapons.build();
@@ -138,4 +138,4 @@ class WeaponsBuilder implements Builder<Weapons, WeaponsBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

@@ -15,9 +15,9 @@ class _$SoldiersSerializer implements StructuredSerializer<Soldiers> {
   final String wireName = 'Soldiers';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Soldiers object,
+  Iterable<Object?> serialize(Serializers serializers, Soldiers object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'soldiers',
       serializers.serialize(object.soldiers,
           specifiedType:
@@ -28,7 +28,7 @@ class _$SoldiersSerializer implements StructuredSerializer<Soldiers> {
   }
 
   @override
-  Soldiers deserialize(Serializers serializers, Iterable<Object> serialized,
+  Soldiers deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SoldiersBuilder();
 
@@ -36,13 +36,13 @@ class _$SoldiersSerializer implements StructuredSerializer<Soldiers> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'soldiers':
           result.soldiers.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Soldier)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Soldier)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -55,10 +55,10 @@ class _$Soldiers extends Soldiers {
   @override
   final BuiltList<Soldier> soldiers;
 
-  factory _$Soldiers([void Function(SoldiersBuilder) updates]) =>
+  factory _$Soldiers([void Function(SoldiersBuilder)? updates]) =>
       (new SoldiersBuilder()..update(updates)).build();
 
-  _$Soldiers._({this.soldiers}) : super._() {
+  _$Soldiers._({required this.soldiers}) : super._() {
     BuiltValueNullFieldError.checkNotNull(soldiers, 'Soldiers', 'soldiers');
   }
 
@@ -88,12 +88,12 @@ class _$Soldiers extends Soldiers {
 }
 
 class SoldiersBuilder implements Builder<Soldiers, SoldiersBuilder> {
-  _$Soldiers _$v;
+  _$Soldiers? _$v;
 
-  ListBuilder<Soldier> _soldiers;
+  ListBuilder<Soldier>? _soldiers;
   ListBuilder<Soldier> get soldiers =>
       _$this._soldiers ??= new ListBuilder<Soldier>();
-  set soldiers(ListBuilder<Soldier> soldiers) => _$this._soldiers = soldiers;
+  set soldiers(ListBuilder<Soldier>? soldiers) => _$this._soldiers = soldiers;
 
   SoldiersBuilder();
 
@@ -113,7 +113,7 @@ class SoldiersBuilder implements Builder<Soldiers, SoldiersBuilder> {
   }
 
   @override
-  void update(void Function(SoldiersBuilder) updates) {
+  void update(void Function(SoldiersBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -123,7 +123,7 @@ class SoldiersBuilder implements Builder<Soldiers, SoldiersBuilder> {
     try {
       _$result = _$v ?? new _$Soldiers._(soldiers: soldiers.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'soldiers';
         soldiers.build();
@@ -138,4 +138,4 @@ class SoldiersBuilder implements Builder<Soldiers, SoldiersBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

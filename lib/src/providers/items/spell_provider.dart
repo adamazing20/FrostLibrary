@@ -11,7 +11,7 @@ class SpellProvider extends ItemProvider<Spell> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = Spells.fromJson(jsonString).spells.toList();
+    items = Spells.fromJson(jsonString)!.spells.toList();
   }
 }
 
@@ -20,10 +20,10 @@ class GrimoireProvider extends SpellProvider {
   Future load() async {
     definitionLoader.filePath = SpellProvider.filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = Spells.fromJson(jsonString).spells.toList();
+    items = Spells.fromJson(jsonString)!.spells.toList();
     List<Spell> itemsUpdated = [];
 
-    for (Spell spell in items) {
+    for (Spell spell in items!) {
       var newSpell = spell.rebuild((spell) => spell
         ..itemType = ItemType.Grimoire
         ..sellValue = 250
@@ -39,10 +39,10 @@ class ScrollProvider extends SpellProvider {
   Future load() async {
     definitionLoader.filePath = SpellProvider.filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = Spells.fromJson(jsonString).spells.toList();
+    items = Spells.fromJson(jsonString)!.spells.toList();
     List<Spell> itemsUpdated = [];
 
-    for (Spell spell in items) {
+    for (Spell spell in items!) {
       var newSpell = spell.rebuild((spell) => spell
         ..itemType = ItemType.Scroll
         ..sellValue = 100

@@ -26,15 +26,12 @@ abstract class Weapon implements Built<Weapon, WeaponBuilder>, Item {
 
   WeaponType get weaponType;
 
-  @nullable
-  int get damageModified;
+  int? get damageModified;
 
-  @nullable
   @override
-  String get description;
+  String? get description;
 
-  @nullable
-  String get notes;
+  String? get notes;
 
   @override
   Expansion get expansion;
@@ -43,7 +40,7 @@ abstract class Weapon implements Built<Weapon, WeaponBuilder>, Item {
     return json.encode(serializers.serializeWith(Weapon.serializer, this));
   }
 
-  static Weapon fromJson(String jsonString) {
+  static Weapon? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Weapon.serializer, jsonDecode(jsonString));
   }

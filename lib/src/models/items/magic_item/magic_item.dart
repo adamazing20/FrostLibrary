@@ -35,43 +35,33 @@ abstract class MagicItem
   ItemType get itemType;
 
   @override
-  @nullable
-  int get damageModified;
+  int? get damageModified;
 
   @override
-  @nullable
-  int get fightModified;
+  int? get fightModified;
 
   @override
-  @nullable
-  int get shootModified;
+  int? get shootModified;
 
   @override
-  @nullable
-  int get castingRollModified;
+  int? get castingRollModified;
 
   @override
-  @nullable
-  int get willRollModified;
+  int? get willRollModified;
 
   @override
-  @nullable
-  int get moveModified;
+  int? get moveModified;
 
   @override
-  @nullable
-  int get armourModified;
+  int? get armourModified;
 
   @override
-  @nullable
-  int get healthModified;
+  int? get healthModified;
 
-  @nullable
   @override
-  String get description;
+  String? get description;
 
-  @nullable
-  String get notes;
+  String? get notes;
 
   @override
   Expansion get expansion;
@@ -80,7 +70,7 @@ abstract class MagicItem
     return json.encode(serializers.serializeWith(MagicItem.serializer, this));
   }
 
-  static MagicItem fromJson(String jsonString) {
+  static MagicItem? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MagicItem.serializer, jsonDecode(jsonString));
   }

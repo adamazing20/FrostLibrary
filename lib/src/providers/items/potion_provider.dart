@@ -8,6 +8,6 @@ class PotionProvider extends ItemProvider<Potion> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = Potions.fromJson(jsonString).potions.toList();
+    items = Potions.fromJson(jsonString)!.potions.toList();
   }
 }

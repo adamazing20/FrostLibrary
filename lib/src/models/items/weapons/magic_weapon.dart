@@ -35,27 +35,21 @@ abstract class MagicWeapon
   ItemType get itemType;
 
   @override
-  @nullable
-  int get damageModified;
+  int? get damageModified;
 
   @override
-  @nullable
-  int get fightModified;
+  int? get fightModified;
 
   @override
-  @nullable
-  int get willModified;
+  int? get willModified;
 
   @override
-  @nullable
-  int get shootModified;
+  int? get shootModified;
 
-  @nullable
   @override
-  String get description;
+  String? get description;
 
-  @nullable
-  String get notes;
+  String? get notes;
 
   @override
   Expansion get expansion;
@@ -64,7 +58,7 @@ abstract class MagicWeapon
     return json.encode(serializers.serializeWith(MagicWeapon.serializer, this));
   }
 
-  static MagicWeapon fromJson(String jsonString) {
+  static MagicWeapon? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MagicWeapon.serializer, jsonDecode(jsonString));
   }
