@@ -15,9 +15,9 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
   final String wireName = 'MagicArmour';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, MagicArmour object,
+  Iterable<Object?> serialize(Serializers serializers, MagicArmour object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'displayFormattedTypeName',
@@ -41,7 +41,7 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    Object value;
+    Object? value;
     value = object.damageModified;
     if (value != null) {
       result
@@ -66,7 +66,7 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
   }
 
   @override
-  MagicArmour deserialize(Serializers serializers, Iterable<Object> serialized,
+  MagicArmour deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MagicArmourBuilder();
 
@@ -74,7 +74,7 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -90,15 +90,15 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
           break;
         case 'damageModified':
           result.damageModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'notes':
           result.notes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'price':
           result.price = serializers.deserialize(value,
@@ -135,11 +135,11 @@ class _$MagicArmour extends MagicArmour {
   @override
   final ItemType itemType;
   @override
-  final int damageModified;
+  final int? damageModified;
   @override
-  final String description;
+  final String? description;
   @override
-  final String notes;
+  final String? notes;
   @override
   final int price;
   @override
@@ -151,21 +151,21 @@ class _$MagicArmour extends MagicArmour {
   @override
   final Expansion expansion;
 
-  factory _$MagicArmour([void Function(MagicArmourBuilder) updates]) =>
+  factory _$MagicArmour([void Function(MagicArmourBuilder)? updates]) =>
       (new MagicArmourBuilder()..update(updates)).build();
 
   _$MagicArmour._(
-      {this.name,
-      this.displayFormattedTypeName,
-      this.itemType,
+      {required this.name,
+      required this.displayFormattedTypeName,
+      required this.itemType,
       this.damageModified,
       this.description,
       this.notes,
-      this.price,
-      this.sellValue,
-      this.armourType,
-      this.armourModified,
-      this.expansion})
+      required this.price,
+      required this.sellValue,
+      required this.armourType,
+      required this.armourModified,
+      required this.expansion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicArmour', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -249,54 +249,54 @@ class _$MagicArmour extends MagicArmour {
 }
 
 class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
-  _$MagicArmour _$v;
+  _$MagicArmour? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _displayFormattedTypeName;
-  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
-  set displayFormattedTypeName(String displayFormattedTypeName) =>
+  String? _displayFormattedTypeName;
+  String? get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String? displayFormattedTypeName) =>
       _$this._displayFormattedTypeName = displayFormattedTypeName;
 
-  ItemType _itemType;
-  ItemType get itemType => _$this._itemType;
-  set itemType(ItemType itemType) => _$this._itemType = itemType;
+  ItemType? _itemType;
+  ItemType? get itemType => _$this._itemType;
+  set itemType(ItemType? itemType) => _$this._itemType = itemType;
 
-  int _damageModified;
-  int get damageModified => _$this._damageModified;
-  set damageModified(int damageModified) =>
+  int? _damageModified;
+  int? get damageModified => _$this._damageModified;
+  set damageModified(int? damageModified) =>
       _$this._damageModified = damageModified;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _notes;
-  String get notes => _$this._notes;
-  set notes(String notes) => _$this._notes = notes;
+  String? _notes;
+  String? get notes => _$this._notes;
+  set notes(String? notes) => _$this._notes = notes;
 
-  int _price;
-  int get price => _$this._price;
-  set price(int price) => _$this._price = price;
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
 
-  int _sellValue;
-  int get sellValue => _$this._sellValue;
-  set sellValue(int sellValue) => _$this._sellValue = sellValue;
+  int? _sellValue;
+  int? get sellValue => _$this._sellValue;
+  set sellValue(int? sellValue) => _$this._sellValue = sellValue;
 
-  ArmourType _armourType;
-  ArmourType get armourType => _$this._armourType;
-  set armourType(ArmourType armourType) => _$this._armourType = armourType;
+  ArmourType? _armourType;
+  ArmourType? get armourType => _$this._armourType;
+  set armourType(ArmourType? armourType) => _$this._armourType = armourType;
 
-  int _armourModified;
-  int get armourModified => _$this._armourModified;
-  set armourModified(int armourModified) =>
+  int? _armourModified;
+  int? get armourModified => _$this._armourModified;
+  set armourModified(int? armourModified) =>
       _$this._armourModified = armourModified;
 
-  Expansion _expansion;
-  Expansion get expansion => _$this._expansion;
-  set expansion(Expansion expansion) => _$this._expansion = expansion;
+  Expansion? _expansion;
+  Expansion? get expansion => _$this._expansion;
+  set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
   MagicArmourBuilder();
 
@@ -326,7 +326,7 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
   }
 
   @override
-  void update(void Function(MagicArmourBuilder) updates) {
+  void update(void Function(MagicArmourBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -360,4 +360,4 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

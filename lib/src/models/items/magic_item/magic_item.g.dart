@@ -15,9 +15,9 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
   final String wireName = 'MagicItem';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, MagicItem object,
+  Iterable<Object?> serialize(Serializers serializers, MagicItem object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'displayFormattedTypeName',
@@ -38,7 +38,7 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    Object value;
+    Object? value;
     value = object.damageModified;
     if (value != null) {
       result
@@ -105,7 +105,7 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
   }
 
   @override
-  MagicItem deserialize(Serializers serializers, Iterable<Object> serialized,
+  MagicItem deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MagicItemBuilder();
 
@@ -113,7 +113,7 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -141,43 +141,43 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
           break;
         case 'damageModified':
           result.damageModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'fightModified':
           result.fightModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'shootModified':
           result.shootModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'castingRollModified':
           result.castingRollModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'willRollModified':
           result.willRollModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'moveModified':
           result.moveModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'armourModified':
           result.armourModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'healthModified':
           result.healthModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'notes':
           result.notes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'expansion':
           result.expansion = serializers.deserialize(value,
@@ -204,38 +204,38 @@ class _$MagicItem extends MagicItem {
   @override
   final ItemType itemType;
   @override
-  final int damageModified;
+  final int? damageModified;
   @override
-  final int fightModified;
+  final int? fightModified;
   @override
-  final int shootModified;
+  final int? shootModified;
   @override
-  final int castingRollModified;
+  final int? castingRollModified;
   @override
-  final int willRollModified;
+  final int? willRollModified;
   @override
-  final int moveModified;
+  final int? moveModified;
   @override
-  final int armourModified;
+  final int? armourModified;
   @override
-  final int healthModified;
+  final int? healthModified;
   @override
-  final String description;
+  final String? description;
   @override
-  final String notes;
+  final String? notes;
   @override
   final Expansion expansion;
 
-  factory _$MagicItem([void Function(MagicItemBuilder) updates]) =>
+  factory _$MagicItem([void Function(MagicItemBuilder)? updates]) =>
       (new MagicItemBuilder()..update(updates)).build();
 
   _$MagicItem._(
-      {this.name,
-      this.displayFormattedTypeName,
-      this.price,
-      this.sellValue,
-      this.magicItemType,
-      this.itemType,
+      {required this.name,
+      required this.displayFormattedTypeName,
+      required this.price,
+      required this.sellValue,
+      required this.magicItemType,
+      required this.itemType,
       this.damageModified,
       this.fightModified,
       this.shootModified,
@@ -246,7 +246,7 @@ class _$MagicItem extends MagicItem {
       this.healthModified,
       this.description,
       this.notes,
-      this.expansion})
+      required this.expansion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicItem', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -355,82 +355,84 @@ class _$MagicItem extends MagicItem {
 }
 
 class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
-  _$MagicItem _$v;
+  _$MagicItem? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _displayFormattedTypeName;
-  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
-  set displayFormattedTypeName(String displayFormattedTypeName) =>
+  String? _displayFormattedTypeName;
+  String? get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String? displayFormattedTypeName) =>
       _$this._displayFormattedTypeName = displayFormattedTypeName;
 
-  int _price;
-  int get price => _$this._price;
-  set price(int price) => _$this._price = price;
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
 
-  int _sellValue;
-  int get sellValue => _$this._sellValue;
-  set sellValue(int sellValue) => _$this._sellValue = sellValue;
+  int? _sellValue;
+  int? get sellValue => _$this._sellValue;
+  set sellValue(int? sellValue) => _$this._sellValue = sellValue;
 
-  MagicItemType _magicItemType;
-  MagicItemType get magicItemType => _$this._magicItemType;
-  set magicItemType(MagicItemType magicItemType) =>
+  MagicItemType? _magicItemType;
+  MagicItemType? get magicItemType => _$this._magicItemType;
+  set magicItemType(MagicItemType? magicItemType) =>
       _$this._magicItemType = magicItemType;
 
-  ItemType _itemType;
-  ItemType get itemType => _$this._itemType;
-  set itemType(ItemType itemType) => _$this._itemType = itemType;
+  ItemType? _itemType;
+  ItemType? get itemType => _$this._itemType;
+  set itemType(ItemType? itemType) => _$this._itemType = itemType;
 
-  int _damageModified;
-  int get damageModified => _$this._damageModified;
-  set damageModified(int damageModified) =>
+  int? _damageModified;
+  int? get damageModified => _$this._damageModified;
+  set damageModified(int? damageModified) =>
       _$this._damageModified = damageModified;
 
-  int _fightModified;
-  int get fightModified => _$this._fightModified;
-  set fightModified(int fightModified) => _$this._fightModified = fightModified;
+  int? _fightModified;
+  int? get fightModified => _$this._fightModified;
+  set fightModified(int? fightModified) =>
+      _$this._fightModified = fightModified;
 
-  int _shootModified;
-  int get shootModified => _$this._shootModified;
-  set shootModified(int shootModified) => _$this._shootModified = shootModified;
+  int? _shootModified;
+  int? get shootModified => _$this._shootModified;
+  set shootModified(int? shootModified) =>
+      _$this._shootModified = shootModified;
 
-  int _castingRollModified;
-  int get castingRollModified => _$this._castingRollModified;
-  set castingRollModified(int castingRollModified) =>
+  int? _castingRollModified;
+  int? get castingRollModified => _$this._castingRollModified;
+  set castingRollModified(int? castingRollModified) =>
       _$this._castingRollModified = castingRollModified;
 
-  int _willRollModified;
-  int get willRollModified => _$this._willRollModified;
-  set willRollModified(int willRollModified) =>
+  int? _willRollModified;
+  int? get willRollModified => _$this._willRollModified;
+  set willRollModified(int? willRollModified) =>
       _$this._willRollModified = willRollModified;
 
-  int _moveModified;
-  int get moveModified => _$this._moveModified;
-  set moveModified(int moveModified) => _$this._moveModified = moveModified;
+  int? _moveModified;
+  int? get moveModified => _$this._moveModified;
+  set moveModified(int? moveModified) => _$this._moveModified = moveModified;
 
-  int _armourModified;
-  int get armourModified => _$this._armourModified;
-  set armourModified(int armourModified) =>
+  int? _armourModified;
+  int? get armourModified => _$this._armourModified;
+  set armourModified(int? armourModified) =>
       _$this._armourModified = armourModified;
 
-  int _healthModified;
-  int get healthModified => _$this._healthModified;
-  set healthModified(int healthModified) =>
+  int? _healthModified;
+  int? get healthModified => _$this._healthModified;
+  set healthModified(int? healthModified) =>
       _$this._healthModified = healthModified;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _notes;
-  String get notes => _$this._notes;
-  set notes(String notes) => _$this._notes = notes;
+  String? _notes;
+  String? get notes => _$this._notes;
+  set notes(String? notes) => _$this._notes = notes;
 
-  Expansion _expansion;
-  Expansion get expansion => _$this._expansion;
-  set expansion(Expansion expansion) => _$this._expansion = expansion;
+  Expansion? _expansion;
+  Expansion? get expansion => _$this._expansion;
+  set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
   MagicItemBuilder();
 
@@ -466,7 +468,7 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
   }
 
   @override
-  void update(void Function(MagicItemBuilder) updates) {
+  void update(void Function(MagicItemBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -505,4 +507,4 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

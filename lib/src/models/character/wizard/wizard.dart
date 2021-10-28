@@ -19,8 +19,7 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   static Serializer<Wizard> get serializer => _$wizardSerializer;
 
   @override
-  @nullable
-  String get name;
+  String? get name;
 
   @override
   String get displayFormattedTypeName;
@@ -47,8 +46,7 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   int get health;
 
   @override
-  @nullable
-  int get currentHealth;
+  int? get currentHealth;
 
   @override
   CharacterType get characterType;
@@ -66,8 +64,7 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   School get wizardType;
 
   @override
-  @nullable
-  String get description;
+  String? get description;
 
   @override
   BuiltList<School> get aligned;
@@ -79,22 +76,19 @@ abstract class Wizard implements Built<Wizard, WizardBuilder>, WizardDef {
   BuiltList<School> get opposed;
 
   @override
-  @nullable
-  BuiltList<WeaponType> get weapons;
+  BuiltList<WeaponType>? get weapons;
 
   @override
-  @nullable
-  BuiltList<ArmourType> get armours;
+  BuiltList<ArmourType>? get armours;
 
   @override
-  @nullable
-  int get cost;
+  int? get cost;
 
   String toJson() {
     return json.encode(serializers.serializeWith(Wizard.serializer, this));
   }
 
-  static Wizard fromJson(String jsonString) {
+  static Wizard? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Wizard.serializer, jsonDecode(jsonString));
   }

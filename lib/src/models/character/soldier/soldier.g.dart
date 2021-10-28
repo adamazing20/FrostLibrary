@@ -15,9 +15,9 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
   final String wireName = 'Soldier';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Soldier object,
+  Iterable<Object?> serialize(Serializers serializers, Soldier object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'displayFormattedTypeName',
       serializers.serialize(object.displayFormattedTypeName,
           specifiedType: const FullType(String)),
@@ -48,7 +48,7 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
       'cost',
       serializers.serialize(object.cost, specifiedType: const FullType(int)),
     ];
-    Object value;
+    Object? value;
     value = object.name;
     if (value != null) {
       result
@@ -89,7 +89,7 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
   }
 
   @override
-  Soldier deserialize(Serializers serializers, Iterable<Object> serialized,
+  Soldier deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SoldierBuilder();
 
@@ -97,11 +97,11 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'displayFormattedTypeName':
           result.displayFormattedTypeName = serializers.deserialize(value,
@@ -137,7 +137,7 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           break;
         case 'currentHealth':
           result.currentHealth = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'additionalItemHoldCount':
           result.additionalItemHoldCount = serializers.deserialize(value,
@@ -157,19 +157,19 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'weapons':
           result.weapons.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(WeaponType)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(WeaponType)]))!
+              as BuiltList<Object?>);
           break;
         case 'armours':
           result.armours.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(ArmourType)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(ArmourType)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -180,7 +180,7 @@ class _$SoldierSerializer implements StructuredSerializer<Soldier> {
 
 class _$Soldier extends Soldier {
   @override
-  final String name;
+  final String? name;
   @override
   final String displayFormattedTypeName;
   @override
@@ -198,7 +198,7 @@ class _$Soldier extends Soldier {
   @override
   final int health;
   @override
-  final int currentHealth;
+  final int? currentHealth;
   @override
   final int additionalItemHoldCount;
   @override
@@ -208,30 +208,30 @@ class _$Soldier extends Soldier {
   @override
   final int cost;
   @override
-  final String description;
+  final String? description;
   @override
-  final BuiltList<WeaponType> weapons;
+  final BuiltList<WeaponType>? weapons;
   @override
-  final BuiltList<ArmourType> armours;
+  final BuiltList<ArmourType>? armours;
 
-  factory _$Soldier([void Function(SoldierBuilder) updates]) =>
+  factory _$Soldier([void Function(SoldierBuilder)? updates]) =>
       (new SoldierBuilder()..update(updates)).build();
 
   _$Soldier._(
       {this.name,
-      this.displayFormattedTypeName,
-      this.expansion,
-      this.move,
-      this.fight,
-      this.shoot,
-      this.armour,
-      this.will,
-      this.health,
+      required this.displayFormattedTypeName,
+      required this.expansion,
+      required this.move,
+      required this.fight,
+      required this.shoot,
+      required this.armour,
+      required this.will,
+      required this.health,
       this.currentHealth,
-      this.additionalItemHoldCount,
-      this.characterType,
-      this.soldierType,
-      this.cost,
+      required this.additionalItemHoldCount,
+      required this.characterType,
+      required this.soldierType,
+      required this.cost,
       this.description,
       this.weapons,
       this.armours})
@@ -351,80 +351,82 @@ class _$Soldier extends Soldier {
 }
 
 class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
-  _$Soldier _$v;
+  _$Soldier? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _displayFormattedTypeName;
-  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
-  set displayFormattedTypeName(String displayFormattedTypeName) =>
+  String? _displayFormattedTypeName;
+  String? get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String? displayFormattedTypeName) =>
       _$this._displayFormattedTypeName = displayFormattedTypeName;
 
-  Expansion _expansion;
-  Expansion get expansion => _$this._expansion;
-  set expansion(Expansion expansion) => _$this._expansion = expansion;
+  Expansion? _expansion;
+  Expansion? get expansion => _$this._expansion;
+  set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
-  int _move;
-  int get move => _$this._move;
-  set move(int move) => _$this._move = move;
+  int? _move;
+  int? get move => _$this._move;
+  set move(int? move) => _$this._move = move;
 
-  int _fight;
-  int get fight => _$this._fight;
-  set fight(int fight) => _$this._fight = fight;
+  int? _fight;
+  int? get fight => _$this._fight;
+  set fight(int? fight) => _$this._fight = fight;
 
-  int _shoot;
-  int get shoot => _$this._shoot;
-  set shoot(int shoot) => _$this._shoot = shoot;
+  int? _shoot;
+  int? get shoot => _$this._shoot;
+  set shoot(int? shoot) => _$this._shoot = shoot;
 
-  int _armour;
-  int get armour => _$this._armour;
-  set armour(int armour) => _$this._armour = armour;
+  int? _armour;
+  int? get armour => _$this._armour;
+  set armour(int? armour) => _$this._armour = armour;
 
-  int _will;
-  int get will => _$this._will;
-  set will(int will) => _$this._will = will;
+  int? _will;
+  int? get will => _$this._will;
+  set will(int? will) => _$this._will = will;
 
-  int _health;
-  int get health => _$this._health;
-  set health(int health) => _$this._health = health;
+  int? _health;
+  int? get health => _$this._health;
+  set health(int? health) => _$this._health = health;
 
-  int _currentHealth;
-  int get currentHealth => _$this._currentHealth;
-  set currentHealth(int currentHealth) => _$this._currentHealth = currentHealth;
+  int? _currentHealth;
+  int? get currentHealth => _$this._currentHealth;
+  set currentHealth(int? currentHealth) =>
+      _$this._currentHealth = currentHealth;
 
-  int _additionalItemHoldCount;
-  int get additionalItemHoldCount => _$this._additionalItemHoldCount;
-  set additionalItemHoldCount(int additionalItemHoldCount) =>
+  int? _additionalItemHoldCount;
+  int? get additionalItemHoldCount => _$this._additionalItemHoldCount;
+  set additionalItemHoldCount(int? additionalItemHoldCount) =>
       _$this._additionalItemHoldCount = additionalItemHoldCount;
 
-  CharacterType _characterType;
-  CharacterType get characterType => _$this._characterType;
-  set characterType(CharacterType characterType) =>
+  CharacterType? _characterType;
+  CharacterType? get characterType => _$this._characterType;
+  set characterType(CharacterType? characterType) =>
       _$this._characterType = characterType;
 
-  SoldierType _soldierType;
-  SoldierType get soldierType => _$this._soldierType;
-  set soldierType(SoldierType soldierType) => _$this._soldierType = soldierType;
+  SoldierType? _soldierType;
+  SoldierType? get soldierType => _$this._soldierType;
+  set soldierType(SoldierType? soldierType) =>
+      _$this._soldierType = soldierType;
 
-  int _cost;
-  int get cost => _$this._cost;
-  set cost(int cost) => _$this._cost = cost;
+  int? _cost;
+  int? get cost => _$this._cost;
+  set cost(int? cost) => _$this._cost = cost;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  ListBuilder<WeaponType> _weapons;
+  ListBuilder<WeaponType>? _weapons;
   ListBuilder<WeaponType> get weapons =>
       _$this._weapons ??= new ListBuilder<WeaponType>();
-  set weapons(ListBuilder<WeaponType> weapons) => _$this._weapons = weapons;
+  set weapons(ListBuilder<WeaponType>? weapons) => _$this._weapons = weapons;
 
-  ListBuilder<ArmourType> _armours;
+  ListBuilder<ArmourType>? _armours;
   ListBuilder<ArmourType> get armours =>
       _$this._armours ??= new ListBuilder<ArmourType>();
-  set armours(ListBuilder<ArmourType> armours) => _$this._armours = armours;
+  set armours(ListBuilder<ArmourType>? armours) => _$this._armours = armours;
 
   SoldierBuilder();
 
@@ -460,7 +462,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   }
 
   @override
-  void update(void Function(SoldierBuilder) updates) {
+  void update(void Function(SoldierBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -498,7 +500,7 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
               weapons: _weapons?.build(),
               armours: _armours?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'weapons';
         _weapons?.build();
@@ -515,4 +517,4 @@ class SoldierBuilder implements Builder<Soldier, SoldierBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

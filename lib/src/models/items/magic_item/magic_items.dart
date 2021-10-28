@@ -17,7 +17,7 @@ abstract class MagicItems implements Built<MagicItems, MagicItemsBuilder> {
     return json.encode(serializers.serializeWith(MagicItems.serializer, this));
   }
 
-  static MagicItems fromJson(String jsonString) {
+  static MagicItems? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MagicItems.serializer, jsonDecode(jsonString));
   }

@@ -8,6 +8,6 @@ class MagicWeaponProvider extends ItemProvider<MagicWeapon> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = MagicWeapons.fromJson(jsonString).magicWeapons.toList();
+    items = MagicWeapons.fromJson(jsonString)!.magicWeapons.toList();
   }
 }

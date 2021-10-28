@@ -16,9 +16,9 @@ class _$MagicWeaponsSerializer implements StructuredSerializer<MagicWeapons> {
   final String wireName = 'MagicWeapons';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, MagicWeapons object,
+  Iterable<Object?> serialize(Serializers serializers, MagicWeapons object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'magicWeapons',
       serializers.serialize(object.magicWeapons,
           specifiedType:
@@ -29,7 +29,8 @@ class _$MagicWeaponsSerializer implements StructuredSerializer<MagicWeapons> {
   }
 
   @override
-  MagicWeapons deserialize(Serializers serializers, Iterable<Object> serialized,
+  MagicWeapons deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MagicWeaponsBuilder();
 
@@ -37,13 +38,13 @@ class _$MagicWeaponsSerializer implements StructuredSerializer<MagicWeapons> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'magicWeapons':
           result.magicWeapons.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(MagicWeapon)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(MagicWeapon)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -56,10 +57,10 @@ class _$MagicWeapons extends MagicWeapons {
   @override
   final BuiltList<MagicWeapon> magicWeapons;
 
-  factory _$MagicWeapons([void Function(MagicWeaponsBuilder) updates]) =>
+  factory _$MagicWeapons([void Function(MagicWeaponsBuilder)? updates]) =>
       (new MagicWeaponsBuilder()..update(updates)).build();
 
-  _$MagicWeapons._({this.magicWeapons}) : super._() {
+  _$MagicWeapons._({required this.magicWeapons}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         magicWeapons, 'MagicWeapons', 'magicWeapons');
   }
@@ -92,12 +93,12 @@ class _$MagicWeapons extends MagicWeapons {
 
 class MagicWeaponsBuilder
     implements Builder<MagicWeapons, MagicWeaponsBuilder> {
-  _$MagicWeapons _$v;
+  _$MagicWeapons? _$v;
 
-  ListBuilder<MagicWeapon> _magicWeapons;
+  ListBuilder<MagicWeapon>? _magicWeapons;
   ListBuilder<MagicWeapon> get magicWeapons =>
       _$this._magicWeapons ??= new ListBuilder<MagicWeapon>();
-  set magicWeapons(ListBuilder<MagicWeapon> magicWeapons) =>
+  set magicWeapons(ListBuilder<MagicWeapon>? magicWeapons) =>
       _$this._magicWeapons = magicWeapons;
 
   MagicWeaponsBuilder();
@@ -118,7 +119,7 @@ class MagicWeaponsBuilder
   }
 
   @override
-  void update(void Function(MagicWeaponsBuilder) updates) {
+  void update(void Function(MagicWeaponsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -129,7 +130,7 @@ class MagicWeaponsBuilder
       _$result =
           _$v ?? new _$MagicWeapons._(magicWeapons: magicWeapons.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'magicWeapons';
         magicWeapons.build();
@@ -144,4 +145,4 @@ class MagicWeaponsBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

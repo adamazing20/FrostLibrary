@@ -15,9 +15,9 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
   final String wireName = 'MagicWeapon';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, MagicWeapon object,
+  Iterable<Object?> serialize(Serializers serializers, MagicWeapon object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'displayFormattedTypeName',
@@ -38,7 +38,7 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    Object value;
+    Object? value;
     value = object.damageModified;
     if (value != null) {
       result
@@ -81,7 +81,7 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
   }
 
   @override
-  MagicWeapon deserialize(Serializers serializers, Iterable<Object> serialized,
+  MagicWeapon deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MagicWeaponBuilder();
 
@@ -89,7 +89,7 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -117,27 +117,27 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
           break;
         case 'damageModified':
           result.damageModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'fightModified':
           result.fightModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'willModified':
           result.willModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'shootModified':
           result.shootModified = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'notes':
           result.notes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'expansion':
           result.expansion = serializers.deserialize(value,
@@ -164,37 +164,37 @@ class _$MagicWeapon extends MagicWeapon {
   @override
   final ItemType itemType;
   @override
-  final int damageModified;
+  final int? damageModified;
   @override
-  final int fightModified;
+  final int? fightModified;
   @override
-  final int willModified;
+  final int? willModified;
   @override
-  final int shootModified;
+  final int? shootModified;
   @override
-  final String description;
+  final String? description;
   @override
-  final String notes;
+  final String? notes;
   @override
   final Expansion expansion;
 
-  factory _$MagicWeapon([void Function(MagicWeaponBuilder) updates]) =>
+  factory _$MagicWeapon([void Function(MagicWeaponBuilder)? updates]) =>
       (new MagicWeaponBuilder()..update(updates)).build();
 
   _$MagicWeapon._(
-      {this.name,
-      this.displayFormattedTypeName,
-      this.price,
-      this.sellValue,
-      this.weaponType,
-      this.itemType,
+      {required this.name,
+      required this.displayFormattedTypeName,
+      required this.price,
+      required this.sellValue,
+      required this.weaponType,
+      required this.itemType,
       this.damageModified,
       this.fightModified,
       this.willModified,
       this.shootModified,
       this.description,
       this.notes,
-      this.expansion})
+      required this.expansion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicWeapon', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -286,61 +286,63 @@ class _$MagicWeapon extends MagicWeapon {
 }
 
 class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
-  _$MagicWeapon _$v;
+  _$MagicWeapon? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _displayFormattedTypeName;
-  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
-  set displayFormattedTypeName(String displayFormattedTypeName) =>
+  String? _displayFormattedTypeName;
+  String? get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String? displayFormattedTypeName) =>
       _$this._displayFormattedTypeName = displayFormattedTypeName;
 
-  int _price;
-  int get price => _$this._price;
-  set price(int price) => _$this._price = price;
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
 
-  int _sellValue;
-  int get sellValue => _$this._sellValue;
-  set sellValue(int sellValue) => _$this._sellValue = sellValue;
+  int? _sellValue;
+  int? get sellValue => _$this._sellValue;
+  set sellValue(int? sellValue) => _$this._sellValue = sellValue;
 
-  WeaponType _weaponType;
-  WeaponType get weaponType => _$this._weaponType;
-  set weaponType(WeaponType weaponType) => _$this._weaponType = weaponType;
+  WeaponType? _weaponType;
+  WeaponType? get weaponType => _$this._weaponType;
+  set weaponType(WeaponType? weaponType) => _$this._weaponType = weaponType;
 
-  ItemType _itemType;
-  ItemType get itemType => _$this._itemType;
-  set itemType(ItemType itemType) => _$this._itemType = itemType;
+  ItemType? _itemType;
+  ItemType? get itemType => _$this._itemType;
+  set itemType(ItemType? itemType) => _$this._itemType = itemType;
 
-  int _damageModified;
-  int get damageModified => _$this._damageModified;
-  set damageModified(int damageModified) =>
+  int? _damageModified;
+  int? get damageModified => _$this._damageModified;
+  set damageModified(int? damageModified) =>
       _$this._damageModified = damageModified;
 
-  int _fightModified;
-  int get fightModified => _$this._fightModified;
-  set fightModified(int fightModified) => _$this._fightModified = fightModified;
+  int? _fightModified;
+  int? get fightModified => _$this._fightModified;
+  set fightModified(int? fightModified) =>
+      _$this._fightModified = fightModified;
 
-  int _willModified;
-  int get willModified => _$this._willModified;
-  set willModified(int willModified) => _$this._willModified = willModified;
+  int? _willModified;
+  int? get willModified => _$this._willModified;
+  set willModified(int? willModified) => _$this._willModified = willModified;
 
-  int _shootModified;
-  int get shootModified => _$this._shootModified;
-  set shootModified(int shootModified) => _$this._shootModified = shootModified;
+  int? _shootModified;
+  int? get shootModified => _$this._shootModified;
+  set shootModified(int? shootModified) =>
+      _$this._shootModified = shootModified;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _notes;
-  String get notes => _$this._notes;
-  set notes(String notes) => _$this._notes = notes;
+  String? _notes;
+  String? get notes => _$this._notes;
+  set notes(String? notes) => _$this._notes = notes;
 
-  Expansion _expansion;
-  Expansion get expansion => _$this._expansion;
-  set expansion(Expansion expansion) => _$this._expansion = expansion;
+  Expansion? _expansion;
+  Expansion? get expansion => _$this._expansion;
+  set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
   MagicWeaponBuilder();
 
@@ -372,7 +374,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   }
 
   @override
-  void update(void Function(MagicWeaponBuilder) updates) {
+  void update(void Function(MagicWeaponBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -407,4 +409,4 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

@@ -39,13 +39,13 @@ part 'items/spell_provider.dart';
 part 'items/weapon_provider.dart';
 
 class DefinitionLoader {
-  String filePath;
+  String? filePath;
 
   Future<String> _getFile() async {
     return await rootBundle.loadString("$filePath");
   }
 
-  Future<YamlMap> _LoadYaml() async {
+  Future<YamlMap?> _LoadYaml() async {
     var yamlString = await _getFile();
     return loadYaml(await yamlString);
   }
@@ -57,13 +57,13 @@ class DefinitionLoader {
 }
 
 abstract class ItemProvider<T extends Item> {
-  List<T> items;
+  List<T>? items;
   DefinitionLoader definitionLoader = DefinitionLoader();
 
   void load();
 
-  T getItemByName(String name, {Expansion expansion}) {
-    var filteredItems = items;
+  T getItemByName(String name, {Expansion? expansion}) {
+    var filteredItems = items!;
 
     if (expansion != null) {
       filteredItems.removeWhere((item) => item.expansion != expansion);
@@ -73,39 +73,39 @@ abstract class ItemProvider<T extends Item> {
     return itemWithName;
   }
 
-  List<T> filterItemsByExpansion(Expansion expansion) {
+  List<T>? filterItemsByExpansion(Expansion expansion) {
     var filteredItems = items;
 
     if (expansion != null) {
-      filteredItems.removeWhere((item) => item.expansion != expansion);
+      filteredItems!.removeWhere((item) => item.expansion != expansion);
     }
     return filteredItems;
   }
 }
 
 abstract class CharacterProvider<T extends Character> {
-  List<T> characters;
+  List<T>? characters;
   DefinitionLoader definitionLoader = DefinitionLoader();
 
   void load();
 
-  T getCharacterByName(String name, {Expansion expansion}) {
-    var filteredItems = characters;
+  T getCharacterByName(String name, {Expansion? expansion}) {
+    var filteredItems = characters!;
 
     if (expansion != null) {
       filteredItems
           .removeWhere((character) => character.expansion != expansion);
     }
     var characterWithName = filteredItems
-        .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
+        .firstWhere((item) => item.name!.toLowerCase() == name.toLowerCase());
     return characterWithName;
   }
 
-  List<T> filterCharactersByExpansion(Expansion expansion) {
+  List<T>? filterCharactersByExpansion(Expansion expansion) {
     var filteredItems = characters;
 
     if (expansion != null) {
-      filteredItems.removeWhere((item) => item.expansion != expansion);
+      filteredItems!.removeWhere((item) => item.expansion != expansion);
     }
     return filteredItems;
   }

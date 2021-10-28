@@ -8,11 +8,11 @@ class WizardProvider extends CharacterProvider<Wizard> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    characters = Wizards.fromJson(jsonString).wizards.toList();
+    characters = Wizards.fromJson(jsonString)!.wizards.toList();
 
     List<Wizard> updatedCharacters = [];
 
-    for (Wizard character in characters) {
+    for (Wizard character in characters!) {
       var updatedcharacter = character
           .rebuild((character) => character.currentHealth = character.health);
 

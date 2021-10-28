@@ -15,9 +15,9 @@ class _$SpellsSerializer implements StructuredSerializer<Spells> {
   final String wireName = 'Spells';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Spells object,
+  Iterable<Object?> serialize(Serializers serializers, Spells object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'spells',
       serializers.serialize(object.spells,
           specifiedType:
@@ -28,7 +28,7 @@ class _$SpellsSerializer implements StructuredSerializer<Spells> {
   }
 
   @override
-  Spells deserialize(Serializers serializers, Iterable<Object> serialized,
+  Spells deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SpellsBuilder();
 
@@ -36,13 +36,13 @@ class _$SpellsSerializer implements StructuredSerializer<Spells> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'spells':
           result.spells.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(BuiltList, const [const FullType(Spell)]))
-              as BuiltList<Object>);
+                      const FullType(BuiltList, const [const FullType(Spell)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -55,10 +55,10 @@ class _$Spells extends Spells {
   @override
   final BuiltList<Spell> spells;
 
-  factory _$Spells([void Function(SpellsBuilder) updates]) =>
+  factory _$Spells([void Function(SpellsBuilder)? updates]) =>
       (new SpellsBuilder()..update(updates)).build();
 
-  _$Spells._({this.spells}) : super._() {
+  _$Spells._({required this.spells}) : super._() {
     BuiltValueNullFieldError.checkNotNull(spells, 'Spells', 'spells');
   }
 
@@ -88,11 +88,11 @@ class _$Spells extends Spells {
 }
 
 class SpellsBuilder implements Builder<Spells, SpellsBuilder> {
-  _$Spells _$v;
+  _$Spells? _$v;
 
-  ListBuilder<Spell> _spells;
+  ListBuilder<Spell>? _spells;
   ListBuilder<Spell> get spells => _$this._spells ??= new ListBuilder<Spell>();
-  set spells(ListBuilder<Spell> spells) => _$this._spells = spells;
+  set spells(ListBuilder<Spell>? spells) => _$this._spells = spells;
 
   SpellsBuilder();
 
@@ -112,7 +112,7 @@ class SpellsBuilder implements Builder<Spells, SpellsBuilder> {
   }
 
   @override
-  void update(void Function(SpellsBuilder) updates) {
+  void update(void Function(SpellsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -122,7 +122,7 @@ class SpellsBuilder implements Builder<Spells, SpellsBuilder> {
     try {
       _$result = _$v ?? new _$Spells._(spells: spells.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'spells';
         spells.build();
@@ -137,4 +137,4 @@ class SpellsBuilder implements Builder<Spells, SpellsBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

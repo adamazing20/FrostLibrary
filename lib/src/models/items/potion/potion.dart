@@ -23,15 +23,12 @@ abstract class Potion implements Built<Potion, PotionBuilder>, Item {
   @override
   ItemType get itemType;
 
-  @nullable
   @override
-  String get description;
+  String? get description;
 
-  @nullable
-  String get effect;
+  String? get effect;
 
-  @nullable
-  int get price;
+  int? get price;
 
   @override
   Expansion get expansion;
@@ -40,7 +37,7 @@ abstract class Potion implements Built<Potion, PotionBuilder>, Item {
     return json.encode(serializers.serializeWith(Potion.serializer, this));
   }
 
-  static Potion fromJson(String jsonString) {
+  static Potion? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Potion.serializer, jsonDecode(jsonString));
   }

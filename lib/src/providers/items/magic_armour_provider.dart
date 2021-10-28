@@ -8,6 +8,6 @@ class MagicArmourProvider extends ItemProvider<MagicArmour> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = MagicArmours.fromJson(jsonString).magicArmours.toList();
+    items = MagicArmours.fromJson(jsonString)!.magicArmours.toList();
   }
 }

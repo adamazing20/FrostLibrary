@@ -8,6 +8,6 @@ class MagicItemProvider extends ItemProvider<MagicItem> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    items = MagicItems.fromJson(jsonString).magicItems.toList();
+    items = MagicItems.fromJson(jsonString)!.magicItems.toList();
   }
 }

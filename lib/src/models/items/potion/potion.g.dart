@@ -15,9 +15,9 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
   final String wireName = 'Potion';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Potion object,
+  Iterable<Object?> serialize(Serializers serializers, Potion object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'displayFormattedTypeName',
@@ -30,7 +30,7 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
     ];
-    Object value;
+    Object? value;
     value = object.description;
     if (value != null) {
       result
@@ -55,7 +55,7 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
   }
 
   @override
-  Potion deserialize(Serializers serializers, Iterable<Object> serialized,
+  Potion deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PotionBuilder();
 
@@ -63,7 +63,7 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -79,15 +79,15 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'effect':
           result.effect = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'price':
           result.price = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'expansion':
           result.expansion = serializers.deserialize(value,
@@ -108,25 +108,25 @@ class _$Potion extends Potion {
   @override
   final ItemType itemType;
   @override
-  final String description;
+  final String? description;
   @override
-  final String effect;
+  final String? effect;
   @override
-  final int price;
+  final int? price;
   @override
   final Expansion expansion;
 
-  factory _$Potion([void Function(PotionBuilder) updates]) =>
+  factory _$Potion([void Function(PotionBuilder)? updates]) =>
       (new PotionBuilder()..update(updates)).build();
 
   _$Potion._(
-      {this.name,
-      this.displayFormattedTypeName,
-      this.itemType,
+      {required this.name,
+      required this.displayFormattedTypeName,
+      required this.itemType,
       this.description,
       this.effect,
       this.price,
-      this.expansion})
+      required this.expansion})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Potion', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -186,36 +186,36 @@ class _$Potion extends Potion {
 }
 
 class PotionBuilder implements Builder<Potion, PotionBuilder> {
-  _$Potion _$v;
+  _$Potion? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _displayFormattedTypeName;
-  String get displayFormattedTypeName => _$this._displayFormattedTypeName;
-  set displayFormattedTypeName(String displayFormattedTypeName) =>
+  String? _displayFormattedTypeName;
+  String? get displayFormattedTypeName => _$this._displayFormattedTypeName;
+  set displayFormattedTypeName(String? displayFormattedTypeName) =>
       _$this._displayFormattedTypeName = displayFormattedTypeName;
 
-  ItemType _itemType;
-  ItemType get itemType => _$this._itemType;
-  set itemType(ItemType itemType) => _$this._itemType = itemType;
+  ItemType? _itemType;
+  ItemType? get itemType => _$this._itemType;
+  set itemType(ItemType? itemType) => _$this._itemType = itemType;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _effect;
-  String get effect => _$this._effect;
-  set effect(String effect) => _$this._effect = effect;
+  String? _effect;
+  String? get effect => _$this._effect;
+  set effect(String? effect) => _$this._effect = effect;
 
-  int _price;
-  int get price => _$this._price;
-  set price(int price) => _$this._price = price;
+  int? _price;
+  int? get price => _$this._price;
+  set price(int? price) => _$this._price = price;
 
-  Expansion _expansion;
-  Expansion get expansion => _$this._expansion;
-  set expansion(Expansion expansion) => _$this._expansion = expansion;
+  Expansion? _expansion;
+  Expansion? get expansion => _$this._expansion;
+  set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
   PotionBuilder();
 
@@ -241,7 +241,7 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   }
 
   @override
-  void update(void Function(PotionBuilder) updates) {
+  void update(void Function(PotionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -264,4 +264,4 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

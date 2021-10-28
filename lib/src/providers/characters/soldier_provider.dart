@@ -8,11 +8,11 @@ class SoldierProvider extends CharacterProvider<Soldier> {
   Future load() async {
     definitionLoader.filePath = filePath;
     var jsonString = await definitionLoader._getDefinitionsAsJsonString();
-    characters = Soldiers.fromJson(jsonString).soldiers.toList();
+    characters = Soldiers.fromJson(jsonString)!.soldiers.toList();
 
     List<Soldier> updatedCharacters = [];
 
-    for (Soldier character in characters) {
+    for (Soldier character in characters!) {
       var updatedcharacter = character
           .rebuild((character) => character.currentHealth = character.health);
 

@@ -31,17 +31,14 @@ abstract class Spell implements Built<Spell, SpellBuilder>, SpellDefinition {
   @override
   ItemType get itemType;
 
-  @nullable
   @override
-  String get description;
+  String? get description;
 
   @override
-  @nullable
-  int get sellValue;
+  int? get sellValue;
 
   @override
-  @nullable
-  int get price;
+  int? get price;
 
   @override
   School get school;
@@ -59,7 +56,7 @@ abstract class Spell implements Built<Spell, SpellBuilder>, SpellDefinition {
     return json.encode(serializers.serializeWith(Spell.serializer, this));
   }
 
-  static Spell fromJson(String jsonString) {
+  static Spell? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Spell.serializer, jsonDecode(jsonString));
   }

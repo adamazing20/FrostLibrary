@@ -17,7 +17,7 @@ abstract class Apprentices implements Built<Apprentices, ApprenticesBuilder> {
     return json.encode(serializers.serializeWith(Apprentices.serializer, this));
   }
 
-  static Apprentices fromJson(String jsonString) {
+  static Apprentices? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Apprentices.serializer, jsonDecode(jsonString));
   }

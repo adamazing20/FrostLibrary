@@ -12,7 +12,7 @@ abstract class Item {
 
   ItemType get itemType;
 
-  String get description;
+  String? get description;
 
   Expansion get expansion;
 
@@ -20,9 +20,9 @@ abstract class Item {
 }
 
 abstract class SpellDefinition extends Item {
-  int get price;
+  int? get price;
 
-  int get sellValue;
+  int? get sellValue;
 
   School get school;
 
@@ -38,21 +38,21 @@ abstract class MagicItemDef extends Item {
 
   int get sellValue;
 
-  int get damageModified;
+  int? get damageModified;
 
-  int get fightModified;
+  int? get fightModified;
 
-  int get shootModified;
+  int? get shootModified;
 
-  int get castingRollModified;
+  int? get castingRollModified;
 
-  int get willRollModified;
+  int? get willRollModified;
 
-  int get moveModified;
+  int? get moveModified;
 
-  int get armourModified;
+  int? get armourModified;
 
-  int get healthModified;
+  int? get healthModified;
 }
 
 abstract class MagicWeaponDef extends Item {
@@ -60,11 +60,11 @@ abstract class MagicWeaponDef extends Item {
 
   WeaponType get weaponType;
 
-  int get damageModified;
+  int? get damageModified;
 
-  int get fightModified;
+  int? get fightModified;
 
-  int get shootModified;
+  int? get shootModified;
 
   int get sellValue;
 }

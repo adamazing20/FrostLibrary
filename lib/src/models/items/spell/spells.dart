@@ -17,7 +17,7 @@ abstract class Spells implements Built<Spells, SpellsBuilder> {
     return json.encode(serializers.serializeWith(Spells.serializer, this));
   }
 
-  static Spells fromJson(String jsonString) {
+  static Spells? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Spells.serializer, jsonDecode(jsonString));
   }
