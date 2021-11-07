@@ -30,3 +30,6 @@ export 'src/models/character/creature/misecellaneous/miscellaneous.dart';
 export 'src/models/character/creature/misecellaneous/miscellaneoustype.dart';
 export 'src/models/character/creature/undead/undead.dart';
 export 'src/models/character/creature/undead/undeadtype.dart';
+export 'src/models/character/creature/creaturetype.dart';
+export 'src/models/character/creature/creature.dart';
+
