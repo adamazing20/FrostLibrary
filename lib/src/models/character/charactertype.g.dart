@@ -9,6 +9,7 @@ part of charactertype;
 const CharacterType _$wizard = const CharacterType._('Wizard');
 const CharacterType _$apprentice = const CharacterType._('Apprentice');
 const CharacterType _$soldier = const CharacterType._('Soldier');
+const CharacterType _$creature = const CharacterType._('Creature');
 
 CharacterType _$valueOf(String name) {
   switch (name) {
@@ -18,6 +19,8 @@ CharacterType _$valueOf(String name) {
       return _$apprentice;
     case 'Soldier':
       return _$soldier;
+    case 'Creature':
+      return _$creature;
     default:
       throw new ArgumentError(name);
   }
@@ -28,6 +31,7 @@ final BuiltSet<CharacterType> _$values =
   _$wizard,
   _$apprentice,
   _$soldier,
+  _$creature,
 ]);
 
 Serializer<CharacterType> _$characterTypeSerializer =

@@ -15,7 +15,7 @@ abstract class Character {
   int get health;
   int? get currentHealth;
   int? get cost;
-  int get additionalItemHoldCount;
+  int? get additionalItemHoldCount;
   String? get name;
   // There is a way to override toString in builtValue but not sure how to do it
   // for enums

@@ -3,6 +3,25 @@ library serializers;
 import 'package:FrostLibrary/src/models/character/apprentice/apprentice.dart';
 import 'package:FrostLibrary/src/models/character/apprentice/apprentices.dart';
 import 'package:FrostLibrary/src/models/character/charactertype.dart';
+import 'package:FrostLibrary/src/models/character/creature/animal/animal.dart';
+import 'package:FrostLibrary/src/models/character/creature/animal/animals.dart';
+import 'package:FrostLibrary/src/models/character/creature/animal/animaltype.dart';
+import 'package:FrostLibrary/src/models/character/creature/construct/construct.dart';
+import 'package:FrostLibrary/src/models/character/creature/construct/constructs.dart';
+import 'package:FrostLibrary/src/models/character/creature/construct/constructtype.dart';
+import 'package:FrostLibrary/src/models/character/creature/creaturetype.dart';
+import 'package:FrostLibrary/src/models/character/creature/demon/demon.dart';
+import 'package:FrostLibrary/src/models/character/creature/demon/demons.dart';
+import 'package:FrostLibrary/src/models/character/creature/demon/demontype.dart';
+import 'package:FrostLibrary/src/models/character/creature/misecellaneous/miscellaneous.dart';
+import 'package:FrostLibrary/src/models/character/creature/misecellaneous/miscellaneous_creatures.dart';
+import 'package:FrostLibrary/src/models/character/creature/misecellaneous/miscellaneoustype.dart';
+import 'package:FrostLibrary/src/models/character/creature/traits/trait.dart';
+import 'package:FrostLibrary/src/models/character/creature/traits/traits.dart';
+import 'package:FrostLibrary/src/models/character/creature/traits/traittype.dart';
+import 'package:FrostLibrary/src/models/character/creature/undead/undead.dart';
+import 'package:FrostLibrary/src/models/character/creature/undead/undead_creatures.dart';
+import 'package:FrostLibrary/src/models/character/creature/undead/undeadtype.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldier.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldiers.dart';
 import 'package:FrostLibrary/src/models/character/soldier/soldiertype.dart';
@@ -38,7 +57,17 @@ part 'serializers.g.dart';
   ArmourType,
   Apprentice,
   Apprentices,
+  Animal,
+  Animals,
+  AnimalType,
   CharacterType,
+  Construct,
+  Constructs,
+  ConstructType,
+  CreatureType,
+  Demon,
+  Demons,
+  DemonType,
   Expansion,
   ItemType,
   MagicArmour,
@@ -47,6 +76,9 @@ part 'serializers.g.dart';
   MagicItem,
   MagicWeapons,
   MagicWeapon,
+  Miscellaneous,
+  MiscellaneousCreatures,
+  MiscellaneousType,
   Potion,
   Potions,
   Weapon,
@@ -58,7 +90,13 @@ part 'serializers.g.dart';
   SoldierType,
   Soldier,
   Soldiers,
+  Trait,
+  Traits,
+  TraitType,
   Category,
+  Undead,
+  UndeadCreatures,
+  UndeadType,
   Wizard,
   Wizards,
 ])

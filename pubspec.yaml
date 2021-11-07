@@ -10,6 +10,8 @@ flutter:
   assets:
     - lib/item_defs/
     - lib/character_defs/
+    - lib/creature_defs/trait_defs/
+    - lib/creature_defs/
 
 dependencies:
   flutter:

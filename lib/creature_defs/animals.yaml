@@ -1,0 +1,179 @@
+animals:
+  - name: "Bear"
+    displayFormattedTypeName: "Bear"
+    move: 6
+    fight: 4
+    shoot: 0
+    armour: 12
+    will: 0
+    health: 14
+    animalType: Bear
+    description: "Northern bears are mostly peaceful creatures but are easily spooked.
+    If a bear is encountered in the city, it is safe to assume that it is already unhappy and desperate to leave."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - Large
+      - Strong
+
+  - name: "Boar"
+    displayFormattedTypeName: "Boar"
+    move: 6
+    fight: 2
+    shoot: 0
+    armour: 12
+    will: 2
+    health: 8
+    animalType: Boar
+    description: "Bad-tempered and aggressive, wild boars are also very tasty and thus much
+    sought-after in the Frozen City. Their tusks are prized in the Frozen City,
+    and anyone that kills a boar will take them to sell."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    bounty: 10
+    traits:
+      - Animal
+      - Bounty
+      - Horns
+
+  - name: "GiantRat"
+    displayFormattedTypeName: "GiantRat"
+    move: 6
+    fight: 4
+    shoot: 0
+    armour: 12
+    will: 0
+    health: 14
+    animalType: GiantRat
+    description: "Rats were one of the few species that did manage to survive the freezing of
+    the city, hiding in some part of the ancient sewer system.
+    There, they scavenged what food they could, including potions and other magic items. Somehow,
+    over the centuries, at least one strain evolved to produce rats the size of cats. Giant rats
+    are usually encountered in small packs which have been known to overwhelm weak
+    or wounded adventurers."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - PackHunter
+
+  - name: "IceSpider"
+    displayFormattedTypeName: "Ice Spider"
+    move: 6
+    fight: 1
+    shoot: 0
+    armour: 8
+    will: 0
+    health: 4
+    animalType: IceSpider
+    description: "These hairy arachnids vary in size but are generally about the size of a wolf.
+     These spiders do not spin webs – they are active hunters. Generally,
+     they feed on rodents and other small mammals, but are not averse to trying their luck with
+     larger prey. Although not particularly strong, ice spiders are swift, and their bite releases
+      a dangerous venom."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - ExpertClimber
+      - Poison
+
+  - name: "IceToad"
+    displayFormattedTypeName: "Ice Toad"
+    move: 4
+    fight: 2
+    shoot: 0
+    armour: 10
+    will: 0
+    health: 5
+    animalType: IceToad
+    description: "These large and ponderous amphibians have devastatingly powerful
+    jaws but are otherwise weak. It is generally just best to avoid them. "
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - Amphibious
+      - Powerful
+
+
+  - name: "SnowLeopard"
+    displayFormattedTypeName: "Snow Leopard"
+    move: 8
+    fight: 3
+    shoot: 0
+    armour: 10
+    will: 2
+    health: 10
+    animalType: SnowLeopard
+    description: "The largest and most vicious of the big cats around Frostgrave,
+    the snow leopard is a dangerous hunter. They have no fear of humans and
+    will attack if they are hungry or feel threatened. "
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - ExpertClimber
+
+  - name: "WhiteGorilla"
+    displayFormattedTypeName: "White Gorilla"
+    move: 6
+    fight: 4
+    shoot: 0
+    armour: 12
+    will: 8
+    health: 14
+    animalType: WhiteGorilla
+    description: "Although rarely seen, at least one colony of white gorillas calls the city home.
+    While the females and young generally stay inside a nest deep within the ruins,
+     the males go out hunting and are not above eating human flesh."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - Strong
+
+  - name: "WildDog"
+    displayFormattedTypeName: "Wild Dog"
+    move: 8
+    fight: 0
+    shoot: 0
+    armour: 8
+    will: 0
+    health: 4
+    animalType: WildDog
+    description: "Several large packs of wild dogs now roam the ruins of Frostgrave.
+    These animals are generally scrawny and chronically malnourished,
+    but this has unfortunately also made them extremely aggressive."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - PackHunter
+
+  - name: "Wolf"
+    displayFormattedTypeName: "Wolf"
+    move: 8
+    fight: 1
+    shoot: 0
+    armour: 10
+    will: 0
+    health: 6
+    animalType: Wolf
+    description: "Wolves tend to shy away from humans,
+    but a few will occasionally wander down into the city in search of prey."
+    characterType: Creature
+    expansion: Core
+    creatureType: Animal
+    traits:
+      - Animal
+      - PackHunter
