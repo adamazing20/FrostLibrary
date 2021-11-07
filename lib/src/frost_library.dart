@@ -40,6 +40,11 @@ class FrostLibrary {
     _wizardProvider,
     _soldierProvider,
     _apprenticeProvider,
+    _animalProvider,
+    _constructProvider,
+    _demonProvider,
+    _miscellaneousCreatureProvider,
+    _undeadCreatureProvider,
   ];
 
   static final List _creatureProviderList = [
