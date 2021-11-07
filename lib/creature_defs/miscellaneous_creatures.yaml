@@ -1,5 +1,6 @@
 miscellaneousCreatures:
   - name: "FrostGiant"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Frost Giant"
     move: 6
     fight: 5
@@ -22,6 +23,7 @@ miscellaneousCreatures:
       - Strong
 
   - name: "GiantWorm"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Giant Worm"
     move: 7
     fight: 4
@@ -44,6 +46,7 @@ miscellaneousCreatures:
       - Large
 
   - name: "SnowTroll"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Snow Troll"
     move: 4
     fight: 4
@@ -64,6 +67,7 @@ miscellaneousCreatures:
       - Strong
 
   - name: "Werewolf"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Werewolf"
     move: 7
     fight: 4

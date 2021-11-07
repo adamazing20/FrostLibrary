@@ -1,5 +1,6 @@
 constructs:
   - name: "SmallConstruct"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Small Construct"
     move: 6
     fight: 1
@@ -18,6 +19,7 @@ constructs:
       - Construct
 
   - name: "MediumConstruct"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Medium Construct"
     move: 5
     fight: 3
@@ -36,6 +38,7 @@ constructs:
       - Construct
 
   - name: "LargeConstruct"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Large Construct"
     move: 4
     fight: 4

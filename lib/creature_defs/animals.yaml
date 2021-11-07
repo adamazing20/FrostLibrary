@@ -7,6 +7,7 @@ animals:
     armour: 12
     will: 0
     health: 14
+    additionalItemHoldCount: -1
     animalType: Bear
     description: "Northern bears are mostly peaceful creatures but are easily spooked.
     If a bear is encountered in the city, it is safe to assume that it is already unhappy and desperate to leave."
@@ -20,6 +21,7 @@ animals:
 
   - name: "Boar"
     displayFormattedTypeName: "Boar"
+    additionalItemHoldCount: -1
     move: 6
     fight: 2
     shoot: 0
@@ -40,6 +42,7 @@ animals:
       - Horns
 
   - name: "GiantRat"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "GiantRat"
     move: 6
     fight: 4
@@ -62,6 +65,7 @@ animals:
       - PackHunter
 
   - name: "IceSpider"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Ice Spider"
     move: 6
     fight: 1
@@ -84,6 +88,7 @@ animals:
       - Poison
 
   - name: "IceToad"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Ice Toad"
     move: 4
     fight: 2
@@ -104,6 +109,7 @@ animals:
 
 
   - name: "SnowLeopard"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Snow Leopard"
     move: 8
     fight: 3
@@ -123,6 +129,7 @@ animals:
       - ExpertClimber
 
   - name: "WhiteGorilla"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "White Gorilla"
     move: 6
     fight: 4
@@ -142,6 +149,7 @@ animals:
       - Strong
 
   - name: "WildDog"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Wild Dog"
     move: 8
     fight: 0
@@ -161,6 +169,7 @@ animals:
       - PackHunter
 
   - name: "Wolf"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Wolf"
     move: 8
     fight: 1

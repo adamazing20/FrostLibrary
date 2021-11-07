@@ -1,5 +1,6 @@
 undeadCreatures:
   - name: "ArmouredSkeleton"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Armoured Skeleton"
     move: 6
     fight: 2
@@ -19,6 +20,7 @@ undeadCreatures:
       - Undead
 
   - name: "AnimatedSkull"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Animated Skull"
     move: 3
     fight: 0
@@ -39,6 +41,7 @@ undeadCreatures:
       - Undead
 
   - name: "Ghoul"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Ghoul"
     move: 6
     fight: 2
@@ -58,6 +61,7 @@ undeadCreatures:
       - Undead
 
   - name: "Skeleton"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Skeleton"
     move: 6
     fight: 1
@@ -77,6 +81,7 @@ undeadCreatures:
       - Undead
 
   - name: "SkeletonArcher"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Skeleton Archer"
     move: 6
     fight: 0
@@ -98,6 +103,7 @@ undeadCreatures:
       - Bow
 
   - name: "Vampire"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Vampire"
     move: 7
     fight: 4
@@ -122,6 +128,7 @@ undeadCreatures:
       - Undead
 
   - name: "Wraith"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Wraith"
     move: 6
     fight: 2
@@ -146,6 +153,7 @@ undeadCreatures:
       - Undead
 
   - name: "Zombie"
+    additionalItemHoldCount: -1
     displayFormattedTypeName: "Zombie"
     move: 4
     fight: 1
