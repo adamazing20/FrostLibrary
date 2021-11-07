@@ -1,0 +1,62 @@
+demons:
+  - name: "Imp"
+    displayFormattedTypeName: "Imp"
+    move: 6
+    fight: 1
+    shoot: 0
+    armour:  10
+    will: 4
+    health: 6
+    demonType: Imp
+    description: "Imps are generally the smallest and least powerful of demons.
+    They tend to be smaller than a human, but the infinity of forms across the planes of
+    existence means that they can appear as practically anything – a mass of flesh defined
+    solely by a giant mouth, a spindly insect creature with vestigial wings, a crooked imitation
+    of a man, a humanoid rat…"
+    characterType: Creature
+    expansion: Core
+    creatureType: Demon
+    traits:
+      - Demon
+
+  - name: "MinorDemon"
+    displayFormattedTypeName: "Minor Demon"
+    move: 6
+    fight: 3
+    shoot: 0
+    armour: 11
+    will: 4
+    health: 12
+    demonType: MinorDemon
+    description: "Minor demons are close to human size, and while they come in an infinite
+     number of forms, some distinct ‘species’ can be identified, such as the human–animal
+     hybrids or the ‘gargoyles’ – hunched, grey-skinned creatures that find homes amongst the
+     ruined architecture of Frostgrave."
+    characterType: Creature
+    expansion: Core
+    creatureType: Demon
+    traits:
+      - Demon
+
+  - name: "MajorDemon"
+    displayFormattedTypeName: "Major Demon"
+    move: 6
+    fight: 5
+    shoot: 0
+    armour: 12
+    will: 6
+    health: 15
+    demonType: MajorDemon
+    description: "Major demons are powerful entities.
+    There is no limit to the size or shape they can take, and some are capable of
+     changing form at will. They can appear as flawlessly beautiful humans, grotesque
+      hybrids of multiple animals, giant amorphous blobs, floating spheres of light, or anything
+      else that can be imagined. The stats given below are just a guideline, as major demons will
+      often have their own magic powers or abilities, or access to a number of spells."
+    characterType: Creature
+    expansion: Core
+    creatureType: Demon
+    traits:
+      - Demon
+      - Strong
+      - TrueSight

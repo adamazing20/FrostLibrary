@@ -1,0 +1,85 @@
+miscellaneousCreatures:
+  - name: "FrostGiant"
+    displayFormattedTypeName: "Frost Giant"
+    move: 6
+    fight: 5
+    shoot: 0
+    armour: 15
+    will: 4
+    health: 25
+    miscellaneousType: FrostGiant
+    elementalResistance: 2
+    description: "Ever since the great storm that destroyed the city,
+    frost giants have occasionally wandered down from the northern mountains.
+    Possessed of rudimentary intelligence, they can occasionally be reasoned with but
+    generally see humans (and most other animals) as little more than food."
+    characterType: Creature
+    expansion: Core
+    creatureType: Miscellaneous
+    traits:
+      - ElementalResistance
+      - Large
+      - Strong
+
+  - name: "GiantWorm"
+    displayFormattedTypeName: "Giant Worm"
+    move: 7
+    fight: 4
+    shoot: 0
+    armour: 10
+    will: 5
+    health: 20
+    miscellaneousType: GiantWorm
+    description: "The giant worms that move beneath the city are, like so many of the dangers
+    of Frostgrave, a legacy of the old days. They were originally bred to clean the city’s sewer
+    system, devouring all the waste. It is unknown if they were frozen and thawed or
+    if they have been active and breeding in the last thousand years but, either way,
+    it is clear that there is no longer enough food for them in the sewer system, and they
+    often come out to hunt."
+    characterType: Creature
+    expansion: Core
+    creatureType: Miscellaneous
+    traits:
+      - Burrowing
+      - Large
+
+  - name: "SnowTroll"
+    displayFormattedTypeName: "Snow Troll"
+    move: 4
+    fight: 4
+    shoot: 0
+    armour: 14
+    will: 2
+    health: 16
+    miscellaneousType: SnowTroll
+    description: "Large, dumb, and dangerous, the shaggy snow trolls encountered in the
+    city are not to be taken lightly. Trolls consider anything that is alive and smaller than
+    themselves to be food and will not hesitate to attack anyone they meet. Thankfully, trolls
+    are slow and can usually be avoided or outpaced."
+    characterType: Creature
+    expansion: Core
+    creatureType: Miscellaneous
+    traits:
+      - Large
+      - Strong
+
+  - name: "Werewolf"
+    displayFormattedTypeName: "Werewolf"
+    move: 7
+    fight: 4
+    shoot: 0
+    armour: 11
+    will: 5
+    health: 12
+    bountyAmount: 20
+    miscellaneousType: Werewolf
+    description: "The werewolves that inhabit the ruins of the city are not true lycanthropes.
+    They are not shape shifters, but some kind of wolf–human hybrid.
+    Although they live in small packs, they hunt alone and are thus normally encountered
+    individually. The heads of werewolves are highly prized trophies."
+    characterType: Creature
+    expansion: Core
+    creatureType: Miscellaneous
+    traits:
+      - Bounty
+      - ExpertClimber

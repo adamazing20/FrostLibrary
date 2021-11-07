@@ -1,0 +1,239 @@
+traits:
+  - name: "Amphibious"
+    displayFormattedTypeName: "Amphibious"
+    traitType: Amphibious
+    description: "This Creature is perfectly happy on land or in water.
+    It automatically passes all Swimming Rolls, treats water as normal instead of rough ground,
+    and suffers no Fight penalties for being in the water."
+    notes:
+    expansion: Core
+
+  - name: "Animal"
+    displayFormattedTypeName: "Animal"
+    traitType: Animal
+    description: "A natural creature with less-than-human intelligence.
+    Even if they become a member of a warband, animals cannot pick up treasure tokens and have no item slots."
+    notes:
+    expansion: Core
+
+  - name: "Aquatic"
+    displayFormattedTypeName: "Aquatic"
+    traitType: Aquatic
+    description: "This creature can only live in the water and will never willingly move onto land.
+     If forced onto land, it treats all ground as rough ground for the purposes of movement and must
+      pass a Will Roll (TN16) every time it activates or suffer 5 points of damage.
+      Aquatic creatures never have to make Swimming Rolls, treat water as normal instead"
+    notes:
+    expansion: Core
+
+  - name: "Bounty"
+    displayFormattedTypeName: "Bounty"
+    traitType: Bounty
+    description: "There is a reward of (X) awaiting the warband that kills this creature."
+    notes:
+    expansion: Core
+
+  - name: "Burrowing"
+    displayFormattedTypeName: "Burrowing"
+    traitType: Burrowing
+    description: "This creature may move through terrain as though it were not there,
+    provided it has enough movement to reach the other side
+    (it cannot end its movement within a solid piece of terrain). Furthermore,
+     the creature never suffers any movement penalty for moving over rough ground."
+    notes:
+    expansion: Core
+
+  - name: "Construct"
+    displayFormattedTypeName: "Construct"
+    traitType: Construct
+    description: "This creature is immune to poison and never counts as wounded.
+    Constructs can pick up and carry treasure tokens but have no item slots.
+    Although constructs may never carry items, some items may be permanently
+    grafted to them – if available, this option will be noted in the item’s description."
+    notes:
+    expansion: Core
+
+  - name: "Demon"
+    displayFormattedTypeName: "Demon"
+    traitType: Demon
+    description: "All attacks made by this creature count as magic attacks.
+    This creature is immune to poison. Demons can pick up and carry
+    treasure tokens but have no item slots."
+    notes:
+    expansion: Core
+
+  - name: "EnergyDrain"
+    displayFormattedTypeName: "Energy Drain"
+    traitType: EnergyDrain
+    description: "This creature deals double damage in combat. Undead and constructs are immune to
+    this extra damage and just take the standard amount."
+    notes:
+    expansion: Core
+
+  - name: "Ethereal"
+    displayFormattedTypeName: "Ethereal"
+    traitType: Ethereal
+    description: "This creature may move through terrain as though it were not there,
+    provided it has enough movement to reach the other side (it cannot end its movement within
+    a solid piece of terrain). Furthermore, the creature never suffers any movement penalty for
+    climbing or moving over rough ground."
+    notes:
+    expansion: Core
+
+  - name: "ElementalResistance"
+    displayFormattedTypeName: "Elemental Resistance"
+    traitType: ElementalResistance
+    description: "Whenever this creature takes elemental damage, increase its armour by (X) for
+    the purposes of determining damage from that attack."
+    notes:
+    expansion: Core
+
+  - name: "ExpertClimber"
+    displayFormattedTypeName: "Expert Climber"
+    traitType: ExpertClimber
+    description: "This creature suffers no movement penalty for climbing."
+    notes:
+    expansion: Core
+
+  - name: "Flying"
+    displayFormattedTypeName: "Flying"
+    traitType: Flying
+    description: "This creature ignores all terrain and movement penalties when moving.
+    Furthermore, it never takes damage from falling. Flying creatures automatically
+     pass all Swimming Rolls."
+    notes:
+    expansion: Core
+
+  - name: "Horns"
+    displayFormattedTypeName: "Horns"
+    traitType: Horns
+    description: "If this creature moves into combat and spends an action to fight as part
+     of the same activation, it receives +2 Fight for that attack only."
+    notes:
+    expansion: Core
+
+  - name: "ImmuneToCriticalHits"
+    displayFormattedTypeName: "Immune To Critical Hits"
+    traitType: ImmuneToCriticalHits
+    description: "This creature never suffers any extra damage from a critical hit.
+    Its opponent still automatically wins the fight on a roll of 20, but no additional
+     damage is inflicted."
+    notes:
+    expansion: Core
+
+  - name: "ImmuneToNormalWeapons"
+    displayFormattedTypeName: "Immune To Normal Weapons"
+    traitType: ImmuneToNormalWeapons
+    description: "This creature can only be hurt by magic.
+    This includes all damage caused by magic weapons, and any other attack specifically
+    noted to be magic or to cause magic damage."
+    notes:
+    expansion: Core
+
+  - name: "ImmuneToPoison"
+    displayFormattedTypeName: "Immune To Poison"
+    traitType: ImmuneToPoison
+    description: "This creature is never counted as poisoned."
+    notes:
+    expansion: Core
+
+  - name: "ImmuneToSpell"
+    displayFormattedTypeName: "Immune To Spell"
+    traitType: ImmuneToSpell
+    description: "This creature is immune to a specific spell.
+    Any attempts to cast that spell on the creature automatically fail."
+    notes:
+    expansion: Core
+
+  - name: "Large"
+    displayFormattedTypeName: "Large"
+    traitType: Large
+    description: "This huge creature is easier to target with shooting attacks.
+    It suffers from the Large Target modifier (-2) when defending against shooting attacks."
+    notes:
+    expansion: Core
+
+  - name: "Levitate"
+    displayFormattedTypeName: "Levitate"
+    traitType: Levitate
+    description: "This creature never suffers any movement penalty for climbing or
+    moving over rough ground."
+    notes:
+    expansion: Core
+
+  - name: "MagicAttack"
+    displayFormattedTypeName: "Magic Attack"
+    traitType: MagicAttack
+    description: "Any attack made by this creature counts as a magic attack."
+    notes:
+    expansion: Core
+
+  - name: "MindLock"
+    displayFormattedTypeName: "Mind Lock"
+    traitType: MindLock
+    description: "This creature is Immune to Mind Control and Immune to Suggestion."
+    notes:
+    expansion: Core
+
+  - name: "NeverWounded"
+    displayFormattedTypeName: "Never Wounded"
+    traitType: MindLock
+    description: "This creature never counts as wounded."
+    notes:
+    expansion: Core
+
+  - name: "PackHunter"
+    displayFormattedTypeName: "Pack Hunter"
+    traitType: PackHunter
+    description: "If more than one of these creatures appears at the same time,
+     place them in base contact. Whenever a pack hunter is activated, all other pack
+     hunters in contact with it should be activated and moved as one. Roll randomly to
+     see which creature is the ‘pack leader’ and determine the pack’s actions using that figure."
+    notes:
+    expansion: Core
+
+  - name: "Poison"
+    displayFormattedTypeName: "Poison"
+    traitType: Poison
+    description: "Attacks from this creature are venomous and deal poison damage."
+    notes:
+    expansion: Core
+
+  - name: "Powerful"
+    displayFormattedTypeName: "Powerful"
+    traitType: Powerful
+    description: "Damage dealt by this creature is doubled."
+    notes:
+    expansion: Core
+
+  - name: "SpellCaster"
+    displayFormattedTypeName: "SpellCaster"
+    traitType: SpellCaster
+    description: "This creature can cast spells. Exactly which spells it can cast and how this is
+    handled will be given in the creature’s description."
+    notes:
+    expansion: Core
+
+  - name: "Strong"
+    displayFormattedTypeName: "Strong"
+    traitType: Strong
+    description: "This creature does +2 damage."
+    notes:
+    expansion: Core
+
+  - name: "TrueSight"
+    displayFormattedTypeName: "True Sight"
+    traitType: TrueSight
+    description: "Ignore any castings of Beauty or Invisibility when determining this creature’s
+    actions. Furthermore, if this figure is ever in combat with an Illusionary Soldier,
+     the Illusionary Soldier is immediately removed from the table."
+    notes:
+    expansion: Core
+
+  - name: "Undead"
+    displayFormattedTypeName: "Undead"
+    traitType: Undead
+    description: "This creature is immune to poison and never counts as wounded.
+    Undead creatures can pick up and carry treasure tokens but have no item slots."
+    notes:
+    expansion: Core

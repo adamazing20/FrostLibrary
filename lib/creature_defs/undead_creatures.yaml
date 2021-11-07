@@ -1,0 +1,165 @@
+undeadCreatures:
+  - name: "ArmouredSkeleton"
+    displayFormattedTypeName: "Armoured Skeleton"
+    move: 6
+    fight: 2
+    shoot: 0
+    armour: 12
+    will: 0
+    health: 1
+    undeadType: ArmouredSkeleton
+    description: "Armoured skeletons are skeletons that were animated specifically to use
+    as soldiers. Due to their more demanding role, they are harder to create, but are generally
+    tougher, more aggressive, and better-equipped."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - PackHunter
+      - Undead
+
+  - name: "AnimatedSkull"
+    displayFormattedTypeName: "Animated Skull"
+    move: 3
+    fight: 0
+    shoot: 0
+    armour: 10
+    will: -2
+    health: 1
+    undeadType: AnimatedSkull
+    description: "When a necromancer needs to send a message, hold a candle, or other minor task,
+    they often animate a skull for the purpose. Usually, but not exclusively, human, these skulls
+    can levitate a few feet above the ground and float around. Although not a huge threat, their
+    broken-toothed bite can be extremely painful to those not paying enough attention."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - Levitate
+      - Undead
+
+  - name: "Ghoul"
+    displayFormattedTypeName: "Ghoul"
+    move: 6
+    fight: 2
+    shoot: 0
+    armour: 10
+    will: 2
+    health: 10
+    undeadType: Ghoul
+    description: "Ghouls are the scavengers of the undead world and tend to be created by accident,
+    when hunger or ignorance drives a living creature to consume the tainted flesh of the undead.
+     Most of the ghouls currently haunting the ruins of Frostgrave were once adventurers who came
+     to explore the city following the great thaw."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - Undead
+
+  - name: "Skeleton"
+    displayFormattedTypeName: "Skeleton"
+    move: 6
+    fight: 1
+    shoot: 0
+    armour: 10
+    will: 0
+    health: 1
+    undeadType: Skeleton
+    description: "Skeletons are the animated bones of some long-dead creature,
+    held together and animated by the power of magic. Most skeletons in Frostgrave were originally
+    humans, but skeletons of dogs or other animals are not uncommon. Regardless of their origins,
+    all skeletons have the same stats."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - Undead
+
+  - name: "SkeletonArcher"
+    displayFormattedTypeName: "Skeleton Archer"
+    move: 6
+    fight: 0
+    shoot: 0
+    armour: 10
+    will: 0
+    health: 1
+    undeadType: SkeletonArcher
+    description: "Most animated skeletons do not possess the manual dexterity to fire a bow.
+    However, if the skeleton belonged to a skilled archer, then some of that ability is retained
+    in the bones. Skeletons will never be the best shots, but even the dead make a lucky shot
+    now and then."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - Undead
+    weapons:
+      - Bow
+
+  - name: "Vampire"
+    displayFormattedTypeName: "Vampire"
+    move: 7
+    fight: 4
+    shoot: 0
+    armour: 12
+    will: 5
+    health: 14
+    undeadType: Vampire
+    description: "Even at the height of its glory, the city had its problems with vampires.
+    While a few vampires were powerful wizards or warriors, most were just parasitic
+    creatures – too dangerous to allow to roam unchecked, too powerful to stamp out entirely.
+    Being undead, these creatures just froze along with the rest of the city but now they too
+    have thawed out. The stats given here represent a typical vampire."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - ImmuneToNormalWeapons
+      - MagicAttack
+      - MindLock
+      - TrueSight
+      - Undead
+
+  - name: "Wraith"
+    displayFormattedTypeName: "Wraith"
+    move: 6
+    fight: 2
+    shoot: 0
+    armour: 10
+    will: 3
+    health: 6
+    undeadType: Wraith
+    description: "‘Wraith’ is a catch-all term for the various forms of ethereal undead in the city,
+     although ‘ghost’ and ‘wight’ are also used. It is not known how they are created,
+     and no-one is sure if the ones currently haunting the city come from before or after
+     its fall. What is known, though, is that a wraith is both extremely dangerous and hard to
+     kill – their touch can drain a victim’s life force, and they are immune to mundane weapons."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - EnergyDrain
+      - Ethereal
+      - ImmuneToNormalWeapons
+      - MagicAttack
+      - Undead
+
+  - name: "Zombie"
+    displayFormattedTypeName: "Zombie"
+    move: 4
+    fight: 1
+    shoot: 0
+    armour: 12
+    will: 0
+    health: 6
+    undeadType: Zombie
+    description: "Zombies probably outnumber all the other inhabitants of Frostgrave combined.
+    Unlike skeletons, these undead were reanimated soon after death and still have most of
+    their flesh. Before the cataclysm, zombies were chiefly used as household servants and
+    messengers. Now, they have gone feral and hunger for living flesh."
+    characterType: Creature
+    expansion: Core
+    creatureType: Undead
+    traits:
+      - Undead

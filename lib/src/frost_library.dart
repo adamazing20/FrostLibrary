@@ -1,5 +1,6 @@
 import 'package:FrostLibrary/FrostLibrary.dart';
 import 'package:FrostLibrary/src/models/character/character.dart';
+import 'package:FrostLibrary/src/models/character/creature/creature.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/providers/definition_providers.dart';
@@ -17,6 +18,12 @@ class FrostLibrary {
   static final WizardProvider _wizardProvider = WizardProvider();
   static final SoldierProvider _soldierProvider = SoldierProvider();
   static final ApprenticeProvider _apprenticeProvider = ApprenticeProvider();
+  static final TraitProvider _traitProvider = TraitProvider();
+  static final AnimalProvider _animalProvider = AnimalProvider();
+  static final ConstructProvider _constructProvider = ConstructProvider();
+  static final DemonProvider _demonProvider = DemonProvider();
+  static final MiscellaneousCreatureProvider _miscellaneousCreatureProvider = MiscellaneousCreatureProvider();
+  static final UndeadCreatureProvider _undeadCreatureProvider = UndeadCreatureProvider();
 
   static final List _itemProviderList = [
     _weaponProvider,
@@ -33,6 +40,14 @@ class FrostLibrary {
     _wizardProvider,
     _soldierProvider,
     _apprenticeProvider,
+  ];
+
+  static final List _creatureProviderList = [
+    _animalProvider,
+    _constructProvider,
+    _demonProvider,
+    _miscellaneousCreatureProvider,
+    _undeadCreatureProvider,
   ];
 
   // WeaponProvider get weapons => _weaponProvider;
@@ -69,6 +84,12 @@ class FrostLibrary {
     await _wizardProvider.load();
     await _soldierProvider.load();
     await _apprenticeProvider.load();
+    await _traitProvider.load();
+    await _animalProvider.load();
+    await _constructProvider.load();
+    await _demonProvider.load();
+    await _miscellaneousCreatureProvider.load();
+    await _undeadCreatureProvider.load();
   }
 
   List<Item> getAllItems({Expansion? expansion}) {
@@ -113,6 +134,18 @@ class FrostLibrary {
     }
 
     return charactersList;
+  }
+
+  List<Creature> getAllCreatures({Expansion? expansion}){
+    List<Creature> creaturesList = List.empty(growable: true);
+    _creatureProviderList.forEach((provider) {
+      creaturesList.addAll(provider.characters);
+    });
+
+    if(expansion != null){
+      creaturesList.removeWhere((item) => item.expansion != expansion);
+    }
+    return creaturesList;
   }
 
   List<Character> getCharactersByType(
@@ -166,4 +199,9 @@ class FrostLibrary {
     });
     return charactersToReturn;
   }
+
+  List<Trait> getAllTraits(){
+    return _traitProvider.traits!;
+  }
+
 }

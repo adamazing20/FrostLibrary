@@ -12,7 +12,7 @@ class CharacterType extends EnumClass {
   static const CharacterType Wizard = _$wizard;
   static const CharacterType Apprentice = _$apprentice;
   static const CharacterType Soldier = _$soldier;
-
+  static const CharacterType Creature = _$creature;
 
   const CharacterType._(String name) : super(name);
 

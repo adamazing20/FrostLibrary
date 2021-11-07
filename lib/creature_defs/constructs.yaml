@@ -1,0 +1,56 @@
+constructs:
+  - name: "SmallConstruct"
+    displayFormattedTypeName: "Small Construct"
+    move: 6
+    fight: 1
+    shoot: 0
+    armour: 11
+    will: 0
+    health: 10
+    constructType: SmallConstruct
+    description: "These are constructs that are smaller than most humans.
+    They normally take the form of a small humanoid or animal,
+    but could just as easily be an animated chair, child’s toy, or something even more unusual."
+    characterType: Creature
+    expansion: Core
+    creatureType: Construct
+    traits:
+      - Construct
+
+  - name: "MediumConstruct"
+    displayFormattedTypeName: "Medium Construct"
+    move: 5
+    fight: 3
+    shoot: 0
+    armour: 12
+    will: 0
+    health: 12
+    constructType: MediumConstruct
+    description: "These constructs are around human size and come in all types,
+     from humanoid designs to machines designed for a specific purpose,
+     such as chopping wood, washing clothes, or serving as a mount."
+    characterType: Creature
+    expansion: Core
+    creatureType: Construct
+    traits:
+      - Construct
+
+  - name: "LargeConstruct"
+    displayFormattedTypeName: "Large Construct"
+    move: 4
+    fight: 4
+    shoot: 0
+    armour: 13
+    will: 0
+    health: 14
+    constructType: LargeConstruct
+    description: "These constructs are larger than a human and, while often still humanoid in shape,
+     can also be found as self-propelled ‘living’ wagons or
+     carriages or with designs inspired by larger animals such as bears."
+    characterType: Creature
+    expansion: Core
+    creatureType: Construct
+    traits:
+      - Construct
+      - Large
+      - Strong
