@@ -154,7 +154,7 @@ class FrostLibrary {
   }
 
   List<Character> getCharactersByType(
-      {required CharacterType characterType, Expansion? expansion}) {
+      {required CharacterType characterType, CharacterSubType? subType, Expansion? expansion}) {
     List<Character> allCharacters;
     if (expansion != null) {
       allCharacters = getAllCharacters(expansion: expansion);
@@ -163,6 +163,23 @@ class FrostLibrary {
     allCharacters = getAllCharacters();
     allCharacters
         .removeWhere((character) => character.characterType != characterType);
+
+    //TODO: for now this block of code will only work for creatures, fix it :);
+    if(subType != null) {
+      var creatureType = subType as CreatureType;
+
+      //all other characters that weren't creatures were removed above, now we
+      //remove specific types of creatures;
+      allCharacters.removeWhere((character){
+        var creature = character as Creature;
+        if(creatureType == creature.creatureType) {
+          return false;
+        }
+        return true;
+      } );
+
+    }
+
     return allCharacters;
   }
 
