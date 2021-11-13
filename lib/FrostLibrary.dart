@@ -32,4 +32,5 @@ export 'src/models/character/creature/undead/undead.dart';
 export 'src/models/character/creature/undead/undeadtype.dart';
 export 'src/models/character/creature/creaturetype.dart';
 export 'src/models/character/creature/creature.dart';
+export 'src/models/character/character_subtype.dart';
 
