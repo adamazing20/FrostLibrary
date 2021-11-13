@@ -1,12 +1,13 @@
 library creaturetype;
 
+import 'package:FrostLibrary/src/models/character/character_subtype.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'creaturetype.g.dart';
 
-class CreatureType extends EnumClass {
+class CreatureType extends EnumClass implements CharacterSubType{
   static Serializer<CreatureType> get serializer => _$creatureTypeSerializer;
 
   static const CreatureType Animal = _$animal;

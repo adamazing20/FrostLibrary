@@ -1,12 +1,13 @@
 library soldiertype;
 
+import 'package:FrostLibrary/src/models/character/character_subtype.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'soldiertype.g.dart';
 
-class SoldierType extends EnumClass {
+class SoldierType extends EnumClass implements CharacterSubType{
   static Serializer<SoldierType> get serializer => _$soldierTypeSerializer;
 
   static const SoldierType Thug = _$thug;

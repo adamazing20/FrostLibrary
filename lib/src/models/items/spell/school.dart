@@ -1,12 +1,13 @@
 library school;
 
+import 'package:FrostLibrary/src/models/character/character_subtype.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_collection/built_collection.dart';
 
 part 'school.g.dart';
 
-class School extends EnumClass {
+class School extends EnumClass  implements CharacterSubType{
   static Serializer<School> get serializer => _$schoolSerializer;
 
   static const School Chronomancer = _$chronomancer;
