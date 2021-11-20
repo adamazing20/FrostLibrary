@@ -1,13 +1,15 @@
 library miscellaneoustype;
 
+import 'package:FrostLibrary/src/models/character/character_sub_catagory';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'miscellaneoustype.g.dart';
 
-class MiscellaneousType extends EnumClass {
-  static Serializer<MiscellaneousType> get serializer => _$miscellaneousTypeSerializer;
+class MiscellaneousType extends EnumClass implements CharacterSubCatagory {
+  static Serializer<MiscellaneousType> get serializer =>
+      _$miscellaneousTypeSerializer;
 
   static const MiscellaneousType FrostGiant = _$frostGiant;
   static const MiscellaneousType GiantWorm = _$giantWorm;

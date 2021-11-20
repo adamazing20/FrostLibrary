@@ -1,12 +1,13 @@
 library constructtype;
 
+import 'package:FrostLibrary/src/models/character/character_sub_catagory';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'constructtype.g.dart';
 
-class ConstructType extends EnumClass {
+class ConstructType extends EnumClass implements CharacterSubCatagory {
   static Serializer<ConstructType> get serializer => _$constructTypeSerializer;
 
   static const ConstructType SmallConstruct = _$smallConstruct;

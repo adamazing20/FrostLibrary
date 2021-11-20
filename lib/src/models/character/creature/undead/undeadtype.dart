@@ -1,12 +1,13 @@
 library undeadtype;
 
+import 'package:FrostLibrary/src/models/character/character_sub_catagory';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'undeadtype.g.dart';
 
-class UndeadType extends EnumClass {
+class UndeadType extends EnumClass implements CharacterSubCatagory {
   static Serializer<UndeadType> get serializer => _$undeadTypeSerializer;
 
   static const UndeadType ArmouredSkeleton = _$armouredSkeleton;
