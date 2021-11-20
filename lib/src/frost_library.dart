@@ -5,6 +5,7 @@ import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/providers/definition_providers.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class FrostLibrary {
   static final WeaponProvider _weaponProvider = WeaponProvider();
@@ -120,7 +121,7 @@ class FrostLibrary {
   List<Item> getItemsByName(List<String> itemNames,
       {ItemType? itemType, Expansion? expansion}) {
     List<String> lowerCaseNames =
-        itemNames.map((name) => name.toLowerCase()).toList();
+    itemNames.map((name) => name.toLowerCase()).toList();
 
     return getAllItems(expansion: expansion)
         .where((item) => lowerCaseNames.contains(item.name.toLowerCase()))
@@ -141,15 +142,26 @@ class FrostLibrary {
     return charactersList;
   }
 
-  List<Creature> getAllCreatures({Expansion? expansion}){
+  List<Creature> getAllCreatures({Expansion? expansion}) {
     List<Creature> creaturesList = List.empty(growable: true);
     _creatureProviderList.forEach((provider) {
       creaturesList.addAll(provider.characters);
     });
 
-    if(expansion != null){
+    if (expansion != null) {
       creaturesList.removeWhere((item) => item.expansion != expansion);
     }
+    return creaturesList;
+  }
+
+  List<Creature> getCreaturesByType(CreatureType creatureType,
+      {Expansion? expansion}) {
+    List<Creature> creaturesList = List.empty(growable: true);
+    creaturesList.addAll(getAllCreatures(expansion: expansion));
+
+    creaturesList.removeWhere((creature) =>
+    creature.creatureType != creatureType);
+
     return creaturesList;
   }
 
@@ -165,19 +177,18 @@ class FrostLibrary {
         .removeWhere((character) => character.characterType != characterType);
 
     //TODO: for now this block of code will only work for creatures, fix it :);
-    if(subType != null) {
+    if (subType != null) {
       var creatureType = subType as CreatureType;
 
       //all other characters that weren't creatures were removed above, now we
       //remove specific types of creatures;
-      allCharacters.removeWhere((character){
+      allCharacters.removeWhere((character) {
         var creature = character as Creature;
-        if(creatureType == creature.creatureType) {
+        if (creatureType == creature.creatureType) {
           return false;
         }
         return true;
-      } );
-
+      });
     }
 
     return allCharacters;
@@ -185,15 +196,15 @@ class FrostLibrary {
 
   Wizard getWizardBySchool({required School school}) {
     List<Wizard> wizards =
-        getCharactersByType(characterType: CharacterType.Wizard).cast<Wizard>();
+    getCharactersByType(characterType: CharacterType.Wizard).cast<Wizard>();
 
     return wizards.firstWhere((wizard) => wizard.wizardType == school);
   }
 
   Soldier getSoldierBySoldierType({required SoldierType soldierType}) {
     List<Soldier> soldiers =
-        getCharactersByType(characterType: CharacterType.Soldier)
-            .cast<Soldier>();
+    getCharactersByType(characterType: CharacterType.Soldier)
+        .cast<Soldier>();
 
     return soldiers.firstWhere((soldier) => soldier.soldierType == soldierType);
   }
@@ -203,7 +214,7 @@ class FrostLibrary {
     //    TODO: add expansion logic as needed
     List<Character> characterList = getAllCharacters(expansion: expansion);
     return characterList.firstWhere((character) =>
-        character.displayFormattedTypeName.toLowerCase() == name.toLowerCase());
+    character.displayFormattedTypeName.toLowerCase() == name.toLowerCase());
   }
 
   List<Character> getCharactersByFormattedDisplayName(List<String> displayNames,
@@ -222,7 +233,81 @@ class FrostLibrary {
     return charactersToReturn;
   }
 
-  List<Trait> getAllTraits(){
+  List<TraitType> getTraitsForCreatureSubTypeAndSubCategory(
+      CreatureType creatureType, CharacterSubCategory subCategory) {
+
+    var definedSubCategory;
+    var sortList = getCreaturesByType(creatureType);
+    var selectedSubCategoryType;
+
+    switch (creatureType) {
+      case CreatureType.Undead:
+        definedSubCategory = subCategory as UndeadType;
+
+        var castedSortList = sortList.cast<Undead>();
+
+        selectedSubCategoryType =
+            castedSortList.firstWhere((undead) =>
+            undead.undeadType ==
+                definedSubCategory);
+
+        break;
+      case CreatureType.Animal:
+        definedSubCategory = subCategory as AnimalType;
+
+        var castedSortList = sortList.cast<Animal>();
+
+
+        selectedSubCategoryType =
+            castedSortList.firstWhere((animal) =>
+            animal.animalType ==
+                definedSubCategory);
+
+
+        break;
+      case CreatureType.Demon:
+        definedSubCategory = subCategory as DemonType;
+
+        var castedSortList = sortList.cast<Demon>();
+
+
+        selectedSubCategoryType =
+            castedSortList.firstWhere((demon) =>
+            demon.demonType ==
+                definedSubCategory);
+
+        break;
+      case CreatureType.Construct:
+        definedSubCategory = subCategory as ConstructType;
+
+        var castedSortList = sortList.cast<Construct>();
+
+        selectedSubCategoryType =
+            castedSortList.firstWhere((construct) =>
+            construct.constructType ==
+                definedSubCategory);
+
+
+        break;
+      case CreatureType.Miscellaneous:
+        definedSubCategory = subCategory as MiscellaneousType;
+
+        var castedSortList = sortList.cast<Miscellaneous>();
+
+
+        selectedSubCategoryType =
+            castedSortList.firstWhere((miscellaneous) =>
+            miscellaneous.miscellaneousType ==
+                definedSubCategory);
+
+        break;
+    }
+
+
+    return selectedSubCategoryType.traits.asList();
+  }
+
+  List<Trait> getAllTraits() {
     return _traitProvider.traits!;
   }
 
