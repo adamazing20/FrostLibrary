@@ -1,6 +1,7 @@
 import 'package:FrostLibrary/FrostLibrary.dart';
 import 'package:FrostLibrary/src/models/character/character.dart';
 import 'package:FrostLibrary/src/models/character/creature/creature.dart';
+import 'package:FrostLibrary/src/models/character/creature/traits/traits.dart';
 import 'package:FrostLibrary/src/models/expansions/expansion.dart';
 import 'package:FrostLibrary/src/models/items/item/item.dart';
 import 'package:FrostLibrary/src/providers/definition_providers.dart';
@@ -309,6 +310,15 @@ class FrostLibrary {
 
   List<Trait> getAllTraits() {
     return _traitProvider.traits!;
+  }
+
+  List<Trait> getTraitDetailsByTraitType(List<TraitType> types){
+
+    List<Trait> traitsToReturn = getAllTraits();
+
+    traitsToReturn.removeWhere((trait) => !types.contains(trait.traitType));
+    return traitsToReturn;
+
   }
 
 }

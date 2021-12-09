@@ -22,9 +22,11 @@ void main() {
     var frostLibrary = FrostLibrary();
     await frostLibrary.init();
 
-    var items = frostLibrary.getTraitsForCreatureSubTypeAndSubCategory(
-        CreatureType.Demon, DemonType.MajorDemon);
+    var traits = frostLibrary.getTraitsForCreatureSubTypeAndSubCategory(
+        CreatureType.Construct, ConstructType.LargeConstruct);
 
-    print(items);
+    frostLibrary.getTraitDetailsByTraitType(traits).forEach((element) {
+      print(element.description);
+    });
   });
 }
