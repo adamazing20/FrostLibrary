@@ -309,7 +309,7 @@ class FrostLibrary {
   }
 
   List<Trait> getAllTraits() {
-    return _traitProvider.traits!;
+    return List.from(_traitProvider.traits!);
   }
 
   List<Trait> getTraitDetailsByTraitType(List<TraitType> types){
