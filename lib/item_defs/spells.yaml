@@ -16,6 +16,7 @@ spells:
   #    scrollSellValue: <Calculated for you, for now don't include this field>
   #    #Valid expansions are DarkAlchemy, ArcaneLocations, SecondChances, UlteriorMotives,
   #    TheMazeOfMalcor, LostColossus, TheWizardsConclave, and Core
+  #    isWizardOnly: true
 
   - name: "Absorb Knowledge"
     displayFormattedTypeName: "Absorb Knowledge"
@@ -31,6 +32,7 @@ spells:
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
     category: OutOfGame
     expansion: Core
+    isWizardOnly: true
 
   - name: "Arcane Something Spell"
     displayFormattedTypeName: "Arcane Something Spell"
@@ -46,4 +48,5 @@ spells:
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
     category: OutOfGame
     expansion: ArcaneLocations
+    isWizardOnly: false
 

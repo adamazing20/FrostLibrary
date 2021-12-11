@@ -38,6 +38,9 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
+      'isWizardOnly',
+      serializers.serialize(object.isWizardOnly,
+          specifiedType: const FullType(bool)),
     ];
     Object? value;
     value = object.description;
@@ -113,6 +116,10 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
           break;
+        case 'isWizardOnly':
+          result.isWizardOnly = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
       }
     }
 
@@ -141,6 +148,8 @@ class _$Spell extends Spell {
   final Category category;
   @override
   final Expansion expansion;
+  @override
+  final bool isWizardOnly;
 
   factory _$Spell([void Function(SpellBuilder)? updates]) =>
       (new SpellBuilder()..update(updates)).build();
@@ -155,7 +164,8 @@ class _$Spell extends Spell {
       required this.school,
       required this.baseCastingNumber,
       required this.category,
-      required this.expansion})
+      required this.expansion,
+      required this.isWizardOnly})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Spell', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -166,6 +176,8 @@ class _$Spell extends Spell {
         baseCastingNumber, 'Spell', 'baseCastingNumber');
     BuiltValueNullFieldError.checkNotNull(category, 'Spell', 'category');
     BuiltValueNullFieldError.checkNotNull(expansion, 'Spell', 'expansion');
+    BuiltValueNullFieldError.checkNotNull(
+        isWizardOnly, 'Spell', 'isWizardOnly');
   }
 
   @override
@@ -188,7 +200,8 @@ class _$Spell extends Spell {
         school == other.school &&
         baseCastingNumber == other.baseCastingNumber &&
         category == other.category &&
-        expansion == other.expansion;
+        expansion == other.expansion &&
+        isWizardOnly == other.isWizardOnly;
   }
 
   @override
@@ -201,16 +214,18 @@ class _$Spell extends Spell {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc($jc(0, name.hashCode),
-                                        displayFormattedTypeName.hashCode),
-                                    itemType.hashCode),
-                                description.hashCode),
-                            sellValue.hashCode),
-                        price.hashCode),
-                    school.hashCode),
-                baseCastingNumber.hashCode),
-            category.hashCode),
-        expansion.hashCode));
+                                    $jc(
+                                        $jc($jc(0, name.hashCode),
+                                            displayFormattedTypeName.hashCode),
+                                        itemType.hashCode),
+                                    description.hashCode),
+                                sellValue.hashCode),
+                            price.hashCode),
+                        school.hashCode),
+                    baseCastingNumber.hashCode),
+                category.hashCode),
+            expansion.hashCode),
+        isWizardOnly.hashCode));
   }
 
   @override
@@ -225,7 +240,8 @@ class _$Spell extends Spell {
           ..add('school', school)
           ..add('baseCastingNumber', baseCastingNumber)
           ..add('category', category)
-          ..add('expansion', expansion))
+          ..add('expansion', expansion)
+          ..add('isWizardOnly', isWizardOnly))
         .toString();
   }
 }
@@ -275,6 +291,10 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   Expansion? get expansion => _$this._expansion;
   set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
+  bool? _isWizardOnly;
+  bool? get isWizardOnly => _$this._isWizardOnly;
+  set isWizardOnly(bool? isWizardOnly) => _$this._isWizardOnly = isWizardOnly;
+
   SpellBuilder();
 
   SpellBuilder get _$this {
@@ -290,6 +310,7 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
       _baseCastingNumber = $v.baseCastingNumber;
       _category = $v.category;
       _expansion = $v.expansion;
+      _isWizardOnly = $v.isWizardOnly;
       _$v = null;
     }
     return this;
@@ -325,7 +346,9 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
             category: BuiltValueNullFieldError.checkNotNull(
                 category, 'Spell', 'category'),
             expansion: BuiltValueNullFieldError.checkNotNull(
-                expansion, 'Spell', 'expansion'));
+                expansion, 'Spell', 'expansion'),
+            isWizardOnly: BuiltValueNullFieldError.checkNotNull(
+                isWizardOnly, 'Spell', 'isWizardOnly'));
     replace(_$result);
     return _$result;
   }

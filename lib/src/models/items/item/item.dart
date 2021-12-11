@@ -29,6 +29,8 @@ abstract class SpellDefinition extends Item {
   int get baseCastingNumber;
 
   Category get category;
+
+  bool get isWizardOnly;
 }
 
 abstract class MagicItemDef extends Item {
