@@ -55,6 +55,9 @@ abstract class Spell implements Built<Spell, SpellBuilder>, SpellDefinition {
   @override
   bool get isWizardOnly;
 
+  @override
+  int get pageNumber;
+
   String toJson() {
     return json.encode(serializers.serializeWith(Spell.serializer, this));
   }

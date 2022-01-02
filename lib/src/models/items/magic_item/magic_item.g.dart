@@ -37,6 +37,9 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
+      'pageNumber',
+      serializers.serialize(object.pageNumber,
+          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.damageModified;
@@ -183,6 +186,10 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
           break;
+        case 'pageNumber':
+          result.pageNumber = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
       }
     }
 
@@ -225,6 +232,8 @@ class _$MagicItem extends MagicItem {
   final String? notes;
   @override
   final Expansion expansion;
+  @override
+  final int pageNumber;
 
   factory _$MagicItem([void Function(MagicItemBuilder)? updates]) =>
       (new MagicItemBuilder()..update(updates)).build();
@@ -246,7 +255,8 @@ class _$MagicItem extends MagicItem {
       this.healthModified,
       this.description,
       this.notes,
-      required this.expansion})
+      required this.expansion,
+      required this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicItem', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -257,6 +267,8 @@ class _$MagicItem extends MagicItem {
         magicItemType, 'MagicItem', 'magicItemType');
     BuiltValueNullFieldError.checkNotNull(itemType, 'MagicItem', 'itemType');
     BuiltValueNullFieldError.checkNotNull(expansion, 'MagicItem', 'expansion');
+    BuiltValueNullFieldError.checkNotNull(
+        pageNumber, 'MagicItem', 'pageNumber');
   }
 
   @override
@@ -286,7 +298,8 @@ class _$MagicItem extends MagicItem {
         healthModified == other.healthModified &&
         description == other.description &&
         notes == other.notes &&
-        expansion == other.expansion;
+        expansion == other.expansion &&
+        pageNumber == other.pageNumber;
   }
 
   @override
@@ -308,26 +321,31 @@ class _$MagicItem extends MagicItem {
                                                             $jc(
                                                                 $jc(
                                                                     $jc(
-                                                                        0,
-                                                                        name
+                                                                        $jc(
+                                                                            0,
+                                                                            name
+                                                                                .hashCode),
+                                                                        displayFormattedTypeName
                                                                             .hashCode),
-                                                                    displayFormattedTypeName
+                                                                    price
                                                                         .hashCode),
-                                                                price.hashCode),
-                                                            sellValue.hashCode),
-                                                        magicItemType.hashCode),
-                                                    itemType.hashCode),
-                                                damageModified.hashCode),
-                                            fightModified.hashCode),
-                                        shootModified.hashCode),
-                                    castingRollModified.hashCode),
-                                willRollModified.hashCode),
-                            moveModified.hashCode),
-                        armourModified.hashCode),
-                    healthModified.hashCode),
-                description.hashCode),
-            notes.hashCode),
-        expansion.hashCode));
+                                                                sellValue
+                                                                    .hashCode),
+                                                            magicItemType
+                                                                .hashCode),
+                                                        itemType.hashCode),
+                                                    damageModified.hashCode),
+                                                fightModified.hashCode),
+                                            shootModified.hashCode),
+                                        castingRollModified.hashCode),
+                                    willRollModified.hashCode),
+                                moveModified.hashCode),
+                            armourModified.hashCode),
+                        healthModified.hashCode),
+                    description.hashCode),
+                notes.hashCode),
+            expansion.hashCode),
+        pageNumber.hashCode));
   }
 
   @override
@@ -349,7 +367,8 @@ class _$MagicItem extends MagicItem {
           ..add('healthModified', healthModified)
           ..add('description', description)
           ..add('notes', notes)
-          ..add('expansion', expansion))
+          ..add('expansion', expansion)
+          ..add('pageNumber', pageNumber))
         .toString();
   }
 }
@@ -434,6 +453,10 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
   Expansion? get expansion => _$this._expansion;
   set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
+  int? _pageNumber;
+  int? get pageNumber => _$this._pageNumber;
+  set pageNumber(int? pageNumber) => _$this._pageNumber = pageNumber;
+
   MagicItemBuilder();
 
   MagicItemBuilder get _$this {
@@ -456,6 +479,7 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
       _description = $v.description;
       _notes = $v.notes;
       _expansion = $v.expansion;
+      _pageNumber = $v.pageNumber;
       _$v = null;
     }
     return this;
@@ -501,7 +525,9 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
             description: description,
             notes: notes,
             expansion: BuiltValueNullFieldError.checkNotNull(
-                expansion, 'MagicItem', 'expansion'));
+                expansion, 'MagicItem', 'expansion'),
+            pageNumber: BuiltValueNullFieldError.checkNotNull(
+                pageNumber, 'MagicItem', 'pageNumber'));
     replace(_$result);
     return _$result;
   }

@@ -17,6 +17,8 @@ abstract class Item {
   Expansion get expansion;
 
   String get displayFormattedTypeName;
+
+  int? get pageNumber;
 }
 
 abstract class SpellDefinition extends Item {

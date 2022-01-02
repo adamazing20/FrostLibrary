@@ -37,6 +37,9 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
+      'pageNumber',
+      serializers.serialize(object.pageNumber,
+          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.damageModified;
@@ -143,6 +146,10 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
           result.expansion = serializers.deserialize(value,
               specifiedType: const FullType(Expansion)) as Expansion;
           break;
+        case 'pageNumber':
+          result.pageNumber = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
       }
     }
 
@@ -177,6 +184,8 @@ class _$MagicWeapon extends MagicWeapon {
   final String? notes;
   @override
   final Expansion expansion;
+  @override
+  final int pageNumber;
 
   factory _$MagicWeapon([void Function(MagicWeaponBuilder)? updates]) =>
       (new MagicWeaponBuilder()..update(updates)).build();
@@ -194,7 +203,8 @@ class _$MagicWeapon extends MagicWeapon {
       this.shootModified,
       this.description,
       this.notes,
-      required this.expansion})
+      required this.expansion,
+      required this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicWeapon', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -207,6 +217,8 @@ class _$MagicWeapon extends MagicWeapon {
     BuiltValueNullFieldError.checkNotNull(itemType, 'MagicWeapon', 'itemType');
     BuiltValueNullFieldError.checkNotNull(
         expansion, 'MagicWeapon', 'expansion');
+    BuiltValueNullFieldError.checkNotNull(
+        pageNumber, 'MagicWeapon', 'pageNumber');
   }
 
   @override
@@ -232,7 +244,8 @@ class _$MagicWeapon extends MagicWeapon {
         shootModified == other.shootModified &&
         description == other.description &&
         notes == other.notes &&
-        expansion == other.expansion;
+        expansion == other.expansion &&
+        pageNumber == other.pageNumber;
   }
 
   @override
@@ -249,20 +262,22 @@ class _$MagicWeapon extends MagicWeapon {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc(0, name.hashCode),
-                                                    displayFormattedTypeName
-                                                        .hashCode),
-                                                price.hashCode),
-                                            sellValue.hashCode),
-                                        weaponType.hashCode),
-                                    itemType.hashCode),
-                                damageModified.hashCode),
-                            fightModified.hashCode),
-                        willModified.hashCode),
-                    shootModified.hashCode),
-                description.hashCode),
-            notes.hashCode),
-        expansion.hashCode));
+                                                    $jc(
+                                                        $jc(0, name.hashCode),
+                                                        displayFormattedTypeName
+                                                            .hashCode),
+                                                    price.hashCode),
+                                                sellValue.hashCode),
+                                            weaponType.hashCode),
+                                        itemType.hashCode),
+                                    damageModified.hashCode),
+                                fightModified.hashCode),
+                            willModified.hashCode),
+                        shootModified.hashCode),
+                    description.hashCode),
+                notes.hashCode),
+            expansion.hashCode),
+        pageNumber.hashCode));
   }
 
   @override
@@ -280,7 +295,8 @@ class _$MagicWeapon extends MagicWeapon {
           ..add('shootModified', shootModified)
           ..add('description', description)
           ..add('notes', notes)
-          ..add('expansion', expansion))
+          ..add('expansion', expansion)
+          ..add('pageNumber', pageNumber))
         .toString();
   }
 }
@@ -344,6 +360,10 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
   Expansion? get expansion => _$this._expansion;
   set expansion(Expansion? expansion) => _$this._expansion = expansion;
 
+  int? _pageNumber;
+  int? get pageNumber => _$this._pageNumber;
+  set pageNumber(int? pageNumber) => _$this._pageNumber = pageNumber;
+
   MagicWeaponBuilder();
 
   MagicWeaponBuilder get _$this {
@@ -362,6 +382,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
       _description = $v.description;
       _notes = $v.notes;
       _expansion = $v.expansion;
+      _pageNumber = $v.pageNumber;
       _$v = null;
     }
     return this;
@@ -403,7 +424,9 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
             description: description,
             notes: notes,
             expansion: BuiltValueNullFieldError.checkNotNull(
-                expansion, 'MagicWeapon', 'expansion'));
+                expansion, 'MagicWeapon', 'expansion'),
+            pageNumber: BuiltValueNullFieldError.checkNotNull(
+                pageNumber, 'MagicWeapon', 'pageNumber'));
     replace(_$result);
     return _$result;
   }

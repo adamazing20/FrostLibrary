@@ -36,6 +36,9 @@ abstract class Weapon implements Built<Weapon, WeaponBuilder>, Item {
   @override
   Expansion get expansion;
 
+  @override
+  int get pageNumber;
+
   String toJson() {
     return json.encode(serializers.serializeWith(Weapon.serializer, this));
   }
