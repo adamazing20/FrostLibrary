@@ -6,7 +6,8 @@ part of category;
 // BuiltValueGenerator
 // **************************************************************************
 
-const Category _$outOfGame = const Category._('OutOfGame');
+const Category _$outOfGameBefore = const Category._('OutOfGameBefore');
+const Category _$outOfGameAfter = const Category._('OutOfGameAfter');
 const Category _$selfOnly = const Category._('SelfOnly');
 const Category _$lineOfSight = const Category._('LineOfSight');
 const Category _$areaOfAffect = const Category._('AreaOfAffect');
@@ -14,8 +15,10 @@ const Category _$touch = const Category._('Touch');
 
 Category _$valueOf(String name) {
   switch (name) {
-    case 'OutOfGame':
-      return _$outOfGame;
+    case 'OutOfGameBefore':
+      return _$outOfGameBefore;
+    case 'OutOfGameAfter':
+      return _$outOfGameAfter;
     case 'SelfOnly':
       return _$selfOnly;
     case 'LineOfSight':
@@ -30,7 +33,8 @@ Category _$valueOf(String name) {
 }
 
 final BuiltSet<Category> _$values = new BuiltSet<Category>(const <Category>[
-  _$outOfGame,
+  _$outOfGameBefore,
+  _$outOfGameAfter,
   _$selfOnly,
   _$lineOfSight,
   _$areaOfAffect,

@@ -8,6 +8,7 @@ import 'package:FrostLibrary/src/models/items/item/itemtype.dart';
 import 'package:FrostLibrary/src/models/items/spell/category.dart';
 import 'package:FrostLibrary/src/models/items/spell/school.dart';
 import 'package:FrostLibrary/src/models/serializers.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -47,7 +48,7 @@ abstract class Spell implements Built<Spell, SpellBuilder>, SpellDefinition {
   int get baseCastingNumber;
 
   @override
-  Category get category;
+  BuiltList<Category> get categories;
 
   @override
   Expansion get expansion;

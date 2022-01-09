@@ -60,6 +60,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Apprentice)]),
           () => new ListBuilder<Apprentice>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Category)]),
+          () => new ListBuilder<Category>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Construct)]),
           () => new ListBuilder<Construct>())
       ..addBuilderFactory(
