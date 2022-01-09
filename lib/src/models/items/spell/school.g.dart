@@ -16,6 +16,7 @@ const School _$soothsayer = const School._('Soothsayer');
 const School _$summoner = const School._('Summoner');
 const School _$thaumaturge = const School._('Thaumaturge');
 const School _$witch = const School._('Witch');
+const School _$all = const School._('All');
 
 School _$valueOf(String name) {
   switch (name) {
@@ -39,6 +40,8 @@ School _$valueOf(String name) {
       return _$thaumaturge;
     case 'Witch':
       return _$witch;
+    case 'All':
+      return _$all;
     default:
       throw new ArgumentError(name);
   }
@@ -55,6 +58,7 @@ final BuiltSet<School> _$values = new BuiltSet<School>(const <School>[
   _$summoner,
   _$thaumaturge,
   _$witch,
+  _$all,
 ]);
 
 Serializer<School> _$schoolSerializer = new _$SchoolSerializer();
