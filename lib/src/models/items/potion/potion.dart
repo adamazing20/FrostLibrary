@@ -34,7 +34,7 @@ abstract class Potion implements Built<Potion, PotionBuilder>, Item {
   Expansion get expansion;
 
   @override
-  int get pageNumber;
+  int? get pageNumber;
 
   String toJson() {
     return json.encode(serializers.serializeWith(Potion.serializer, this));

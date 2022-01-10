@@ -8,7 +8,7 @@ spells:
   #    school: Sigilist
   #    baseCastingNumber: 8
   #    # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-  #    category: OutOfGame
+  #    categories: OutOfGame
   #    grimoirePrice: <Calculated for you, for now don't include this field>
   #    scrollPrice: <Calculated for you, for now don't include this field>
   #    grimoireSellValue: <Calculated for you, for now don't include this field>
@@ -30,7 +30,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameAfter
     expansion: Core
     isWizardOnly: true
@@ -50,7 +50,7 @@ spells:
     school: Witch
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameAfter
     expansion: Core
     isWizardOnly: false
@@ -72,7 +72,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameBefore
     expansion: Core
     isWizardOnly: false
@@ -91,7 +91,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -111,7 +111,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameBefore
     expansion: Core
     isWizardOnly: false
@@ -130,7 +130,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -152,7 +152,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: false
@@ -171,7 +171,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -189,7 +189,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -206,7 +206,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -228,7 +228,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -249,7 +249,7 @@ spells:
     school: Witch
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameBefore
     expansion: Core
     isWizardOnly: false
@@ -276,7 +276,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -293,7 +293,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - AreaOfAffect
     expansion: Core
     isWizardOnly: false
@@ -312,7 +312,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - Touch
     expansion: Core
     isWizardOnly: false
@@ -329,7 +329,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - Touch
     expansion: Core
     isWizardOnly: false
@@ -348,7 +348,7 @@ spells:
     school: Witch
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -367,7 +367,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -386,7 +386,7 @@ spells:
     school: Summoner
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -405,7 +405,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -427,7 +427,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -445,7 +445,7 @@ spells:
     school: Witch
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -464,7 +464,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -482,7 +482,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -498,7 +498,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - AreaOfAffect
     expansion: Core
     isWizardOnly: false
@@ -515,7 +515,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -534,7 +534,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 14
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - AreaOfAffect
     expansion: Core
     isWizardOnly: false
@@ -555,7 +555,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -571,7 +571,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -591,7 +591,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -609,7 +609,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: false
@@ -627,7 +627,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 14
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameAfter
     expansion: Core
     isWizardOnly: false
@@ -645,7 +645,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -667,7 +667,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -691,7 +691,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -711,7 +711,7 @@ spells:
     school: Witch
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameBefore
     expansion: Core
     isWizardOnly: false
@@ -731,7 +731,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -747,7 +747,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -766,7 +766,7 @@ spells:
     school: Witch
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -785,7 +785,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -805,7 +805,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -822,7 +822,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -842,7 +842,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -859,7 +859,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -885,7 +885,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - Touch
       - OutOfGameBefore
     expansion: Core
@@ -905,7 +905,7 @@ spells:
     school: Summoner
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -926,7 +926,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - Touch
     expansion: Core
     isWizardOnly: false
@@ -948,7 +948,7 @@ spells:
     school: Summoner
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -974,7 +974,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -991,7 +991,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1016,7 +1016,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameAfter
     expansion: Core
     isWizardOnly: true
@@ -1031,7 +1031,7 @@ spells:
     school: Witch
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1050,7 +1050,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1073,7 +1073,7 @@ spells:
     school: Summoner
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1092,7 +1092,7 @@ spells:
     school: Summoner
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1117,7 +1117,7 @@ spells:
     school: Summoner
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: false
@@ -1133,7 +1133,7 @@ spells:
     school: Witch
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1155,7 +1155,7 @@ spells:
     school: Summoner
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1174,7 +1174,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 14
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - AreaOfAffect
     expansion: Core
     isWizardOnly: false
@@ -1197,7 +1197,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1216,7 +1216,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameBefore
       - Touch
     expansion: Core
@@ -1235,7 +1235,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameBefore
     expansion: Core
     isWizardOnly: false
@@ -1253,8 +1253,8 @@ spells:
     school: Elementalist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
-      - AreaOfEffect
+    categories:
+      - AreaOfAffect
     expansion: Core
     isWizardOnly: false
     pageNumber: 130
@@ -1270,7 +1270,7 @@ spells:
     school: Thaumaturge
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1288,7 +1288,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1306,7 +1306,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1328,7 +1328,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1344,7 +1344,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1364,7 +1364,7 @@ spells:
     school: Necromancer
     baseCastingNumber: 18
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1383,7 +1383,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1408,7 +1408,7 @@ spells:
     school: Summoner
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - Touch
     expansion: Core
     isWizardOnly: false
@@ -1429,7 +1429,7 @@ spells:
     school: Enchanter
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1446,7 +1446,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: false
@@ -1468,7 +1468,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 14
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: false
@@ -1490,7 +1490,7 @@ spells:
     school: Chronomancer
     baseCastingNumber: 14
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: true
@@ -1512,7 +1512,7 @@ spells:
     school: Illusionist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1531,7 +1531,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - SelfOnly
     expansion: Core
     isWizardOnly: false
@@ -1549,7 +1549,7 @@ spells:
     school: Elementalist
     baseCastingNumber: 10
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1571,7 +1571,7 @@ spells:
     school: Soothsayer
     baseCastingNumber: 8
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - LineOfSight
     expansion: Core
     isWizardOnly: false
@@ -1588,7 +1588,7 @@ spells:
     school: Sigilist
     baseCastingNumber: 12
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameAfter
     expansion: Core
     isWizardOnly: false
@@ -1614,7 +1614,7 @@ spells:
     school: All
     baseCastingNumber: 20
     # Valid categories are OutOfGame, SelfOnly, LineOfSight, AreaOfAffect and Touch.
-    category:
+    categories:
       - OutOfGameAfter
     expansion: Core
     isWizardOnly: true

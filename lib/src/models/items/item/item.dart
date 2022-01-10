@@ -4,6 +4,7 @@ import 'package:FrostLibrary/src/models/items/magic_item/magic_itemtype.dart';
 import 'package:FrostLibrary/src/models/items/spell/category.dart';
 import 'package:FrostLibrary/src/models/items/spell/school.dart';
 import 'package:FrostLibrary/src/models/items/weapons/weapontype.dart';
+import 'package:built_collection/built_collection.dart';
 
 import 'itemtype.dart';
 
@@ -30,7 +31,7 @@ abstract class SpellDefinition extends Item {
 
   int get baseCastingNumber;
 
-  Category get category;
+  BuiltList<Category> get categories;
 
   bool get isWizardOnly;
 }

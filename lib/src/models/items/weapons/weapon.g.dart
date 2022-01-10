@@ -32,9 +32,6 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'pageNumber',
-      serializers.serialize(object.pageNumber,
-          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.damageModified;
@@ -56,6 +53,12 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
         ..add('notes')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
+    }
+    value = object.pageNumber;
+    if (value != null) {
+      result
+        ..add('pageNumber')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -105,7 +108,7 @@ class _$WeaponSerializer implements StructuredSerializer<Weapon> {
           break;
         case 'pageNumber':
           result.pageNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -132,7 +135,7 @@ class _$Weapon extends Weapon {
   @override
   final Expansion expansion;
   @override
-  final int pageNumber;
+  final int? pageNumber;
 
   factory _$Weapon([void Function(WeaponBuilder)? updates]) =>
       (new WeaponBuilder()..update(updates)).build();
@@ -146,7 +149,7 @@ class _$Weapon extends Weapon {
       this.description,
       this.notes,
       required this.expansion,
-      required this.pageNumber})
+      this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Weapon', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -154,7 +157,6 @@ class _$Weapon extends Weapon {
     BuiltValueNullFieldError.checkNotNull(itemType, 'Weapon', 'itemType');
     BuiltValueNullFieldError.checkNotNull(weaponType, 'Weapon', 'weaponType');
     BuiltValueNullFieldError.checkNotNull(expansion, 'Weapon', 'expansion');
-    BuiltValueNullFieldError.checkNotNull(pageNumber, 'Weapon', 'pageNumber');
   }
 
   @override
@@ -302,8 +304,7 @@ class WeaponBuilder implements Builder<Weapon, WeaponBuilder> {
             notes: notes,
             expansion: BuiltValueNullFieldError.checkNotNull(
                 expansion, 'Weapon', 'expansion'),
-            pageNumber: BuiltValueNullFieldError.checkNotNull(
-                pageNumber, 'Weapon', 'pageNumber'));
+            pageNumber: pageNumber);
     replace(_$result);
     return _$result;
   }

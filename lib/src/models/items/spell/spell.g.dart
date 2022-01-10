@@ -42,12 +42,6 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
       'isWizardOnly',
       serializers.serialize(object.isWizardOnly,
           specifiedType: const FullType(bool)),
-      'pageNumber',
-      serializers.serialize(object.pageNumber,
-          specifiedType: const FullType(int)),
-      'category',
-      serializers.serialize(object.category,
-          specifiedType: const FullType(Category)),
     ];
     Object? value;
     value = object.description;
@@ -67,6 +61,12 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
     if (value != null) {
       result
         ..add('price')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.pageNumber;
+    if (value != null) {
+      result
+        ..add('pageNumber')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
@@ -131,11 +131,7 @@ class _$SpellSerializer implements StructuredSerializer<Spell> {
           break;
         case 'pageNumber':
           result.pageNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
-          break;
-        case 'category':
-          result.category = serializers.deserialize(value,
-              specifiedType: const FullType(Category)) as Category;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -168,9 +164,7 @@ class _$Spell extends Spell {
   @override
   final bool isWizardOnly;
   @override
-  final int pageNumber;
-  @override
-  final Category category;
+  final int? pageNumber;
 
   factory _$Spell([void Function(SpellBuilder)? updates]) =>
       (new SpellBuilder()..update(updates)).build();
@@ -187,8 +181,7 @@ class _$Spell extends Spell {
       required this.categories,
       required this.expansion,
       required this.isWizardOnly,
-      required this.pageNumber,
-      required this.category})
+      this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Spell', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -201,8 +194,6 @@ class _$Spell extends Spell {
     BuiltValueNullFieldError.checkNotNull(expansion, 'Spell', 'expansion');
     BuiltValueNullFieldError.checkNotNull(
         isWizardOnly, 'Spell', 'isWizardOnly');
-    BuiltValueNullFieldError.checkNotNull(pageNumber, 'Spell', 'pageNumber');
-    BuiltValueNullFieldError.checkNotNull(category, 'Spell', 'category');
   }
 
   @override
@@ -227,8 +218,7 @@ class _$Spell extends Spell {
         categories == other.categories &&
         expansion == other.expansion &&
         isWizardOnly == other.isWizardOnly &&
-        pageNumber == other.pageNumber &&
-        category == other.category;
+        pageNumber == other.pageNumber;
   }
 
   @override
@@ -244,21 +234,19 @@ class _$Spell extends Spell {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc(
-                                                    $jc(0, name.hashCode),
-                                                    displayFormattedTypeName
-                                                        .hashCode),
-                                                itemType.hashCode),
-                                            description.hashCode),
-                                        sellValue.hashCode),
-                                    price.hashCode),
-                                school.hashCode),
-                            baseCastingNumber.hashCode),
-                        categories.hashCode),
-                    expansion.hashCode),
-                isWizardOnly.hashCode),
-            pageNumber.hashCode),
-        category.hashCode));
+                                                $jc(0, name.hashCode),
+                                                displayFormattedTypeName
+                                                    .hashCode),
+                                            itemType.hashCode),
+                                        description.hashCode),
+                                    sellValue.hashCode),
+                                price.hashCode),
+                            school.hashCode),
+                        baseCastingNumber.hashCode),
+                    categories.hashCode),
+                expansion.hashCode),
+            isWizardOnly.hashCode),
+        pageNumber.hashCode));
   }
 
   @override
@@ -275,8 +263,7 @@ class _$Spell extends Spell {
           ..add('categories', categories)
           ..add('expansion', expansion)
           ..add('isWizardOnly', isWizardOnly)
-          ..add('pageNumber', pageNumber)
-          ..add('category', category))
+          ..add('pageNumber', pageNumber))
         .toString();
   }
 }
@@ -336,10 +323,6 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
   int? get pageNumber => _$this._pageNumber;
   set pageNumber(int? pageNumber) => _$this._pageNumber = pageNumber;
 
-  Category? _category;
-  Category? get category => _$this._category;
-  set category(Category? category) => _$this._category = category;
-
   SpellBuilder();
 
   SpellBuilder get _$this {
@@ -357,7 +340,6 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
       _expansion = $v.expansion;
       _isWizardOnly = $v.isWizardOnly;
       _pageNumber = $v.pageNumber;
-      _category = $v.category;
       _$v = null;
     }
     return this;
@@ -400,10 +382,7 @@ class SpellBuilder implements Builder<Spell, SpellBuilder> {
                   expansion, 'Spell', 'expansion'),
               isWizardOnly: BuiltValueNullFieldError.checkNotNull(
                   isWizardOnly, 'Spell', 'isWizardOnly'),
-              pageNumber: BuiltValueNullFieldError.checkNotNull(
-                  pageNumber, 'Spell', 'pageNumber'),
-              category: BuiltValueNullFieldError.checkNotNull(
-                  category, 'Spell', 'category'));
+              pageNumber: pageNumber);
     } catch (_) {
       late String _$failedField;
       try {

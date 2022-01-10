@@ -40,9 +40,6 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'pageNumber',
-      serializers.serialize(object.pageNumber,
-          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.damageModified;
@@ -64,6 +61,12 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
         ..add('notes')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
+    }
+    value = object.pageNumber;
+    if (value != null) {
+      result
+        ..add('pageNumber')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -125,7 +128,7 @@ class _$MagicArmourSerializer implements StructuredSerializer<MagicArmour> {
           break;
         case 'pageNumber':
           result.pageNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -158,7 +161,7 @@ class _$MagicArmour extends MagicArmour {
   @override
   final Expansion expansion;
   @override
-  final int pageNumber;
+  final int? pageNumber;
 
   factory _$MagicArmour([void Function(MagicArmourBuilder)? updates]) =>
       (new MagicArmourBuilder()..update(updates)).build();
@@ -175,7 +178,7 @@ class _$MagicArmour extends MagicArmour {
       required this.armourType,
       required this.armourModified,
       required this.expansion,
-      required this.pageNumber})
+      this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicArmour', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -190,8 +193,6 @@ class _$MagicArmour extends MagicArmour {
         armourModified, 'MagicArmour', 'armourModified');
     BuiltValueNullFieldError.checkNotNull(
         expansion, 'MagicArmour', 'expansion');
-    BuiltValueNullFieldError.checkNotNull(
-        pageNumber, 'MagicArmour', 'pageNumber');
   }
 
   @override
@@ -360,7 +361,9 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
             name: BuiltValueNullFieldError.checkNotNull(
                 name, 'MagicArmour', 'name'),
             displayFormattedTypeName: BuiltValueNullFieldError.checkNotNull(
-                displayFormattedTypeName, 'MagicArmour', 'displayFormattedTypeName'),
+                displayFormattedTypeName,
+                'MagicArmour',
+                'displayFormattedTypeName'),
             itemType: BuiltValueNullFieldError.checkNotNull(
                 itemType, 'MagicArmour', 'itemType'),
             damageModified: damageModified,
@@ -376,8 +379,7 @@ class MagicArmourBuilder implements Builder<MagicArmour, MagicArmourBuilder> {
                 armourModified, 'MagicArmour', 'armourModified'),
             expansion: BuiltValueNullFieldError.checkNotNull(
                 expansion, 'MagicArmour', 'expansion'),
-            pageNumber: BuiltValueNullFieldError.checkNotNull(
-                pageNumber, 'MagicArmour', 'pageNumber'));
+            pageNumber: pageNumber);
     replace(_$result);
     return _$result;
   }

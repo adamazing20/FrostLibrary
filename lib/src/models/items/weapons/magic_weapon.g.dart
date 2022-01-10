@@ -37,9 +37,6 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'pageNumber',
-      serializers.serialize(object.pageNumber,
-          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.damageModified;
@@ -79,6 +76,12 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
         ..add('notes')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
+    }
+    value = object.pageNumber;
+    if (value != null) {
+      result
+        ..add('pageNumber')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -148,7 +151,7 @@ class _$MagicWeaponSerializer implements StructuredSerializer<MagicWeapon> {
           break;
         case 'pageNumber':
           result.pageNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -185,7 +188,7 @@ class _$MagicWeapon extends MagicWeapon {
   @override
   final Expansion expansion;
   @override
-  final int pageNumber;
+  final int? pageNumber;
 
   factory _$MagicWeapon([void Function(MagicWeaponBuilder)? updates]) =>
       (new MagicWeaponBuilder()..update(updates)).build();
@@ -204,7 +207,7 @@ class _$MagicWeapon extends MagicWeapon {
       this.description,
       this.notes,
       required this.expansion,
-      required this.pageNumber})
+      this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicWeapon', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -217,8 +220,6 @@ class _$MagicWeapon extends MagicWeapon {
     BuiltValueNullFieldError.checkNotNull(itemType, 'MagicWeapon', 'itemType');
     BuiltValueNullFieldError.checkNotNull(
         expansion, 'MagicWeapon', 'expansion');
-    BuiltValueNullFieldError.checkNotNull(
-        pageNumber, 'MagicWeapon', 'pageNumber');
   }
 
   @override
@@ -425,8 +426,7 @@ class MagicWeaponBuilder implements Builder<MagicWeapon, MagicWeaponBuilder> {
             notes: notes,
             expansion: BuiltValueNullFieldError.checkNotNull(
                 expansion, 'MagicWeapon', 'expansion'),
-            pageNumber: BuiltValueNullFieldError.checkNotNull(
-                pageNumber, 'MagicWeapon', 'pageNumber'));
+            pageNumber: pageNumber);
     replace(_$result);
     return _$result;
   }

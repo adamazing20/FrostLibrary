@@ -37,9 +37,6 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'pageNumber',
-      serializers.serialize(object.pageNumber,
-          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.damageModified;
@@ -103,6 +100,12 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
         ..add('notes')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
+    }
+    value = object.pageNumber;
+    if (value != null) {
+      result
+        ..add('pageNumber')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
   }
@@ -188,7 +191,7 @@ class _$MagicItemSerializer implements StructuredSerializer<MagicItem> {
           break;
         case 'pageNumber':
           result.pageNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -233,7 +236,7 @@ class _$MagicItem extends MagicItem {
   @override
   final Expansion expansion;
   @override
-  final int pageNumber;
+  final int? pageNumber;
 
   factory _$MagicItem([void Function(MagicItemBuilder)? updates]) =>
       (new MagicItemBuilder()..update(updates)).build();
@@ -256,7 +259,7 @@ class _$MagicItem extends MagicItem {
       this.description,
       this.notes,
       required this.expansion,
-      required this.pageNumber})
+      this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'MagicItem', 'name');
     BuiltValueNullFieldError.checkNotNull(
@@ -267,8 +270,6 @@ class _$MagicItem extends MagicItem {
         magicItemType, 'MagicItem', 'magicItemType');
     BuiltValueNullFieldError.checkNotNull(itemType, 'MagicItem', 'itemType');
     BuiltValueNullFieldError.checkNotNull(expansion, 'MagicItem', 'expansion');
-    BuiltValueNullFieldError.checkNotNull(
-        pageNumber, 'MagicItem', 'pageNumber');
   }
 
   @override
@@ -526,8 +527,7 @@ class MagicItemBuilder implements Builder<MagicItem, MagicItemBuilder> {
             notes: notes,
             expansion: BuiltValueNullFieldError.checkNotNull(
                 expansion, 'MagicItem', 'expansion'),
-            pageNumber: BuiltValueNullFieldError.checkNotNull(
-                pageNumber, 'MagicItem', 'pageNumber'));
+            pageNumber: pageNumber);
     replace(_$result);
     return _$result;
   }

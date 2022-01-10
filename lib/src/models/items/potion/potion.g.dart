@@ -29,9 +29,6 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
       'expansion',
       serializers.serialize(object.expansion,
           specifiedType: const FullType(Expansion)),
-      'pageNumber',
-      serializers.serialize(object.pageNumber,
-          specifiedType: const FullType(int)),
     ];
     Object? value;
     value = object.description;
@@ -52,6 +49,12 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
     if (value != null) {
       result
         ..add('price')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.pageNumber;
+    if (value != null) {
+      result
+        ..add('pageNumber')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     return result;
@@ -98,7 +101,7 @@ class _$PotionSerializer implements StructuredSerializer<Potion> {
           break;
         case 'pageNumber':
           result.pageNumber = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -123,7 +126,7 @@ class _$Potion extends Potion {
   @override
   final Expansion expansion;
   @override
-  final int pageNumber;
+  final int? pageNumber;
 
   factory _$Potion([void Function(PotionBuilder)? updates]) =>
       (new PotionBuilder()..update(updates)).build();
@@ -136,14 +139,13 @@ class _$Potion extends Potion {
       this.effect,
       this.price,
       required this.expansion,
-      required this.pageNumber})
+      this.pageNumber})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Potion', 'name');
     BuiltValueNullFieldError.checkNotNull(
         displayFormattedTypeName, 'Potion', 'displayFormattedTypeName');
     BuiltValueNullFieldError.checkNotNull(itemType, 'Potion', 'itemType');
     BuiltValueNullFieldError.checkNotNull(expansion, 'Potion', 'expansion');
-    BuiltValueNullFieldError.checkNotNull(pageNumber, 'Potion', 'pageNumber');
   }
 
   @override
@@ -279,8 +281,7 @@ class PotionBuilder implements Builder<Potion, PotionBuilder> {
             price: price,
             expansion: BuiltValueNullFieldError.checkNotNull(
                 expansion, 'Potion', 'expansion'),
-            pageNumber: BuiltValueNullFieldError.checkNotNull(
-                pageNumber, 'Potion', 'pageNumber'));
+            pageNumber: pageNumber);
     replace(_$result);
     return _$result;
   }
