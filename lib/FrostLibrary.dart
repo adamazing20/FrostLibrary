@@ -30,6 +30,7 @@ export 'src/models/character/wizard/wizard.dart';
 export 'src/models/items/armour/amourtype.dart';
 export 'src/models/items/item/item.dart';
 export 'src/models/items/item/itemtype.dart';
+export 'src/models/items/spell/category.dart';
 export 'src/models/items/spell/school.dart';
 export 'src/models/items/spell/spell.dart';
 export 'src/models/items/weapons/weapontype.dart';
