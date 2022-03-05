@@ -121,8 +121,13 @@ class FrostLibrary {
     return list;
   }
 
-  Item getFirstItemByName(String name, {Expansion? expansion}) {
+  Item getFirstItemByName(String name,
+      {Expansion? expansion, ItemType? itemType}) {
     List<Item> itemList = getAllItems(expansion: expansion);
+
+    if (itemType != null) {
+      itemList.removeWhere((element) => element.itemType != itemType);
+    }
 
     return itemList
         .firstWhere((item) => item.name.toLowerCase() == name.toLowerCase());
