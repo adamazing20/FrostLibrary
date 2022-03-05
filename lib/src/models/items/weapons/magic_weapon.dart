@@ -54,6 +54,9 @@ abstract class MagicWeapon
   @override
   Expansion get expansion;
 
+  @override
+  int? get pageNumber;
+
   String toJson() {
     return json.encode(serializers.serializeWith(MagicWeapon.serializer, this));
   }

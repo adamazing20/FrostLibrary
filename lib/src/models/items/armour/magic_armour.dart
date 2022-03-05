@@ -47,6 +47,9 @@ abstract class MagicArmour
   @override
   Expansion get expansion;
 
+  @override
+  int? get pageNumber;
+
   String toJson() {
     return json.encode(serializers.serializeWith(MagicArmour.serializer, this));
   }
