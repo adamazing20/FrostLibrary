@@ -849,7 +849,7 @@ spells:
     pageNumber: 124
 
   - name: "Heal"
-    displayFormattedTypeName: "Grenade"
+    displayFormattedTypeName: "Heal"
     itemType: Spell
     description: "This spell restores up to 5 points of lost Health to a target figure within 6”.
     This spell cannot take a model above its starting Health.
