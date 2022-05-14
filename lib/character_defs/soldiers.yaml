@@ -233,7 +233,7 @@ soldiers:
     shoot: 0
     armour: 12
     will: 1
-    cost: 0
+    cost: 125
     additionalItemHoldCount: 1
     notes:
     characterType: Soldier
